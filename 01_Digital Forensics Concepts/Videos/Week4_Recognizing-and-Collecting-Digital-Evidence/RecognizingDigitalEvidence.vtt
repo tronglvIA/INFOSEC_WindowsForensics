@@ -1,0 +1,495 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.660
+Welcome back to the
+computer forensics path,
+
+2
+00:00:03.660 --> 00:00:05.895
+Core 6, Module 3.
+
+3
+00:00:05.895 --> 00:00:10.690
+We're going to talk about
+recognizing digital evidence.
+
+4
+00:00:10.730 --> 00:00:14.100
+Digital evidence can
+best be described as
+
+5
+00:00:14.100 --> 00:00:17.010
+anything that is capable
+of holding data.
+
+6
+00:00:17.010 --> 00:00:19.940
+Of course, we're talking
+about computers, and tablets,
+
+7
+00:00:19.940 --> 00:00:21.740
+and cell phones,
+but we're talking
+
+8
+00:00:21.740 --> 00:00:24.990
+about routers, watches, cameras,
+
+9
+00:00:24.990 --> 00:00:28.360
+internal and external devices,
+
+10
+00:00:28.360 --> 00:00:33.120
+smart devices like
+refrigerators, televisions,
+
+11
+00:00:33.120 --> 00:00:37.020
+Nest, Echoes, SD cards,
+
+12
+00:00:37.020 --> 00:00:42.160
+thumb drives, any devices
+capable of holding data.
+
+13
+00:00:42.500 --> 00:00:46.605
+It may not be obvious.
+
+14
+00:00:46.605 --> 00:00:49.370
+We can see up here on the
+screen that we need to be
+
+15
+00:00:49.370 --> 00:00:52.265
+aware of hidden drives.
+
+16
+00:00:52.265 --> 00:00:55.190
+You can see some
+of these examples
+
+17
+00:00:55.190 --> 00:00:59.945
+of flash drives that can
+be hidden in jewelry,
+
+18
+00:00:59.945 --> 00:01:01.790
+things that look like keys,
+
+19
+00:01:01.790 --> 00:01:07.025
+things that look like coins,
+bracelets, necklaces.
+
+20
+00:01:07.025 --> 00:01:09.290
+We really need to be aware
+
+21
+00:01:09.290 --> 00:01:12.650
+that electronic media
+storage is getting
+
+22
+00:01:12.650 --> 00:01:15.260
+smaller and smaller and thus more
+
+23
+00:01:15.260 --> 00:01:18.700
+easy to hide these devices.
+
+24
+00:01:18.700 --> 00:01:20.505
+Storage items.
+
+25
+00:01:20.505 --> 00:01:22.920
+Now, these are very
+small storage items.
+
+26
+00:01:22.920 --> 00:01:26.675
+This is a micro SD card
+here in this picture.
+
+27
+00:01:26.675 --> 00:01:31.810
+It is a terabyte in
+size, a terabyte.
+
+28
+00:01:31.810 --> 00:01:35.445
+That's amazing, but scary too.
+
+29
+00:01:35.445 --> 00:01:37.310
+A micro SD card,
+
+30
+00:01:37.310 --> 00:01:39.605
+I'm sure everybody
+knows it's very small.
+
+31
+00:01:39.605 --> 00:01:42.410
+We could overlook a
+terabyte of data by
+
+32
+00:01:42.410 --> 00:01:44.930
+missing one micro SD card.
+
+33
+00:01:44.930 --> 00:01:50.415
+The other picture depicts
+a SanDisk thumb drive,
+
+34
+00:01:50.415 --> 00:01:53.430
+which is like a mini thumb drive.
+
+35
+00:01:53.430 --> 00:01:55.859
+This also is a very
+high capacity,
+
+36
+00:01:55.859 --> 00:01:58.900
+I believe it's 500 gigabytes.
+
+37
+00:01:59.510 --> 00:02:04.775
+That's crazy, that these devices
+can be so small yet hold
+
+38
+00:02:04.775 --> 00:02:07.250
+such a large amount
+of data and they can
+
+39
+00:02:07.250 --> 00:02:10.450
+be very easily missed
+during a search warrant.
+
+40
+00:02:10.450 --> 00:02:12.890
+You want to make
+sure you look very
+
+41
+00:02:12.890 --> 00:02:17.415
+carefully when you're
+searching your scene.
+
+42
+00:02:17.415 --> 00:02:20.475
+Computers too are
+getting smaller.
+
+43
+00:02:20.475 --> 00:02:25.625
+This is a picture of what
+they call the atom computer.
+
+44
+00:02:25.625 --> 00:02:30.990
+It is 1.5 inches wide.
+
+45
+00:02:31.090 --> 00:02:33.755
+That's how small this thing is.
+
+46
+00:02:33.755 --> 00:02:35.915
+It's really, really tiny
+
+47
+00:02:35.915 --> 00:02:41.965
+yet it actually has a
+quad-core processor in it.
+
+48
+00:02:41.965 --> 00:02:44.050
+You can see the
+specification up here.
+
+49
+00:02:44.050 --> 00:02:47.635
+It supports Windows 10 OS,
+
+50
+00:02:47.635 --> 00:02:51.175
+it has an HDMI graphics card,
+
+51
+00:02:51.175 --> 00:02:54.775
+it also has a micro
+SD card reader,
+
+52
+00:02:54.775 --> 00:02:57.250
+it has a USB 2 port,
+
+53
+00:02:57.250 --> 00:03:02.980
+it is 32 gigabytes
+of flash memory.
+
+54
+00:03:04.040 --> 00:03:06.300
+It's scary to think.
+
+55
+00:03:06.300 --> 00:03:12.630
+It has wireless capabilities
+and yet it's tiny.
+
+56
+00:03:12.630 --> 00:03:16.050
+It's not much bigger than a
+standard size thumb drive.
+
+57
+00:03:16.050 --> 00:03:19.120
+It is a fully
+functioning computer
+
+58
+00:03:19.120 --> 00:03:21.710
+capable of running Windows 10.
+
+59
+00:03:21.710 --> 00:03:23.890
+We do need to be aware that
+
+60
+00:03:23.890 --> 00:03:25.670
+these types of devices are out
+
+61
+00:03:25.670 --> 00:03:27.650
+there and be on the lookout for
+
+62
+00:03:27.650 --> 00:03:30.620
+them when we're executing
+our search warrants.
+
+63
+00:03:30.620 --> 00:03:32.870
+Wireless networks.
+
+64
+00:03:32.870 --> 00:03:36.050
+You definitely want to
+make sure that you've done
+
+65
+00:03:36.050 --> 00:03:37.640
+some wireless network scanning
+
+66
+00:03:37.640 --> 00:03:39.980
+prior to executing
+a search warrant.
+
+67
+00:03:39.980 --> 00:03:41.000
+But while you're there,
+
+68
+00:03:41.000 --> 00:03:43.040
+you definitely want to make
+sure you can account for
+
+69
+00:03:43.040 --> 00:03:48.600
+every Internet-capable device
+in that home or a business.
+
+70
+00:03:48.600 --> 00:03:49.980
+You do want to scan
+
+71
+00:03:49.980 --> 00:03:52.995
+the scene for
+Internet-connected devices.
+
+72
+00:03:52.995 --> 00:03:55.820
+Again, we want to account
+for every device that
+
+73
+00:03:55.820 --> 00:03:58.655
+is capable of connecting
+to the Internet.
+
+74
+00:03:58.655 --> 00:04:00.890
+We want to isolate these devices,
+
+75
+00:04:00.890 --> 00:04:03.950
+get them off the network
+as soon as possible.
+
+76
+00:04:03.950 --> 00:04:08.330
+Now there is one exception
+to this and this
+
+77
+00:04:08.330 --> 00:04:11.615
+comes into knowing what type
+
+78
+00:04:11.615 --> 00:04:13.115
+of case you're investigating.
+
+79
+00:04:13.115 --> 00:04:15.514
+If you're investigating
+a case that involves
+
+80
+00:04:15.514 --> 00:04:18.110
+a lot of Cloud storage and
+you're looking at, say,
+
+81
+00:04:18.110 --> 00:04:20.915
+a residence and you want to know
+
+82
+00:04:20.915 --> 00:04:23.840
+what's in their Google
+Drive or your case
+
+83
+00:04:23.840 --> 00:04:26.839
+revolves around something
+that is Cloud storage
+
+84
+00:04:26.839 --> 00:04:30.860
+or maybe social media-based.
+
+85
+00:04:30.860 --> 00:04:32.640
+Most users,
+
+86
+00:04:32.640 --> 00:04:35.300
+their home computers will
+
+87
+00:04:35.300 --> 00:04:38.060
+auto log into a lot
+of these accounts.
+
+88
+00:04:38.060 --> 00:04:40.280
+Now, make sure you're staying
+
+89
+00:04:40.280 --> 00:04:42.335
+within the scope of your warrant.
+
+90
+00:04:42.335 --> 00:04:44.360
+But if your warrant does
+
+91
+00:04:44.360 --> 00:04:48.950
+cover these types
+of Cloud accounts,
+
+92
+00:04:48.950 --> 00:04:52.070
+before you break that
+Internet connection,
+
+93
+00:04:52.070 --> 00:04:54.320
+you do want to see if
+you can collect some
+
+94
+00:04:54.320 --> 00:04:56.690
+live data from these
+accounts and do
+
+95
+00:04:56.690 --> 00:04:58.820
+some live imaging and get
+
+96
+00:04:58.820 --> 00:05:01.855
+information from
+these Cloud accounts.
+
+97
+00:05:01.855 --> 00:05:04.175
+That's going to be
+the only exception on
+
+98
+00:05:04.175 --> 00:05:06.560
+isolating your devices ASAP,
+
+99
+00:05:06.560 --> 00:05:08.645
+getting devices off the network.
+
+100
+00:05:08.645 --> 00:05:10.550
+Again, make sure you stay within
+
+101
+00:05:10.550 --> 00:05:12.500
+the scope of your legal process.
+
+102
+00:05:12.500 --> 00:05:14.090
+Know what you can and can't
+
+103
+00:05:14.090 --> 00:05:16.040
+do and if you have a question,
+
+104
+00:05:16.040 --> 00:05:19.350
+contact your supervisor
+or prosecutor.
+
+105
+00:05:21.050 --> 00:05:23.355
+In our next module,
+
+106
+00:05:23.355 --> 00:05:24.530
+we're going to talk about
+
+107
+00:05:24.530 --> 00:05:26.810
+the proper collection
+of digital evidence.
+
+108
+00:05:26.810 --> 00:05:28.760
+How we're going to
+collect this evidence
+
+109
+00:05:28.760 --> 00:05:31.170
+without altering it.

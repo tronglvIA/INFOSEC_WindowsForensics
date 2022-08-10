@@ -1,0 +1,1352 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.870
+Welcome back to the
+Computer Forensics Path.
+
+2
+00:00:03.870 --> 00:00:06.180
+In this course, we're talking
+
+3
+00:00:06.180 --> 00:00:09.225
+about creating a forensic image.
+
+4
+00:00:09.225 --> 00:00:11.340
+In Module 3 of this course,
+
+5
+00:00:11.340 --> 00:00:13.890
+we're going to talk
+about write blockers.
+
+6
+00:00:13.890 --> 00:00:16.889
+Now, hardware write blockers,
+
+7
+00:00:16.889 --> 00:00:20.295
+which are the ones you
+really want to try to use,
+
+8
+00:00:20.295 --> 00:00:23.760
+they have firmware
+to prevent writes.
+
+9
+00:00:23.760 --> 00:00:25.680
+So there's built-in firmware
+
+10
+00:00:25.680 --> 00:00:28.105
+inside the hardware
+write blockers.
+
+11
+00:00:28.105 --> 00:00:31.220
+This firmware does not depend on
+
+12
+00:00:31.220 --> 00:00:35.720
+our operating system or
+a BIOS to block writes.
+
+13
+00:00:35.720 --> 00:00:40.075
+It is independent of
+our operating system.
+
+14
+00:00:40.075 --> 00:00:41.660
+It is effective in
+
+15
+00:00:41.660 --> 00:00:44.964
+modern Windows and other
+operating systems.
+
+16
+00:00:44.964 --> 00:00:49.085
+Software write
+blockers by contrast,
+
+17
+00:00:49.085 --> 00:00:52.790
+they do work in a
+Dos environment with
+
+18
+00:00:52.790 --> 00:00:57.180
+the intercept 13 of the BIOS
+command for the writes,
+
+19
+00:00:57.180 --> 00:01:02.074
+but they will not work in a
+modern Windows environment.
+
+20
+00:01:02.074 --> 00:01:08.695
+They can be effective in
+stopping writes to USB ports.
+
+21
+00:01:08.695 --> 00:01:12.665
+You always want to test
+these write blockers because
+
+22
+00:01:12.665 --> 00:01:16.230
+I've downloaded quite a few
+of them and tested them,
+
+23
+00:01:16.230 --> 00:01:18.800
+and some of them simply
+just don't work,
+
+24
+00:01:18.800 --> 00:01:20.765
+or they don't work on
+a particular drive
+
+25
+00:01:20.765 --> 00:01:23.020
+that you're trying
+to use them on.
+
+26
+00:01:23.020 --> 00:01:26.460
+They're not reliable for
+
+27
+00:01:26.460 --> 00:01:30.015
+the most part and we'll
+talk more about that.
+
+28
+00:01:30.015 --> 00:01:34.340
+Now, there are some paid
+software write blockers
+
+29
+00:01:34.340 --> 00:01:35.780
+that will work in
+
+30
+00:01:35.780 --> 00:01:38.015
+modern Windows and
+they're listed up here.
+
+31
+00:01:38.015 --> 00:01:39.665
+There is Safe Block,
+
+32
+00:01:39.665 --> 00:01:42.215
+which will work in a
+modern Windows system,
+
+33
+00:01:42.215 --> 00:01:44.960
+and there is FastBloc SE,
+
+34
+00:01:44.960 --> 00:01:49.205
+which is an add-on
+module to EnCase.
+
+35
+00:01:49.205 --> 00:01:52.810
+EnCase is an
+examination software.
+
+36
+00:01:52.810 --> 00:01:54.870
+Now there are some software
+
+37
+00:01:54.870 --> 00:01:57.480
+write blockers that
+will work on USB ports,
+
+38
+00:01:57.480 --> 00:01:59.400
+I have two of them
+listed up here.
+
+39
+00:01:59.400 --> 00:02:04.175
+There are more out there and
+I would recommend again,
+
+40
+00:02:04.175 --> 00:02:05.960
+testing and validating whatever
+
+41
+00:02:05.960 --> 00:02:07.400
+you download to make sure it
+
+42
+00:02:07.400 --> 00:02:09.020
+is going to work before you
+
+43
+00:02:09.020 --> 00:02:11.075
+use it on any type of evidence.
+
+44
+00:02:11.075 --> 00:02:13.730
+But we have Thumbscrews and
+
+45
+00:02:13.730 --> 00:02:16.895
+USB write blocker
+for all Windows,
+
+46
+00:02:16.895 --> 00:02:18.950
+and as the name says,
+
+47
+00:02:18.950 --> 00:02:22.000
+it work is in a
+Windows environment.
+
+48
+00:02:22.000 --> 00:02:25.610
+Always test a software write
+
+49
+00:02:25.610 --> 00:02:28.805
+blocker before you
+use it on evidence,
+
+50
+00:02:28.805 --> 00:02:32.370
+I cannot say that enough.
+
+51
+00:02:32.930 --> 00:02:39.465
+We're going to do a demo of
+a write blocker validation.
+
+52
+00:02:39.465 --> 00:02:41.420
+If you would like to follow
+
+53
+00:02:41.420 --> 00:02:44.010
+along the items you're
+going to need, are,
+
+54
+00:02:44.010 --> 00:02:45.610
+you're going to need
+the program called
+
+55
+00:02:45.610 --> 00:02:48.850
+Thumbscrews and a USB device.
+
+56
+00:02:48.850 --> 00:02:53.480
+The URL for Thumbscrews
+is in the slide.
+
+57
+00:02:53.480 --> 00:02:56.285
+Remember go ahead
+and download it,
+
+58
+00:02:56.285 --> 00:02:59.570
+and then you'll have to
+extract it, it's a zip file.
+
+59
+00:02:59.570 --> 00:03:04.760
+Start Thumbscrews before
+connecting the USB device.
+
+60
+00:03:04.760 --> 00:03:07.845
+Because how this particular
+piece of software works,
+
+61
+00:03:07.845 --> 00:03:09.940
+is it will not block
+
+62
+00:03:09.940 --> 00:03:11.275
+the USB devices you
+
+63
+00:03:11.275 --> 00:03:13.750
+already have plugged
+into your computer.
+
+64
+00:03:13.750 --> 00:03:15.310
+Once you turn it on,
+
+65
+00:03:15.310 --> 00:03:18.920
+it only blocks new
+USB connections.
+
+66
+00:03:18.920 --> 00:03:21.205
+So make sure that you activate it
+
+67
+00:03:21.205 --> 00:03:24.565
+before you connect
+the USB device.
+
+68
+00:03:24.565 --> 00:03:27.730
+If you have a
+small-capacity USB device,
+
+69
+00:03:27.730 --> 00:03:29.260
+that's what we want to use,
+
+70
+00:03:29.260 --> 00:03:33.080
+the smaller the better
+because it goes faster.
+
+71
+00:03:33.080 --> 00:03:36.705
+Let's get started
+with our software,
+
+72
+00:03:36.705 --> 00:03:39.640
+USB Write Blocker validation.
+
+73
+00:03:39.640 --> 00:03:41.845
+The first thing we're
+going to need to do,
+
+74
+00:03:41.845 --> 00:03:45.420
+is download USB Write
+Blocker for all Windows,
+
+75
+00:03:45.420 --> 00:03:47.660
+the URL should be in
+
+76
+00:03:47.660 --> 00:03:52.070
+your class handout or
+it is in the video.
+
+77
+00:03:52.070 --> 00:03:53.930
+Once you've navigated
+to the site,
+
+78
+00:03:53.930 --> 00:03:56.825
+go ahead and click ''Download''.
+
+79
+00:03:56.825 --> 00:03:58.760
+Make sure you're downloading
+
+80
+00:03:58.760 --> 00:04:01.355
+USB Write Blocker All Windows.
+
+81
+00:04:01.355 --> 00:04:03.875
+The download will start
+in a couple of seconds.
+
+82
+00:04:03.875 --> 00:04:05.749
+Once the download's complete,
+
+83
+00:04:05.749 --> 00:04:07.260
+it's going to be a zip file,
+
+84
+00:04:07.260 --> 00:04:10.555
+so go ahead and save it
+wherever you'd like to.
+
+85
+00:04:10.555 --> 00:04:12.140
+Once you've saved it,
+
+86
+00:04:12.140 --> 00:04:14.075
+go ahead and extract it.
+
+87
+00:04:14.075 --> 00:04:15.220
+I'm going to use 7-Zip.
+
+88
+00:04:15.220 --> 00:04:18.290
+I would recommend using
+7-Zip to extract it.
+
+89
+00:04:18.290 --> 00:04:20.165
+I'm just going to
+extract it here.
+
+90
+00:04:20.165 --> 00:04:21.920
+Once it extracts, you'll
+
+91
+00:04:21.920 --> 00:04:26.185
+see a file
+USB_Write_Blocker_All_Windows.bat.
+
+92
+00:04:26.185 --> 00:04:30.120
+It's a batch file and that's
+what we're going to use.
+
+93
+00:04:30.120 --> 00:04:33.720
+Go ahead and double-click
+on that and it will open.
+
+94
+00:04:33.720 --> 00:04:36.320
+Once it opens, it's
+very simple to use.
+
+95
+00:04:36.320 --> 00:04:37.835
+If we want to turn it on,
+
+96
+00:04:37.835 --> 00:04:39.874
+what you do is you type a one,
+
+97
+00:04:39.874 --> 00:04:41.680
+then "Enter", and then it'll
+
+98
+00:04:41.680 --> 00:04:44.040
+prompt you to type
+''Enter'' one more time.
+
+99
+00:04:44.040 --> 00:04:46.789
+To turn it off, you
+simply type a two,
+
+100
+00:04:46.789 --> 00:04:48.830
+"Enter", and then
+it will also prompt
+
+101
+00:04:48.830 --> 00:04:51.335
+you to type ''Enter''
+one more time.
+
+102
+00:04:51.335 --> 00:04:55.325
+To exit, simply type the
+number 3 and "Enter".
+
+103
+00:04:55.325 --> 00:04:56.900
+We're going to go
+ahead and turn it on.
+
+104
+00:04:56.900 --> 00:04:58.815
+I'm going to type a one, "Enter",
+
+105
+00:04:58.815 --> 00:05:00.280
+and it's going to tell
+you, it's going to
+
+106
+00:05:00.280 --> 00:05:02.025
+make a change to your registry.
+
+107
+00:05:02.025 --> 00:05:04.055
+That's how it
+prevents the writes.
+
+108
+00:05:04.055 --> 00:05:07.215
+Then you have to type
+''Enter'' again to continue.
+
+109
+00:05:07.215 --> 00:05:10.555
+Now, it will tell you the
+USB write blocker is on.
+
+110
+00:05:10.555 --> 00:05:12.865
+At this point is when
+we're going to plug
+
+111
+00:05:12.865 --> 00:05:15.200
+our test thumb drive,
+
+112
+00:05:15.200 --> 00:05:17.540
+our test USB device in.
+
+113
+00:05:17.540 --> 00:05:22.765
+Do not plug the USB device
+in before you turn this on.
+
+114
+00:05:22.765 --> 00:05:25.660
+If you do, it will not work.
+
+115
+00:05:25.660 --> 00:05:29.215
+Now that it's on, we're going
+to plug in our USB device.
+
+116
+00:05:29.215 --> 00:05:31.655
+We can see when we plug
+in the USB device,
+
+117
+00:05:31.655 --> 00:05:35.185
+these are the files that
+are on my USB device.
+
+118
+00:05:35.185 --> 00:05:36.595
+Now I want to bring up
+
+119
+00:05:36.595 --> 00:05:40.985
+FTK Imager because we are
+going to hash this device.
+
+120
+00:05:40.985 --> 00:05:42.645
+But before we do that,
+
+121
+00:05:42.645 --> 00:05:45.810
+notice the drive letter is M.
+
+122
+00:05:45.810 --> 00:05:48.010
+Bring up Disk
+Management because we
+
+123
+00:05:48.010 --> 00:05:49.970
+want the actual disk number,
+
+124
+00:05:49.970 --> 00:05:53.210
+not just the logical volume.
+
+125
+00:05:53.310 --> 00:05:56.075
+My logical volume is going to be
+
+126
+00:05:56.075 --> 00:06:00.260
+M. My physical disk is Disk 13.
+
+127
+00:06:00.260 --> 00:06:02.380
+When I create this hash value,
+
+128
+00:06:02.380 --> 00:06:04.070
+I want to hash the physical disk,
+
+129
+00:06:04.070 --> 00:06:05.860
+not the logical volume.
+
+130
+00:06:05.860 --> 00:06:07.840
+Whatever yours is,
+it'll probably be
+
+131
+00:06:07.840 --> 00:06:09.630
+different than it
+is on my computer,
+
+132
+00:06:09.630 --> 00:06:14.255
+but make a note of the
+drive letter for the volume
+
+133
+00:06:14.255 --> 00:06:16.660
+and the number of the physical
+disk you're going to be
+
+134
+00:06:16.660 --> 00:06:19.660
+looking for when
+we use FTK Imager.
+
+135
+00:06:19.660 --> 00:06:22.460
+Now go ahead and
+launch FTK Imager.
+
+136
+00:06:22.460 --> 00:06:26.420
+I'm going to go to ''File'',
+''Add Evidence Item''.
+
+137
+00:06:26.420 --> 00:06:30.100
+We're going to use a physical
+drive, click "Next".
+
+138
+00:06:30.100 --> 00:06:31.440
+From the drop-down box,
+
+139
+00:06:31.440 --> 00:06:33.575
+select your USB device.
+
+140
+00:06:33.575 --> 00:06:36.530
+Mine was Physical Drive 13,
+
+141
+00:06:36.530 --> 00:06:37.955
+yours could be different,
+
+142
+00:06:37.955 --> 00:06:39.540
+and then we're going
+to click "Finish".
+
+143
+00:06:39.540 --> 00:06:42.070
+Now, we can take a look
+at what we have here.
+
+144
+00:06:42.070 --> 00:06:44.660
+When I look at the
+root of the volume,
+
+145
+00:06:44.660 --> 00:06:47.930
+I can see the same files I
+saw on Windows Explorer.
+
+146
+00:06:47.930 --> 00:06:51.885
+I want to hash this
+physical disk.
+
+147
+00:06:51.885 --> 00:06:54.440
+I'm going to highlight
+the physical disk.
+
+148
+00:06:54.440 --> 00:06:56.780
+Do not highlight
+the logical volume,
+
+149
+00:06:56.780 --> 00:06:58.465
+you'll get a
+different hash value.
+
+150
+00:06:58.465 --> 00:07:00.675
+Make sure you're highlighting
+the physical drive.
+
+151
+00:07:00.675 --> 00:07:04.830
+Click "File", "Verify
+Drive Image",
+
+152
+00:07:04.830 --> 00:07:06.885
+then it will start working.
+
+153
+00:07:06.885 --> 00:07:10.425
+Now it is hashing
+our physical disk,
+
+154
+00:07:10.425 --> 00:07:12.615
+and because my test
+drive is small,
+
+155
+00:07:12.615 --> 00:07:14.835
+which is what you want
+for your test devices,
+
+156
+00:07:14.835 --> 00:07:16.625
+it goes very quickly.
+
+157
+00:07:16.625 --> 00:07:21.250
+It gives you the physical drive
+number, how many sectors,
+
+158
+00:07:21.250 --> 00:07:23.945
+an MD5 hash value,
+
+159
+00:07:23.945 --> 00:07:25.720
+a SHA1 hash value,
+
+160
+00:07:25.720 --> 00:07:28.640
+and it also notes that it did
+not find any bad sectors.
+
+161
+00:07:28.640 --> 00:07:30.800
+This is called the pre-hash,
+
+162
+00:07:30.800 --> 00:07:32.560
+and we're going to do this before
+
+163
+00:07:32.560 --> 00:07:34.605
+we attempt to write to the drive.
+
+164
+00:07:34.605 --> 00:07:37.275
+Now you need to document
+your pre-hash because
+
+165
+00:07:37.275 --> 00:07:40.075
+Imager will not save this
+information for you.
+
+166
+00:07:40.075 --> 00:07:42.540
+I like to use the snipping tool.
+
+167
+00:07:42.540 --> 00:07:44.335
+You can do a screenshot,
+
+168
+00:07:44.335 --> 00:07:45.835
+however you want to do it,
+
+169
+00:07:45.835 --> 00:07:47.630
+but make sure you document it.
+
+170
+00:07:47.630 --> 00:07:54.125
+I'm just going to save this
+as usb_testdrive_pre-hash.
+
+171
+00:07:54.125 --> 00:07:56.545
+I'll just leave it on
+my desktop for now.
+
+172
+00:07:56.545 --> 00:07:58.610
+Now I'm going to go
+ahead and minimize that.
+
+173
+00:07:58.610 --> 00:07:59.990
+I'm going to close this.
+
+174
+00:07:59.990 --> 00:08:02.055
+I'm going to remove
+my evidence item
+
+175
+00:08:02.055 --> 00:08:04.780
+and I'm going to
+close FTK Imager.
+
+176
+00:08:04.780 --> 00:08:07.480
+The reason I'm doing that
+is I don't want Imager to
+
+177
+00:08:07.480 --> 00:08:10.160
+read from a cache file,
+
+178
+00:08:10.160 --> 00:08:13.895
+I want it to re-hash my
+drive when I'm done.
+
+179
+00:08:13.895 --> 00:08:16.455
+So go ahead and close FTK Imager.
+
+180
+00:08:16.455 --> 00:08:18.890
+Now we're going to bring
+up Windows Explorer
+
+181
+00:08:18.890 --> 00:08:21.465
+and try to write
+to our test drive.
+
+182
+00:08:21.465 --> 00:08:23.025
+I have Windows Explorer.
+
+183
+00:08:23.025 --> 00:08:24.305
+This is my test drive,
+
+184
+00:08:24.305 --> 00:08:29.410
+USB Test Drive M. My volume
+label is USB Test Drive.
+
+185
+00:08:29.410 --> 00:08:31.330
+I'd recommend using
+a volume label
+
+186
+00:08:31.330 --> 00:08:33.070
+that you're going to recognize.
+
+187
+00:08:33.070 --> 00:08:35.255
+Let's try to make
+some changes here.
+
+188
+00:08:35.255 --> 00:08:37.030
+I'm going to write, this is
+
+189
+00:08:37.030 --> 00:08:42.755
+a USB software
+writeblock validation.
+
+190
+00:08:42.755 --> 00:08:44.990
+It doesn't really
+matter what you write.
+
+191
+00:08:44.990 --> 00:08:46.990
+What we're trying to do here is
+
+192
+00:08:46.990 --> 00:08:49.205
+show that we cannot
+write to the drive.
+
+193
+00:08:49.205 --> 00:08:51.775
+I'm going to try to
+save it to the drive.
+
+194
+00:08:51.775 --> 00:08:53.760
+I immediately get a
+message that says I
+
+195
+00:08:53.760 --> 00:08:55.990
+can't save to this
+particular drive.
+
+196
+00:08:55.990 --> 00:08:58.475
+Now you'd also want
+to document this.
+
+197
+00:08:58.475 --> 00:09:01.520
+I'm just going to use a
+screenshot to do that.
+
+198
+00:09:01.520 --> 00:09:05.240
+It won't let me do that
+so I'm going to cancel.
+
+199
+00:09:05.240 --> 00:09:06.890
+Close that file.
+
+200
+00:09:06.890 --> 00:09:11.665
+Don't save. Now let me
+try to delete something.
+
+201
+00:09:11.665 --> 00:09:16.185
+Well, it doesn't even give
+you the option to delete.
+
+202
+00:09:16.185 --> 00:09:20.205
+I'm going to try a
+Control-X to delete.
+
+203
+00:09:20.205 --> 00:09:24.525
+I want to cut it. It
+won't let me do that.
+
+204
+00:09:24.525 --> 00:09:27.285
+Bring up a post-hash here.
+
+205
+00:09:27.285 --> 00:09:28.650
+I'll try to edit it,
+
+206
+00:09:28.650 --> 00:09:32.520
+close it, and it
+is not saving it.
+
+207
+00:09:32.520 --> 00:09:35.140
+We can try it again.
+
+208
+00:09:35.480 --> 00:09:38.440
+I'll draw again.
+
+209
+00:09:46.220 --> 00:09:49.110
+Save a copy.
+
+210
+00:09:49.110 --> 00:09:52.155
+I'm going to try to save it to M,
+
+211
+00:09:52.155 --> 00:09:54.900
+and again it's telling
+me I can't save to
+
+212
+00:09:54.900 --> 00:09:57.630
+drive M. I could save
+that somewhere else,
+
+213
+00:09:57.630 --> 00:10:03.075
+but I cannot write to the
+right protected drive.
+
+214
+00:10:03.075 --> 00:10:04.590
+It is right protecting
+
+215
+00:10:04.590 --> 00:10:08.680
+my USB test drive which is
+what it's supposed to do.
+
+216
+00:10:08.930 --> 00:10:11.160
+I'll just close that,
+
+217
+00:10:11.160 --> 00:10:12.645
+and if I reopen it,
+
+218
+00:10:12.645 --> 00:10:15.480
+you can see it did
+not save the changes.
+
+219
+00:10:15.480 --> 00:10:18.240
+Let me try to add
+something to it.
+
+220
+00:10:18.240 --> 00:10:20.910
+I'll just bring up anything
+
+221
+00:10:20.910 --> 00:10:25.140
+and I'll just try
+to add this PDF.
+
+222
+00:10:25.140 --> 00:10:27.435
+Copy to test drive
+
+223
+00:10:27.435 --> 00:10:31.330
+and it's telling me my
+disk is write-protected,
+
+224
+00:10:31.480 --> 00:10:35.290
+that I cannot add
+any data to this.
+
+225
+00:10:35.290 --> 00:10:38.205
+Let me go ahead and take
+another screenshot.
+
+226
+00:10:38.205 --> 00:10:39.570
+When you're doing this, you do
+
+227
+00:10:39.570 --> 00:10:41.070
+want to document what you did.
+
+228
+00:10:41.070 --> 00:10:42.465
+You tried to write to it,
+
+229
+00:10:42.465 --> 00:10:44.055
+you tried to erase something,
+
+230
+00:10:44.055 --> 00:10:45.945
+you tried to alter something,
+
+231
+00:10:45.945 --> 00:10:47.730
+and you were unable to do so.
+
+232
+00:10:47.730 --> 00:10:50.220
+Now that I've tried to alter
+
+233
+00:10:50.220 --> 00:10:53.160
+data on the drive or tried
+to write to that drive,
+
+234
+00:10:53.160 --> 00:10:56.295
+I'm going to go ahead and
+bring up FTK Imager again,
+
+235
+00:10:56.295 --> 00:10:58.410
+and I'm going to add
+the driver again.
+
+236
+00:10:58.410 --> 00:11:01.005
+So File, Add Evidence Item.
+
+237
+00:11:01.005 --> 00:11:03.165
+We're looking for
+a physical drive.
+
+238
+00:11:03.165 --> 00:11:08.460
+I'm going to select my USB
+drive minus physical drive 13.
+
+239
+00:11:08.460 --> 00:11:10.620
+Yours will probably be different.
+
+240
+00:11:10.620 --> 00:11:14.220
+Click "Finish" and I can take
+
+241
+00:11:14.220 --> 00:11:17.895
+a look just to make sure I'm
+looking at the same drive,
+
+242
+00:11:17.895 --> 00:11:22.620
+and I see the files that we
+saw on Windows Explorer.
+
+243
+00:11:22.620 --> 00:11:25.860
+Now make sure you
+highlight Physical Drive.
+
+244
+00:11:25.860 --> 00:11:31.950
+I'm going to go to File,
+Verify Drive/Image.
+
+245
+00:11:31.950 --> 00:11:34.230
+It has completed.
+
+246
+00:11:34.230 --> 00:11:35.490
+Once it's completed,
+
+247
+00:11:35.490 --> 00:11:37.560
+I'm going to compare my results.
+
+248
+00:11:37.560 --> 00:11:40.350
+This would be considered
+your post-hash.
+
+249
+00:11:40.350 --> 00:11:42.870
+We do a pre-hash and a post-hash.
+
+250
+00:11:42.870 --> 00:11:45.720
+Let me bring up my pre-hash
+and I'm going to look at
+
+251
+00:11:45.720 --> 00:11:49.800
+the hash values and
+they do in fact match.
+
+252
+00:11:49.800 --> 00:11:52.530
+Now what you would do
+here is I go and click
+
+253
+00:11:52.530 --> 00:11:57.615
+"New" and I would take
+a snapshot of this,
+
+254
+00:11:57.615 --> 00:12:01.125
+and I would save
+it File, Save As,
+
+255
+00:12:01.125 --> 00:12:05.520
+and I'm going to call this my
+"USB test drive post-hash."
+
+256
+00:12:05.520 --> 00:12:08.205
+I'm just going to leave it
+as desktop and save it.
+
+257
+00:12:08.205 --> 00:12:11.910
+Now what you would want to
+do is you would want to take
+
+258
+00:12:11.910 --> 00:12:15.240
+all the documentation and put it
+
+259
+00:12:15.240 --> 00:12:20.235
+into a single report, PDF.
+
+260
+00:12:20.235 --> 00:12:22.695
+Whoever you want to save
+that documentation,
+
+261
+00:12:22.695 --> 00:12:24.060
+you'd want to make sure you wrote
+
+262
+00:12:24.060 --> 00:12:26.625
+the date and time
+that you did this,
+
+263
+00:12:26.625 --> 00:12:28.770
+and you'd want to
+keep a record of
+
+264
+00:12:28.770 --> 00:12:31.185
+all your validations so that
+
+265
+00:12:31.185 --> 00:12:33.630
+if you're ever going into court,
+
+266
+00:12:33.630 --> 00:12:36.645
+civil, criminal, or just
+an internal hearing,
+
+267
+00:12:36.645 --> 00:12:38.985
+whatever type of
+investigation you're doing,
+
+268
+00:12:38.985 --> 00:12:42.090
+you could show documentation
+that you did in fact
+
+269
+00:12:42.090 --> 00:12:45.240
+validate your software before
+
+270
+00:12:45.240 --> 00:12:47.760
+you used it on the
+original evidence.
+
+271
+00:12:47.760 --> 00:12:49.665
+With a software right blocker,
+
+272
+00:12:49.665 --> 00:12:52.575
+I would validate it
+before each use.
+
+273
+00:12:52.575 --> 00:12:54.750
+With the hardware write blocker,
+
+274
+00:12:54.750 --> 00:12:56.445
+you do not have to do that.
+
+275
+00:12:56.445 --> 00:12:59.610
+Now I've done that and I'm done.
+
+276
+00:12:59.610 --> 00:13:05.140
+I want to go ahead and
+eject my USB drive.
+
+277
+00:13:05.390 --> 00:13:11.130
+Remember to eject your USB
+drive. Hang on just a second.
+
+278
+00:13:11.130 --> 00:13:15.180
+You're going to have to remove
+
+279
+00:13:15.180 --> 00:13:17.100
+the evidence item and close
+
+280
+00:13:17.100 --> 00:13:20.100
+FTK Imager before you're
+able to eject that drive.
+
+281
+00:13:20.100 --> 00:13:22.350
+Now I want to eject my drive
+
+282
+00:13:22.350 --> 00:13:25.995
+before I turn off
+USB write blocker.
+
+283
+00:13:25.995 --> 00:13:28.680
+I've ejected my drive.
+
+284
+00:13:28.680 --> 00:13:33.870
+Now I want to go ahead and
+turn off USB write blocker.
+
+285
+00:13:33.870 --> 00:13:39.930
+To do that, we're going to
+type the Number 2 to disable,
+
+286
+00:13:39.930 --> 00:13:42.570
+and we're going to type "Enter",
+
+287
+00:13:42.570 --> 00:13:44.970
+and it's going to again
+prompt you that it
+
+288
+00:13:44.970 --> 00:13:46.814
+is going to make a
+change to your registry,
+
+289
+00:13:46.814 --> 00:13:49.620
+I'm going to click "Yes" and now
+
+290
+00:13:49.620 --> 00:13:52.875
+we must press "Enter" again
+or any key to continue,
+
+291
+00:13:52.875 --> 00:13:56.370
+and now USB write
+blocker is turned off.
+
+292
+00:13:56.370 --> 00:13:57.869
+In our next module,
+
+293
+00:13:57.869 --> 00:14:00.060
+we're going to talk
+about creating
+
+294
+00:14:00.060 --> 00:14:03.285
+and validating forensic images.
+
+295
+00:14:03.285 --> 00:14:05.950
+End of demonstration.

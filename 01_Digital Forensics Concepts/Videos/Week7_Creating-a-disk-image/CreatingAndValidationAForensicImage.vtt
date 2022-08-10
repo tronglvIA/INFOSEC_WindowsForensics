@@ -1,0 +1,1034 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:04.090
+Welcome back to the computer
+forensics path course 11.
+
+2
+00:00:04.090 --> 00:00:07.640
+We're talking about creating
+a forensic disk image.
+
+3
+00:00:07.640 --> 00:00:11.838
+And in module four we're going
+to talk about creating and
+
+4
+00:00:11.838 --> 00:00:17.280
+validating our forensic disk image so
+far we've covered sterile media.
+
+5
+00:00:17.280 --> 00:00:21.991
+We've talked about how important it is
+to write our evidence files to media
+
+6
+00:00:21.991 --> 00:00:24.340
+that is free of any other data.
+
+7
+00:00:24.340 --> 00:00:30.291
+We've also talked about validating
+our tools in this module.
+
+8
+00:00:30.291 --> 00:00:35.060
+We're going to talk about how we actually
+create the forensic image itself and
+
+9
+00:00:35.060 --> 00:00:35.861
+validated.
+
+10
+00:00:37.840 --> 00:00:43.072
+Now copying versus imaging
+a full forensic copy
+
+11
+00:00:43.072 --> 00:00:49.621
+otherwise known as an image
+will contain allocated files.
+
+12
+00:00:49.621 --> 00:00:53.140
+It's going to contain
+files lack deleted files.
+
+13
+00:00:53.140 --> 00:00:58.911
+All are unallocated space,
+unused space and an H P A And the D O C.
+
+14
+00:00:58.911 --> 00:01:01.450
+If there is one H P A.
+
+15
+00:01:01.450 --> 00:01:06.360
+Stands for host protected area and D O C.
+
+16
+00:01:06.360 --> 00:01:09.958
+Is an area that is used
+to resize the drive and
+
+17
+00:01:09.958 --> 00:01:14.240
+they are done by
+the manufacturer of the drive.
+
+18
+00:01:14.240 --> 00:01:19.640
+But you want to make sure that your
+forensic tool is able to read that area.
+
+19
+00:01:19.640 --> 00:01:26.061
+All modern forensic software will
+cover the H P A And the D O C.
+
+20
+00:01:27.340 --> 00:01:32.512
+Now if we just copy a file like in
+the Windows Explorer re right click and
+
+21
+00:01:32.512 --> 00:01:38.540
+copy of file, all we're getting is
+the allocated file and the file slack.
+
+22
+00:01:38.540 --> 00:01:43.107
+You're not getting any of
+the unallocated space, deleted files or
+
+23
+00:01:43.107 --> 00:01:47.440
+unused space on that disk or
+any of the operating system.
+
+24
+00:01:47.440 --> 00:01:48.140
+Yeah.
+
+25
+00:01:48.140 --> 00:01:52.944
+When you make a full forensic
+image you are copying from
+
+26
+00:01:52.944 --> 00:01:57.852
+Physical bytes zero all the way
+through to the end of that
+
+27
+00:01:57.852 --> 00:02:02.570
+drive everything forensic
+copying versus cloning.
+
+28
+00:02:02.570 --> 00:02:07.140
+The difference between making
+a forensic copy our cloning it dry.
+
+29
+00:02:07.140 --> 00:02:11.556
+When you clone a drive it is
+a bit by the copy of the original
+
+30
+00:02:11.556 --> 00:02:15.540
+drive onto a drive of the same size or
+larger.
+
+31
+00:02:15.540 --> 00:02:17.621
+So you're physically copying that dear.
+
+32
+00:02:17.621 --> 00:02:19.210
+You're cloning that drive.
+
+33
+00:02:19.210 --> 00:02:21.751
+You could put that drive in
+your computer and boot it.
+
+34
+00:02:24.540 --> 00:02:29.791
+If the target drive is larger,
+it should be filled with all zeros.
+
+35
+00:02:29.791 --> 00:02:35.291
+The remaining space that is not taken
+up should be back filled with zeros.
+
+36
+00:02:37.240 --> 00:02:42.251
+And if you thoroughly wipe your media it
+will automatically be filled with zeros.
+
+37
+00:02:43.740 --> 00:02:47.717
+And this is creating a clone
+of the original drive,
+
+38
+00:02:47.717 --> 00:02:52.261
+not creating a forensic copy,
+forensic evidence files.
+
+39
+00:02:53.440 --> 00:02:57.360
+They also contain a bit by bit,
+a copy of the original evidence.
+
+40
+00:02:57.360 --> 00:02:59.640
+Everything will still be there.
+
+41
+00:02:59.640 --> 00:03:03.840
+But these are container files and
+they're actually files.
+
+42
+00:03:03.840 --> 00:03:08.840
+So they may contain some extra data
+like a header or a check song.
+
+43
+00:03:08.840 --> 00:03:09.851
+For error checking.
+
+44
+00:03:11.140 --> 00:03:15.717
+This will not affect our hash value
+because when we hash it is only going to
+
+45
+00:03:15.717 --> 00:03:19.861
+hash the data, it's not hashing
+the header and the check zones.
+
+46
+00:03:20.940 --> 00:03:27.101
+You can have compression with
+these forensic image files And
+
+47
+00:03:27.101 --> 00:03:31.240
+you know, one is a compressed file.
+
+48
+00:03:31.240 --> 00:03:38.020
+So we could put that on media that is
+smaller than the original evidence.
+
+49
+00:03:38.020 --> 00:03:41.211
+And you may want to use
+that format to save space.
+
+50
+00:03:42.240 --> 00:03:45.630
+But remember these
+are forensic evidence files.
+
+51
+00:03:45.630 --> 00:03:50.130
+There are container file,
+it is really hard to alter them.
+
+52
+00:03:50.130 --> 00:03:54.940
+You would actually have to go into
+a hex editor and physically alter them.
+
+53
+00:03:54.940 --> 00:03:59.931
+Whereas when you're doing the forensic
+copy cloning it is very easy
+
+54
+00:03:59.931 --> 00:04:03.040
+to damage the original evidence.
+
+55
+00:04:03.040 --> 00:04:06.851
+So you want to be very careful
+types of evidence files?
+
+56
+00:04:06.851 --> 00:04:10.910
+Well we have the DD which
+is actually the same.
+
+57
+00:04:10.910 --> 00:04:12.141
+It will be the same size.
+
+58
+00:04:12.141 --> 00:04:14.453
+There's no compression in a DVD so
+
+59
+00:04:14.453 --> 00:04:19.011
+it will be the same size as the original
+evidence Like I said before.
+
+60
+00:04:19.011 --> 00:04:23.980
+The EO one is compressed, so
+is the A F, F and the smart.
+
+61
+00:04:23.980 --> 00:04:27.861
+And there are many more types
+of forensic evidence files.
+
+62
+00:04:29.140 --> 00:04:33.091
+Remember our target drive,
+we're going to use sterile media,
+
+63
+00:04:33.091 --> 00:04:37.800
+it must be at least the same size or
+larger than the original evidence drive.
+
+64
+00:04:37.800 --> 00:04:41.521
+If we're using a non compressed image,
+
+65
+00:04:41.521 --> 00:04:46.840
+your target dry,
+you have to think about the format.
+
+66
+00:04:46.840 --> 00:04:52.343
+And this becomes important when
+say your taking a forensic
+
+67
+00:04:52.343 --> 00:04:58.519
+image of a mac computer and
+you're going to examine that on a Windows
+
+68
+00:04:58.519 --> 00:05:04.135
+computer You need a file system
+that can cross platforms and
+
+69
+00:05:04.135 --> 00:05:10.561
+that would be expat ex fat will work
+in Mac or Windows or even Lennox.
+
+70
+00:05:11.840 --> 00:05:15.338
+So if you have a target
+drive four minute X Fat,
+
+71
+00:05:15.338 --> 00:05:19.740
+you could use it on any
+of those file systems.
+
+72
+00:05:19.740 --> 00:05:22.179
+So when you have your target drives,
+
+73
+00:05:22.179 --> 00:05:26.450
+make sure you have them formatted
+in different file systems.
+
+74
+00:05:26.450 --> 00:05:31.994
+You probably want to Windows, you probably
+want to expat, you may want to A PFS
+
+75
+00:05:31.994 --> 00:05:37.800
+depending on what you routinely examining
+and what your examination machine is.
+
+76
+00:05:37.800 --> 00:05:44.640
+If you're examining a Mac computer,
+you want to use a Mac computer.
+
+77
+00:05:44.640 --> 00:05:49.522
+You don't want to try to examine a MAC on
+a Windows machine because you may miss
+
+78
+00:05:49.522 --> 00:05:50.961
+some important data.
+
+79
+00:05:52.840 --> 00:05:57.316
+When we're creating our
+forensic evidence files,
+
+80
+00:05:57.316 --> 00:06:01.078
+we're going to create
+an image of a drive and
+
+81
+00:06:01.078 --> 00:06:05.740
+this would be traditional
+forensics dead box.
+
+82
+00:06:05.740 --> 00:06:10.640
+We would remove the evidence
+drive from the computer.
+
+83
+00:06:10.640 --> 00:06:14.740
+We would use our target drive
+that we've already prepared.
+
+84
+00:06:14.740 --> 00:06:17.280
+We would have already
+validated our write blocker.
+
+85
+00:06:17.280 --> 00:06:21.534
+We validated our imaging software,
+We're going to
+
+86
+00:06:21.534 --> 00:06:26.465
+connect our hardware write
+blocker to our evidence drive and
+
+87
+00:06:26.465 --> 00:06:31.040
+we're going to connect
+that to the computer.
+
+88
+00:06:31.040 --> 00:06:35.240
+This is showing you what a hardware
+write blocker looks like.
+
+89
+00:06:35.240 --> 00:06:39.556
+And you can see here the evidence
+drive is connected to it and
+
+90
+00:06:39.556 --> 00:06:44.476
+you can see it's an intel solid state
+drive and the wire that is red,
+
+91
+00:06:44.476 --> 00:06:48.740
+black and
+yellow that is the power connector.
+
+92
+00:06:48.740 --> 00:06:55.140
+The wire that is solid black going from
+the right blocker to the evidence.
+
+93
+00:06:55.140 --> 00:06:57.879
+That is our say to this
+is a state of Dr and
+
+94
+00:06:57.879 --> 00:07:02.300
+you can see on the left hand side we
+have a blue cord that is a U S B.
+
+95
+00:07:02.300 --> 00:07:07.540
+Cord and that needs to be
+connected to our forensic station.
+
+96
+00:07:07.540 --> 00:07:10.961
+And then the black court
+above that is the power cord.
+
+97
+00:07:12.540 --> 00:07:16.671
+You can see here I have my
+target drive label target drive,
+
+98
+00:07:16.671 --> 00:07:21.645
+we have our write blocker and over to
+the right we can see it is connected
+
+99
+00:07:21.645 --> 00:07:25.551
+to our evidence and
+that is connected to our computer.
+
+100
+00:07:27.140 --> 00:07:32.340
+And this is how the setup would look for
+a hardware write blocker.
+
+101
+00:07:32.340 --> 00:07:35.126
+This one happens to be a tableau but
+
+102
+00:07:35.126 --> 00:07:42.140
+there are many other brands out there
+on the market, the imaging process.
+
+103
+00:07:42.140 --> 00:07:47.071
+Once we've got our write blocker connected
+and we're ready to go, we're going to
+
+104
+00:07:47.071 --> 00:07:51.784
+pre hash, we're going to take a hash
+value with some type of imaging software,
+
+105
+00:07:51.784 --> 00:07:54.040
+whichever you choose.
+
+106
+00:07:54.040 --> 00:07:56.761
+And we're going to pre hash
+the original evidence.
+
+107
+00:07:57.940 --> 00:08:03.440
+Then we're going to create a forensic
+image of the original evidence.
+
+108
+00:08:03.440 --> 00:08:08.908
+Once the image is completed, we're going
+to validate the image, we're going
+
+109
+00:08:08.908 --> 00:08:14.209
+to take a hash value of the image and the
+hash value of the image file that we just
+
+110
+00:08:14.209 --> 00:08:19.861
+created should match the hash value of
+the original evidence that we took before.
+
+111
+00:08:20.940 --> 00:08:26.011
+Once we've done that, we're going to do
+a post hash of the original evidence.
+
+112
+00:08:26.011 --> 00:08:30.930
+We're going to hash that original evidence
+drive one more time just to show we have
+
+113
+00:08:30.930 --> 00:08:34.340
+not made any changes to
+the original evidence.
+
+114
+00:08:34.340 --> 00:08:39.257
+Once you've done that, you're
+going to shut your write blocker off,
+
+115
+00:08:39.257 --> 00:08:44.440
+disconnect your evidence drive and
+you're going to put it away.
+
+116
+00:08:44.440 --> 00:08:47.020
+We're not touching
+the original evidence again,
+
+117
+00:08:47.020 --> 00:08:49.061
+we're going to work off of our image file.
+
+118
+00:08:50.140 --> 00:08:54.940
+We're going to do a walkthrough of imaging
+and the items we're going to need.
+
+119
+00:08:54.940 --> 00:08:58.930
+We're going to need R N T F S B H D And
+F T K.
+
+120
+00:08:58.930 --> 00:08:59.651
+Immature.
+
+121
+00:09:00.940 --> 00:09:06.600
+We're going to make a forensic image
+of R N T F S B HD using F D K.
+
+122
+00:09:06.600 --> 00:09:08.960
+Immature in this walkthrough.
+
+123
+00:09:08.960 --> 00:09:17.150
+We're going to create a disk image
+using R N T F S V H D And F T K Imager.
+
+124
+00:09:17.150 --> 00:09:21.710
+We're going to use images to create
+a forensic image of the V H D.
+
+125
+00:09:21.710 --> 00:09:25.852
+Go to disk management and
+attach your PHD again,
+
+126
+00:09:25.852 --> 00:09:30.703
+if you don't remember how to
+do that actions attached Bhd
+
+127
+00:09:30.703 --> 00:09:34.961
+browse to where the virtual
+hard drive is stored.
+
+128
+00:09:36.040 --> 00:09:41.030
+Select it, click open, click OK.
+
+129
+00:09:41.030 --> 00:09:43.933
+And the V H D will mount
+once your phds mount and
+
+130
+00:09:43.933 --> 00:09:48.841
+note the disk number because we're
+going to be imaging the physical drive.
+
+131
+00:09:48.841 --> 00:09:51.710
+The entire desk mayan is disk 11.
+
+132
+00:09:51.710 --> 00:09:53.550
+Yours will probably be different.
+
+133
+00:09:53.550 --> 00:09:56.240
+Now we're going to launch F D k Imager.
+
+134
+00:09:56.240 --> 00:10:02.240
+Once Imager opens, we're going to
+go to file, Create a disk image.
+
+135
+00:10:02.240 --> 00:10:05.490
+It's going to be a physical drive and
+we're going to click next.
+
+136
+00:10:05.490 --> 00:10:08.950
+Now we're going to use the drop
+down arrow to select our drive.
+
+137
+00:10:08.950 --> 00:10:10.230
+Mine was Dr 11.
+
+138
+00:10:10.230 --> 00:10:11.151
+Select it.
+
+139
+00:10:12.540 --> 00:10:15.883
+Once you've done that,
+
+140
+00:10:15.883 --> 00:10:21.150
+click finish first we select the type.
+
+141
+00:10:21.150 --> 00:10:26.240
+I'm going to pick Roddy D
+because that is the quickest but
+
+142
+00:10:26.240 --> 00:10:30.940
+we could go with an E 01 A smart or
+an AFF.
+
+143
+00:10:30.940 --> 00:10:32.640
+I'm going to click next.
+
+144
+00:10:32.640 --> 00:10:38.822
+Then you give it your case number and
+evidence, item number, you describe it,
+
+145
+00:10:38.822 --> 00:10:45.040
+you put your name in as the examiner and
+you can add any notes if you'd like.
+
+146
+00:10:45.040 --> 00:10:46.230
+Then hit next.
+
+147
+00:10:46.230 --> 00:10:48.870
+Now it's asking for
+the image destination folder.
+
+148
+00:10:48.870 --> 00:10:51.777
+So I'm going to browse
+out to my desktop and
+
+149
+00:10:51.777 --> 00:10:57.140
+I'm going to make a new folder and
+I'm going to call it N T F S V HD image.
+
+150
+00:10:57.140 --> 00:11:02.205
+I'm going to go ahead and
+select that folder, click OK, now give it
+
+151
+00:11:02.205 --> 00:11:08.400
+a file name but don't put a file extension
+and I'm going to call it class image.
+
+152
+00:11:08.400 --> 00:11:10.190
+You can call it whatever you want.
+
+153
+00:11:10.190 --> 00:11:14.970
+You normally name it something like
+the case number for fragment size.
+
+154
+00:11:14.970 --> 00:11:21.040
+I'm going to put none and compression
+since I'm doing a raw DD there is none.
+
+155
+00:11:21.040 --> 00:11:25.151
+If I was doing any 01 or another type of
+image there would be some compression.
+
+156
+00:11:27.140 --> 00:11:28.241
+I'm going to click finish.
+
+157
+00:11:29.840 --> 00:11:33.540
+I'm going to click verify
+image after they are created.
+
+158
+00:11:33.540 --> 00:11:36.712
+I'm not going to check any of
+these other boxes, but you could
+
+159
+00:11:36.712 --> 00:11:40.870
+create a directory listing of all the
+files in the image after they're created.
+
+160
+00:11:40.870 --> 00:11:43.100
+Which may be helpful in some cases.
+
+161
+00:11:43.100 --> 00:11:48.452
+We can talk about that throughout this
+path, but for now I'm going to hit
+
+162
+00:11:48.452 --> 00:11:54.334
+start and you can see that it's processing
+very quickly because it's small and
+
+163
+00:11:54.334 --> 00:11:58.410
+now it is verifying the image
+now an image or finishes.
+
+164
+00:11:58.410 --> 00:12:03.061
+You're going to have information on
+the screen and let's take a look at that.
+
+165
+00:12:04.340 --> 00:12:08.922
+We have our sector count,
+we have the name of the image,
+
+166
+00:12:08.922 --> 00:12:12.640
+We have the MD five and Sha 1 # values.
+
+167
+00:12:12.640 --> 00:12:20.440
+Now what FBK immature is doing is it is
+hashing the source and passing the image.
+
+168
+00:12:20.440 --> 00:12:21.091
+It's happening.
+
+169
+00:12:21.091 --> 00:12:24.437
+My source,
+passing the image of created and
+
+170
+00:12:24.437 --> 00:12:29.250
+it's telling me that they match and
+no bad sectors were found.
+
+171
+00:12:29.250 --> 00:12:34.841
+Now you can go ahead and close this
+because Imager does keep a record of this.
+
+172
+00:12:34.841 --> 00:12:38.063
+If you click on image summary,
+we could see the record and
+
+173
+00:12:38.063 --> 00:12:40.570
+it has the case information
+that I added in.
+
+174
+00:12:40.570 --> 00:12:44.929
+It tells you the name of the software
+that created it in the version and
+
+175
+00:12:44.929 --> 00:12:49.990
+it gives you some drive geometry bytes,
+per sector and the total sector count.
+
+176
+00:12:49.990 --> 00:12:53.290
+And it shows you the MD five and
+sha one check sums.
+
+177
+00:12:53.290 --> 00:12:56.671
+It also tells you the time you
+started your acquisition and
+
+178
+00:12:56.671 --> 00:12:59.100
+the time you finished your acquisition.
+
+179
+00:12:59.100 --> 00:13:02.251
+And it also tells you the time
+the verification started.
+
+180
+00:13:02.251 --> 00:13:05.512
+That is the MD five and
+sha one hashes being created and
+
+181
+00:13:05.512 --> 00:13:09.862
+when the verification finished and
+this is all saved out to a text file so
+
+182
+00:13:09.862 --> 00:13:11.850
+you can go ahead and close that.
+
+183
+00:13:11.850 --> 00:13:14.230
+Now let's go ahead and look at our image.
+
+184
+00:13:14.230 --> 00:13:19.034
+I say that out on my system in a folder
+called N T F S underscore V H D
+
+185
+00:13:19.034 --> 00:13:21.848
+underscore image and we look there,
+
+186
+00:13:21.848 --> 00:13:26.140
+we can see we have the one file and
+we have the text file.
+
+187
+00:13:26.140 --> 00:13:29.544
+If you look at the text file,
+it opens up in note pad and
+
+188
+00:13:29.544 --> 00:13:32.740
+it has all that information
+that we talked about.
+
+189
+00:13:32.740 --> 00:13:36.880
+It shows the case number, the item number
+and all the information that I put in.
+
+190
+00:13:36.880 --> 00:13:39.140
+It tells you the sources physical.
+
+191
+00:13:39.140 --> 00:13:43.327
+And again we see the hash values and all
+the information we looked at in the image
+
+192
+00:13:43.327 --> 00:13:46.840
+summer that was on the screen is
+safe to this nice text file for us.
+
+193
+00:13:46.840 --> 00:13:49.088
+So we have it including
+when we started and
+
+194
+00:13:49.088 --> 00:13:52.710
+when we finished with both
+the acquisition and the verification.
+
+195
+00:13:52.710 --> 00:13:56.720
+So this is going to be important
+information that you want documented and
+
+196
+00:13:56.720 --> 00:14:01.020
+FDK does provide that documentation for
+you when you're creating an image.
+
+197
+00:14:01.020 --> 00:14:04.485
+If you're just doing a hash value or
+verifying an image,
+
+198
+00:14:04.485 --> 00:14:09.539
+it does not save the file and that's when
+we need to save that information ourselves
+
+199
+00:14:09.539 --> 00:14:14.120
+either through a screenshot or snip or
+wherever you want to document that.
+
+200
+00:14:14.120 --> 00:14:16.310
+Now I'm going to take
+a look at my image so
+
+201
+00:14:16.310 --> 00:14:18.720
+I'm going to go to file at evidence item.
+
+202
+00:14:18.720 --> 00:14:20.610
+It is a image file.
+
+203
+00:14:20.610 --> 00:14:21.930
+I'm going to browse store,
+
+204
+00:14:21.930 --> 00:14:24.360
+I saved it which was out of
+my desktop in that folder.
+
+205
+00:14:24.360 --> 00:14:28.012
+I'm going to select the 0.1 file and
+click open and
+
+206
+00:14:28.012 --> 00:14:33.340
+then I'm going to click finish and
+we can see all our partitions laid out.
+
+207
+00:14:33.340 --> 00:14:35.960
+We can see our file system is fat 32.
+
+208
+00:14:35.960 --> 00:14:40.210
+We have another one that's NTFS and we
+could see our extended partition also and
+
+209
+00:14:40.210 --> 00:14:42.640
+the extended logical partitions within it.
+
+210
+00:14:42.640 --> 00:14:46.934
+You can drill down further and
+we see some of the documents we've seen
+
+211
+00:14:46.934 --> 00:14:52.140
+throughout this path and you can scroll
+through and look at the information.
+
+212
+00:14:52.140 --> 00:14:53.627
+We see all the files and
+
+213
+00:14:53.627 --> 00:14:57.937
+folders have been working with
+throughout the path on RN T F S V H D.
+
+214
+00:14:57.937 --> 00:15:02.501
+So we've successfully created our first
+forensic image in the next module.
+
+215
+00:15:02.501 --> 00:15:08.577
+We're going to talk about using
+the Lennox D D D D D C F L D D and
+
+216
+00:15:08.577 --> 00:15:15.651
+D C three D D commands to create
+a forensic image end of walk through.

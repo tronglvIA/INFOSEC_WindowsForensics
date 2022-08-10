@@ -1,0 +1,940 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.960
+Welcome back for the
+Computer Forensics Path,
+
+2
+00:00:03.960 --> 00:00:06.360
+course 5, Module 2.
+
+3
+00:00:06.360 --> 00:00:09.990
+In this module we're going
+to discuss big data.
+
+4
+00:00:09.990 --> 00:00:13.200
+Some of the challenges that
+we're going to face when we
+
+5
+00:00:13.200 --> 00:00:17.475
+are collecting big
+data. Big data.
+
+6
+00:00:17.475 --> 00:00:20.700
+We definitely need to
+talk about the three V's.
+
+7
+00:00:20.700 --> 00:00:21.990
+You're going to hear
+this term a lot
+
+8
+00:00:21.990 --> 00:00:23.280
+when you hear big data.
+
+9
+00:00:23.280 --> 00:00:25.425
+We're talking about volume,
+
+10
+00:00:25.425 --> 00:00:29.715
+it's amount of data, velocity,
+
+11
+00:00:29.715 --> 00:00:32.435
+the speed this data
+is traveling at,
+
+12
+00:00:32.435 --> 00:00:37.160
+and variety, the data comes
+in many shapes and sizes.
+
+13
+00:00:37.160 --> 00:00:40.640
+Most of the time it's going
+to be unstructured or
+
+14
+00:00:40.640 --> 00:00:45.790
+structured in many different
+ways, or multi structured.
+
+15
+00:00:46.070 --> 00:00:49.895
+This data is going
+to be too large for
+
+16
+00:00:49.895 --> 00:00:51.740
+our standard tools
+and techniques that
+
+17
+00:00:51.740 --> 00:00:54.780
+we normally would
+use in forensics.
+
+18
+00:00:57.260 --> 00:00:59.850
+Why do we care about big data?
+
+19
+00:00:59.850 --> 00:01:01.160
+Why is this going to be important
+
+20
+00:01:01.160 --> 00:01:03.095
+to us in our investigations?
+
+21
+00:01:03.095 --> 00:01:05.255
+Well, it is going to be
+
+22
+00:01:05.255 --> 00:01:08.015
+part of a lot of
+our investigations.
+
+23
+00:01:08.015 --> 00:01:10.215
+Big data will play a role.
+
+24
+00:01:10.215 --> 00:01:12.640
+It is especially important when
+
+25
+00:01:12.640 --> 00:01:14.290
+we're going to see
+incident forensics
+
+26
+00:01:14.290 --> 00:01:18.005
+because big data may contain
+the sources of our breach.
+
+27
+00:01:18.005 --> 00:01:19.620
+So we need to find it.
+
+28
+00:01:19.620 --> 00:01:21.175
+It can be buried under
+
+29
+00:01:21.175 --> 00:01:23.920
+a lot of other things that
+are going to be irrelevant.
+
+30
+00:01:23.920 --> 00:01:27.620
+Sorting through that is
+going to be the key.
+
+31
+00:01:27.620 --> 00:01:31.440
+We're going to see patterns of
+
+32
+00:01:31.440 --> 00:01:36.430
+data hidden under piles of
+irrelevant information.
+
+33
+00:01:36.830 --> 00:01:42.545
+It is of great value to
+businesses and cybersecurity.
+
+34
+00:01:42.545 --> 00:01:46.405
+We're talking about businesses,
+marketing and sales.
+
+35
+00:01:46.405 --> 00:01:47.950
+They rely on this big data,
+
+36
+00:01:47.950 --> 00:01:49.150
+all these data that's being
+
+37
+00:01:49.150 --> 00:01:51.025
+collected about us all the time
+
+38
+00:01:51.025 --> 00:01:55.115
+moving across the
+Internet at rapid speed.
+
+39
+00:01:55.115 --> 00:01:57.140
+This data is very important
+
+40
+00:01:57.140 --> 00:02:00.030
+to businesses and cybersecurity.
+
+41
+00:02:00.030 --> 00:02:01.850
+It's very important
+to cybersecurity
+
+42
+00:02:01.850 --> 00:02:03.320
+because like we said,
+
+43
+00:02:03.320 --> 00:02:07.460
+it can reveal the sources
+of breaches and most of
+
+44
+00:02:07.460 --> 00:02:09.080
+the data that is dealt with in
+
+45
+00:02:09.080 --> 00:02:12.565
+the business world is
+an unstructured data.
+
+46
+00:02:12.565 --> 00:02:14.110
+We need to remember that,
+
+47
+00:02:14.110 --> 00:02:15.810
+it's going to be unstructured.
+
+48
+00:02:15.810 --> 00:02:18.740
+It could be vendor proprietary,
+
+49
+00:02:18.740 --> 00:02:20.180
+proprietary to just that
+
+50
+00:02:20.180 --> 00:02:22.820
+particular entity that
+you're looking at,
+
+51
+00:02:22.820 --> 00:02:24.715
+just a particular company.
+
+52
+00:02:24.715 --> 00:02:27.260
+These things are going
+to play a big role in
+
+53
+00:02:27.260 --> 00:02:30.260
+how we look at the data.
+
+54
+00:02:30.260 --> 00:02:34.490
+The methodology is pretty
+much the same that we
+
+55
+00:02:34.490 --> 00:02:38.905
+use throughout any other type
+of forensic investigation.
+
+56
+00:02:38.905 --> 00:02:41.535
+We need to identify.
+
+57
+00:02:41.535 --> 00:02:43.190
+The first thing is we need to
+
+58
+00:02:43.190 --> 00:02:44.870
+identify our a
+source of evidence,
+
+59
+00:02:44.870 --> 00:02:46.325
+where is this big data?
+
+60
+00:02:46.325 --> 00:02:47.945
+Then we need to collect it.
+
+61
+00:02:47.945 --> 00:02:49.070
+Once we've identified it,
+
+62
+00:02:49.070 --> 00:02:50.435
+we need to collect it,
+
+63
+00:02:50.435 --> 00:02:53.020
+Then we need to acquire it.
+
+64
+00:02:53.020 --> 00:02:54.920
+That's going to be taking
+
+65
+00:02:54.920 --> 00:02:57.335
+some type of forensic copy of it.
+
+66
+00:02:57.335 --> 00:02:59.225
+We need to acquire these data.
+
+67
+00:02:59.225 --> 00:03:00.890
+We're talking about big data.
+
+68
+00:03:00.890 --> 00:03:02.225
+You're going to be
+talking about doing
+
+69
+00:03:02.225 --> 00:03:04.610
+a lot of live acquisitions.
+
+70
+00:03:04.610 --> 00:03:07.880
+We'll get more into that
+throughout this path.
+
+71
+00:03:07.880 --> 00:03:09.680
+Preservation, we need to
+
+72
+00:03:09.680 --> 00:03:11.270
+preserve it like any
+other evidence we've
+
+73
+00:03:11.270 --> 00:03:14.640
+collected we need to
+preserve it as best we can.
+
+74
+00:03:14.640 --> 00:03:16.845
+Then we need to analyze it.
+
+75
+00:03:16.845 --> 00:03:18.470
+Again, this is something that
+
+76
+00:03:18.470 --> 00:03:19.700
+we're going to have
+challenges with
+
+77
+00:03:19.700 --> 00:03:20.990
+because it's going
+to be too big for
+
+78
+00:03:20.990 --> 00:03:23.150
+our traditional tools and
+
+79
+00:03:23.150 --> 00:03:25.640
+so justly how we examined things.
+
+80
+00:03:25.640 --> 00:03:27.985
+It's going to be unstructured
+
+81
+00:03:27.985 --> 00:03:30.345
+or it may be vendor proprietary,
+
+82
+00:03:30.345 --> 00:03:32.790
+and it can be multi-structured.
+
+83
+00:03:32.790 --> 00:03:34.845
+Then we're going
+to write a report.
+
+84
+00:03:34.845 --> 00:03:36.495
+We're going to report on this.
+
+85
+00:03:36.495 --> 00:03:38.570
+Then of course,
+after that we should
+
+86
+00:03:38.570 --> 00:03:43.620
+have peer review and
+quality control.
+
+87
+00:03:44.540 --> 00:03:46.575
+How do we identify?
+
+88
+00:03:46.575 --> 00:03:48.510
+Where are we going
+to find the data?
+
+89
+00:03:48.510 --> 00:03:50.685
+Well, you'll find
+them on servers.
+
+90
+00:03:50.685 --> 00:03:53.450
+Servers are multiple
+hard drives and they
+
+91
+00:03:53.450 --> 00:03:56.675
+can be configured in
+what's called a RAID,
+
+92
+00:03:56.675 --> 00:03:58.100
+which is going to mean you have
+
+93
+00:03:58.100 --> 00:04:01.130
+multiple disks that may
+have duplicate data.
+
+94
+00:04:01.130 --> 00:04:03.470
+It may be stripe so you
+could have parts of
+
+95
+00:04:03.470 --> 00:04:07.490
+data spread out over
+several disks in this RAID.
+
+96
+00:04:07.490 --> 00:04:11.140
+RAIDS do provide their
+own set of challenges.
+
+97
+00:04:11.140 --> 00:04:13.425
+We could have a SAN,
+
+98
+00:04:13.425 --> 00:04:14.840
+a Storage Area Network,
+
+99
+00:04:14.840 --> 00:04:16.790
+and this is going
+to be a network of
+
+100
+00:04:16.790 --> 00:04:18.920
+service containing
+large-scale data.
+
+101
+00:04:18.920 --> 00:04:22.910
+We could have a network of
+servers and on something
+
+102
+00:04:22.910 --> 00:04:24.440
+like this you're
+going to need to do
+
+103
+00:04:24.440 --> 00:04:27.425
+some type of live collection.
+
+104
+00:04:27.425 --> 00:04:29.705
+We can have
+large-scale databases.
+
+105
+00:04:29.705 --> 00:04:32.210
+Databases now come in many shapes
+
+106
+00:04:32.210 --> 00:04:35.165
+and sizes and they
+are growing in size.
+
+107
+00:04:35.165 --> 00:04:38.435
+We may have distributed
+file systems.
+
+108
+00:04:38.435 --> 00:04:41.360
+A lot of people use
+distributed file systems and
+
+109
+00:04:41.360 --> 00:04:44.360
+distributed processing
+because of the power
+
+110
+00:04:44.360 --> 00:04:45.800
+and the speed of it
+
+111
+00:04:45.800 --> 00:04:48.125
+and that means your data
+could be spread out
+
+112
+00:04:48.125 --> 00:04:53.400
+across multiple servers,
+multiple systems.
+
+113
+00:04:53.720 --> 00:04:56.780
+You're going to have
+associated application,
+
+114
+00:04:56.780 --> 00:04:59.630
+specialized applications that
+we're going to need to deal
+
+115
+00:04:59.630 --> 00:05:01.490
+with that are not going to
+
+116
+00:05:01.490 --> 00:05:04.195
+be our traditional file systems.
+
+117
+00:05:04.195 --> 00:05:05.930
+Some of the challenges
+we're going to
+
+118
+00:05:05.930 --> 00:05:08.635
+have, lack of expertise.
+
+119
+00:05:08.635 --> 00:05:10.975
+There's not a lot of
+people that are experts
+
+120
+00:05:10.975 --> 00:05:14.005
+in doing big data
+collection analysis.
+
+121
+00:05:14.005 --> 00:05:15.970
+It takes specialized
+training beyond
+
+122
+00:05:15.970 --> 00:05:18.250
+that course of this path,
+
+123
+00:05:18.250 --> 00:05:21.145
+but lack of experience,
+
+124
+00:05:21.145 --> 00:05:22.254
+lack of experts.
+
+125
+00:05:22.254 --> 00:05:23.695
+It is time-consuming.
+
+126
+00:05:23.695 --> 00:05:25.179
+It is extremely time-consuming
+
+127
+00:05:25.179 --> 00:05:26.455
+to do because you're dealing
+
+128
+00:05:26.455 --> 00:05:27.820
+with a very large amount of
+
+129
+00:05:27.820 --> 00:05:29.575
+data that you have
+to sift through.
+
+130
+00:05:29.575 --> 00:05:31.060
+It's going to be difficult to
+
+131
+00:05:31.060 --> 00:05:32.710
+understand because
+it's not going to
+
+132
+00:05:32.710 --> 00:05:35.950
+be our traditional
+NTFS file system,
+
+133
+00:05:35.950 --> 00:05:38.815
+EXE files, HFS or MELIO.
+
+134
+00:05:38.815 --> 00:05:41.080
+It's going to be something
+
+135
+00:05:41.080 --> 00:05:44.210
+that's unstructured
+a lot of times.
+
+136
+00:05:44.210 --> 00:05:45.820
+We're going to be dealing
+
+137
+00:05:45.820 --> 00:05:47.935
+with large-scale storage devices,
+
+138
+00:05:47.935 --> 00:05:51.250
+which again are these
+servers, these RAIDS.
+
+139
+00:05:51.250 --> 00:05:53.410
+A lot of these data
+is going to need
+
+140
+00:05:53.410 --> 00:05:55.820
+to be collected live.
+
+141
+00:05:55.820 --> 00:05:57.765
+Then we have to deal with
+
+142
+00:05:57.765 --> 00:06:00.460
+IoT which is the
+Internet of Things,
+
+143
+00:06:00.460 --> 00:06:02.770
+which means we can have
+many different devices
+
+144
+00:06:02.770 --> 00:06:03.820
+and even different types of
+
+145
+00:06:03.820 --> 00:06:08.120
+devices all intertwined
+into the same system.
+
+146
+00:06:08.120 --> 00:06:11.730
+You also have to deal
+with Cloud Computing.
+
+147
+00:06:11.730 --> 00:06:16.015
+A lot of your data is not
+going to be on a local server.
+
+148
+00:06:16.015 --> 00:06:17.230
+It's going to be on
+
+149
+00:06:17.230 --> 00:06:19.030
+some server firm out there
+
+150
+00:06:19.030 --> 00:06:20.950
+in the Cloud and you're
+going to have to
+
+151
+00:06:20.950 --> 00:06:24.130
+rely on Amazon or whoever holds
+
+152
+00:06:24.130 --> 00:06:25.810
+that club to give you the data
+
+153
+00:06:25.810 --> 00:06:28.090
+you're looking forward
+to sift through.
+
+154
+00:06:28.090 --> 00:06:29.845
+Social media,
+
+155
+00:06:29.845 --> 00:06:33.625
+there's a ton of data out
+there on social media.
+
+156
+00:06:33.625 --> 00:06:37.850
+Again, you're going to have
+to rely on somebody else
+
+157
+00:06:37.850 --> 00:06:40.190
+to give you that data
+because Facebook isn't
+
+158
+00:06:40.190 --> 00:06:43.295
+going to let you live
+image their servers.
+
+159
+00:06:43.295 --> 00:06:47.330
+You may be dealing with
+thousands of storage drives.
+
+160
+00:06:47.330 --> 00:06:49.130
+When you're dealing
+with Cloud computing
+
+161
+00:06:49.130 --> 00:06:50.180
+and social media,
+
+162
+00:06:50.180 --> 00:06:52.220
+your servers may be located in
+
+163
+00:06:52.220 --> 00:06:54.110
+different jurisdictions
+and that in
+
+164
+00:06:54.110 --> 00:06:56.630
+itself can give you
+even more challenges.
+
+165
+00:06:56.630 --> 00:06:58.340
+There are some challenges with
+
+166
+00:06:58.340 --> 00:07:02.760
+big data hence the systems
+cannot be shut down.
+
+167
+00:07:02.760 --> 00:07:05.480
+We've talked about that a
+lot of times you can't shut
+
+168
+00:07:05.480 --> 00:07:09.125
+the system's down because you
+could lose data if you do,
+
+169
+00:07:09.125 --> 00:07:12.200
+the servers may not come back up
+
+170
+00:07:12.200 --> 00:07:16.890
+and you can't shut down
+legitimate business.
+
+171
+00:07:17.240 --> 00:07:19.415
+It's going to require
+
+172
+00:07:19.415 --> 00:07:22.340
+a logical acquisition
+of the targeted data.
+
+173
+00:07:22.340 --> 00:07:24.170
+So you're going to
+need to talk to
+
+174
+00:07:24.170 --> 00:07:26.530
+somebody who knows the network.
+
+175
+00:07:26.530 --> 00:07:29.570
+You're going to have to talk
+to a network admin to figure
+
+176
+00:07:29.570 --> 00:07:33.020
+out where the data
+you want is in.
+
+177
+00:07:33.020 --> 00:07:35.060
+It could be even on
+a virtual machine,
+
+178
+00:07:35.060 --> 00:07:36.620
+located on a server.
+
+179
+00:07:36.620 --> 00:07:38.120
+But you're going to need to find
+
+180
+00:07:38.120 --> 00:07:40.070
+that information
+out so that you can
+
+181
+00:07:40.070 --> 00:07:43.555
+target the data you need
+with a logical acquisition.
+
+182
+00:07:43.555 --> 00:07:46.490
+We will cover more about
+this throughout the path.
+
+183
+00:07:46.490 --> 00:07:50.285
+Some of the tools that are
+specialized for big data.
+
+184
+00:07:50.285 --> 00:07:52.850
+We had Apache Hadoop,
+
+185
+00:07:52.850 --> 00:07:55.849
+which is an open source framework
+
+186
+00:07:55.849 --> 00:07:59.460
+and it stores and
+processes large data-sets.
+
+187
+00:08:00.070 --> 00:08:03.050
+We also have traditional tools,
+
+188
+00:08:03.050 --> 00:08:05.524
+we have FTK the Forensic Toolkit.
+
+189
+00:08:05.524 --> 00:08:08.165
+We have cellebrite, X-ways,
+
+190
+00:08:08.165 --> 00:08:10.620
+KAPE which is a free tool,
+
+191
+00:08:10.620 --> 00:08:14.130
+EnCase, and Autopsy
+which is a free tool.
+
+192
+00:08:14.130 --> 00:08:17.570
+But a lot of these
+tools are going
+
+193
+00:08:17.570 --> 00:08:22.300
+to have a hard time with
+extremely large data sources.
+
+194
+00:08:22.300 --> 00:08:27.634
+Hadoop is especially configured
+
+195
+00:08:27.634 --> 00:08:30.175
+to handle large data sources.
+
+196
+00:08:30.175 --> 00:08:32.930
+KAPE would do a
+pretty good job on
+
+197
+00:08:32.930 --> 00:08:35.555
+a large data source
+and alive acquisition.
+
+198
+00:08:35.555 --> 00:08:39.610
+But we're talking about
+cellebrite, X-ways, FTK,
+
+199
+00:08:39.610 --> 00:08:42.410
+you're going to have
+a hard time using
+
+200
+00:08:42.410 --> 00:08:46.085
+your traditional tools to
+examine these large data-sets.
+
+201
+00:08:46.085 --> 00:08:48.320
+To use your traditional tools,
+
+202
+00:08:48.320 --> 00:08:52.400
+you're going to have to
+narrow down your data-set to
+
+203
+00:08:52.400 --> 00:08:57.170
+be able to process it with
+traditional forensic tools.
+
+204
+00:08:57.170 --> 00:08:59.090
+In our next section,
+
+205
+00:08:59.090 --> 00:09:02.390
+we are going to talk
+about acquiring data,
+
+206
+00:09:02.390 --> 00:09:04.435
+how we would do an acquisition.
+
+207
+00:09:04.435 --> 00:09:09.450
+We're going to talk about
+collecting digital evidence.

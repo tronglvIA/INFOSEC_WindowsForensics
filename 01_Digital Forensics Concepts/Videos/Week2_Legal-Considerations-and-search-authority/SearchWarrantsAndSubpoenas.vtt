@@ -1,0 +1,977 @@
+WEBVTT
+
+1
+00:00:00.540 --> 00:00:05.396
+Welcome back to the computer forensics
+path of course four module three.
+
+2
+00:00:05.396 --> 00:00:10.251
+In this module, we're going to talk
+about Search Warrants and Subpoenas.
+
+3
+00:00:11.740 --> 00:00:14.161
+What is the role of
+the computer in the crime?
+
+4
+00:00:15.640 --> 00:00:18.740
+Is the computer and evidence container?
+
+5
+00:00:18.740 --> 00:00:21.859
+If it is,
+what information are we looking for
+
+6
+00:00:21.859 --> 00:00:24.661
+and why do we think it is on the computer?
+
+7
+00:00:26.940 --> 00:00:30.400
+We have to consider the nature of
+the crime that's under investigation.
+
+8
+00:00:30.400 --> 00:00:33.040
+Is this an ongoing crime?
+
+9
+00:00:33.040 --> 00:00:36.561
+Is this something that's
+going to take multiple warrants?
+
+10
+00:00:37.640 --> 00:00:41.250
+And what type of computer system
+are we going to be looking at?
+
+11
+00:00:41.250 --> 00:00:44.440
+Is this a stand alone PC?
+
+12
+00:00:44.440 --> 00:00:48.860
+Is this going to be a network or
+is this going to be a server farm?
+
+13
+00:00:48.860 --> 00:00:54.213
+I mean we need to consider
+the type of network
+
+14
+00:00:54.213 --> 00:01:00.007
+before we get to the place
+we're going to search.
+
+15
+00:01:00.007 --> 00:01:00.996
+Warrants.
+
+16
+00:01:00.996 --> 00:01:06.050
+A warrant is defined as a legal
+document authorizing search and
+
+17
+00:01:06.050 --> 00:01:08.740
+or seizure of property.
+
+18
+00:01:08.740 --> 00:01:12.061
+He can also authorize the search for
+the rest of a person.
+
+19
+00:01:13.540 --> 00:01:17.222
+In our case we're mainly
+talking about search and
+
+20
+00:01:17.222 --> 00:01:23.940
+seizure of property warrants are issued
+upon the legal standard of probable cause.
+
+21
+00:01:23.940 --> 00:01:27.634
+And again, this is going to be
+supported by a written document and so
+
+22
+00:01:27.634 --> 00:01:28.651
+on to under oath.
+
+23
+00:01:31.040 --> 00:01:36.478
+A search warrant will authorize the search
+of a place to look for evidence,
+
+24
+00:01:36.478 --> 00:01:41.761
+contraband or stolen property to be
+used as evidence in a criminal case.
+
+25
+00:01:43.600 --> 00:01:45.740
+How are we going to get this warrant?
+
+26
+00:01:45.740 --> 00:01:51.269
+Well, we need to prepare our affidavit,
+which is our written document and
+
+27
+00:01:51.269 --> 00:01:55.043
+we have to describe the place
+we're going to search,
+
+28
+00:01:55.043 --> 00:01:59.120
+whether it's a home of business or
+wherever it may be.
+
+29
+00:01:59.120 --> 00:02:02.286
+And we're going to describe
+the item that we're going to see,
+
+30
+00:02:02.286 --> 00:02:04.830
+what type of items are we looking for.
+
+31
+00:02:04.830 --> 00:02:11.011
+And you want to make sure when you do
+this, you include every possible item
+
+32
+00:02:11.011 --> 00:02:17.340
+that you could be looking for,
+where this data could be stored.
+
+33
+00:02:17.340 --> 00:02:20.744
+And then we need to
+provide probable cause to
+
+34
+00:02:20.744 --> 00:02:25.252
+show that we believe that the item
+is that this location and
+
+35
+00:02:25.252 --> 00:02:30.588
+that the evidence we're looking for
+is going to be found on these item.
+
+36
+00:02:30.588 --> 00:02:33.220
+Of course you have to get
+the warrant signed by a judge.
+
+37
+00:02:33.220 --> 00:02:36.496
+If you're talking about
+an ongoing investigation,
+
+38
+00:02:36.496 --> 00:02:41.299
+you may want to ask of warrant because
+we may need to have multiple search
+
+39
+00:02:41.299 --> 00:02:45.250
+warrants depending on the type
+of investigation we're doing.
+
+40
+00:02:45.250 --> 00:02:48.500
+Another consideration is how
+are we going to time this?
+
+41
+00:02:48.500 --> 00:02:51.301
+How are we going to time when
+we served the search warrant?
+
+42
+00:02:51.301 --> 00:02:52.751
+We actually execute the warrant.
+
+43
+00:02:53.940 --> 00:02:56.870
+Well that may differ from
+a business to a residence.
+
+44
+00:02:56.870 --> 00:03:01.400
+If we're talking about a business we may
+want to go at the start of the work day.
+
+45
+00:03:01.400 --> 00:03:04.251
+Some of the reasons could be
+because the business is open.
+
+46
+00:03:06.640 --> 00:03:08.021
+The workforce is on duty.
+
+47
+00:03:08.021 --> 00:03:09.741
+The people, we want to talk to are there.
+
+48
+00:03:09.741 --> 00:03:13.631
+We're going to need some type of network
+administrator to be present to help us
+
+49
+00:03:13.631 --> 00:03:15.240
+with this.
+
+50
+00:03:15.240 --> 00:03:17.891
+The computers are running
+they're already up and running.
+
+51
+00:03:19.140 --> 00:03:21.831
+We do have outside resources available.
+
+52
+00:03:21.831 --> 00:03:25.282
+If we need to use them you may
+need to phone a friend and
+
+53
+00:03:25.282 --> 00:03:29.940
+call somebody who has dealt
+with networks more than you.
+
+54
+00:03:29.940 --> 00:03:37.140
+Like I said the IT administrators
+should be in there during the day.
+
+55
+00:03:37.140 --> 00:03:43.640
+Yeah and it will allow us for
+maximum search time.
+
+56
+00:03:43.640 --> 00:03:46.907
+This usually does not apply
+to law enforcement but
+
+57
+00:03:46.907 --> 00:03:50.173
+in the private sector most
+people work set hours so
+
+58
+00:03:50.173 --> 00:03:55.261
+if you go at the beginning of the work
+that you will maximize your search time.
+
+59
+00:03:56.340 --> 00:03:59.961
+We also will have
+the presence of the suspect.
+
+60
+00:03:59.961 --> 00:04:02.740
+The suspects should be
+there during the work day.
+
+61
+00:04:02.740 --> 00:04:06.951
+And the reason we might want to do
+that is because we would want to
+
+62
+00:04:06.951 --> 00:04:11.440
+find out his passwords and
+be able to interview the suspect.
+
+63
+00:04:11.440 --> 00:04:14.951
+Now if we're talking about a residence,
+the timing may be different.
+
+64
+00:04:17.540 --> 00:04:24.440
+If we go at the start of the workday,
+family members may or may not be home.
+
+65
+00:04:24.440 --> 00:04:28.751
+We will have outside resources available.
+
+66
+00:04:29.840 --> 00:04:31.206
+If we want the suspect there,
+
+67
+00:04:31.206 --> 00:04:34.120
+there's sometimes you're not
+going to want the suspect there.
+
+68
+00:04:34.120 --> 00:04:37.920
+But in a lot of cases you will because
+you want to try to get passwords and
+
+69
+00:04:37.920 --> 00:04:40.540
+you want to interview the suspect.
+
+70
+00:04:40.540 --> 00:04:45.368
+If there are children in the house,
+the timing of the school day may be
+
+71
+00:04:45.368 --> 00:04:49.370
+important because you probably
+do not want them there.
+
+72
+00:04:49.370 --> 00:04:52.491
+In some cases if they are the suspect,
+you do want them there.
+
+73
+00:04:52.491 --> 00:04:55.761
+Sometimes teenagers
+commit internet crimes.
+
+74
+00:04:57.240 --> 00:05:01.860
+So you really have to consider the type of
+search warrant you're serving if you're
+
+75
+00:05:01.860 --> 00:05:06.170
+serving a narcotic search warrant and
+you're serving amount of residents.
+
+76
+00:05:06.170 --> 00:05:11.140
+And a lot of times digital
+evidence is involved in narcotics.
+
+77
+00:05:11.140 --> 00:05:15.544
+Those search warrants are usually served
+in the early morning hours because
+
+78
+00:05:15.544 --> 00:05:17.970
+they are considered a high risk warrant.
+
+79
+00:05:17.970 --> 00:05:21.440
+And you generally want to get
+people while they're sleeping.
+
+80
+00:05:21.440 --> 00:05:24.400
+Is that how are we going to
+organize our search?
+
+81
+00:05:24.400 --> 00:05:26.380
+We can't just go in willy nilly.
+
+82
+00:05:26.380 --> 00:05:27.750
+You have to have a plan.
+
+83
+00:05:27.750 --> 00:05:29.641
+It's very important.
+
+84
+00:05:30.840 --> 00:05:33.556
+When we go in,
+are we going to have team assignments and
+
+85
+00:05:33.556 --> 00:05:35.551
+we're going to have room assignments?
+
+86
+00:05:36.920 --> 00:05:39.340
+We're going to label evidence.
+
+87
+00:05:39.340 --> 00:05:42.674
+We're going to make sure
+we authenticate and
+
+88
+00:05:42.674 --> 00:05:48.540
+organize in other words found
+the evidence and where they found it.
+
+89
+00:05:48.540 --> 00:05:53.610
+And it can be organized by room
+by a person that found it.
+
+90
+00:05:53.610 --> 00:05:57.647
+Or even by time it's going to depend
+on how you want to organize your search
+
+91
+00:05:57.647 --> 00:05:58.261
+warrant.
+
+92
+00:06:00.440 --> 00:06:02.420
+We do want to control the evidence.
+
+93
+00:06:02.420 --> 00:06:07.766
+I highly recommend you have a designated
+person to record and intake
+
+94
+00:06:07.766 --> 00:06:14.140
+the evidence and we are going to want
+to log all evidence as it is collected.
+
+95
+00:06:14.140 --> 00:06:19.640
+What is our basis for the seizure?
+
+96
+00:06:19.640 --> 00:06:22.719
+We no longer want to go into a house and
+take everything and
+
+97
+00:06:22.719 --> 00:06:26.840
+we definitely don't want to go into
+a business and take everything.
+
+98
+00:06:26.840 --> 00:06:30.040
+So what is our basis for our seizure?
+
+99
+00:06:30.040 --> 00:06:31.551
+Is it outright contraband?
+
+100
+00:06:31.551 --> 00:06:33.440
+Something that's legal to possess?
+
+101
+00:06:33.440 --> 00:06:37.540
+And we want to make sure
+it's covered in the warrant.
+
+102
+00:06:37.540 --> 00:06:42.151
+So those are the two reasons you
+would see something obvious.
+
+103
+00:06:42.151 --> 00:06:47.379
+Contraband are covered in the warrant,
+reasons why you would want
+
+104
+00:06:47.379 --> 00:06:54.040
+to use restraint on nazis, items,
+storage requirements may come into play.
+
+105
+00:06:54.040 --> 00:06:58.309
+If you're dealing with the business,
+you're probably going to end up doing what
+
+106
+00:06:58.309 --> 00:07:02.350
+we call a live collection and we'll
+talk about more through out this path.
+
+107
+00:07:02.350 --> 00:07:07.865
+Talk about that more because you're not
+going to be able to seize a businesses
+
+108
+00:07:07.865 --> 00:07:12.440
+computers due to the effect it's
+going to have on the business.
+
+109
+00:07:12.440 --> 00:07:14.631
+You're going to go into some places and
+
+110
+00:07:14.631 --> 00:07:19.294
+you're not going to be able to shut down
+their servers because you'd be in a lot of
+
+111
+00:07:19.294 --> 00:07:22.348
+trouble if the server
+wouldn't come back online.
+
+112
+00:07:22.348 --> 00:07:26.969
+You may be liable in that case because
+there is another way to do a live
+
+113
+00:07:26.969 --> 00:07:28.340
+collection.
+
+114
+00:07:28.340 --> 00:07:32.135
+And obviously you do not
+seize items not covered in
+
+115
+00:07:32.135 --> 00:07:36.661
+the warrant unless they
+are obvious contraband evidence.
+
+116
+00:07:36.661 --> 00:07:40.320
+The preservation of evidence
+is of the utmost importance.
+
+117
+00:07:40.320 --> 00:07:41.761
+We need to preserve the evidence.
+
+118
+00:07:41.761 --> 00:07:47.840
+That's the most important thing.
+
+119
+00:07:47.840 --> 00:07:50.707
+Evidence is defined as information or
+
+120
+00:07:50.707 --> 00:07:56.440
+things introduced in court to prove or
+disprove an allegation.
+
+121
+00:07:56.440 --> 00:08:00.650
+Exculpatory evidence and
+this is something we want to be aware of.
+
+122
+00:08:00.650 --> 00:08:05.020
+This evidence that tends to exonerate
+the accused in a criminal case.
+
+123
+00:08:05.020 --> 00:08:11.240
+You cannot overlook or not include
+exculpatory evidence in your reports.
+
+124
+00:08:11.240 --> 00:08:13.551
+That would be an ethics problem.
+
+125
+00:08:14.780 --> 00:08:20.238
+Electronic evidence that is sort of
+a misnomer because evidence is evidence,
+
+126
+00:08:20.238 --> 00:08:23.711
+whether it's electronic or
+physical evidence,
+
+127
+00:08:23.711 --> 00:08:28.271
+it is still considered evidence and
+the same rules apply a trial.
+
+128
+00:08:28.271 --> 00:08:34.099
+You must remember that the evidence
+first and foremost must be admissible or
+
+129
+00:08:34.099 --> 00:08:38.140
+it's of no use to you and
+it must be persuasive.
+
+130
+00:08:38.140 --> 00:08:42.512
+We do have some special issues with
+electronic evidence because it
+
+131
+00:08:42.512 --> 00:08:45.478
+can be easily altered,
+created or erased and
+
+132
+00:08:45.478 --> 00:08:50.474
+deleted information is an issue we have
+with electronic evidence and we're
+
+133
+00:08:50.474 --> 00:08:56.940
+going to talk about recovering deleted
+information helped us path authentication.
+
+134
+00:08:56.940 --> 00:09:01.465
+We have to prove that the thing
+is what it's supposed to be and
+
+135
+00:09:01.465 --> 00:09:08.080
+that's due to the testimony of witnesses
+and distinctive characteristics.
+
+136
+00:09:08.080 --> 00:09:10.840
+We have to be able to
+authenticate that evidence.
+
+137
+00:09:10.840 --> 00:09:16.134
+You have to be able to say who found it,
+
+138
+00:09:16.134 --> 00:09:21.759
+where they found it when they found it and
+
+139
+00:09:21.759 --> 00:09:27.561
+show what it actually is email accounts.
+
+140
+00:09:27.561 --> 00:09:30.460
+To get this content of an email account.
+
+141
+00:09:30.460 --> 00:09:32.961
+You will need a search and
+seizure warrant.
+
+142
+00:09:35.170 --> 00:09:40.004
+You can request that the owner
+of the account be delayed
+
+143
+00:09:40.004 --> 00:09:43.440
+notification for up to 90 days.
+
+144
+00:09:43.440 --> 00:09:46.520
+And if you need longer than that,
+you can apply for an extension for
+
+145
+00:09:46.520 --> 00:09:47.731
+an additional 90 days.
+
+146
+00:09:47.731 --> 00:09:51.840
+This is all done through the courts.
+
+147
+00:09:51.840 --> 00:09:57.010
+And the reason you would ask for
+a delay of notification is destruction
+
+148
+00:09:57.010 --> 00:10:01.652
+of evidence if the account user
+finds out that you've asked for
+
+149
+00:10:01.652 --> 00:10:06.940
+the contents of their email account,
+they may delete it.
+
+150
+00:10:06.940 --> 00:10:09.799
+They could intimidate other
+witnesses in the case and
+
+151
+00:10:09.799 --> 00:10:14.261
+it could be an ongoing investigation where
+you're going to need multiple warrants.
+
+152
+00:10:15.650 --> 00:10:20.740
+Record types are generally
+divided into three categories.
+
+153
+00:10:20.740 --> 00:10:25.886
+We have the basic subscriber information
+that's generally the building address,
+
+154
+00:10:25.886 --> 00:10:28.061
+name and credit card information or
+
+155
+00:10:28.061 --> 00:10:32.540
+billing information of the person
+who is paying for the account.
+
+156
+00:10:32.540 --> 00:10:35.690
+We have something called
+call detail records.
+
+157
+00:10:35.690 --> 00:10:40.867
+And these show the calls to and
+from they may show
+
+158
+00:10:40.867 --> 00:10:49.020
+internet log on internet log off
+where the account was originated.
+
+159
+00:10:49.020 --> 00:10:50.661
+The originating IP address.
+
+160
+00:10:51.950 --> 00:10:56.290
+Those are called detailed records and
+content of the account.
+
+161
+00:10:56.290 --> 00:11:01.951
+The actual emails, the actual
+content of that particular account.
+
+162
+00:11:03.240 --> 00:11:09.240
+Basic subscriber information can be
+obtained through subpoenas or warrants.
+
+163
+00:11:09.240 --> 00:11:14.298
+And it will usually give you the name,
+address, phone number,
+
+164
+00:11:14.298 --> 00:11:18.515
+billing records,
+what type of services they have and
+
+165
+00:11:18.515 --> 00:11:24.540
+how long they've had this particular
+service call detail records.
+
+166
+00:11:24.540 --> 00:11:28.631
+They're not content and
+they're not basic subscriber information.
+
+167
+00:11:28.631 --> 00:11:33.140
+They're going to give you a call history,
+cell tower locations like I said,
+
+168
+00:11:33.140 --> 00:11:35.731
+they will also give you some IP addresses.
+
+169
+00:11:35.731 --> 00:11:41.095
+Usually if you're dealing with something
+that was connected to wireless,
+
+170
+00:11:41.095 --> 00:11:45.786
+you will get account creation IP and
+you get uploads IP addresses,
+
+171
+00:11:45.786 --> 00:11:50.540
+download IP addresses and
+periodic log on addresses.
+
+172
+00:11:50.540 --> 00:11:54.140
+And this is obtained through a search and
+seizure warrant.
+
+173
+00:11:54.140 --> 00:11:59.940
+So it's a kind of a level up from
+the basic subscriber information.
+
+174
+00:11:59.940 --> 00:12:05.041
+Wiretaps, were talking about
+wiretaps were going back to
+
+175
+00:12:05.041 --> 00:12:11.290
+the Electronic Commission
+Communications Privacy Act of 1986 and
+
+176
+00:12:11.290 --> 00:12:17.940
+this applies to wiretaps a real
+time interception of communication.
+
+177
+00:12:17.940 --> 00:12:20.441
+It protects the parties
+of the communication.
+
+178
+00:12:21.640 --> 00:12:27.551
+You would need to have some type of legal
+process, court order for wiretapping.
+
+179
+00:12:29.840 --> 00:12:34.885
+If you wiretap and you don't have this
+court order or if you intercept real time
+
+180
+00:12:34.885 --> 00:12:40.640
+electronic communications without a court
+order, you're committing a felony.
+
+181
+00:12:40.640 --> 00:12:44.172
+So just make sure you have
+your legal process and
+
+182
+00:12:44.172 --> 00:12:50.340
+make sure it covers this real time
+interception are four steps to success.
+
+183
+00:12:50.340 --> 00:12:52.161
+We want to assemble a team.
+
+184
+00:12:53.540 --> 00:12:55.850
+We want to have a case agent.
+
+185
+00:12:55.850 --> 00:12:59.301
+We want to have some type of
+legal counsel involved in this.
+
+186
+00:12:59.301 --> 00:13:01.030
+You want to talk to your prosecutors.
+
+187
+00:13:01.030 --> 00:13:06.210
+You want to talk to the person
+that is going to be
+
+188
+00:13:06.210 --> 00:13:11.130
+doing the technical expertise on scene.
+
+189
+00:13:11.130 --> 00:13:14.812
+The person that's going to be
+maybe previewing the computers,
+
+190
+00:13:14.812 --> 00:13:18.090
+actually seizing the electronic
+evidence properly.
+
+191
+00:13:18.090 --> 00:13:23.563
+You want to have a technical expert and
+you want to have this team assembled
+
+192
+00:13:23.563 --> 00:13:28.940
+well in advance of what you intend
+to execute a search warrant.
+
+193
+00:13:28.940 --> 00:13:34.936
+You want to learn as much as possible
+about the computer systems that you're
+
+194
+00:13:34.936 --> 00:13:41.820
+going to be searching before you divide
+your plan or draft your warrant okay?
+
+195
+00:13:41.820 --> 00:13:43.661
+You want to plan for the search.
+
+196
+00:13:45.140 --> 00:13:49.465
+You want to know as much as you can
+about the physical location and
+
+197
+00:13:49.465 --> 00:13:51.030
+about the computers.
+
+198
+00:13:51.030 --> 00:13:54.161
+And you want to make a plan
+based on that information.
+
+199
+00:13:56.530 --> 00:14:00.800
+Then you will need to draft your
+warrant or legal documentation.
+
+200
+00:14:00.800 --> 00:14:02.340
+You wore your subpoena.
+
+201
+00:14:02.340 --> 00:14:05.870
+You're going to describe
+the location of the search and
+
+202
+00:14:05.870 --> 00:14:10.140
+you're going to describe
+the property to be seized.
+
+203
+00:14:10.140 --> 00:14:12.061
+You're going to do all this accurately.
+
+204
+00:14:13.440 --> 00:14:18.381
+This concludes course for
+of our computers forensics path.
+
+205
+00:14:18.381 --> 00:14:20.004
+In our next course,
+
+206
+00:14:20.004 --> 00:14:25.451
+course five where you're going to
+cover the investigative process.

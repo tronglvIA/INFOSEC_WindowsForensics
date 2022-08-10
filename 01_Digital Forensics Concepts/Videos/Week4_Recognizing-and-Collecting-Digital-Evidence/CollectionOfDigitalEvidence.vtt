@@ -1,0 +1,409 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:03.280
+Welcome back to the computer
+forensics path.
+
+2
+00:00:03.280 --> 00:00:05.640
+Course six module four.
+
+3
+00:00:05.640 --> 00:00:07.561
+The collection of digital evidence.
+
+4
+00:00:09.340 --> 00:00:14.558
+When we're talking about collecting or
+seizing evidence,
+
+5
+00:00:14.558 --> 00:00:19.740
+we need to document who
+collected the evidence.
+
+6
+00:00:19.740 --> 00:00:22.240
+Where was the evidence found?
+
+7
+00:00:22.240 --> 00:00:26.140
+When, I mean date and
+time was the evidence found?
+
+8
+00:00:26.140 --> 00:00:27.760
+What is the evidence?
+
+9
+00:00:27.760 --> 00:00:31.150
+So model serial number and
+
+10
+00:00:31.150 --> 00:00:35.778
+why is this evidence being seized?
+
+11
+00:00:35.778 --> 00:00:40.579
+When you intake the evidence when you're
+on scene evidence officer like I said,
+
+12
+00:00:40.579 --> 00:00:45.309
+you always want one person assigned as
+the evidence person, when they take this
+
+13
+00:00:45.309 --> 00:00:49.930
+evidence in, they need to write on a piece
+of paper or type into the computer.
+
+14
+00:00:49.930 --> 00:00:51.351
+The answers to all these questions.
+
+15
+00:00:51.351 --> 00:00:56.040
+Who where, when what and why?
+
+16
+00:00:56.040 --> 00:01:02.511
+Because trust me, when this case goes to
+court or you have your company hearing,
+
+17
+00:01:02.511 --> 00:01:07.567
+you're not going to remember
+the answer to all these questions.
+
+18
+00:01:07.567 --> 00:01:11.571
+And if you're in a court of law this
+is called authenticating the evidence.
+
+19
+00:01:11.571 --> 00:01:16.277
+And we talked about that if you
+can't authenticate the evidence,
+
+20
+00:01:16.277 --> 00:01:18.893
+it's not going to be allowed to court.
+
+21
+00:01:18.893 --> 00:01:23.555
+When we seize a computer or
+any other piece of digital evidence for
+
+22
+00:01:23.555 --> 00:01:28.555
+that matter, the items that are attached
+to it are called sub items and
+
+23
+00:01:28.555 --> 00:01:32.287
+these could be attached
+external storage devices,
+
+24
+00:01:32.287 --> 00:01:36.814
+they could be manuals, papers,
+adapters or other hardware.
+
+25
+00:01:36.814 --> 00:01:38.431
+These were all sub items.
+
+26
+00:01:38.431 --> 00:01:43.527
+And we're going to talk about how
+you tagged these, so that we don't
+
+27
+00:01:43.527 --> 00:01:49.171
+get confused later throughout this path,
+Photos First, Photos First.
+
+28
+00:01:49.171 --> 00:01:50.940
+I can't say that enough.
+
+29
+00:01:50.940 --> 00:01:54.882
+I can't tell you how many times
+I've been on a search warrant and
+
+30
+00:01:54.882 --> 00:01:58.180
+people just run in and
+start moving stuff around.
+
+31
+00:01:58.180 --> 00:02:02.350
+You need to have everybody have
+their assignments ahead of time.
+
+32
+00:02:02.350 --> 00:02:03.781
+Make sure you put the brakes on.
+
+33
+00:02:03.781 --> 00:02:07.664
+If you're the case person and
+take these photos,
+
+34
+00:02:07.664 --> 00:02:12.740
+we need to take the photos of
+evidence prior to being collected.
+
+35
+00:02:12.740 --> 00:02:17.340
+We've got to show that evidence
+as it was found in its location.
+
+36
+00:02:17.340 --> 00:02:19.340
+We're going to note the location.
+
+37
+00:02:19.340 --> 00:02:22.500
+We're going to know the state
+of the evidence on or off.
+
+38
+00:02:22.500 --> 00:02:27.247
+We're going to note prior damage to
+the evidence and at least one person,
+
+39
+00:02:27.247 --> 00:02:31.279
+possibly more depending on
+the size of the area searching and
+
+40
+00:02:31.279 --> 00:02:33.700
+how many people are searching.
+
+41
+00:02:33.700 --> 00:02:39.561
+But at least one person should be assigned
+to take photos and keep a photo log.
+
+42
+00:02:41.040 --> 00:02:46.241
+This is going to become very important
+when this case goes to court or
+
+43
+00:02:46.241 --> 00:02:48.521
+when this hearing happens.
+
+44
+00:02:49.840 --> 00:02:54.272
+This is an example of photos taken.
+
+45
+00:02:54.272 --> 00:02:56.409
+You want to take an overall photo.
+
+46
+00:02:56.409 --> 00:03:01.070
+If you look at the photo on the right,
+that would be called an overall photo.
+
+47
+00:03:01.070 --> 00:03:06.116
+Now, if you look at the photo of the left,
+that's close up photo,
+
+48
+00:03:06.116 --> 00:03:12.060
+you need to be able to see how these
+devices all connected together.
+
+49
+00:03:12.060 --> 00:03:17.496
+We need to show how this computer connects
+to these external drives, connects to this
+
+50
+00:03:17.496 --> 00:03:23.240
+other computer, connects to this Camp V
+switch, connects to these monitors.
+
+51
+00:03:23.240 --> 00:03:30.261
+There's yeah USB ports, USB drives.
+
+52
+00:03:32.040 --> 00:03:36.540
+So you have a lot going on in
+this picture on the right.
+
+53
+00:03:36.540 --> 00:03:42.140
+And you want to be able to reassemble
+that system if you had to.
+
+54
+00:03:42.140 --> 00:03:46.684
+So you want to take those overall photos
+showing the pieces in relation to each
+
+55
+00:03:46.684 --> 00:03:51.228
+other and you want to take the close up
+photos showing the connectors in which
+
+56
+00:03:51.228 --> 00:03:55.940
+port all these connections are going
+into and where they're going.
+
+57
+00:03:55.940 --> 00:04:01.340
+So take many photos,
+you can never take too many photos.
+
+58
+00:04:01.340 --> 00:04:04.551
+Logging evidence.
+
+59
+00:04:06.040 --> 00:04:08.273
+I can't stress this enough.
+
+60
+00:04:08.273 --> 00:04:13.358
+You're going to have one person assigned
+to document evidence collection
+
+61
+00:04:13.358 --> 00:04:17.940
+who found the evidence,
+what they found that I mean make model and
+
+62
+00:04:17.940 --> 00:04:21.720
+serial number where they
+found it when they found it.
+
+63
+00:04:21.720 --> 00:04:27.351
+Date and time and any sub items
+that are attached to the device.
+
+64
+00:04:32.864 --> 00:04:37.556
+You want to make sure you label the
+evidence, when you label the evidence you
+
+65
+00:04:37.556 --> 00:04:42.173
+should include the case of the incident
+number of course the date and time,
+
+66
+00:04:42.173 --> 00:04:44.241
+a short description of the item.
+
+67
+00:04:44.241 --> 00:04:47.374
+But you know make model serial number and
+
+68
+00:04:47.374 --> 00:04:51.428
+the name of the person who
+collected the evidence for
+
+69
+00:04:51.428 --> 00:04:56.160
+authentication purposes at a hearing or
+in the court of law.
+
+70
+00:04:56.160 --> 00:05:00.620
+When you package the evidence, make
+sure you take over all the disk drives.
+
+71
+00:05:00.620 --> 00:05:05.705
+If we're talking about a computer or
+something that does have just drives, make
+
+72
+00:05:05.705 --> 00:05:11.310
+sure you take over all the disk drives,
+the USB ports or openings for SD cards.
+
+73
+00:05:11.310 --> 00:05:15.850
+The reason being is you don't want anybody
+to be able to insert anything in these
+
+74
+00:05:15.850 --> 00:05:18.340
+drives and alter your evidence.
+
+75
+00:05:18.340 --> 00:05:24.240
+You want to use paper or
+anti static bags over exposed contacts.
+
+76
+00:05:24.240 --> 00:05:28.794
+If you have exposed contacts,
+say, like a USB connection,
+
+77
+00:05:28.794 --> 00:05:33.525
+you want to make sure that you put
+some type of anesthetic bags or
+
+78
+00:05:33.525 --> 00:05:36.761
+paper over those exposed contact points.
+
+79
+00:05:38.100 --> 00:05:45.130
+If you use plastic,
+consider moisture in exposed contacts.
+
+80
+00:05:45.130 --> 00:05:48.337
+So when you use plastic you don't
+want is plastic on anything wet and
+
+81
+00:05:48.337 --> 00:05:50.821
+you don't want to use plastic or
+exposed contacts.
+
+82
+00:05:50.821 --> 00:05:51.851
+You want to use paper.
+
+83
+00:05:52.940 --> 00:05:58.266
+Take your evidence seals and
+when you do this,
+
+84
+00:05:58.266 --> 00:06:04.138
+initial the tape, date and
+time, right the case or
+
+85
+00:06:04.138 --> 00:06:08.510
+the incident number very important,
+
+86
+00:06:08.510 --> 00:06:13.837
+in our next module,
+we are going to talk about how
+
+87
+00:06:13.837 --> 00:06:18.771
+we transport and store digital evidence.

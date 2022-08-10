@@ -1,0 +1,659 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.720
+Welcome back to the
+computer forensics path,
+
+2
+00:00:03.720 --> 00:00:07.380
+Course 5, The
+Investigative Process.
+
+3
+00:00:07.380 --> 00:00:09.720
+Throughout this
+course, we're going to
+
+4
+00:00:09.720 --> 00:00:12.405
+cover the investigative process.
+
+5
+00:00:12.405 --> 00:00:16.030
+We're going to talk about
+Locard's principle of exchange,
+
+6
+00:00:16.030 --> 00:00:18.970
+we're going to discuss
+the scientific method,
+
+7
+00:00:18.970 --> 00:00:21.530
+and we're going to talk
+about big data and some of
+
+8
+00:00:21.530 --> 00:00:24.775
+the concerns and issues
+we face with that.
+
+9
+00:00:24.775 --> 00:00:26.930
+Course 5, module 1,
+
+10
+00:00:26.930 --> 00:00:29.105
+we're going to talk
+about Locard's principle
+
+11
+00:00:29.105 --> 00:00:31.625
+in the scientific method.
+
+12
+00:00:31.625 --> 00:00:35.210
+Locard's principle
+of exchange deals
+
+13
+00:00:35.210 --> 00:00:38.165
+with the cross-transference
+of evidence.
+
+14
+00:00:38.165 --> 00:00:41.900
+What they're talking about
+is when one object comes
+
+15
+00:00:41.900 --> 00:00:45.469
+in contact with a second object,
+
+16
+00:00:45.469 --> 00:00:49.415
+traces of both objects
+are left on each other.
+
+17
+00:00:49.415 --> 00:00:52.025
+Picture a car accident,
+
+18
+00:00:52.025 --> 00:00:54.440
+where one car bumps into
+
+19
+00:00:54.440 --> 00:00:57.230
+another car and
+scrapes of paint are
+
+20
+00:00:57.230 --> 00:01:02.865
+left on the other car
+from the first car.
+
+21
+00:01:02.865 --> 00:01:07.690
+So they both had an exchange
+of paint as they collide.
+
+22
+00:01:07.690 --> 00:01:10.970
+Locard's principle
+says that every object
+
+23
+00:01:10.970 --> 00:01:14.180
+that connects with
+another object,
+
+24
+00:01:14.180 --> 00:01:18.180
+makes contact with another
+object, leaves a trace.
+
+25
+00:01:20.690 --> 00:01:24.855
+As digital forensic
+investigators,
+
+26
+00:01:24.855 --> 00:01:27.240
+we're talking about computers.
+
+27
+00:01:27.240 --> 00:01:29.840
+Whenever you do something
+with a computer,
+
+28
+00:01:29.840 --> 00:01:32.410
+it does leave a trace behind.
+
+29
+00:01:32.410 --> 00:01:34.610
+These traces will help us
+
+30
+00:01:34.610 --> 00:01:38.270
+link suspects to a
+particular crime,
+
+31
+00:01:38.270 --> 00:01:43.470
+victims to a place,
+person, or evidence.
+
+32
+00:01:43.990 --> 00:01:50.020
+The scientific method
+consists of stages.
+
+33
+00:01:50.020 --> 00:01:55.365
+The first stage in the scientific
+method is observation.
+
+34
+00:01:55.365 --> 00:01:58.550
+We want to look and see what type
+
+35
+00:01:58.550 --> 00:02:01.765
+of evidence we can obtain
+from the crime scene.
+
+36
+00:02:01.765 --> 00:02:03.800
+From there we're going to develop
+
+37
+00:02:03.800 --> 00:02:07.355
+a hypothesis based on
+what we've observed.
+
+38
+00:02:07.355 --> 00:02:09.590
+After we have our hypothesis,
+
+39
+00:02:09.590 --> 00:02:12.535
+we're going to test it
+and see if it works,
+
+40
+00:02:12.535 --> 00:02:14.930
+like a proof of concept.
+
+41
+00:02:15.110 --> 00:02:17.915
+Once we've done that,
+
+42
+00:02:17.915 --> 00:02:22.790
+we're going to verify
+if it is true,
+
+43
+00:02:22.790 --> 00:02:26.000
+and once we verify
+our hypothesis,
+
+44
+00:02:26.000 --> 00:02:28.355
+we're going to make a conclusion.
+
+45
+00:02:28.355 --> 00:02:31.415
+If our conclusions
+don't call true,
+
+46
+00:02:31.415 --> 00:02:34.825
+then we have to form
+a new hypothesis.
+
+47
+00:02:34.825 --> 00:02:37.660
+This is cyclical in nature.
+
+48
+00:02:37.660 --> 00:02:40.505
+Usually once we make
+some observations,
+
+49
+00:02:40.505 --> 00:02:42.140
+we develop a hypothesis,
+
+50
+00:02:42.140 --> 00:02:44.915
+we test it, we come
+to a conclusion.
+
+51
+00:02:44.915 --> 00:02:47.150
+From there, we're going to
+find more evidence and we're
+
+52
+00:02:47.150 --> 00:02:49.730
+going to start over and
+make another observation,
+
+53
+00:02:49.730 --> 00:02:51.710
+develop a new hypothesis,
+
+54
+00:02:51.710 --> 00:02:54.940
+and continue to test that one.
+
+55
+00:02:54.940 --> 00:02:57.425
+This is a visual representation
+
+56
+00:02:57.425 --> 00:02:58.910
+of the scientific process.
+
+57
+00:02:58.910 --> 00:03:01.550
+You can see over here on
+
+58
+00:03:01.550 --> 00:03:05.030
+the far left-hand
+side of the screen,
+
+59
+00:03:05.030 --> 00:03:07.925
+we will start with
+our observation.
+
+60
+00:03:07.925 --> 00:03:09.770
+Once we make our observation,
+
+61
+00:03:09.770 --> 00:03:11.755
+we'll think of a question.
+
+62
+00:03:11.755 --> 00:03:15.920
+Once we have that, we will
+formulate a hypothesis,
+
+63
+00:03:15.920 --> 00:03:18.515
+and then we will test it.
+
+64
+00:03:18.515 --> 00:03:21.270
+Once we test it,
+
+65
+00:03:21.320 --> 00:03:24.485
+we'll make a theory,
+
+66
+00:03:24.485 --> 00:03:28.085
+come up with some type of
+theory from our tests,
+
+67
+00:03:28.085 --> 00:03:30.020
+and from there we'll
+go ahead and make
+
+68
+00:03:30.020 --> 00:03:31.430
+some more observations and
+
+69
+00:03:31.430 --> 00:03:33.955
+continue to go round and round.
+
+70
+00:03:33.955 --> 00:03:36.410
+The forensic cycle, it
+
+71
+00:03:36.410 --> 00:03:40.150
+includes the creation of
+policy and procedures.
+
+72
+00:03:40.150 --> 00:03:42.110
+You should all have
+written policy and
+
+73
+00:03:42.110 --> 00:03:44.854
+procedures regarding
+digital evidence,
+
+74
+00:03:44.854 --> 00:03:48.740
+how it's collected, how
+you do your intake,
+
+75
+00:03:48.740 --> 00:03:51.720
+how it is handled, stored.
+
+76
+00:03:53.120 --> 00:03:59.915
+You also want to obtain
+initial information.
+
+77
+00:03:59.915 --> 00:04:01.520
+So once we've done this,
+
+78
+00:04:01.520 --> 00:04:03.920
+we're going to find out what type
+
+79
+00:04:03.920 --> 00:04:05.615
+of case are we looking at?
+
+80
+00:04:05.615 --> 00:04:08.490
+What type of evidence
+would we expect to find,
+
+81
+00:04:08.490 --> 00:04:10.130
+and where would we expect to find
+
+82
+00:04:10.130 --> 00:04:12.985
+that evidence within
+the file system?
+
+83
+00:04:12.985 --> 00:04:16.710
+Then we're going to
+provide an investigation.
+
+84
+00:04:16.710 --> 00:04:18.810
+We're going to document,
+you're going to
+
+85
+00:04:18.810 --> 00:04:20.460
+document the site,
+the conditions,
+
+86
+00:04:20.460 --> 00:04:22.110
+and your observations,
+
+87
+00:04:22.110 --> 00:04:25.095
+you have examination
+and reporting,
+
+88
+00:04:25.095 --> 00:04:28.835
+and you'll have quality
+control and peer review,
+
+89
+00:04:28.835 --> 00:04:30.710
+where your findings
+are reviewed by
+
+90
+00:04:30.710 --> 00:04:33.290
+another examiner to
+see if they hold true,
+
+91
+00:04:33.290 --> 00:04:35.195
+and then the last step we'll have
+
+92
+00:04:35.195 --> 00:04:38.555
+testimony and final disposition.
+
+93
+00:04:38.555 --> 00:04:41.270
+This is where we would bring
+our evidence into court,
+
+94
+00:04:41.270 --> 00:04:43.430
+or into a hearing,
+
+95
+00:04:43.430 --> 00:04:45.155
+or some type of
+
+96
+00:04:45.155 --> 00:04:50.195
+formal procedure and testify
+regarding our findings.
+
+97
+00:04:50.195 --> 00:04:52.670
+You should have procedures
+
+98
+00:04:52.670 --> 00:04:55.790
+for digital evidence examination.
+
+99
+00:04:55.790 --> 00:04:58.445
+You should maintain,
+keep these procedures
+
+100
+00:04:58.445 --> 00:05:01.985
+up-to-date with current
+standards in the field,
+
+101
+00:05:01.985 --> 00:05:05.505
+and you should follow
+these written procedures.
+
+102
+00:05:05.505 --> 00:05:08.240
+You should have work practices to
+
+103
+00:05:08.240 --> 00:05:11.940
+prevent your contamination
+of evidence.
+
+104
+00:05:12.220 --> 00:05:15.155
+You need to monitor
+your procedures
+
+105
+00:05:15.155 --> 00:05:17.240
+using controls and standards,
+
+106
+00:05:17.240 --> 00:05:22.890
+and you need to test and
+validate these procedures.
+
+107
+00:05:22.970 --> 00:05:26.865
+We'll talk more about
+this throughout the path.
+
+108
+00:05:26.865 --> 00:05:30.170
+We're going to validate
+our tools and software.
+
+109
+00:05:30.170 --> 00:05:33.530
+We're going to do this before
+we use them on evidence.
+
+110
+00:05:33.530 --> 00:05:38.405
+We want to make sure all our
+tools are working properly.
+
+111
+00:05:38.405 --> 00:05:40.820
+We want to preserve the evidence.
+
+112
+00:05:40.820 --> 00:05:43.600
+We want to make no
+changes to the evidence.
+
+113
+00:05:43.600 --> 00:05:46.165
+We want to document
+
+114
+00:05:46.165 --> 00:05:48.950
+every access to the
+original evidence.
+
+115
+00:05:48.950 --> 00:05:50.659
+This is called the
+chain of custody,
+
+116
+00:05:50.659 --> 00:05:51.860
+and we'll talk more about that
+
+117
+00:05:51.860 --> 00:05:53.270
+as we go through this path.
+
+118
+00:05:53.270 --> 00:05:55.760
+But every time somebody
+touches the original evidence,
+
+119
+00:05:55.760 --> 00:05:57.530
+you need to document that.
+
+120
+00:05:57.530 --> 00:06:00.514
+You want to work from a
+copy of the evidence.
+
+121
+00:06:00.514 --> 00:06:02.480
+You never work on the original,
+
+122
+00:06:02.480 --> 00:06:05.150
+you always work from a copy.
+
+123
+00:06:05.150 --> 00:06:08.695
+You do want to document
+the chain of custody.
+
+124
+00:06:08.695 --> 00:06:11.150
+Then you want to have
+your reporting and
+
+125
+00:06:11.150 --> 00:06:13.415
+documentation process.
+
+126
+00:06:13.415 --> 00:06:18.710
+Witnesses. There are
+different types of witnesses.
+
+127
+00:06:18.710 --> 00:06:21.620
+But basically, a witness
+is defined as a person who
+
+128
+00:06:21.620 --> 00:06:25.565
+provides testimony under oath
+and is subject to perjury.
+
+129
+00:06:25.565 --> 00:06:27.215
+A witness is going to have
+
+130
+00:06:27.215 --> 00:06:29.375
+a connection with the incident.
+
+131
+00:06:29.375 --> 00:06:31.985
+He's going to have information
+about the incident.
+
+132
+00:06:31.985 --> 00:06:33.245
+Either he was there,
+
+133
+00:06:33.245 --> 00:06:35.495
+he has some first-hand
+information,
+
+134
+00:06:35.495 --> 00:06:37.850
+he knows somebody who was there,
+
+135
+00:06:37.850 --> 00:06:41.645
+so a witness who has some
+connection to the crime.
+
+136
+00:06:41.645 --> 00:06:45.005
+An expert witness,
+on the other hand,
+
+137
+00:06:45.005 --> 00:06:48.110
+probably doesn't not have
+direct connection to
+
+138
+00:06:48.110 --> 00:06:50.944
+the crime or the incident
+we are investigating.
+
+139
+00:06:50.944 --> 00:06:54.650
+He or she is an expert
+in their field,
+
+140
+00:06:54.650 --> 00:06:58.710
+and they are usually
+paid to testify.
+
+141
+00:07:02.000 --> 00:07:04.429
+In our next module,
+
+142
+00:07:04.429 --> 00:07:06.950
+we're going to
+discuss big data and
+
+143
+00:07:06.950 --> 00:07:11.280
+the challenges that we have
+when examining big data.

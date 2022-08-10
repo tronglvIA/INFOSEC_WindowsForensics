@@ -1,0 +1,532 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:04.740
+Hello, and welcome back to
+the digital forensic concept paths.
+
+2
+00:00:04.740 --> 00:00:10.622
+In this course, course 11, we're going to
+talk about reporting, and peer review.
+
+3
+00:00:10.622 --> 00:00:12.230
+An overview of this course,
+
+4
+00:00:12.230 --> 00:00:15.851
+we're going to talk about report
+writing the parts of the report.
+
+5
+00:00:15.851 --> 00:00:17.596
+How we write the report, and
+
+6
+00:00:17.596 --> 00:00:21.980
+to consider things we need to consider
+when we're writing the report.
+
+7
+00:00:21.980 --> 00:00:26.469
+We're going to take a look at some tool
+generated reports, and see the pros, and
+
+8
+00:00:26.469 --> 00:00:27.740
+cons to those.
+
+9
+00:00:27.740 --> 00:00:31.404
+And we're also going to talk about
+peer review, what it is, and
+
+10
+00:00:31.404 --> 00:00:33.240
+why it's important.
+
+11
+00:00:33.240 --> 00:00:37.840
+And in module one,
+we're going to talk about report writing.
+
+12
+00:00:37.840 --> 00:00:41.572
+Well, report writing
+starts with preparation.
+
+13
+00:00:41.572 --> 00:00:45.211
+We have to have good note taking,
+to have a good report.
+
+14
+00:00:45.211 --> 00:00:47.475
+Because you're not going to
+remember everything you did.
+
+15
+00:00:47.475 --> 00:00:49.299
+And what time you did it.
+
+16
+00:00:49.299 --> 00:00:50.743
+And what were the circumstances.
+
+17
+00:00:50.743 --> 00:00:51.670
+And who was there.
+
+18
+00:00:51.670 --> 00:00:56.250
+So you need to take good notes as
+you go through your process of your
+
+19
+00:00:56.250 --> 00:00:57.520
+investigation.
+
+20
+00:00:57.520 --> 00:01:00.430
+So take the notes as you take the actions.
+
+21
+00:01:00.430 --> 00:01:03.480
+Don't wait, and
+try to make the notes up later.
+
+22
+00:01:03.480 --> 00:01:05.940
+Take the notes as you're doing it.
+
+23
+00:01:05.940 --> 00:01:10.240
+We want to make sure we document all
+our observations, things that we see.
+
+24
+00:01:10.240 --> 00:01:13.425
+Maybe we saw a destructive
+program running on the screen,
+
+25
+00:01:13.425 --> 00:01:16.675
+and we decided to pull the plug
+from the back of the machine.
+
+26
+00:01:16.675 --> 00:01:20.504
+We would want to make sure that we
+documented that screen, took a photograph.
+
+27
+00:01:22.540 --> 00:01:24.640
+You want to document the actions we take.
+
+28
+00:01:24.640 --> 00:01:26.800
+What did we do in response to seeing that?
+
+29
+00:01:26.800 --> 00:01:29.250
+Well, we pulled the plug,
+we want to document that.
+
+30
+00:01:29.250 --> 00:01:32.470
+You want to document what time that
+you did that at the date, and time.
+
+31
+00:01:32.470 --> 00:01:33.651
+And that brings us to our next one.
+
+32
+00:01:33.651 --> 00:01:36.640
+We want to document the times
+our actions were taken.
+
+33
+00:01:36.640 --> 00:01:37.897
+That's very important.
+
+34
+00:01:37.897 --> 00:01:41.056
+And the reasons why we took
+the actions that we did.
+
+35
+00:01:41.056 --> 00:01:47.110
+The results of our examination need to
+be reproducible by another examiner.
+
+36
+00:01:47.110 --> 00:01:49.740
+That's what makes them
+scientifically sound.
+
+37
+00:01:49.740 --> 00:01:53.630
+A well-written report, you want to
+think about your target audience.
+
+38
+00:01:53.630 --> 00:01:56.240
+Is it another examiner?
+
+39
+00:01:56.240 --> 00:01:58.600
+Is it a group of lay people?
+
+40
+00:01:58.600 --> 00:02:00.084
+Is it your boss?
+
+41
+00:02:00.084 --> 00:02:01.435
+Is it an attorney's office?
+
+42
+00:02:01.435 --> 00:02:04.777
+Who's going to be the audience for
+your report?
+
+43
+00:02:04.777 --> 00:02:08.340
+You want to make your report very clear,
+and unambiguous.
+
+44
+00:02:08.340 --> 00:02:10.645
+You don't want to leave things hanging.
+
+45
+00:02:10.645 --> 00:02:12.470
+You want to make sure
+you explain everything.
+
+46
+00:02:12.470 --> 00:02:15.040
+Make sure it's a detail, but concise.
+
+47
+00:02:15.040 --> 00:02:18.187
+Nobody wants to read
+a really wordy report, and
+
+48
+00:02:18.187 --> 00:02:21.590
+people usually won't read
+a really wordy report.
+
+49
+00:02:21.590 --> 00:02:24.131
+So make them detailed, bucket size.
+
+50
+00:02:24.131 --> 00:02:27.238
+Make sure they're fact-based,
+and unbiased.
+
+51
+00:02:27.238 --> 00:02:33.415
+You can't bring preconceptions of personal
+biases into your reporting, and findings.
+
+52
+00:02:33.415 --> 00:02:37.673
+And you must include any
+exculpatory evidence.
+
+53
+00:02:37.673 --> 00:02:39.219
+Our exculpatory findings, and
+
+54
+00:02:39.219 --> 00:02:43.006
+that would be findings that tended to
+go against what you're trying to prove.
+
+55
+00:02:43.006 --> 00:02:47.724
+Prove the person's innocence, or
+prove that the act did not happen.
+
+56
+00:02:47.724 --> 00:02:50.123
+Now, parts of the reports,
+we have our narrative.
+
+57
+00:02:50.123 --> 00:02:53.860
+And then in our narrative we're
+going to talk about what we did find.
+
+58
+00:02:53.860 --> 00:02:57.436
+We're going to have exhibits,
+and these can be things like,
+
+59
+00:02:57.436 --> 00:03:01.390
+artifacts within the file system
+that supports our hypothesis.
+
+60
+00:03:01.390 --> 00:03:07.226
+Maybe your hypothesis is that an employee
+copied some documents to a USB drive.
+
+61
+00:03:07.226 --> 00:03:11.341
+What you want to have some USB
+connections with dates, and
+
+62
+00:03:11.341 --> 00:03:14.262
+times that the devices were connected.
+
+63
+00:03:14.262 --> 00:03:19.400
+Serial numbers, volume names, and maybe
+you think a certain document was copied.
+
+64
+00:03:19.400 --> 00:03:21.766
+You might want to try to look for
+link files,
+
+65
+00:03:21.766 --> 00:03:26.040
+to find a link file to that volume
+containing a certain document name.
+
+66
+00:03:26.040 --> 00:03:27.624
+So those are exhibits.
+
+67
+00:03:27.624 --> 00:03:31.861
+The processes you used,
+what forensic software did you use?
+
+68
+00:03:31.861 --> 00:03:33.210
+What was your process?
+
+69
+00:03:33.210 --> 00:03:36.390
+How did you go about coming
+to these conclusions?
+
+70
+00:03:36.390 --> 00:03:40.070
+Did you examine the link
+files with autopsy?
+
+71
+00:03:40.070 --> 00:03:43.980
+Did you export them, and examine them,
+but not the third party tool?
+
+72
+00:03:43.980 --> 00:03:45.640
+What did you do?
+
+73
+00:03:45.640 --> 00:03:48.300
+And then we want to have
+the interpretation of our findings.
+
+74
+00:03:48.300 --> 00:03:52.674
+You may find information in
+the Windows registry just for example.
+
+75
+00:03:52.674 --> 00:03:54.817
+And you want to be able to interpret that.
+
+76
+00:03:54.817 --> 00:03:58.521
+When you're doing your report or
+investigation.
+
+77
+00:03:58.521 --> 00:04:03.263
+Make sure you're answering each of
+the questions that pertained to your
+
+78
+00:04:03.263 --> 00:04:05.220
+particular investigation.
+
+79
+00:04:05.220 --> 00:04:07.760
+If the question is,
+was there malware on the system?
+
+80
+00:04:07.760 --> 00:04:11.484
+You want to make sure that you
+can find out whether there was,
+
+81
+00:04:11.484 --> 00:04:13.952
+or there was not malware on the system.
+
+82
+00:04:13.952 --> 00:04:18.353
+And you might want to look in some
+of your persistent artifacts,
+
+83
+00:04:18.353 --> 00:04:22.599
+to see if you can see anything
+that was set to a run at startup.
+
+84
+00:04:22.599 --> 00:04:25.740
+That you know is known malware.
+
+85
+00:04:25.740 --> 00:04:30.940
+You might want to run a virus program,
+something that virus total against it.
+
+86
+00:04:30.940 --> 00:04:32.893
+So you want to answer your questions.
+
+87
+00:04:32.893 --> 00:04:35.601
+And you want to support
+your opinions with facts,
+
+88
+00:04:35.601 --> 00:04:38.251
+and artifacts that you
+find in the file system.
+
+89
+00:04:39.440 --> 00:04:43.122
+We want to document the examination
+software tools we use, and
+
+90
+00:04:43.122 --> 00:04:46.440
+what versions of the tools we were using.
+
+91
+00:04:46.440 --> 00:04:49.891
+And you want to make sure you read
+the release notes on these tools.
+
+92
+00:04:49.891 --> 00:04:54.249
+So if they're already known issues,
+you know about it ahead of time.
+
+93
+00:04:54.249 --> 00:04:57.532
+You want to be able to explain
+anything you include in your report.
+
+94
+00:04:57.532 --> 00:05:00.871
+Never put anything in a report
+that you cannot explain.
+
+95
+00:05:00.871 --> 00:05:08.040
+And if you make a mistake own up to it,
+don't try to leave it out, or sweep it by.
+
+96
+00:05:08.040 --> 00:05:13.316
+If you make a mistake, document it, and
+continue on with your investigation.
+
+97
+00:05:13.316 --> 00:05:18.119
+Report considerations, stay away from
+using statements like, always, and never,
+
+98
+00:05:18.119 --> 00:05:21.299
+because when we're talking
+about computer forensics.
+
+99
+00:05:21.299 --> 00:05:26.919
+There are very few things that will fall
+into the category of always being one way,
+
+100
+00:05:26.919 --> 00:05:28.940
+or never being one way.
+
+101
+00:05:28.940 --> 00:05:32.820
+A lot of it depends as part
+of computer forensics.
+
+102
+00:05:32.820 --> 00:05:37.140
+Be careful about attributing
+who was the user.
+
+103
+00:05:37.140 --> 00:05:40.763
+Because just because somebody logged
+on with somebody's credentials.
+
+104
+00:05:40.763 --> 00:05:44.770
+You're going to need a little more
+supportive evidence than that to say,
+
+105
+00:05:44.770 --> 00:05:48.729
+that this particular person was
+the one sitting behind the keyboard.
+
+106
+00:05:48.729 --> 00:05:54.182
+And it's okay to say you don't know,
+inconclusive happens.
+
+107
+00:05:54.182 --> 00:05:59.272
+A good example is this,
+if you found graphic files
+
+108
+00:05:59.272 --> 00:06:04.251
+in internet cache,
+temporary internet files.
+
+109
+00:06:04.251 --> 00:06:08.089
+You can say, that at some point
+that website was visited.
+
+110
+00:06:08.089 --> 00:06:12.462
+But you cannot say, that those images were
+downloaded to the computer by the user.
+
+111
+00:06:12.462 --> 00:06:15.885
+Or that the user had knowledge that
+those images were on the computer.
+
+112
+00:06:15.885 --> 00:06:18.337
+So you do want to be careful.
+
+113
+00:06:18.337 --> 00:06:25.550
+In our next module, module two, we're
+going to look at tools generated reports

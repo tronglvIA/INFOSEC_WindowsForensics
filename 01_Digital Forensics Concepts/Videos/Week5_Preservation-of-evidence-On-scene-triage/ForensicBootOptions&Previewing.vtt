@@ -1,0 +1,595 @@
+WEBVTT
+
+1
+00:00:00.140 --> 00:00:01.097
+Hello, and
+
+2
+00:00:01.097 --> 00:00:07.137
+welcome back to course seven module
+three of the computer forensics path.
+
+3
+00:00:07.137 --> 00:00:13.051
+In this module, we're going to discuss
+live imaging and forensic boot media.
+
+4
+00:00:14.540 --> 00:00:18.440
+Live imaging,
+why would we need to live image?
+
+5
+00:00:18.440 --> 00:00:22.684
+Well, we could be dealing
+with an encrypted drive, or
+
+6
+00:00:22.684 --> 00:00:27.298
+an encrypted volume or
+just some encrypted files may be open
+
+7
+00:00:27.298 --> 00:00:32.740
+in RAM currently that we want to
+create a logical image of.
+
+8
+00:00:32.740 --> 00:00:36.148
+We would also want to collect RAM,
+but collecting RAM and
+
+9
+00:00:36.148 --> 00:00:38.351
+live imaging are not the same thing.
+
+10
+00:00:39.860 --> 00:00:44.419
+Another reason why we may need to live
+image is that the system can't be
+
+11
+00:00:44.419 --> 00:00:45.201
+shut down.
+
+12
+00:00:46.640 --> 00:00:49.240
+When we are doing live imaging,
+
+13
+00:00:49.240 --> 00:00:54.850
+we are getting a logical image of
+a logical volume or a logical drive.
+
+14
+00:00:54.850 --> 00:00:59.159
+You're not getting that full disk image
+from sector zero all the way to the end of
+
+15
+00:00:59.159 --> 00:00:59.751
+the disk.
+
+16
+00:01:02.040 --> 00:01:06.750
+We're going to use our imaging
+software from an external drive.
+
+17
+00:01:06.750 --> 00:01:10.990
+We're not going to run our imaging
+software from the suspect's computer.
+
+18
+00:01:10.990 --> 00:01:14.740
+You would use something like
+FDK light on a thumb drive.
+
+19
+00:01:14.740 --> 00:01:18.061
+And there are other imaging
+softwares that we can use.
+
+20
+00:01:19.740 --> 00:01:24.536
+We're going to send that
+image that we've created to
+
+21
+00:01:24.536 --> 00:01:28.055
+an external sterilized target media,
+
+22
+00:01:28.055 --> 00:01:32.651
+which we are then going to
+take with us from the scene.
+
+23
+00:01:34.440 --> 00:01:38.480
+We want to make sure that our target
+media is large enough to contain
+
+24
+00:01:38.480 --> 00:01:40.761
+all the data that we want to put on it.
+
+25
+00:01:43.440 --> 00:01:48.687
+And again, the reasons we would do this
+is if the hard drive is not removable,
+
+26
+00:01:48.687 --> 00:01:50.882
+we had some type of encryption.
+
+27
+00:01:50.882 --> 00:01:52.402
+And the Surface Pro and
+
+28
+00:01:52.402 --> 00:01:58.660
+MacBook would be examples of computers
+where the hard drives are not removable.
+
+29
+00:01:58.660 --> 00:02:02.531
+The chicks decided to the board and
+I think we're going to see more and
+
+30
+00:02:02.531 --> 00:02:03.380
+more of this.
+
+31
+00:02:03.380 --> 00:02:10.662
+So live imaging, I think it's going to
+become something of a standard practice.
+
+32
+00:02:10.662 --> 00:02:16.283
+Dead box forensics,
+this is if you find the computer off or
+
+33
+00:02:16.283 --> 00:02:22.725
+when you perform a normal shutdown
+after you've collected ramp.
+
+34
+00:02:22.725 --> 00:02:27.309
+You would remove the hard drive, attach
+the hard drive to your write blocker,
+
+35
+00:02:27.309 --> 00:02:28.975
+and you would have tested and
+
+36
+00:02:28.975 --> 00:02:33.025
+validated your write blocker prior
+to going on your search warrant.
+
+37
+00:02:33.025 --> 00:02:38.920
+Then you're going to attach your write
+blocker to your forensic computer,
+
+38
+00:02:38.920 --> 00:02:44.461
+and then you're going to copy your
+evidence, two sterile target media.
+
+39
+00:02:45.740 --> 00:02:48.688
+And when I say sterile target media,
+
+40
+00:02:48.688 --> 00:02:52.890
+I mean media that is wiped and
+confirmed to be wiped.
+
+41
+00:02:52.890 --> 00:02:56.340
+Not something that you ran a format on.
+
+42
+00:02:56.340 --> 00:03:00.321
+And just because you buy a brand-new
+disk out of the box does not mean it is
+
+43
+00:03:00.321 --> 00:03:01.450
+completely clean.
+
+44
+00:03:01.450 --> 00:03:06.836
+You need to wipe the media with something
+like kill disk, and then check and
+
+45
+00:03:06.836 --> 00:03:11.797
+verify that it is indeed completely
+white with some type of algorithm
+
+46
+00:03:11.797 --> 00:03:16.259
+not visually looking at it
+because you could miss something.
+
+47
+00:03:16.259 --> 00:03:22.697
+Forensic proof media, this is a little
+different then dead box forensics and
+
+48
+00:03:22.697 --> 00:03:27.847
+a little different than the other
+method of live imaging I just
+
+49
+00:03:27.847 --> 00:03:32.819
+described what we would use FBK
+imagery from a thumb drive.
+
+50
+00:03:32.819 --> 00:03:38.741
+Forensic boot media is when we're
+actually the computer is either off or
+
+51
+00:03:38.741 --> 00:03:41.761
+has gone through a normal shutdown.
+
+52
+00:03:43.240 --> 00:03:48.449
+We are going to reboot this computer
+into a forensic environment,
+
+53
+00:03:48.449 --> 00:03:54.140
+and that is usually some type of
+modified Lennox Operating System.
+
+54
+00:03:54.140 --> 00:03:58.540
+With the exception of
+windows forensic environment.
+
+55
+00:03:58.540 --> 00:04:02.453
+Win FE is not a Lennox distribution, but
+
+56
+00:04:02.453 --> 00:04:08.438
+we can see the other software
+is listed on the screen paladin,
+
+57
+00:04:08.438 --> 00:04:16.861
+cane, helix, and penguinSleuth are all
+some type of modified Lennox distribution.
+
+58
+00:04:19.339 --> 00:04:24.710
+When you were doing booting from
+forensic group media, you want to make
+
+59
+00:04:24.710 --> 00:04:31.140
+sure you do some research on the computer
+that you're going to be booting up.
+
+60
+00:04:31.140 --> 00:04:36.138
+You need to find out which key
+will get you into the bios, so
+
+61
+00:04:36.138 --> 00:04:41.343
+you can change the boot order
+because if you don't do that and
+
+62
+00:04:41.343 --> 00:04:43.707
+you just boot up normally.
+
+63
+00:04:43.707 --> 00:04:46.950
+And the boot order says boot
+from the hard drive first and
+
+64
+00:04:46.950 --> 00:04:48.886
+your external media secondary.
+
+65
+00:04:48.886 --> 00:04:52.744
+You're going to boot into
+the operating system and
+
+66
+00:04:52.744 --> 00:04:56.799
+you're going to be making
+changes to that evidence.
+
+67
+00:04:56.799 --> 00:05:01.637
+And this is what we call stepping
+on the evidence, we've all done it,
+
+68
+00:05:01.637 --> 00:05:04.340
+but we really try not to.
+
+69
+00:05:04.340 --> 00:05:07.300
+Now you want to make sure
+you do this correctly, so
+
+70
+00:05:07.300 --> 00:05:11.190
+you don't step on the evidence and
+if you do, do this correctly.
+
+71
+00:05:11.190 --> 00:05:16.125
+This is a forensically sound
+method of creating a full
+
+72
+00:05:16.125 --> 00:05:20.961
+disk image or
+a logical image you can do either here.
+
+73
+00:05:23.640 --> 00:05:25.800
+Again, the computer must be shut down and
+reboot it.
+
+74
+00:05:25.800 --> 00:05:28.917
+So this is not collecting ramp because
+if you shut down and reboot it,
+
+75
+00:05:28.917 --> 00:05:30.061
+you've lost your ramp.
+
+76
+00:05:31.200 --> 00:05:33.561
+You must change the boot
+order of the system.
+
+77
+00:05:35.840 --> 00:05:40.597
+Again, you're going to want to to find
+out what he will get you into the bios,
+
+78
+00:05:40.597 --> 00:05:45.531
+so you can change the boot order to
+boot from external media done correctly.
+
+79
+00:05:45.531 --> 00:05:49.650
+This makes no changes in the original
+evidence, it is forensically sound, and
+
+80
+00:05:49.650 --> 00:05:52.551
+we'll give you the ability
+to create a forensic image.
+
+81
+00:05:54.040 --> 00:05:58.842
+Now come up with Windows 8,
+we got that far down the road,
+
+82
+00:05:58.842 --> 00:06:03.742
+something called UEFI come into
+play along with secure boot
+
+83
+00:06:03.742 --> 00:06:08.951
+unified extended from where
+interfaces what UEFI stands for.
+
+84
+00:06:11.240 --> 00:06:13.174
+But this secure boot and
+
+85
+00:06:13.174 --> 00:06:18.696
+UEFI prevent the operating system
+from booting to external media.
+
+86
+00:06:18.696 --> 00:06:27.040
+Because secure boot means it can only
+boot from assigned operating system.
+
+87
+00:06:27.040 --> 00:06:29.994
+So all the sign operating
+systems can boot, so
+
+88
+00:06:29.994 --> 00:06:34.561
+when you try to boot from your forensic
+boot media, it's going to say no.
+
+89
+00:06:35.940 --> 00:06:38.971
+Now there is a work around here,
+you must go into the bios.
+
+90
+00:06:38.971 --> 00:06:41.221
+So again you have to know
+where the bios key is, and
+
+91
+00:06:41.221 --> 00:06:43.740
+you're going to have to do some research.
+
+92
+00:06:43.740 --> 00:06:45.572
+You need to go in there and
+
+93
+00:06:45.572 --> 00:06:50.920
+change the settings to allow the computer
+to boot from removable media.
+
+94
+00:06:50.920 --> 00:06:56.213
+So we have to disable secure boot and
+enable legacy group.
+
+95
+00:06:59.210 --> 00:07:05.737
+To do this again, we have to get access to
+the unified extended firmware interface
+
+96
+00:07:05.737 --> 00:07:10.951
+to change these settings, and
+we would do that through the bios.
+
+97
+00:07:12.240 --> 00:07:16.730
+This is an example of
+a screenshot of paladin.
+
+98
+00:07:16.730 --> 00:07:21.734
+So this is what it will look
+like when we successfully
+
+99
+00:07:21.734 --> 00:07:27.440
+boot into that forensic
+media in this case paladin.
+
+100
+00:07:27.440 --> 00:07:31.370
+You can see the slide
+on the left-hand side,
+
+101
+00:07:31.370 --> 00:07:35.923
+it has imager find,
+it also shows us an allocated and
+
+102
+00:07:35.923 --> 00:07:41.835
+disk manager will show you all
+the drives attached to the computer.
+
+103
+00:07:41.835 --> 00:07:46.626
+So you can choose which drive you
+want to image as your source,
+
+104
+00:07:46.626 --> 00:07:50.677
+and you can see it but
+the top here it's a source, and
+
+105
+00:07:50.677 --> 00:07:53.462
+we can see the dead in the file path.
+
+106
+00:07:53.462 --> 00:08:00.158
+And that's going to tell us,
+we're looking at some type of Lennox,
+
+107
+00:08:00.158 --> 00:08:04.232
+and then you're selecting image type.
+
+108
+00:08:04.232 --> 00:08:08.162
+And then you would select a destination
+where is the image going to, and
+
+109
+00:08:08.162 --> 00:08:10.661
+then you would label
+the image created name.
+
+110
+00:08:14.840 --> 00:08:19.106
+So we have our source,
+you have to know where the sources,
+
+111
+00:08:19.106 --> 00:08:22.960
+you have to know where your
+destination is going to be.
+
+112
+00:08:22.960 --> 00:08:28.631
+Now your source file should be
+something on these suspects computer or
+
+113
+00:08:28.631 --> 00:08:32.690
+something attached to
+the suspect's computer.
+
+114
+00:08:32.690 --> 00:08:37.907
+Your destination drive
+is going to be some form
+
+115
+00:08:37.907 --> 00:08:45.140
+of removable media attached
+to your forensic machine.
+
+116
+00:08:45.140 --> 00:08:50.087
+Just make sure you're aware of that and
+you're not imaging your own C drive, and
+
+117
+00:08:50.087 --> 00:08:53.751
+you're not copying the image
+to the suspect's computer.
+
+118
+00:08:55.530 --> 00:08:58.389
+There's also a fine
+feature which we did see,
+
+119
+00:08:58.389 --> 00:09:02.740
+you could use the fines feature
+to search for certain keywords.
+
+120
+00:09:02.740 --> 00:09:07.270
+If you had keywords that you know in
+your case, in this case it's bad.
+
+121
+00:09:07.270 --> 00:09:13.161
+The key word was bad stuff, and this shows
+you the device that you're searching.
+
+122
+00:09:14.440 --> 00:09:20.240
+You just put a little check mark in
+the box, and then you select fine.
+
+123
+00:09:20.240 --> 00:09:23.640
+This brings us to the end of course seven.
+
+124
+00:09:23.640 --> 00:09:28.161
+In course eight we're going to
+discuss the fat file system.

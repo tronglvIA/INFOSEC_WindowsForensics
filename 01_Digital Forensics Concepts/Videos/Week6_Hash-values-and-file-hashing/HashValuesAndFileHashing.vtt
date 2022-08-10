@@ -1,0 +1,347 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.605
+Hello. Welcome back to the
+Computer Forensics Path.
+
+2
+00:00:04.605 --> 00:00:07.485
+In this course, Course 12,
+
+3
+00:00:07.485 --> 00:00:11.560
+we're going to talk about
+hash values and file hashing.
+
+4
+00:00:12.200 --> 00:00:14.610
+In this course, we're going to
+
+5
+00:00:14.610 --> 00:00:19.530
+cover: understanding
+the concept of hashing,
+
+6
+00:00:19.530 --> 00:00:23.519
+the functions and
+uses of hashing,
+
+7
+00:00:23.519 --> 00:00:27.590
+creating hash sets, what
+
+8
+00:00:27.590 --> 00:00:29.240
+rainbow tables are and how
+
+9
+00:00:29.240 --> 00:00:31.745
+we use them to break passwords,
+
+10
+00:00:31.745 --> 00:00:34.340
+and we're going to
+cover hashing files,
+
+11
+00:00:34.340 --> 00:00:36.940
+folders and entire drives.
+
+12
+00:00:36.940 --> 00:00:41.315
+I know we have hash and drives
+in our imaging section,
+
+13
+00:00:41.315 --> 00:00:45.050
+but we're going to
+dive deeper into what
+
+14
+00:00:45.050 --> 00:00:48.635
+hash values are and
+other uses for them.
+
+15
+00:00:48.635 --> 00:00:51.125
+In Module 1, we're
+going to talk about
+
+16
+00:00:51.125 --> 00:00:55.135
+the function and the
+uses of hashing.
+
+17
+00:00:55.135 --> 00:00:57.285
+What is hashing?
+
+18
+00:00:57.285 --> 00:01:00.950
+Well, hashing is a way
+to represent data with
+
+19
+00:01:00.950 --> 00:01:07.290
+a unique numerical value using
+a mathematical algorithm.
+
+20
+00:01:07.300 --> 00:01:11.870
+It's like fingerprinting
+our data,
+
+21
+00:01:11.870 --> 00:01:14.540
+and that fingerprint is for
+
+22
+00:01:14.540 --> 00:01:19.040
+a specific dataset
+at a specific time.
+
+23
+00:01:19.040 --> 00:01:24.695
+Hash value of a dataset will
+change if it is modified,
+
+24
+00:01:24.695 --> 00:01:26.960
+or sometimes even if
+it is just opened up
+
+25
+00:01:26.960 --> 00:01:29.945
+in Windows without
+write protection.
+
+26
+00:01:29.945 --> 00:01:31.730
+You need to understand that
+
+27
+00:01:31.730 --> 00:01:34.235
+hashing is a one-way function.
+
+28
+00:01:34.235 --> 00:01:38.540
+We can get a hash
+value using a dataset,
+
+29
+00:01:38.540 --> 00:01:41.360
+but we cannot take
+that hash value and
+
+30
+00:01:41.360 --> 00:01:45.160
+then recreate the
+data from the hash.
+
+31
+00:01:45.160 --> 00:01:48.360
+The concept of hashing.
+
+32
+00:01:48.360 --> 00:01:52.220
+Regardless of what the
+size of the data is,
+
+33
+00:01:52.220 --> 00:01:56.930
+whether it's a megabyte
+or a gigabyte,
+
+34
+00:01:56.930 --> 00:01:59.630
+it doesn't matter, how
+
+35
+00:01:59.630 --> 00:02:01.040
+large or small the file
+
+36
+00:02:01.040 --> 00:02:03.050
+or the drives that
+you're hashing.
+
+37
+00:02:03.050 --> 00:02:07.515
+The hash algorithm
+size will not change.
+
+38
+00:02:07.515 --> 00:02:10.085
+If you're doing an MD5 hash,
+
+39
+00:02:10.085 --> 00:02:13.630
+that's going to be a
+32-character value,
+
+40
+00:02:13.630 --> 00:02:16.160
+no matter what size
+the data is that
+
+41
+00:02:16.160 --> 00:02:19.910
+we're getting that
+hash value from.
+
+42
+00:02:19.910 --> 00:02:24.410
+The same is true for
+SHA1 and SHA256.
+
+43
+00:02:24.410 --> 00:02:27.740
+SHA1 is a 40-character value,
+
+44
+00:02:27.740 --> 00:02:29.150
+and that will never
+
+45
+00:02:29.150 --> 00:02:32.285
+change no matter what
+the size of the data is.
+
+46
+00:02:32.285 --> 00:02:39.030
+SHA256 is a 64-character
+long hash value,
+
+47
+00:02:39.030 --> 00:02:42.020
+and again, that will not
+change no matter how
+
+48
+00:02:42.020 --> 00:02:45.560
+big or small the dataset
+is that we are hashing.
+
+49
+00:02:45.560 --> 00:02:47.985
+What do we use hashes for?
+
+50
+00:02:47.985 --> 00:02:49.490
+Well, some of the common uses of
+
+51
+00:02:49.490 --> 00:02:51.950
+hashes is to check
+the integrity of
+
+52
+00:02:51.950 --> 00:02:54.470
+data as it is being sent from
+
+53
+00:02:54.470 --> 00:02:57.730
+one computer to another,
+like data transmission.
+
+54
+00:02:57.730 --> 00:03:00.630
+It is used for sector checking.
+
+55
+00:03:00.630 --> 00:03:04.950
+As we saw with reuse
+or a checksum 64 to
+
+56
+00:03:04.950 --> 00:03:10.015
+validate that our drives
+was properly wiped.
+
+57
+00:03:10.015 --> 00:03:12.830
+Also find integrity to
+
+58
+00:03:12.830 --> 00:03:15.680
+show that no changes
+were made to a file.
+
+59
+00:03:15.680 --> 00:03:18.860
+A hash value can show that
+
+60
+00:03:18.860 --> 00:03:21.995
+a file has not been changed
+because if changes were made,
+
+61
+00:03:21.995 --> 00:03:24.925
+the hash value would change.
+
+62
+00:03:24.925 --> 00:03:26.870
+We used it when we
+
+63
+00:03:26.870 --> 00:03:29.840
+validated our hard
+drives and we validated
+
+64
+00:03:29.840 --> 00:03:36.990
+our copies of our hard
+drives in the last course.
+
+65
+00:03:36.990 --> 00:03:41.570
+Well, let's talk about the
+MD5 collision for a second.
+
+66
+00:03:41.570 --> 00:03:44.565
+It was created in the laboratory.
+
+67
+00:03:44.565 --> 00:03:48.410
+The odds that two
+different files will have
+
+68
+00:03:48.410 --> 00:03:55.315
+the same MD5 hash value is two
+raised to the 128th power,
+
+69
+00:03:55.315 --> 00:03:59.610
+which is 3.4 undecillion.
+
+70
+00:03:59.610 --> 00:04:02.390
+That is rare than
+two people having
+
+71
+00:04:02.390 --> 00:04:05.850
+the same DNA or fingerprints.
+
+72
+00:04:06.890 --> 00:04:09.440
+In our next module,
+
+73
+00:04:09.440 --> 00:04:12.260
+we're going to talk about
+creating hash sets,
+
+74
+00:04:12.260 --> 00:04:14.135
+why we create hash sets,
+
+75
+00:04:14.135 --> 00:04:17.490
+and what we can
+use hash sets for.
