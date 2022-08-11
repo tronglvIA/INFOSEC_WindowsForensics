@@ -1,0 +1,1001 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:04.940
+Were looking at the Fat file
+system in course eight.
+
+2
+00:00:04.940 --> 00:00:06.593
+And in this module,
+
+3
+00:00:06.593 --> 00:00:12.740
+module five we're going to look at
+fat file creation and deletion.
+
+4
+00:00:12.740 --> 00:00:15.677
+What happens when we create a file and
+
+5
+00:00:15.677 --> 00:00:20.340
+what happens when we don't
+need it the creation process?
+
+6
+00:00:20.340 --> 00:00:23.490
+What happens when files created
+on our fat file system?
+
+7
+00:00:23.490 --> 00:00:27.704
+Well a directory entry is written
+in the parent directory and
+
+8
+00:00:27.704 --> 00:00:33.310
+we looked at our directory entries are
+short file name and our long final name.
+
+9
+00:00:33.310 --> 00:00:37.415
+Directory entries in our last module, so
+
+10
+00:00:37.415 --> 00:00:41.061
+that directory entry gets written.
+
+11
+00:00:42.540 --> 00:00:47.340
+The data is written to
+the first available clusters.
+
+12
+00:00:47.340 --> 00:00:53.140
+So the data is going to get written out
+on the drive and entries are made in
+
+13
+00:00:53.140 --> 00:01:00.740
+the fat the file allocation table to show
+the chain of clusters used by the file.
+
+14
+00:01:00.740 --> 00:01:05.607
+And if it only uses one cluster we'll have
+that end of file marker like we saw in our
+
+15
+00:01:05.607 --> 00:01:07.640
+previous module.
+
+16
+00:01:07.640 --> 00:01:11.140
+What happens when we delete a file,
+the file system?
+
+17
+00:01:11.140 --> 00:01:15.708
+Well the first character of
+the directory entry set is
+
+18
+00:01:15.708 --> 00:01:19.040
+changed to a hexi decimal E five.
+
+19
+00:01:19.040 --> 00:01:22.290
+And this indicates the file
+system that the file is deleted.
+
+20
+00:01:22.290 --> 00:01:28.740
+So it just skips it,
+the clusters in the fat are zeroed out.
+
+21
+00:01:28.740 --> 00:01:32.806
+What this means is those
+fat directory entries,
+
+22
+00:01:32.806 --> 00:01:39.661
+those fat table entries that we saw in our
+previous module would be all zeroed out.
+
+23
+00:01:41.240 --> 00:01:44.307
+So we would not be able
+to look at the fat and
+
+24
+00:01:44.307 --> 00:01:50.181
+see that the cluster was occupied from
+the fats point of view would be all zeros,
+
+25
+00:01:50.181 --> 00:01:54.145
+and that cluster would be
+available to be written to.
+
+26
+00:01:54.145 --> 00:01:58.640
+The data that's out on
+the drive remains unchanged.
+
+27
+00:01:58.640 --> 00:02:04.247
+Nothing happens to the data until
+another file overwrites it,
+
+28
+00:02:04.247 --> 00:02:06.901
+another file gets assigned.
+
+29
+00:02:06.901 --> 00:02:11.039
+Are allocated to those clusters and
+overwrites the data.
+
+30
+00:02:11.039 --> 00:02:15.261
+But until that time the data stays out
+on the drive, it remains unchanged.
+
+31
+00:02:17.540 --> 00:02:21.655
+We're going to actually
+write some data to RVHDs and
+
+32
+00:02:21.655 --> 00:02:28.140
+take a look at it what active disk editor
+and see for ourselves what happens.
+
+33
+00:02:28.140 --> 00:02:30.961
+And then we're going to delete it and
+look at the changes that are made.
+
+34
+00:02:32.340 --> 00:02:34.220
+What we're going to need for
+
+35
+00:02:34.220 --> 00:02:38.499
+this walkthrough is we're
+going to need active disk editor.
+
+36
+00:02:38.499 --> 00:02:43.133
+We're going to need our MBRVHD and
+we're going to need
+
+37
+00:02:43.133 --> 00:02:47.879
+Windows Explorer because
+we're going to be actually
+
+38
+00:02:47.879 --> 00:02:53.640
+writing some data to these VHDs and
+then deleting it.
+
+39
+00:02:53.640 --> 00:02:56.340
+So let's start our walk through.
+
+40
+00:02:56.340 --> 00:02:59.441
+The first thing we need
+to do is attach RVHD.
+
+41
+00:02:59.441 --> 00:03:05.913
+So let's open up this management,
+go to actions,
+
+42
+00:03:05.913 --> 00:03:11.028
+attach VHD navigate out to where you have
+
+43
+00:03:11.028 --> 00:03:17.061
+your MBR VHD saved and
+select it and click open.
+
+44
+00:03:22.440 --> 00:03:28.380
+Once it opens, it should look like
+Mayan note the drive number and
+
+45
+00:03:28.380 --> 00:03:33.456
+the volume we're going to be using for
+this walkthrough is
+
+46
+00:03:33.456 --> 00:03:38.870
+the very first volume on the drive and
+it should be fat 32.
+
+47
+00:03:38.870 --> 00:03:44.228
+Mayan is disc a yours
+may be a different disk,
+
+48
+00:03:44.228 --> 00:03:52.551
+but it's the very first fat 32
+100 megabyte volume on the drive.
+
+49
+00:03:53.840 --> 00:03:57.380
+So let's open up active disk editor and
+
+50
+00:03:57.380 --> 00:04:01.361
+take a look at this,
+so active disk editor.
+
+51
+00:04:03.540 --> 00:04:10.863
+We're going to locate our
+drive a right click and
+
+52
+00:04:10.863 --> 00:04:16.315
+we're going to open in disk editor.
+
+53
+00:04:21.203 --> 00:04:27.140
+Once we've done that,
+what we're going to do, yeah.
+
+54
+00:04:27.140 --> 00:04:31.691
+Is navigate to our root directory.
+
+55
+00:04:38.640 --> 00:04:43.922
+We can see in our root directory
+the only thing we have
+
+56
+00:04:43.922 --> 00:04:51.261
+in here is a volume label and a system
+volume file and a recycle bin entry.
+
+57
+00:04:53.240 --> 00:04:56.896
+So I don't see any user created
+files on this volume except for
+
+58
+00:04:56.896 --> 00:04:59.161
+the volume label was created by user.
+
+59
+00:05:00.840 --> 00:05:06.612
+So now we're going to bring up going
+ahead and minimize active disk editor and
+
+60
+00:05:06.612 --> 00:05:11.755
+this management and we're going to
+bring up file explorer and go to.
+
+61
+00:05:11.755 --> 00:05:18.240
+Where you have that fat 32 volume mounted
+and we're going to create a file.
+
+62
+00:05:18.240 --> 00:05:21.761
+So go ahead and right click select new.
+
+63
+00:05:23.340 --> 00:05:31.340
+I am going to do a text document,
+those are easier to read in hex.
+
+64
+00:05:31.340 --> 00:05:35.590
+And now I'm going to go ahead and
+
+65
+00:05:35.590 --> 00:05:39.844
+call this new text document.
+
+66
+00:05:45.728 --> 00:05:51.951
+New tech stock now that I've created it,
+I'm going to put some data in it.
+
+67
+00:05:53.040 --> 00:05:55.453
+You can write anything you want.
+
+68
+00:05:55.453 --> 00:06:03.461
+I am just going to write
+this is a new duck.
+
+69
+00:06:04.940 --> 00:06:09.781
+I just created once you put
+a little bit of data in there,
+
+70
+00:06:09.781 --> 00:06:14.340
+it really doesn't matter for our purposes.
+
+71
+00:06:14.340 --> 00:06:17.851
+Go ahead and save that file and
+I'm going to close it.
+
+72
+00:06:19.820 --> 00:06:24.099
+You can go ahead and minimize file
+explore and we will go back and
+
+73
+00:06:24.099 --> 00:06:26.461
+take a look at active disk editor.
+
+74
+00:06:29.040 --> 00:06:32.679
+Go ahead and close the drive.
+
+75
+00:06:36.660 --> 00:06:42.132
+And reopen the drive so
+you would right click opening
+
+76
+00:06:42.132 --> 00:06:47.940
+this editor and
+the drive will open back up again.
+
+77
+00:06:47.940 --> 00:06:55.412
+Now let's navigate to the root directory
+and see what changes there are.
+
+78
+00:06:56.761 --> 00:07:02.261
+Now in my root directory I
+see a new entry, new text.
+
+79
+00:07:07.940 --> 00:07:11.151
+Make sure we change our
+templates to root directory.
+
+80
+00:07:12.540 --> 00:07:18.844
+Fat directory entry, highlight
+the beginning of your directory entry and
+
+81
+00:07:18.844 --> 00:07:24.344
+that will be the DOS alias with
+the tilde in it should say new text or
+
+82
+00:07:24.344 --> 00:07:26.361
+whatever you named it.
+
+83
+00:07:29.340 --> 00:07:33.661
+Go ahead and
+right click say set template position.
+
+84
+00:07:35.440 --> 00:07:37.361
+We could see our directory entry here.
+
+85
+00:07:39.940 --> 00:07:43.944
+Well it did write the directory entry and
+
+86
+00:07:43.944 --> 00:07:48.570
+we do have too long file
+name entries above it.
+
+87
+00:07:48.570 --> 00:07:55.255
+So if we go to the second long file
+name and you say set template position,
+
+88
+00:07:55.255 --> 00:07:59.740
+it'll show you all through the entries.
+
+89
+00:07:59.740 --> 00:08:02.340
+So we have a long file name entry.
+
+90
+00:08:02.340 --> 00:08:06.340
+We know that by the OF
+long file name entry.
+
+91
+00:08:06.340 --> 00:08:10.692
+And then we have our dos alias which is
+our short file them entry which is where
+
+92
+00:08:10.692 --> 00:08:13.761
+we're going to get all
+the information about the file.
+
+93
+00:08:20.340 --> 00:08:26.411
+We have our last access
+we would have our name,
+
+94
+00:08:26.411 --> 00:08:30.615
+our extension creation date and
+
+95
+00:08:30.615 --> 00:08:36.851
+time last excess state modified date and
+time.
+
+96
+00:08:39.140 --> 00:08:43.482
+We have no high word but
+we do have a lower that says our file
+
+97
+00:08:43.482 --> 00:08:47.740
+starts in cluster a and
+this will be our file size.
+
+98
+00:08:47.740 --> 00:08:54.372
+Mayan is 32 bytes long so
+not a big file, so
+
+99
+00:08:54.372 --> 00:09:00.661
+let's go ahead and look at our fat table.
+
+100
+00:09:03.040 --> 00:09:06.787
+Let's look at fat one and
+let's go ahead and
+
+101
+00:09:06.787 --> 00:09:11.151
+change our view because it makes it so
+much easier.
+
+102
+00:09:11.151 --> 00:09:15.740
+File preferences we'll change
+our view to four bites.
+
+103
+00:09:15.740 --> 00:09:18.440
+We just have to change your
+back when we're done though.
+
+104
+00:09:18.440 --> 00:09:23.090
+Okay bytes per line changes to four and
+select OK And
+
+105
+00:09:23.090 --> 00:09:26.561
+now we can take a look at our fat table.
+
+106
+00:09:28.340 --> 00:09:33.508
+We have our media descriptor,
+we have our fat
+
+107
+00:09:33.508 --> 00:09:39.361
+version indicator which
+shows us this is fat 32.
+
+108
+00:09:41.740 --> 00:09:46.827
+This would represent cluster two,
+cluster three, cluster four,
+
+109
+00:09:46.827 --> 00:09:51.661
+cluster five, close to six,
+close to seven and cluster eight.
+
+110
+00:09:55.340 --> 00:09:59.267
+So going back to our root directory,
+
+111
+00:09:59.267 --> 00:10:04.080
+we're going to go to file
+preferences again and
+
+112
+00:10:04.080 --> 00:10:11.061
+we're going to change our view back
+to 16 bytes per line click Ok.
+
+113
+00:10:12.140 --> 00:10:16.452
+We'll navigate back to the directory.
+
+114
+00:10:19.054 --> 00:10:24.261
+And we'll go ahead and
+look at our entry for the file.
+
+115
+00:10:24.261 --> 00:10:31.551
+We created new text, we'll go ahead and
+set the template position.
+
+116
+00:10:33.040 --> 00:10:36.940
+We can see our file is in cluster eight.
+
+117
+00:10:36.940 --> 00:10:41.161
+And when we looked at the fats we saw that
+cluster eight was occupied by a file.
+
+118
+00:10:43.640 --> 00:10:45.861
+So now let's see if the data
+was written to the drive.
+
+119
+00:10:45.861 --> 00:10:48.861
+We've checked the fats,
+we've checked the root directory,
+
+120
+00:10:48.861 --> 00:10:51.540
+we can see that those
+two things did happen.
+
+121
+00:10:51.540 --> 00:10:56.440
+Entry was made in the fat table to
+show that that cluster was occupied.
+
+122
+00:10:56.440 --> 00:11:00.851
+We have a directory entry set
+written in the root directory.
+
+123
+00:11:03.140 --> 00:11:07.226
+So we're going to go to, go to sector and
+
+124
+00:11:07.226 --> 00:11:12.336
+we're going to go to sector 0x,
+we're going to use
+
+125
+00:11:12.336 --> 00:11:17.341
+x here 08 we're going to say okay and
+we go out.
+
+126
+00:11:17.341 --> 00:11:21.757
+We can see and this is why I
+used the txt instead of a DOC.
+
+127
+00:11:21.757 --> 00:11:26.853
+Because if you a word document
+is not as easy to read and
+
+128
+00:11:26.853 --> 00:11:29.583
+x as the text documents are.
+
+129
+00:11:29.583 --> 00:11:32.188
+Because they have other
+components to them,
+
+130
+00:11:32.188 --> 00:11:37.240
+which we'll talk about later on in
+this course, like headers and patty.
+
+131
+00:11:37.240 --> 00:11:42.551
+But we can see our text document here and
+we see this is a new text document.
+
+132
+00:11:43.740 --> 00:11:48.567
+I just created a new tech
+stock I just created that
+
+133
+00:11:48.567 --> 00:11:52.348
+is what I wrote, so that's all good.
+
+134
+00:11:52.348 --> 00:11:58.461
+Now let's go back out to file Explorer and
+bring up our drive again.
+
+135
+00:12:01.840 --> 00:12:07.851
+Now let's go ahead, click on this file and
+let's delete it and see what happens.
+
+136
+00:12:09.040 --> 00:12:13.411
+So go ahead and shift delete, so
+it doesn't go to the recycle bin.
+
+137
+00:12:27.040 --> 00:12:33.847
+Once we've done that we can see
+it's gone in file Explorer,
+
+138
+00:12:33.847 --> 00:12:40.521
+file system is no longer seeing
+the file to minimize this and
+
+139
+00:12:40.521 --> 00:12:44.131
+let's go ahead and close this.
+
+140
+00:12:44.131 --> 00:12:48.740
+We do have to reload our
+drive inactive disk editor.
+
+141
+00:12:48.740 --> 00:12:54.057
+So close to drive,
+find your drive again in the tree,
+
+142
+00:12:54.057 --> 00:12:58.201
+right click on it, open and disk editor.
+
+143
+00:13:00.740 --> 00:13:03.351
+And let's go back to our root directory.
+
+144
+00:13:09.240 --> 00:13:13.640
+Now what we see in our directory
+is we see the hexi five.
+
+145
+00:13:13.640 --> 00:13:18.840
+Make sure we change our templates
+to fat directory entry.
+
+146
+00:13:18.840 --> 00:13:23.980
+You see the hexi five and
+that replaces the first letter
+
+147
+00:13:23.980 --> 00:13:28.461
+in our file name,
+in our short file name entry.
+
+148
+00:13:29.540 --> 00:13:33.461
+But I do have long file name entries, so
+let's look at the whole directory set.
+
+149
+00:13:35.540 --> 00:13:42.111
+So find the last long file name,
+directory entry.
+
+150
+00:13:42.111 --> 00:13:47.531
+And how we would do this on
+a deleted file as you'd find
+
+151
+00:13:47.531 --> 00:13:53.640
+the DOS alias and
+work your way up with zero 0F, 0F.
+
+152
+00:13:53.640 --> 00:13:58.146
+When I go to the next one I see a 16,
+so I know this is not another
+
+153
+00:13:58.146 --> 00:14:03.440
+long file name entry associated
+with this toss alias file name.
+
+154
+00:14:03.440 --> 00:14:12.051
+So this is where I want to be on the E
+five right click set template position.
+
+155
+00:14:15.340 --> 00:14:20.780
+No I can see even though I lost the first
+
+156
+00:14:20.780 --> 00:14:27.530
+letter right here in my short file name.
+
+157
+00:14:27.530 --> 00:14:33.430
+The long file name entries, don't start
+with the first letter of the file.
+
+158
+00:14:33.430 --> 00:14:37.899
+The long file name entries
+start with that status bite
+
+159
+00:14:37.899 --> 00:14:41.275
+remember that told us the sequence, and
+
+160
+00:14:41.275 --> 00:14:46.961
+it indicated when we were at the last
+directory entry for that file.
+
+161
+00:14:48.740 --> 00:14:53.481
+So I can get the first letter of that file
+name even though it's been overwritten
+
+162
+00:14:53.481 --> 00:14:55.540
+with a hex E five.
+
+163
+00:14:55.540 --> 00:14:58.551
+Because if I go to my first
+long file name entry and
+
+164
+00:14:58.551 --> 00:15:03.250
+I go to the first bite, the second bite
+in I can see it's an end in this case and
+
+165
+00:15:03.250 --> 00:15:05.940
+see it over here in the ask.
+
+166
+00:15:05.940 --> 00:15:10.117
+So if I change that hexi five to a four e.
+
+167
+00:15:14.075 --> 00:15:18.915
+I would be able to start my file
+recovery which we're going to cover in
+
+168
+00:15:18.915 --> 00:15:20.261
+the next section.
+
+169
+00:15:22.940 --> 00:15:24.640
+But that's how you do it.
+
+170
+00:15:24.640 --> 00:15:28.523
+And then you'd also change that
+to a 01 in the store 4,2 and
+
+171
+00:15:28.523 --> 00:15:31.030
+you've recovered your directory set.
+
+172
+00:15:31.030 --> 00:15:35.393
+But we will we will get to do
+that in the next module so
+
+173
+00:15:35.393 --> 00:15:39.840
+I could see that yes
+the director entry set.
+
+174
+00:15:39.840 --> 00:15:44.844
+All the entries for my file, the long
+file name and short file name entries
+
+175
+00:15:44.844 --> 00:15:50.240
+have been changed to a heck C5 with
+the first bite of the viol entry.
+
+176
+00:15:50.240 --> 00:15:53.660
+So let's take a look at the fats so
+navigate,
+
+177
+00:15:53.660 --> 00:15:58.161
+let's go to fat one and
+we're going to change our view again.
+
+178
+00:16:00.040 --> 00:16:04.922
+File, preferences let's
+look at four bytes per line
+
+179
+00:16:04.922 --> 00:16:10.461
+because of fat 32,
+fat table entry is four bytes per line.
+
+180
+00:16:13.840 --> 00:16:17.408
+So now I see my Meteor Descriptor,
+
+181
+00:16:17.408 --> 00:16:22.461
+my fat type indicator
+which indicates fat 32.
+
+182
+00:16:23.900 --> 00:16:27.554
+This is cluster two because we start
+cluster numbering out on the drive with
+
+183
+00:16:27.554 --> 00:16:28.251
+cluster two.
+
+184
+00:16:29.540 --> 00:16:32.340
+Cluster two as an end
+of file marker in it.
+
+185
+00:16:32.340 --> 00:16:37.299
+My next entry represents
+cluster three has an end of
+
+186
+00:16:37.299 --> 00:16:40.771
+file my next entry, cluster four.
+
+187
+00:16:41.840 --> 00:16:44.771
+My next fat table entry
+represents cluster five.
+
+188
+00:16:46.840 --> 00:16:53.140
+My next one will represent cluster six,
+my next entry represent cluster seven.
+
+189
+00:16:53.140 --> 00:16:58.107
+And when we look at the entry for
+cluster eight we can see now that
+
+190
+00:16:58.107 --> 00:17:03.001
+it's all zeros, all zeroes before
+it had in the file marker.
+
+191
+00:17:03.001 --> 00:17:08.131
+And we looked at it, but after we
+deleted the file, we can see that we
+
+192
+00:17:08.131 --> 00:17:13.261
+have all zeros in that fat table
+entry representing cluster eight.
+
+193
+00:17:14.540 --> 00:17:21.541
+So let's go ahead and change our view
+back, so file preferences, bytes per line.
+
+194
+00:17:21.541 --> 00:17:26.051
+We're going to put in 16,
+I'm going to say okay let's go back to
+
+195
+00:17:26.051 --> 00:17:30.581
+our root directory and
+let's go back to our dossier eleazar.
+
+196
+00:17:30.581 --> 00:17:32.951
+Short file name entry for
+the file we just deleted.
+
+197
+00:17:34.340 --> 00:17:36.564
+Let's set our template position and
+
+198
+00:17:36.564 --> 00:17:40.951
+we could see we're going back the first
+cluster should be close to 08.
+
+199
+00:17:42.540 --> 00:17:46.561
+So we're going to go, go to sector
+we're going to navigate and hex again.
+
+200
+00:17:46.561 --> 00:17:52.495
+So zero x 08 zero X 08,
+we're going to say okay and
+
+201
+00:17:52.495 --> 00:17:56.040
+the data hasn't changed.
+
+202
+00:17:56.040 --> 00:18:00.642
+It's exactly the same as before I
+deleted it, It's still out there so
+
+203
+00:18:00.642 --> 00:18:03.451
+it's very possible to recover this file.
+
+204
+00:18:04.800 --> 00:18:07.922
+Now if we write another file to the drive,
+
+205
+00:18:07.922 --> 00:18:12.340
+it's possible that file
+will overwrite this one.
+
+206
+00:18:12.340 --> 00:18:17.840
+So just keep that in mind that
+the data stays until it's overwritten.
+
+207
+00:18:17.840 --> 00:18:21.919
+But once it's overwritten it's gone.
+
+208
+00:18:25.826 --> 00:18:30.840
+This ends our walkthrough for
+file creation and deletion.
+
+209
+00:18:30.840 --> 00:18:36.117
+In our next module, we're going to talk
+about recovery files so we're going to
+
+210
+00:18:36.117 --> 00:18:41.990
+change some of that information we saw in
+the root directory and in the fat tables.
+
+211
+00:18:41.990 --> 00:18:44.751
+And we're going to go ahead and
+recover the file.

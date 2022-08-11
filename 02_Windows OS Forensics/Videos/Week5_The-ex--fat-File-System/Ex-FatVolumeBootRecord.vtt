@@ -1,0 +1,755 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.820
+In this course, course 10,
+
+2
+00:00:02.820 --> 00:00:05.670
+we're covering the
+exFAT file system.
+
+3
+00:00:05.670 --> 00:00:07.980
+In this module, we're
+going to talk about
+
+4
+00:00:07.980 --> 00:00:10.875
+the exFAT volume boot record.
+
+5
+00:00:10.875 --> 00:00:13.890
+The exFAT volume boot
+record is located
+
+6
+00:00:13.890 --> 00:00:18.645
+at physical sector
+0 of the volume.
+
+7
+00:00:18.645 --> 00:00:22.275
+It contains information
+about the volume.
+
+8
+00:00:22.275 --> 00:00:24.480
+The offsets you're
+going to see in
+
+9
+00:00:24.480 --> 00:00:27.870
+the table to the left
+of the slide are
+
+10
+00:00:27.870 --> 00:00:33.540
+relative to the start of
+the logical volume itself.
+
+11
+00:00:33.540 --> 00:00:36.060
+That would be like your C volume,
+
+12
+00:00:36.060 --> 00:00:39.280
+your D volume, your E volume.
+
+13
+00:00:39.650 --> 00:00:44.520
+They're not relative
+to the physical disk.
+
+14
+00:00:45.350 --> 00:00:49.190
+We can see, we have quite
+a bit of information and
+
+15
+00:00:49.190 --> 00:00:50.810
+the information highlighted in
+
+16
+00:00:50.810 --> 00:00:53.770
+yellow are the structures
+we're going to talk about.
+
+17
+00:00:53.770 --> 00:00:57.050
+So we see we can tell
+what file system we have.
+
+18
+00:00:57.050 --> 00:00:59.720
+You'll have the number
+of hidden sectors,
+
+19
+00:00:59.720 --> 00:01:02.005
+the number of total sectors.
+
+20
+00:01:02.005 --> 00:01:05.805
+We have our first FAT sector,
+
+21
+00:01:05.805 --> 00:01:08.355
+and we're going to see
+our total clusters,
+
+22
+00:01:08.355 --> 00:01:10.385
+the location of the root cluster
+
+23
+00:01:10.385 --> 00:01:12.620
+that will contain
+our root directory.
+
+24
+00:01:12.620 --> 00:01:16.170
+We'll have a volume
+serial number,
+
+25
+00:01:16.190 --> 00:01:19.110
+bytes per sector shift.
+
+26
+00:01:19.110 --> 00:01:22.300
+Now that means byte per sectors,
+
+27
+00:01:22.300 --> 00:01:24.700
+we'll talk a little bit
+about that in a minute.
+
+28
+00:01:24.700 --> 00:01:28.010
+Then we see below that
+sectors per cluster shift,
+
+29
+00:01:28.010 --> 00:01:33.070
+and what that does mean
+is sectors per cluster.
+
+30
+00:01:33.070 --> 00:01:36.650
+You're also going to
+see the number of FATs,
+
+31
+00:01:36.650 --> 00:01:40.024
+which will usually
+be one in exFAT,
+
+32
+00:01:40.024 --> 00:01:42.950
+and then we will have
+down at the bottom
+
+33
+00:01:42.950 --> 00:01:47.820
+our boot sector
+signature of 55 AA.
+
+34
+00:01:47.820 --> 00:01:51.230
+Now getting back to
+bytes per sector,
+
+35
+00:01:51.230 --> 00:01:53.765
+what you're going to
+see there is a value
+
+36
+00:01:53.765 --> 00:01:57.050
+between nine and 12.
+
+37
+00:01:57.050 --> 00:01:59.005
+It'll be in hexadecimal,
+
+38
+00:01:59.005 --> 00:02:03.365
+and this value is going
+to be two to the power
+
+39
+00:02:03.365 --> 00:02:07.865
+of whatever number we
+have between nine and 12.
+
+40
+00:02:07.865 --> 00:02:11.450
+It can be anywhere
+from 512 bytes per
+
+41
+00:02:11.450 --> 00:02:15.780
+sector to 4,096 bytes per sector,
+
+42
+00:02:15.780 --> 00:02:19.490
+and it's the same concept
+on the sectors per cluster.
+
+43
+00:02:19.490 --> 00:02:21.590
+You're going to have a
+number there that will
+
+44
+00:02:21.590 --> 00:02:25.705
+range between 0 and 25.
+
+45
+00:02:25.705 --> 00:02:29.690
+Again that number,
+it will be two to
+
+46
+00:02:29.690 --> 00:02:31.430
+whatever that number is
+
+47
+00:02:31.430 --> 00:02:34.160
+that you have
+between zero and 25,
+
+48
+00:02:34.160 --> 00:02:36.985
+and that can give us as
+many possible zeros.
+
+49
+00:02:36.985 --> 00:02:44.205
+It's somewhere between
+1 and 33,554,432.
+
+50
+00:02:44.205 --> 00:02:49.345
+That's quite a large number
+of sectors per cluster.
+
+51
+00:02:49.345 --> 00:02:51.660
+But again, this file system is
+
+52
+00:02:51.660 --> 00:02:55.755
+designed for large volumes.
+
+53
+00:02:55.755 --> 00:02:59.250
+We're going to do a
+walk-through now of
+
+54
+00:02:59.250 --> 00:03:02.445
+the exFAT volume boot record.
+
+55
+00:03:02.445 --> 00:03:03.890
+The items we're going to need for
+
+56
+00:03:03.890 --> 00:03:06.035
+our walkthrough are
+we're going to need
+
+57
+00:03:06.035 --> 00:03:12.630
+active disk editor and our
+exFAT VHD, virtual hard drive.
+
+58
+00:03:14.570 --> 00:03:17.370
+Let's start our walkthrough.
+
+59
+00:03:17.370 --> 00:03:22.745
+The first thing we need to
+do is attach our exFAT VHD.
+
+60
+00:03:22.745 --> 00:03:26.210
+We're going to open
+up disk management,
+
+61
+00:03:26.210 --> 00:03:31.985
+we're going to go to
+Actions, attach VHD.
+
+62
+00:03:31.985 --> 00:03:34.150
+We're going to navigate
+out to where we
+
+63
+00:03:34.150 --> 00:03:36.805
+saved our exFAT VHD.
+
+64
+00:03:36.805 --> 00:03:39.310
+Mine is on my desktop.
+
+65
+00:03:39.310 --> 00:03:42.950
+We're going to select exFAT VHD,
+
+66
+00:03:42.950 --> 00:03:45.645
+we're going to click Open,
+
+67
+00:03:45.645 --> 00:03:48.310
+and then you're going
+to go ahead and click
+
+68
+00:03:48.310 --> 00:03:52.910
+Okay and your VHD will mount.
+
+69
+00:03:53.850 --> 00:03:56.935
+Once we've done that,
+
+70
+00:03:56.935 --> 00:04:01.325
+we're going to locate
+the VHD that we mounted.
+
+71
+00:04:01.325 --> 00:04:04.990
+It should be labeled exFAT.
+
+72
+00:04:05.930 --> 00:04:14.220
+For me, it's physical Disk 13,
+
+73
+00:04:14.220 --> 00:04:17.400
+logical drive F boot
+up volume level,
+
+74
+00:04:17.400 --> 00:04:19.665
+you can see here of exFAT,
+
+75
+00:04:19.665 --> 00:04:26.205
+and it's a 182 megabytes.
+
+76
+00:04:26.205 --> 00:04:28.960
+Make sure you have
+the correct drive,
+
+77
+00:04:28.960 --> 00:04:32.435
+remember the drive, the
+physical disk number,
+
+78
+00:04:32.435 --> 00:04:34.655
+and the logical drive letter.
+
+79
+00:04:34.655 --> 00:04:39.085
+Now let's go ahead and
+launch Active Disk Editor.
+
+80
+00:04:39.085 --> 00:04:42.330
+Once Active Disk Editor opens up,
+
+81
+00:04:42.330 --> 00:04:45.360
+we're going to
+select "Open disk."
+
+82
+00:04:45.440 --> 00:04:49.750
+Now we're going to
+select volumes.
+
+83
+00:04:50.120 --> 00:04:53.735
+Because we want to look
+at the logical volume,
+
+84
+00:04:53.735 --> 00:05:00.390
+and then we're going to
+select our exFAT file system.
+
+85
+00:05:00.570 --> 00:05:03.115
+Mine is right here, drive F,
+
+86
+00:05:03.115 --> 00:05:07.060
+you drive letter, will
+probably be different.
+
+87
+00:05:07.060 --> 00:05:09.610
+Once you've located
+it select it and
+
+88
+00:05:09.610 --> 00:05:12.385
+click ''Open,'' and
+it will open up.
+
+89
+00:05:12.385 --> 00:05:16.945
+Now, it takes us right to
+the volume boot record,
+
+90
+00:05:16.945 --> 00:05:20.200
+and we can see
+right at the top of
+
+91
+00:05:20.200 --> 00:05:22.765
+the volume boot
+record in the ASCII,
+
+92
+00:05:22.765 --> 00:05:25.900
+up here we see the words EXFAT,
+
+93
+00:05:25.900 --> 00:05:28.270
+and this is the type of
+
+94
+00:05:28.270 --> 00:05:31.250
+file system that
+we're looking at.
+
+95
+00:05:32.670 --> 00:05:34.990
+If you're not seeing
+what I'm seeing,
+
+96
+00:05:34.990 --> 00:05:37.510
+check your template to
+
+97
+00:05:37.510 --> 00:05:40.255
+make sure you're on
+exFAT boot sector,
+
+98
+00:05:40.255 --> 00:05:42.910
+and go ahead and
+right-click "Set Template
+
+99
+00:05:42.910 --> 00:05:46.690
+Position," and you'll
+be able to see that.
+
+100
+00:05:46.690 --> 00:05:50.050
+We have our jump instructions,
+
+101
+00:05:50.050 --> 00:05:52.960
+and then we have our
+file system here
+
+102
+00:05:52.960 --> 00:05:56.990
+highlighted in green,
+identified as exFAT.
+
+103
+00:06:08.010 --> 00:06:12.920
+Moving down, we can see we
+have our hidden sectors.
+
+104
+00:06:13.050 --> 00:06:15.790
+We have our total sectors.
+
+105
+00:06:15.790 --> 00:06:18.770
+Our hidden sectors are
+located right here.
+
+106
+00:06:18.810 --> 00:06:22.580
+If we look at the value of that,
+
+107
+00:06:24.960 --> 00:06:28.480
+we can see it's
+interpreted for us.
+
+108
+00:06:28.480 --> 00:06:33.940
+It's 32,768 hidden sectors.
+
+109
+00:06:33.940 --> 00:06:36.474
+Then we have our total sectors,
+
+110
+00:06:36.474 --> 00:06:39.295
+the total sectors on the drive.
+
+111
+00:06:39.295 --> 00:06:40.840
+We want to know that
+
+112
+00:06:40.840 --> 00:06:42.250
+because we want to
+be able to account
+
+113
+00:06:42.250 --> 00:06:45.920
+for all the space on the drive.
+
+114
+00:06:45.990 --> 00:06:51.070
+We can see that
+number is 372,736,
+
+115
+00:06:51.070 --> 00:06:53.875
+and it is located right here.
+
+116
+00:06:53.875 --> 00:06:57.325
+If we were to go ahead
+and highlight that,
+
+117
+00:06:57.325 --> 00:07:03.260
+and then take a look down
+at our hex interpreter,
+
+118
+00:07:03.570 --> 00:07:09.250
+we can see it is a
+32-bit unsigned integer,
+
+119
+00:07:09.250 --> 00:07:16.810
+and we do have the same
+number of 372,736,
+
+120
+00:07:16.810 --> 00:07:21.970
+which is what we have up here
+also in our total sectors.
+
+121
+00:07:21.970 --> 00:07:25.255
+We can see that our tool is
+interpreting it correctly.
+
+122
+00:07:25.255 --> 00:07:27.250
+We have our first FAT sector.
+
+123
+00:07:27.250 --> 00:07:29.440
+This is where the FAT
+table is located,
+
+124
+00:07:29.440 --> 00:07:31.030
+the first sector
+of our FAT table,
+
+125
+00:07:31.030 --> 00:07:33.430
+and that's going
+to be sector 128.
+
+126
+00:07:33.430 --> 00:07:39.040
+We have the total number of
+sectors in the FAT table,
+
+127
+00:07:39.040 --> 00:07:43.300
+and that is 368 total sectors.
+
+128
+00:07:43.300 --> 00:07:47.170
+We also have our total
+clusters on the drive,
+
+129
+00:07:47.170 --> 00:07:53.030
+which is going to be 46,528.
+
+130
+00:07:53.790 --> 00:08:00.009
+Our root cluster is
+going to be cluster 6,
+
+131
+00:08:00.009 --> 00:08:03.650
+which is what we would
+expect it to be.
+
+132
+00:08:04.890 --> 00:08:11.030
+We have our serial number
+and hexadecimal over here.
+
+133
+00:08:17.130 --> 00:08:19.780
+This is where we
+have our bytes per
+
+134
+00:08:19.780 --> 00:08:24.265
+sector shift and our
+sectors per cluster shift.
+
+135
+00:08:24.265 --> 00:08:28.480
+Now, you can see are bytes
+per sector shift says nine,
+
+136
+00:08:28.480 --> 00:08:30.865
+so what we would have to do
+
+137
+00:08:30.865 --> 00:08:34.490
+is we're going to bring up
+the Windows calculator,
+
+138
+00:08:37.440 --> 00:08:41.480
+we're going to put it
+to scientific view,
+
+139
+00:08:42.600 --> 00:08:46.090
+and we remember it
+would be two to
+
+140
+00:08:46.090 --> 00:08:49.885
+the power of nine to
+find that number.
+
+141
+00:08:49.885 --> 00:08:54.910
+What we'd do is we'll do
+two and go to the x^y,
+
+142
+00:08:54.910 --> 00:08:59.425
+and then go to nine equals 512.
+
+143
+00:08:59.425 --> 00:09:03.280
+We have 512 bytes per sector.
+
+144
+00:09:03.280 --> 00:09:06.640
+Now when we look at our
+sector per cluster shift,
+
+145
+00:09:06.640 --> 00:09:08.395
+which is right next to it,
+
+146
+00:09:08.395 --> 00:09:10.824
+which is a three,
+
+147
+00:09:10.824 --> 00:09:14.480
+we'd do the same calculation.
+
+148
+00:09:18.120 --> 00:09:22.735
+We'd go two to the third power,
+
+149
+00:09:22.735 --> 00:09:30.925
+so it'd be 2, the
+x^y, 3 equals 8.
+
+150
+00:09:30.925 --> 00:09:35.185
+We have eight
+sectors per cluster.
+
+151
+00:09:35.185 --> 00:09:38.710
+Five-hundred-and-twelve
+bytes per sector,
+
+152
+00:09:38.710 --> 00:09:41.305
+and eight sectors per cluster,
+
+153
+00:09:41.305 --> 00:09:42.880
+and that would be
+how you would read
+
+154
+00:09:42.880 --> 00:09:47.360
+the sector and cluster shifts.
+
+155
+00:09:47.910 --> 00:09:50.485
+The number of FATs is one,
+
+156
+00:09:50.485 --> 00:09:53.420
+which is what you would
+expect to see in exFAT.
+
+157
+00:09:54.870 --> 00:10:02.000
+Then we have our signature
+down at the bottom of 55, AA.
+
+158
+00:10:05.760 --> 00:10:08.905
+That will conclude
+our walk-through
+
+159
+00:10:08.905 --> 00:10:12.190
+of the exFAT volume boot record.
+
+160
+00:10:12.190 --> 00:10:14.470
+In our next module,
+
+161
+00:10:14.470 --> 00:10:18.290
+we're going to take a look
+at the exFAT root directory
+
+162
+00:10:18.290 --> 00:10:20.210
+in how we interpret
+
+163
+00:10:20.210 --> 00:10:23.700
+the entries in the
+exFAT root directory.

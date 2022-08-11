@@ -1,0 +1,2042 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.595
+We're on Course 3, Module 4.
+
+2
+00:00:02.595 --> 00:00:04.410
+In this module, we're
+going to be talking
+
+3
+00:00:04.410 --> 00:00:06.435
+about the master boot record.
+
+4
+00:00:06.435 --> 00:00:09.555
+The master boot record,
+partition schema,
+
+5
+00:00:09.555 --> 00:00:11.895
+or otherwise known as MBR,
+
+6
+00:00:11.895 --> 00:00:17.070
+is limited to four entries
+in the partition table.
+
+7
+00:00:17.070 --> 00:00:22.260
+Now, each of these entries
+is 16 bytes in length.
+
+8
+00:00:22.260 --> 00:00:26.355
+Four bytes for the
+partition size,
+
+9
+00:00:26.355 --> 00:00:31.125
+and that leaves us with a
+maximum value of FF, FF,
+
+10
+00:00:31.125 --> 00:00:36.590
+FF, FF, which will limits us
+to two terabytes in size.
+
+11
+00:00:36.590 --> 00:00:40.665
+Disks larger than two
+terabytes must be formatted,
+
+12
+00:00:40.665 --> 00:00:42.890
+with another partition schema
+
+13
+00:00:42.890 --> 00:00:44.630
+are known as GUID
+partition table,
+
+14
+00:00:44.630 --> 00:00:46.510
+which we will talk about
+in the next block.
+
+15
+00:00:46.510 --> 00:00:50.360
+The master boot record is
+located at physical sector 0,
+
+16
+00:00:50.360 --> 00:00:53.070
+the very start of the drive.
+
+17
+00:00:54.890 --> 00:00:59.610
+Each sector is 512 bytes,
+
+18
+00:00:59.610 --> 00:01:06.030
+and it's going to end
+with 55, AA, hexadecimal.
+
+19
+00:01:06.030 --> 00:01:10.730
+The master boot record is
+512 bytes long, one sector,
+
+20
+00:01:10.730 --> 00:01:12.785
+and it's going to end with
+
+21
+00:01:12.785 --> 00:01:17.690
+the hexadecimal
+representation of 55, AA.
+
+22
+00:01:17.690 --> 00:01:19.460
+Now, what's in the
+master boot record?
+
+23
+00:01:19.460 --> 00:01:20.620
+Well, you have the beginning,
+
+24
+00:01:20.620 --> 00:01:22.340
+you're going to
+have the boot code.
+
+25
+00:01:22.340 --> 00:01:25.145
+We're going to have
+our disk signature.
+
+26
+00:01:25.145 --> 00:01:27.020
+We're going to have
+our partition table.
+
+27
+00:01:27.020 --> 00:01:29.720
+That's going to tell us where
+each of the partitions,
+
+28
+00:01:29.720 --> 00:01:32.005
+is located out on the drive.
+
+29
+00:01:32.005 --> 00:01:33.770
+How big the petitions are,
+
+30
+00:01:33.770 --> 00:01:35.630
+it's going to give us the
+size of the partitions,
+
+31
+00:01:35.630 --> 00:01:37.490
+and the type of the partitions.
+
+32
+00:01:37.490 --> 00:01:40.265
+Are they FAT32, NTFS?
+
+33
+00:01:40.265 --> 00:01:42.730
+What type of petition they are.
+
+34
+00:01:42.730 --> 00:01:45.230
+This is what the
+master boot record is
+
+35
+00:01:45.230 --> 00:01:47.075
+going to look like on disk.
+
+36
+00:01:47.075 --> 00:01:49.130
+In the beige up here,
+
+37
+00:01:49.130 --> 00:01:52.590
+you can see we have
+our boot code.
+
+38
+00:01:52.670 --> 00:01:58.330
+Down here we have our
+disk signature in green.
+
+39
+00:01:58.330 --> 00:02:00.055
+Then each of these,
+
+40
+00:02:00.055 --> 00:02:03.080
+the pink represents
+one partition.
+
+41
+00:02:03.080 --> 00:02:05.890
+Then we have our second
+partition represented
+
+42
+00:02:05.890 --> 00:02:08.110
+in blue, orange, and green.
+
+43
+00:02:08.110 --> 00:02:11.840
+We see a maximum of four entries.
+
+44
+00:02:12.690 --> 00:02:17.810
+We see each of these
+entries is 16 bytes long.
+
+45
+00:02:18.680 --> 00:02:21.835
+It gives us the information.
+
+46
+00:02:21.835 --> 00:02:27.735
+The first byte here tells
+us if it's bootable or not.
+
+47
+00:02:27.735 --> 00:02:29.890
+This partition represented with
+
+48
+00:02:29.890 --> 00:02:32.815
+hexadecimal 80 would be bootable,
+
+49
+00:02:32.815 --> 00:02:36.350
+00 would not be bootable.
+
+50
+00:02:37.820 --> 00:02:40.965
+The next three bytes are
+
+51
+00:02:40.965 --> 00:02:43.925
+legacy cylinder head
+sector addressing,
+
+52
+00:02:43.925 --> 00:02:47.605
+which we don't
+really use anymore.
+
+53
+00:02:47.605 --> 00:02:51.920
+The next byte would be
+the partition type entry.
+
+54
+00:02:51.920 --> 00:02:53.760
+In this case, 0c,
+
+55
+00:02:53.760 --> 00:02:56.455
+and we'll get to talking
+about partition types,
+
+56
+00:02:56.455 --> 00:02:59.395
+and what these
+entries mean exactly.
+
+57
+00:02:59.395 --> 00:03:01.015
+Then our next three bytes,
+
+58
+00:03:01.015 --> 00:03:04.880
+is again legacy cylinder
+head sector addressing.
+
+59
+00:03:04.880 --> 00:03:07.305
+Then our next four bytes,
+
+60
+00:03:07.305 --> 00:03:11.155
+are going to tell us the
+location of the first partition,
+
+61
+00:03:11.155 --> 00:03:13.090
+where it starts on disk.
+
+62
+00:03:13.090 --> 00:03:15.595
+Then the last four
+bytes of the entry,
+
+63
+00:03:15.595 --> 00:03:20.480
+give us the size of the
+partition, in sectors.
+
+64
+00:03:20.900 --> 00:03:23.965
+It can only have four entries.
+
+65
+00:03:23.965 --> 00:03:27.245
+Only one of these
+entries can be bootable.
+
+66
+00:03:27.245 --> 00:03:29.860
+Only one of these
+entries can be what we
+
+67
+00:03:29.860 --> 00:03:32.000
+call an extended
+logical partition,
+
+68
+00:03:32.000 --> 00:03:34.510
+and we'll talk more about
+throughout this path.
+
+69
+00:03:34.510 --> 00:03:38.915
+The extended logical
+partition cannot be bootable.
+
+70
+00:03:38.915 --> 00:03:40.930
+Out of those four, the extended
+
+71
+00:03:40.930 --> 00:03:42.670
+logical cannot be bootable.
+
+72
+00:03:42.670 --> 00:03:45.100
+Only one of them can be bootable,
+
+73
+00:03:45.100 --> 00:03:47.045
+at any one time.
+
+74
+00:03:47.045 --> 00:03:49.440
+Here, again, is
+what is contained.
+
+75
+00:03:49.440 --> 00:03:51.615
+We have our bootstrap code.
+
+76
+00:03:51.615 --> 00:03:56.685
+At offset 1B8 we have our
+Windows disk signature.
+
+77
+00:03:56.685 --> 00:04:00.900
+We have our partition indicator,
+
+78
+00:04:00.900 --> 00:04:04.860
+whether it's active
+bootable or not bootable.
+
+79
+00:04:04.860 --> 00:04:06.975
+That's going to be
+one byte in length.
+
+80
+00:04:06.975 --> 00:04:10.340
+Like we saw it before, it'll
+either be a hexadecimal 80,
+
+81
+00:04:10.340 --> 00:04:12.485
+or a hexadecimal 00.
+
+82
+00:04:12.485 --> 00:04:15.110
+80 means it is bootable,
+
+83
+00:04:15.110 --> 00:04:17.650
+00 means it is not.
+
+84
+00:04:17.650 --> 00:04:21.360
+We have our legacy cylinder
+head sector addressing.
+
+85
+00:04:21.360 --> 00:04:25.035
+Then at offset 1C2,
+
+86
+00:04:25.035 --> 00:04:28.110
+we have our partition
+type indicator.
+
+87
+00:04:28.110 --> 00:04:31.050
+This will tell you if it's
+a GUID partition table,
+
+88
+00:04:31.050 --> 00:04:34.440
+or if it's an extended
+partition, NTFS, or FAT.
+
+89
+00:04:34.440 --> 00:04:36.585
+That is one byte in length.
+
+90
+00:04:36.585 --> 00:04:39.465
+Then our next three
+bytes will be,
+
+91
+00:04:39.465 --> 00:04:44.740
+again, legacy cylinder
+head sector addressing.
+
+92
+00:04:45.710 --> 00:04:48.850
+That's three bytes.
+
+93
+00:04:49.310 --> 00:04:52.225
+The next four bytes will tell us
+
+94
+00:04:52.225 --> 00:04:54.910
+the first sector
+in the partition.
+
+95
+00:04:54.910 --> 00:04:56.590
+That is four bytes long,
+
+96
+00:04:56.590 --> 00:04:59.120
+and that is located right here.
+
+97
+00:05:00.010 --> 00:05:05.770
+Then this will be the size
+of the partition in sectors,
+
+98
+00:05:05.770 --> 00:05:09.400
+right here, these four bytes.
+
+99
+00:05:09.860 --> 00:05:13.290
+If we wanted to get
+the size in bytes,
+
+100
+00:05:13.290 --> 00:05:18.480
+we would multiply the number
+
+101
+00:05:18.480 --> 00:05:20.490
+of sectors times 512
+
+102
+00:05:20.490 --> 00:05:22.770
+to give us the total
+number of bytes.
+
+103
+00:05:22.770 --> 00:05:25.935
+We have our active
+bootable and we have
+
+104
+00:05:25.935 --> 00:05:29.265
+our cylinder-head-sector
+partition type
+
+105
+00:05:29.265 --> 00:05:31.215
+right here. This 0C.
+
+106
+00:05:31.215 --> 00:05:33.930
+Again, like a C
+cylinder-head-sector address
+
+107
+00:05:33.930 --> 00:05:36.430
+which you don't need
+to worry about.
+
+108
+00:05:36.800 --> 00:05:41.670
+The first sector, where
+the petition starts,
+
+109
+00:05:41.670 --> 00:05:47.355
+the location, and the size
+of the partition in sectors.
+
+110
+00:05:47.355 --> 00:05:51.040
+These are some common
+partition types.
+
+111
+00:05:51.710 --> 00:05:57.090
+If you saw hexadecimal 04 that
+would represent a FAT 16.
+
+112
+00:05:57.090 --> 00:06:02.020
+This would be 05 would be
+DOS extended partition.
+
+113
+00:06:03.350 --> 00:06:07.560
+NTFS is usually
+represented as 07.
+
+114
+00:06:07.560 --> 00:06:12.730
+FAT 32, you can see a 0B or 0C,
+
+115
+00:06:13.370 --> 00:06:17.955
+and 0F would be in
+extended partition,
+
+116
+00:06:17.955 --> 00:06:23.530
+083 would represent
+a Linux partition.
+
+117
+00:06:24.050 --> 00:06:27.870
+The extended logical partition.
+
+118
+00:06:27.870 --> 00:06:29.460
+Since we can only have
+
+119
+00:06:29.460 --> 00:06:32.940
+four entries to
+give us the ability
+
+120
+00:06:32.940 --> 00:06:37.845
+to have more than four
+partitions on a single drive,
+
+121
+00:06:37.845 --> 00:06:41.205
+we have what's called the
+extended logical partition.
+
+122
+00:06:41.205 --> 00:06:45.580
+You can see that's right
+here, outlined in green.
+
+123
+00:06:46.850 --> 00:06:49.695
+In an extended logical partition,
+
+124
+00:06:49.695 --> 00:06:52.395
+you'll have a partition table
+
+125
+00:06:52.395 --> 00:06:56.100
+at the beginning of the
+extended logical partition,
+
+126
+00:06:56.100 --> 00:06:59.310
+and at the end before
+the second one,
+
+127
+00:06:59.310 --> 00:07:02.475
+you have another partition
+table indicating
+
+128
+00:07:02.475 --> 00:07:03.690
+where the start of the next
+
+129
+00:07:03.690 --> 00:07:06.670
+extended logical partition is.
+
+130
+00:07:06.920 --> 00:07:10.890
+Physical sector 0 of the
+extended logical partition.
+
+131
+00:07:10.890 --> 00:07:13.155
+You have a partition table
+
+132
+00:07:13.155 --> 00:07:16.725
+that will point to
+the next partition.
+
+133
+00:07:16.725 --> 00:07:18.435
+It'll point the first entry.
+
+134
+00:07:18.435 --> 00:07:21.420
+It will always have two
+entries and only two entries.
+
+135
+00:07:21.420 --> 00:07:25.200
+The first entry is going
+to point to itself.
+
+136
+00:07:25.200 --> 00:07:26.850
+The second entry in
+
+137
+00:07:26.850 --> 00:07:28.620
+that partition table
+is going to point
+
+138
+00:07:28.620 --> 00:07:32.910
+to the next logical partition.
+
+139
+00:07:32.910 --> 00:07:35.715
+When you go there, you're going
+to find a partition table
+
+140
+00:07:35.715 --> 00:07:38.955
+and it will have two entries,
+
+141
+00:07:38.955 --> 00:07:42.030
+if there's more than one ELP
+
+142
+00:07:42.030 --> 00:07:44.070
+left extended logical partition.
+
+143
+00:07:44.070 --> 00:07:45.690
+If there's just one entry,
+
+144
+00:07:45.690 --> 00:07:47.040
+it'll point to itself.
+
+145
+00:07:47.040 --> 00:07:49.170
+If there was a second entry here,
+
+146
+00:07:49.170 --> 00:07:52.425
+it'll point to the next
+extended logical partition.
+
+147
+00:07:52.425 --> 00:07:54.780
+The first entry points to itself,
+
+148
+00:07:54.780 --> 00:07:56.430
+and the second entry points to
+
+149
+00:07:56.430 --> 00:07:59.175
+the next extended
+logical partition.
+
+150
+00:07:59.175 --> 00:08:02.445
+We'll see that when we go
+through our walk-through.
+
+151
+00:08:02.445 --> 00:08:04.785
+This is an example of
+
+152
+00:08:04.785 --> 00:08:08.655
+a partition table for an
+extended logical partition.
+
+153
+00:08:08.655 --> 00:08:11.805
+It'll only have two entries.
+
+154
+00:08:11.805 --> 00:08:14.700
+The first entry, would be
+
+155
+00:08:14.700 --> 00:08:22.080
+the location of itself
+where it actually starts,
+
+156
+00:08:22.080 --> 00:08:24.495
+where its volume boot
+record is located.
+
+157
+00:08:24.495 --> 00:08:27.015
+In the next entry,
+
+158
+00:08:27.015 --> 00:08:29.865
+this will tell you
+where the start
+
+159
+00:08:29.865 --> 00:08:32.940
+of the next logical
+partition table is.
+
+160
+00:08:32.940 --> 00:08:35.505
+Again, this will
+give you the size
+
+161
+00:08:35.505 --> 00:08:38.490
+and it also has the
+type indicator.
+
+162
+00:08:38.490 --> 00:08:42.795
+This is the second logical
+partition table entry.
+
+163
+00:08:42.795 --> 00:08:45.720
+You can see it only has one entry
+
+164
+00:08:45.720 --> 00:08:47.670
+because it's the last extended
+
+165
+00:08:47.670 --> 00:08:49.620
+logical partition in this case.
+
+166
+00:08:49.620 --> 00:08:51.315
+It points to itself.
+
+167
+00:08:51.315 --> 00:08:53.730
+It gives you the partition
+type indicator here,
+
+168
+00:08:53.730 --> 00:08:56.175
+we can see the 0C
+outlined in green,
+
+169
+00:08:56.175 --> 00:09:01.380
+and the size, how big the
+partition is in sectors.
+
+170
+00:09:01.380 --> 00:09:04.005
+You would read this
+partition table,
+
+171
+00:09:04.005 --> 00:09:05.790
+the exact same way you would read
+
+172
+00:09:05.790 --> 00:09:09.250
+the partition table located
+in the master boot record.
+
+173
+00:09:10.100 --> 00:09:14.055
+Now we're going to go ahead
+and do our walk-through.
+
+174
+00:09:14.055 --> 00:09:15.930
+You need to download the
+
+175
+00:09:15.930 --> 00:09:18.000
+MBR VHD if you
+haven't already done
+
+176
+00:09:18.000 --> 00:09:22.770
+so from the class drive.
+
+177
+00:09:22.770 --> 00:09:26.415
+Then we're going to have to
+open Active Disk Editor,
+
+178
+00:09:26.415 --> 00:09:28.500
+like we did before when we did
+
+179
+00:09:28.500 --> 00:09:32.970
+our Active Disk Editor
+demo. Let's do that.
+
+180
+00:09:32.970 --> 00:09:35.470
+Active Disk Editor.
+
+181
+00:09:40.880 --> 00:09:44.130
+Once we get to our start screen,
+
+182
+00:09:44.130 --> 00:09:47.230
+we're going to open a disk,
+
+183
+00:09:49.730 --> 00:10:00.130
+navigate to where you
+downloaded your MBR VHD,
+
+184
+00:10:04.280 --> 00:10:08.950
+and we're going to open the VHD.
+
+185
+00:10:09.440 --> 00:10:16.995
+You must mount the VHD
+before you can open it.
+
+186
+00:10:16.995 --> 00:10:18.555
+If you haven't done that,
+
+187
+00:10:18.555 --> 00:10:21.615
+you're going to go into
+your Disk Management,
+
+188
+00:10:21.615 --> 00:10:24.940
+you're going to go to Actions.
+
+189
+00:10:27.060 --> 00:10:35.185
+Attach VHD, navigate to
+where you saved your VHD,
+
+190
+00:10:35.185 --> 00:10:39.770
+select it, and then click "Open."
+
+191
+00:10:45.780 --> 00:10:49.900
+Once you've done that, select it.
+
+192
+00:10:49.900 --> 00:10:52.060
+Note the drive number.
+
+193
+00:10:52.060 --> 00:10:54.145
+Once you have that mounted,
+
+194
+00:10:54.145 --> 00:10:58.255
+make sure you note the
+drive number that it is,
+
+195
+00:10:58.255 --> 00:11:01.460
+so when you go to mounted
+it makes it easier.
+
+196
+00:11:02.190 --> 00:11:04.450
+Once you've done that,
+
+197
+00:11:04.450 --> 00:11:08.840
+go ahead and select
+it, and click "Open."
+
+198
+00:11:08.940 --> 00:11:12.620
+Your drive will open.
+
+199
+00:11:14.010 --> 00:11:18.170
+Now, this is our
+master boot record.
+
+200
+00:11:18.480 --> 00:11:21.220
+Make sure that your template is
+
+201
+00:11:21.220 --> 00:11:23.275
+set on master boot record.
+
+202
+00:11:23.275 --> 00:11:25.780
+Remember the template drop-down.
+
+203
+00:11:25.780 --> 00:11:29.240
+We want to be on
+master boot record.
+
+204
+00:11:30.480 --> 00:11:33.550
+We can see here all the stuff
+
+205
+00:11:33.550 --> 00:11:35.650
+that's in our master boot record.
+
+206
+00:11:35.650 --> 00:11:37.900
+We have our boot code.
+
+207
+00:11:37.900 --> 00:11:47.890
+We have our disk
+serial number, at 1B8.
+
+208
+00:11:47.890 --> 00:11:49.720
+It should be right here.
+
+209
+00:11:49.720 --> 00:11:53.420
+That's our disk serial number.
+
+210
+00:11:55.770 --> 00:12:00.620
+Then we have the start
+of our partition table.
+
+211
+00:12:00.690 --> 00:12:04.340
+This is the active flag.
+
+212
+00:12:04.650 --> 00:12:07.525
+In mine right now is 00,
+
+213
+00:12:07.525 --> 00:12:10.400
+so it is not bootable.
+
+214
+00:12:10.650 --> 00:12:13.165
+After the active flag,
+
+215
+00:12:13.165 --> 00:12:17.950
+we have our cylinder
+head sector addressing,
+
+216
+00:12:17.950 --> 00:12:19.780
+which we said was our legacy
+
+217
+00:12:19.780 --> 00:12:22.375
+addressing that we
+don't use anymore.
+
+218
+00:12:22.375 --> 00:12:26.649
+Then we have our
+partition type indicator,
+
+219
+00:12:26.649 --> 00:12:28.300
+which will tell us what type of
+
+220
+00:12:28.300 --> 00:12:31.225
+file system is on this disk.
+
+221
+00:12:31.225 --> 00:12:34.580
+This was a 0c.
+
+222
+00:12:35.490 --> 00:12:37.600
+Then we have our, again,
+
+223
+00:12:37.600 --> 00:12:40.460
+cylinder head sector addressing.
+
+224
+00:12:41.460 --> 00:12:44.830
+We have the location
+of the first sector.
+
+225
+00:12:44.830 --> 00:12:48.580
+It says the first
+sector is sector 128.
+
+226
+00:12:48.580 --> 00:12:51.625
+Now we have our size,
+
+227
+00:12:51.625 --> 00:12:54.624
+the size of this
+particular partition,
+
+228
+00:12:54.624 --> 00:12:57.460
+the number of sectors
+in the partition.
+
+229
+00:12:57.460 --> 00:13:00.490
+If we wanted to get the
+sector size in bytes,
+
+230
+00:13:00.490 --> 00:13:02.605
+we would multiply that number,
+
+231
+00:13:02.605 --> 00:13:09.055
+that 204,800 times 512,
+
+232
+00:13:09.055 --> 00:13:10.870
+which is our sector size,
+
+233
+00:13:10.870 --> 00:13:15.650
+which would give us our
+total bytes per sector.
+
+234
+00:13:17.400 --> 00:13:20.124
+Second entry.
+
+235
+00:13:20.124 --> 00:13:22.270
+We read the same way.
+
+236
+00:13:22.270 --> 00:13:25.645
+First is our boot indicator,
+
+237
+00:13:25.645 --> 00:13:33.025
+followed by our cylinder
+head sector addressing.
+
+238
+00:13:33.025 --> 00:13:36.385
+Then we have our
+partition type indicator,
+
+239
+00:13:36.385 --> 00:13:38.784
+which in this case is 07,
+
+240
+00:13:38.784 --> 00:13:41.380
+which would tell
+us that it's NTFS.
+
+241
+00:13:41.380 --> 00:13:43.300
+Then we have our,
+
+242
+00:13:43.300 --> 00:13:46.615
+again, cylinder head
+sector addressing.
+
+243
+00:13:46.615 --> 00:13:49.915
+Then we have the location
+of the first sector.
+
+244
+00:13:49.915 --> 00:13:53.290
+The first for partition
+2 in this disk,
+
+245
+00:13:53.290 --> 00:13:57.085
+is going to be 204,928,
+
+246
+00:13:57.085 --> 00:13:59.605
+would be the location
+of the first sector.
+
+247
+00:13:59.605 --> 00:14:04.610
+Then we have the partition
+size in sectors.
+
+248
+00:14:06.840 --> 00:14:10.540
+Then that size is going to
+be, you can see it up here,
+
+249
+00:14:10.540 --> 00:14:16.880
+total sectors is
+going to be 409,600.
+
+250
+00:14:17.100 --> 00:14:20.140
+Then we have our next partition.
+
+251
+00:14:20.140 --> 00:14:23.300
+Again, you have the
+active bootable.
+
+252
+00:14:24.600 --> 00:14:28.030
+This is 00, so it
+is not bootable.
+
+253
+00:14:28.030 --> 00:14:32.035
+If it weren't, hexadecimal
+80 would be bootable.
+
+254
+00:14:32.035 --> 00:14:36.489
+Then we have our cylinder
+head sector addressing,
+
+255
+00:14:36.489 --> 00:14:41.350
+a partition type, which is 0c.
+
+256
+00:14:41.350 --> 00:14:48.325
+0c is fact 32.
+
+257
+00:14:48.325 --> 00:14:52.880
+Then we have our cylinder
+head sector addressing.
+
+258
+00:14:53.580 --> 00:15:00.085
+Then we have our location,
+
+259
+00:15:00.085 --> 00:15:03.470
+the first sector
+in our partition.
+
+260
+00:15:05.000 --> 00:15:11.490
+We can see. Then we
+
+261
+00:15:11.490 --> 00:15:15.645
+have our size of our
+partition in sectors.
+
+262
+00:15:15.645 --> 00:15:18.435
+We have the total
+number of sectors.
+
+263
+00:15:18.435 --> 00:15:21.105
+We have, in this one,
+
+264
+00:15:21.105 --> 00:15:23.920
+the location of the first sector.
+
+265
+00:15:24.300 --> 00:15:27.160
+Now we have another partition,
+
+266
+00:15:27.160 --> 00:15:29.125
+because we have
+four entries here.
+
+267
+00:15:29.125 --> 00:15:32.410
+We can see its active flag,
+
+268
+00:15:32.410 --> 00:15:36.740
+again, is 00, so it
+is not bootable.
+
+269
+00:15:36.740 --> 00:15:40.300
+We have our legacy
+cylinder-head-sector
+
+270
+00:15:40.880 --> 00:15:46.095
+addressing and we have
+our partition type,
+
+271
+00:15:46.095 --> 00:15:51.150
+which is 05, which is a
+DOS extended partition.
+
+272
+00:15:51.150 --> 00:15:55.019
+We know our fourth partition
+is an extended partition.
+
+273
+00:15:55.019 --> 00:16:00.059
+We have our cylinder-head-sector
+addressing,
+
+274
+00:16:00.059 --> 00:16:02.250
+which we no longer use,
+
+275
+00:16:02.250 --> 00:16:03.690
+but it is still there.
+
+276
+00:16:03.690 --> 00:16:06.930
+Then we have the location
+of our first sector,
+
+277
+00:16:06.930 --> 00:16:08.700
+which in this case,
+
+278
+00:16:08.700 --> 00:16:11.474
+the first sector of our
+extended logical partition,
+
+279
+00:16:11.474 --> 00:16:24.615
+is going to be sector 1,024,128.
+
+280
+00:16:24.615 --> 00:16:26.760
+Now what's important
+to know about
+
+281
+00:16:26.760 --> 00:16:29.100
+this is this is giving us
+
+282
+00:16:29.100 --> 00:16:30.900
+the address relative to
+
+283
+00:16:30.900 --> 00:16:34.170
+the start of the
+physical drive itself.
+
+284
+00:16:34.170 --> 00:16:36.360
+Now where things start and
+
+285
+00:16:36.360 --> 00:16:37.950
+what their relative to is going
+
+286
+00:16:37.950 --> 00:16:41.730
+to be very important
+throughout this this path.
+
+287
+00:16:41.730 --> 00:16:44.400
+This location is
+relative to the start of
+
+288
+00:16:44.400 --> 00:16:47.370
+the disk itself,
+the physical disk.
+
+289
+00:16:47.370 --> 00:16:51.235
+Then we have the size in sectors,
+
+290
+00:16:51.235 --> 00:16:53.135
+the total number of sectors.
+
+291
+00:16:53.135 --> 00:16:54.920
+To get the total size,
+
+292
+00:16:54.920 --> 00:16:58.430
+we would multiply that
+number times 512,
+
+293
+00:16:58.430 --> 00:16:59.705
+which is our sector size,
+
+294
+00:16:59.705 --> 00:17:04.770
+and that would give us our
+total bytes in the partition.
+
+295
+00:17:04.770 --> 00:17:10.000
+Then we have our ending
+55 AA as our signature.
+
+296
+00:17:11.450 --> 00:17:13.980
+Let's take a look at
+
+297
+00:17:13.980 --> 00:17:15.630
+the extended logical partition
+
+298
+00:17:15.630 --> 00:17:17.670
+and the partition
+tables within it.
+
+299
+00:17:17.670 --> 00:17:19.110
+What we're going to do is,
+
+300
+00:17:19.110 --> 00:17:23.500
+we're going go to
+''File,'' Open.''
+
+301
+00:17:23.510 --> 00:17:28.540
+Now, it's very important
+we select the right thing.
+
+302
+00:17:29.090 --> 00:17:32.910
+You want to select the
+full extended partition,
+
+303
+00:17:32.910 --> 00:17:36.135
+not the volume, and not
+the ELPs below here.
+
+304
+00:17:36.135 --> 00:17:41.370
+We want to select the
+extended partition.
+
+305
+00:17:41.370 --> 00:17:44.250
+Select the extended partition.
+
+306
+00:17:44.250 --> 00:17:47.235
+Don't click on
+anything over here.
+
+307
+00:17:47.235 --> 00:17:50.980
+To the right, just
+click ''Open.''
+
+308
+00:17:51.260 --> 00:17:56.190
+Because we want to see the
+entire extended partition.
+
+309
+00:17:56.190 --> 00:17:58.410
+We could see at the
+very beginning in
+
+310
+00:17:58.410 --> 00:18:00.975
+sector 0 of our
+extended partition,
+
+311
+00:18:00.975 --> 00:18:02.880
+we see what looks like
+
+312
+00:18:02.880 --> 00:18:05.550
+a master boot record
+with a partition table.
+
+313
+00:18:05.550 --> 00:18:07.635
+This is the partition table
+
+314
+00:18:07.635 --> 00:18:10.065
+for the extended
+logical partition,
+
+315
+00:18:10.065 --> 00:18:11.820
+because each of these extended
+
+316
+00:18:11.820 --> 00:18:14.700
+logical partitions
+has a table prior
+
+317
+00:18:14.700 --> 00:18:16.890
+to the volume boot record to tell
+
+318
+00:18:16.890 --> 00:18:19.410
+us the location of itself.
+
+319
+00:18:19.410 --> 00:18:21.840
+This first entry is
+going to point to
+
+320
+00:18:21.840 --> 00:18:26.025
+the start of the partition
+we're looking at.
+
+321
+00:18:26.025 --> 00:18:28.860
+The second entry is
+going to tell us where
+
+322
+00:18:28.860 --> 00:18:32.055
+the next extended logical
+partition begins.
+
+323
+00:18:32.055 --> 00:18:35.280
+You'd read this entry the
+same as we did before.
+
+324
+00:18:35.280 --> 00:18:37.140
+It is not bootable,
+
+325
+00:18:37.140 --> 00:18:38.760
+but we know extended logical
+
+326
+00:18:38.760 --> 00:18:40.815
+partitions are never bootable.
+
+327
+00:18:40.815 --> 00:18:44.490
+Then we have our
+cylinder-head-sector addressing.
+
+328
+00:18:44.490 --> 00:18:47.745
+We have the partition
+type, which is 0, 7,
+
+329
+00:18:47.745 --> 00:18:50.414
+which tells us that
+the first partition
+
+330
+00:18:50.414 --> 00:18:52.710
+within this extended
+logical partition
+
+331
+00:18:52.710 --> 00:18:54.990
+is going to be NTFS.
+
+332
+00:18:54.990 --> 00:18:58.170
+We have our cylinder-head-sector
+addressing.
+
+333
+00:18:58.170 --> 00:19:01.125
+Then this partition
+points to itself,
+
+334
+00:19:01.125 --> 00:19:04.755
+and we can see the
+first sector is 128.
+
+335
+00:19:04.755 --> 00:19:11.895
+That number is relative to
+the start of the partition,
+
+336
+00:19:11.895 --> 00:19:14.025
+to the start of the volume,
+
+337
+00:19:14.025 --> 00:19:18.310
+not to the start of
+the physical disk.
+
+338
+00:19:20.570 --> 00:19:24.330
+Remember that because if not,
+
+339
+00:19:24.330 --> 00:19:26.100
+you'll be very lost
+in the navigation.
+
+340
+00:19:26.100 --> 00:19:31.380
+So 128 is relative to
+the start of the volume,
+
+341
+00:19:31.380 --> 00:19:35.010
+this particular partition within
+
+342
+00:19:35.010 --> 00:19:37.035
+the extended logical partition
+
+343
+00:19:37.035 --> 00:19:40.530
+is where this location
+is relative to.
+
+344
+00:19:40.530 --> 00:19:44.475
+Then we have the size
+again total sectors.
+
+345
+00:19:44.475 --> 00:19:46.530
+If we wanted to get
+the size in bytes,
+
+346
+00:19:46.530 --> 00:19:49.810
+we multiply that times 512.
+
+347
+00:19:51.080 --> 00:19:55.245
+If I were to go
+out to sector 128,
+
+348
+00:19:55.245 --> 00:19:58.635
+I should see in NTFS
+volume boot record.
+
+349
+00:19:58.635 --> 00:20:01.270
+Let's test that theory.
+
+350
+00:20:01.700 --> 00:20:04.200
+You can either go from navigation
+
+351
+00:20:04.200 --> 00:20:07.030
+or straight to go to sector.
+
+352
+00:20:08.560 --> 00:20:14.490
+Make sure we type 128 in
+the sector, not cluster.
+
+353
+00:20:17.240 --> 00:20:20.234
+You want to make sure
+you typed in sector
+
+354
+00:20:20.234 --> 00:20:23.650
+128 and we're going
+to click ''Okay.''
+
+355
+00:20:24.710 --> 00:20:30.460
+What we find here is indeed
+in NTFS volume boot record.
+
+356
+00:20:32.030 --> 00:20:34.110
+Let's use our back button.
+
+357
+00:20:34.110 --> 00:20:35.970
+This is one I think
+I didn't show you,
+
+358
+00:20:35.970 --> 00:20:38.010
+but the Back button is
+going to come in handy.
+
+359
+00:20:38.010 --> 00:20:39.570
+We'll hit the ''Back button''
+
+360
+00:20:39.570 --> 00:20:41.325
+and we're going right back to
+
+361
+00:20:41.325 --> 00:20:47.620
+our partition table for our
+extended logical partition.
+
+362
+00:20:48.170 --> 00:20:51.720
+It says the next extended
+logical partition,
+
+363
+00:20:51.720 --> 00:20:57.695
+we're going to find
+out at sector 204,928.
+
+364
+00:20:57.695 --> 00:21:01.585
+You can go ahead and write
+that down if you'd like,
+
+365
+00:21:01.585 --> 00:21:03.820
+and we're going to navigate.
+
+366
+00:21:03.820 --> 00:21:05.770
+Go-to sector, make sure you're
+
+367
+00:21:05.770 --> 00:21:08.935
+typing in the sector,
+not cluster box,
+
+368
+00:21:08.935 --> 00:21:18.235
+and we're going to type in
+the number 2, 0, 4, 928.
+
+369
+00:21:18.235 --> 00:21:20.905
+What we should
+expect to find here
+
+370
+00:21:20.905 --> 00:21:24.205
+is again another partition table.
+
+371
+00:21:24.205 --> 00:21:26.740
+We're going to click Okay.
+
+372
+00:21:26.740 --> 00:21:30.070
+You can see we see looks like
+
+373
+00:21:30.070 --> 00:21:33.920
+a partition table would
+have 5, 5 a signature.
+
+374
+00:21:34.020 --> 00:21:36.700
+What we have to do here
+is make sure you're
+
+375
+00:21:36.700 --> 00:21:39.310
+set to master boot record.
+
+376
+00:21:39.310 --> 00:21:44.030
+We're going to right-click
+set template position.
+
+377
+00:21:44.460 --> 00:21:48.130
+We get our template for
+our master boot record.
+
+378
+00:21:48.130 --> 00:21:51.040
+We can see the partition
+table has two entries,
+
+379
+00:21:51.040 --> 00:21:52.600
+which is what it should have.
+
+380
+00:21:52.600 --> 00:21:54.805
+It will always have two entries.
+
+381
+00:21:54.805 --> 00:21:58.240
+The first entry is going
+to point to itself.
+
+382
+00:21:58.240 --> 00:22:00.730
+Not active bootable.
+
+383
+00:22:00.730 --> 00:22:03.130
+We have our cylinder head sector,
+
+384
+00:22:03.130 --> 00:22:05.200
+we have our partition
+type indicator,
+
+385
+00:22:05.200 --> 00:22:07.330
+which again tells
+us this one is also
+
+386
+00:22:07.330 --> 00:22:14.365
+NTFS 07, cylinder head sector.
+
+387
+00:22:14.365 --> 00:22:17.665
+Now the first sector is 128.
+
+388
+00:22:17.665 --> 00:22:21.760
+The first sector is always
+going to be 128 from here,
+
+389
+00:22:21.760 --> 00:22:23.335
+because when it points to itself,
+
+390
+00:22:23.335 --> 00:22:28.430
+it's always 128 sectors in
+from the start of the volume.
+
+391
+00:22:29.880 --> 00:22:34.855
+Then we have the total
+size in sectors.
+
+392
+00:22:34.855 --> 00:22:37.540
+Now the second entry
+is going to point to
+
+393
+00:22:37.540 --> 00:22:40.790
+the next extended
+logical partition.
+
+394
+00:22:41.910 --> 00:22:45.940
+Again, active bootable 00.
+
+395
+00:22:45.940 --> 00:22:49.250
+We have cylinder head
+sector addressing.
+
+396
+00:22:49.590 --> 00:22:53.500
+Our file system is 05,
+
+397
+00:22:53.500 --> 00:22:57.025
+which stands for extended
+logical partition,
+
+398
+00:22:57.025 --> 00:22:59.470
+extended DOS partition.
+
+399
+00:22:59.470 --> 00:23:02.755
+Then we have our cylinder
+head sector addressing again,
+
+400
+00:23:02.755 --> 00:23:04.690
+and we would have the location of
+
+401
+00:23:04.690 --> 00:23:07.570
+our next extended
+logical partition,
+
+402
+00:23:07.570 --> 00:23:11.350
+which is out at 6,
+
+403
+00:23:11.350 --> 00:23:14.575
+1, 4, 6, 5, 6.
+
+404
+00:23:14.575 --> 00:23:19.870
+Then we have the size
+in sectors right here,
+
+405
+00:23:19.870 --> 00:23:23.155
+would be our size in sectors.
+
+406
+00:23:23.155 --> 00:23:29.530
+Size and sectors is 450,688.
+
+407
+00:23:29.530 --> 00:23:31.540
+Again, if you wanted
+to size in bytes,
+
+408
+00:23:31.540 --> 00:23:34.915
+you would multiply
+that number times 512.
+
+409
+00:23:34.915 --> 00:23:38.470
+Let's go ahead and go out and
+
+410
+00:23:38.470 --> 00:23:41.410
+see if we see
+
+411
+00:23:41.410 --> 00:23:44.500
+another partition table
+out at this location,
+
+412
+00:23:44.500 --> 00:23:47.920
+6, 1, 4, 6, 5, 6.
+
+413
+00:23:47.920 --> 00:23:50.335
+Again, we'd go to,
+
+414
+00:23:50.335 --> 00:23:52.720
+it can either go navigation,
+
+415
+00:23:52.720 --> 00:23:57.370
+go to sector, or you could
+just click Go to sector.
+
+416
+00:23:57.370 --> 00:24:01.525
+That number was 6, 1,
+
+417
+00:24:01.525 --> 00:24:08.410
+4, 6, 5, 6.
+
+418
+00:24:08.410 --> 00:24:11.210
+We click Okay.
+
+419
+00:24:11.520 --> 00:24:14.440
+We want to make sure
+you're still on
+
+420
+00:24:14.440 --> 00:24:17.665
+master boot record as
+far as your template.
+
+421
+00:24:17.665 --> 00:24:21.880
+We're going to right-click
+set template position,
+
+422
+00:24:21.880 --> 00:24:24.745
+and again we can see
+our partition table.
+
+423
+00:24:24.745 --> 00:24:27.565
+This time we see it
+only has one entry.
+
+424
+00:24:27.565 --> 00:24:31.045
+That tells us this is the last
+extended logical partition
+
+425
+00:24:31.045 --> 00:24:33.145
+on this physical drive,
+
+426
+00:24:33.145 --> 00:24:35.485
+on just logical drive.
+
+427
+00:24:35.485 --> 00:24:38.905
+It is not active bootable.
+
+428
+00:24:38.905 --> 00:24:42.069
+We see our cylinder
+head sector flags.
+
+429
+00:24:42.069 --> 00:24:43.300
+We see the type.
+
+430
+00:24:43.300 --> 00:24:47.545
+The file system that is
+actually on here is NTFS,
+
+431
+00:24:47.545 --> 00:24:50.290
+cylinder head sector addressing,
+
+432
+00:24:50.290 --> 00:24:53.125
+and then we see the location
+of the first sector.
+
+433
+00:24:53.125 --> 00:24:55.960
+Again we see it's 128.
+
+434
+00:24:55.960 --> 00:24:57.655
+Like I said, it'll always be
+
+435
+00:24:57.655 --> 00:25:01.420
+128 sectors in the
+volume boot record.
+
+436
+00:25:01.420 --> 00:25:04.225
+The start of the partition
+will be at 128 sectors
+
+437
+00:25:04.225 --> 00:25:08.420
+in from the extended
+logical partition table.
+
+438
+00:25:09.270 --> 00:25:12.235
+If we go ahead and navigate,
+
+439
+00:25:12.235 --> 00:25:14.785
+or go to sector,
+
+440
+00:25:14.785 --> 00:25:18.890
+and we type in 128,
+
+441
+00:25:19.070 --> 00:25:24.870
+and we click Okay we come to
+our NTFS volume boot record.
+
+442
+00:25:24.870 --> 00:25:29.760
+What's important to remember
+is these locations are
+
+443
+00:25:29.760 --> 00:25:34.510
+relative to the start
+of the logical volume,
+
+444
+00:25:34.510 --> 00:25:37.720
+the logical partition
+within the extended logical
+
+445
+00:25:37.720 --> 00:25:43.990
+partition not the physical drive.
+
+446
+00:25:43.990 --> 00:25:47.870
+Very important to remember that.
+
+447
+00:25:51.330 --> 00:25:56.510
+That is how you would read
+a volume boot record.
+
+448
+00:25:59.330 --> 00:26:03.329
+The extended logical
+partition tables
+
+449
+00:26:03.329 --> 00:26:08.049
+located within an extended
+logical partition.

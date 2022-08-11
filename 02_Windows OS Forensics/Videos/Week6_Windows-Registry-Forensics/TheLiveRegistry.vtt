@@ -1,0 +1,874 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.630
+In this course, we're talking
+about the Windows Registry.
+
+2
+00:00:03.630 --> 00:00:05.790
+In this module, module 2,
+
+3
+00:00:05.790 --> 00:00:07.245
+we're going to talk
+about the structure
+
+4
+00:00:07.245 --> 00:00:08.925
+of the Windows Registry.
+
+5
+00:00:08.925 --> 00:00:10.650
+The layout of the Registry.
+
+6
+00:00:10.650 --> 00:00:13.275
+The Registry is
+broken into hives,
+
+7
+00:00:13.275 --> 00:00:17.295
+keys, sub-keys, values, and data.
+
+8
+00:00:17.295 --> 00:00:19.640
+The data within the
+Registry can be
+
+9
+00:00:19.640 --> 00:00:23.035
+stored in several
+different formats.
+
+10
+00:00:23.035 --> 00:00:24.680
+We can have binary data,
+
+11
+00:00:24.680 --> 00:00:27.170
+string data, text data,
+
+12
+00:00:27.170 --> 00:00:29.055
+and also BLOB data.
+
+13
+00:00:29.055 --> 00:00:32.495
+BLOB stands for
+binary large object.
+
+14
+00:00:32.495 --> 00:00:35.810
+This slide shows us
+what the live Registry
+
+15
+00:00:35.810 --> 00:00:39.590
+looks like if we open it
+up in Registry Editor.
+
+16
+00:00:39.590 --> 00:00:41.570
+You can see at the top there,
+
+17
+00:00:41.570 --> 00:00:44.455
+we have the HKEY, the handle key.
+
+18
+00:00:44.455 --> 00:00:46.800
+We have HKEY local machine.
+
+19
+00:00:46.800 --> 00:00:48.770
+Underneath that, we have
+
+20
+00:00:48.770 --> 00:00:51.200
+the hives and you can
+see there the SAM,
+
+21
+00:00:51.200 --> 00:00:53.795
+security, software,
+and system file,
+
+22
+00:00:53.795 --> 00:00:56.735
+along with hardware
+driver and components.
+
+23
+00:00:56.735 --> 00:01:00.940
+Beneath that, we have our keys.
+
+24
+00:01:00.940 --> 00:01:04.335
+Those are sub-folders
+of the hives.
+
+25
+00:01:04.335 --> 00:01:08.070
+Beneath the keys,
+we have sub-keys.
+
+26
+00:01:08.070 --> 00:01:09.830
+Over the right-hand pane,
+
+27
+00:01:09.830 --> 00:01:13.780
+you can see we have
+values and we have data.
+
+28
+00:01:13.780 --> 00:01:18.560
+That is the basic structure
+of the Windows Registry.
+
+29
+00:01:18.560 --> 00:01:21.800
+Now, the hive files that make up
+
+30
+00:01:21.800 --> 00:01:26.135
+the Registry can be divided
+into two types of classes.
+
+31
+00:01:26.135 --> 00:01:28.625
+They're either
+system-related files
+
+32
+00:01:28.625 --> 00:01:30.620
+or user-related files.
+
+33
+00:01:30.620 --> 00:01:32.600
+Now, the system-related files
+
+34
+00:01:32.600 --> 00:01:34.265
+are going to consist of the SAM,
+
+35
+00:01:34.265 --> 00:01:40.545
+security, software, and
+AmCache hive files.
+
+36
+00:01:40.545 --> 00:01:43.410
+The user-related files
+are going to be the NT
+
+37
+00:01:43.410 --> 00:01:46.965
+User.dat and the User Class.dat.
+
+38
+00:01:46.965 --> 00:01:52.945
+Now, the system files will
+dictate system-wide settings,
+
+39
+00:01:52.945 --> 00:01:55.610
+and the user files
+are going to be
+
+40
+00:01:55.610 --> 00:01:58.910
+specific to that individual user.
+
+41
+00:01:58.910 --> 00:02:02.990
+Every user on the system
+will have their own NT
+
+42
+00:02:02.990 --> 00:02:07.600
+User.dat hive and
+User Class.dat hive.
+
+43
+00:02:07.600 --> 00:02:09.560
+We are going to need
+
+44
+00:02:09.560 --> 00:02:13.820
+specialized tools to view
+the Windows Registry files.
+
+45
+00:02:13.820 --> 00:02:16.160
+When your computer boots up,
+
+46
+00:02:16.160 --> 00:02:18.895
+the hive files get
+pulled into memory.
+
+47
+00:02:18.895 --> 00:02:23.100
+They are represented by
+these HKs or handled keys.
+
+48
+00:02:23.100 --> 00:02:26.835
+We're going to have
+HKEY local machine,
+
+49
+00:02:26.835 --> 00:02:32.565
+HKEY classes root,
+HKEY current config,
+
+50
+00:02:32.565 --> 00:02:36.510
+HKEY users, and
+HKEY current user.
+
+51
+00:02:36.510 --> 00:02:39.765
+We're talking about
+live Registry.
+
+52
+00:02:39.765 --> 00:02:43.475
+This is what it would look
+like in Registry Editor.
+
+53
+00:02:43.475 --> 00:02:46.670
+You can see we have classes root,
+
+54
+00:02:46.670 --> 00:02:48.830
+the handle key up at the top.
+
+55
+00:02:48.830 --> 00:02:52.310
+Now, certain handle keys are
+
+56
+00:02:52.310 --> 00:02:56.495
+only going to be found in
+the live running Registry.
+
+57
+00:02:56.495 --> 00:02:59.480
+These are keys like
+HKEY current user,
+
+58
+00:02:59.480 --> 00:03:03.585
+hardware, and HKEY
+current config.
+
+59
+00:03:03.585 --> 00:03:09.985
+HKEY current user refers to
+the currently logged-on user.
+
+60
+00:03:09.985 --> 00:03:14.820
+That User NT.dat and User
+Class.dat get pulled into
+
+61
+00:03:14.820 --> 00:03:16.760
+memory and they contain
+
+62
+00:03:16.760 --> 00:03:21.050
+all that user's specific
+settings and activities.
+
+63
+00:03:21.050 --> 00:03:25.700
+Hardware is only going to be
+found on the library system
+
+64
+00:03:25.700 --> 00:03:30.635
+and this covers Bios and
+current hardware configuration.
+
+65
+00:03:30.635 --> 00:03:33.140
+Hardware is going to have
+information concerning
+
+66
+00:03:33.140 --> 00:03:36.835
+the Bios and the current
+hardware configuration.
+
+67
+00:03:36.835 --> 00:03:40.049
+Then we have HKEY current config.
+
+68
+00:03:40.049 --> 00:03:43.685
+This is the current
+system configuration
+
+69
+00:03:43.685 --> 00:03:46.345
+relating mainly to software.
+
+70
+00:03:46.345 --> 00:03:50.240
+Just be aware that on
+a live running system,
+
+71
+00:03:50.240 --> 00:03:53.270
+the SAM hive file and all of
+
+72
+00:03:53.270 --> 00:03:57.980
+its sub-keys are not going
+to be able to be accessed.
+
+73
+00:03:57.980 --> 00:04:00.265
+They are disabled.
+
+74
+00:04:00.265 --> 00:04:04.890
+The security sub-key
+is also disabled.
+
+75
+00:04:04.890 --> 00:04:06.860
+Looking at it through RegEditor,
+
+76
+00:04:06.860 --> 00:04:11.655
+we won't be able to see what
+is contained in those hives.
+
+77
+00:04:11.655 --> 00:04:15.670
+Now, some of our non-live
+Registry files of interests.
+
+78
+00:04:15.670 --> 00:04:17.815
+We're going to take
+a look at the SAM,
+
+79
+00:04:17.815 --> 00:04:22.110
+system, security, software
+and the AmCache file.
+
+80
+00:04:22.110 --> 00:04:25.005
+These are system-related files.
+
+81
+00:04:25.005 --> 00:04:27.480
+We're also going to
+talk about the NT
+
+82
+00:04:27.480 --> 00:04:30.600
+User.dat and User Class.dat.
+
+83
+00:04:30.600 --> 00:04:36.985
+The non-line Registry, as
+seen using Registry browser,
+
+84
+00:04:36.985 --> 00:04:38.540
+is what this slide depicts.
+
+85
+00:04:38.540 --> 00:04:41.840
+The Registry browser
+does depict it pretty
+
+86
+00:04:41.840 --> 00:04:45.495
+much the same as RegEdit does.
+
+87
+00:04:45.495 --> 00:04:47.105
+But with Registry browser,
+
+88
+00:04:47.105 --> 00:04:53.330
+we can drill down into the
+keys and see the data within.
+
+89
+00:04:53.330 --> 00:04:56.330
+It also helps us
+translate some of
+
+90
+00:04:56.330 --> 00:04:59.655
+this data under the values,
+
+91
+00:04:59.655 --> 00:05:02.040
+value data, and then
+the bottom pane
+
+92
+00:05:02.040 --> 00:05:05.730
+data but it is laid out same way.
+
+93
+00:05:05.730 --> 00:05:07.295
+We have the handle
+key at the top,
+
+94
+00:05:07.295 --> 00:05:08.950
+we have the hives,
+
+95
+00:05:08.950 --> 00:05:10.680
+then we have the keys,
+
+96
+00:05:10.680 --> 00:05:13.360
+and then we have the sub-keys.
+
+97
+00:05:14.120 --> 00:05:16.575
+In our next module,
+
+98
+00:05:16.575 --> 00:05:18.780
+we're going to talk
+about the location of
+
+99
+00:05:18.780 --> 00:05:22.375
+the Registry files
+within a forensic image.
+
+100
+00:05:22.375 --> 00:05:24.920
+In this walk-through,
+we are going to
+
+101
+00:05:24.920 --> 00:05:28.285
+locate and export the
+Windows Registry files.
+
+102
+00:05:28.285 --> 00:05:29.690
+The items we will need for
+
+103
+00:05:29.690 --> 00:05:32.570
+this Registry walk-through are
+
+104
+00:05:32.570 --> 00:05:37.235
+the Windows 10 vmdk
+and FTK imager.
+
+105
+00:05:37.235 --> 00:05:40.579
+Once you launch FTK imager,
+
+106
+00:05:40.579 --> 00:05:45.680
+go ahead and load
+the Windows 10 vmdk.
+
+107
+00:05:45.680 --> 00:05:47.750
+If you forgot how to do that,
+
+108
+00:05:47.750 --> 00:05:51.800
+it would be File,
+Add evidence item.
+
+109
+00:05:51.800 --> 00:05:56.270
+We're looking for an image
+file and you click "Next".
+
+110
+00:05:56.270 --> 00:06:00.215
+Browse to where the image file
+is saved on your computer.
+
+111
+00:06:00.215 --> 00:06:03.725
+Simply click "Open" and
+the file will load.
+
+112
+00:06:03.725 --> 00:06:06.560
+Once it's loaded, go
+ahead and expand it.
+
+113
+00:06:06.560 --> 00:06:08.390
+You'll see three partitions.
+
+114
+00:06:08.390 --> 00:06:10.190
+We're going to be
+looking at partition
+
+115
+00:06:10.190 --> 00:06:12.920
+2 because that is where
+the operating system is.
+
+116
+00:06:12.920 --> 00:06:17.500
+We expand partition 2 and we're
+going to expand the NTFS.
+
+117
+00:06:17.500 --> 00:06:19.145
+We're going to expand root.
+
+118
+00:06:19.145 --> 00:06:20.720
+Once we expand root,
+
+119
+00:06:20.720 --> 00:06:24.889
+we're going to go to
+Windows and expand windows.
+
+120
+00:06:24.889 --> 00:06:27.620
+We're going to scroll
+down to system 32.
+
+121
+00:06:27.620 --> 00:06:30.575
+We're going to expand system 32.
+
+122
+00:06:30.575 --> 00:06:32.900
+After we expand system 32,
+
+123
+00:06:32.900 --> 00:06:35.315
+we're going to locate
+the config folder.
+
+124
+00:06:35.315 --> 00:06:36.890
+We locate the config folder,
+
+125
+00:06:36.890 --> 00:06:38.105
+we're going to highlight it,
+
+126
+00:06:38.105 --> 00:06:40.295
+and then we're going to
+look in the file list pane.
+
+127
+00:06:40.295 --> 00:06:43.940
+Here are all the files
+inside the config folder.
+
+128
+00:06:43.940 --> 00:06:46.640
+We're looking for the SAM file,
+
+129
+00:06:46.640 --> 00:06:49.790
+security file, software file,
+
+130
+00:06:49.790 --> 00:06:51.155
+and the system file.
+
+131
+00:06:51.155 --> 00:06:53.195
+Once we locate these files,
+
+132
+00:06:53.195 --> 00:06:54.410
+we're going to go ahead and
+
+133
+00:06:54.410 --> 00:06:57.305
+right-click and we're
+going to export the files.
+
+134
+00:06:57.305 --> 00:07:00.590
+Choose a location on your
+computer to export them to.
+
+135
+00:07:00.590 --> 00:07:02.330
+I'm going to choose
+my desktop and make
+
+136
+00:07:02.330 --> 00:07:05.485
+a new folder and call
+it Win 10 Registry.
+
+137
+00:07:05.485 --> 00:07:07.430
+Then we'll go ahead and export
+
+138
+00:07:07.430 --> 00:07:09.200
+those files and it tells you
+
+139
+00:07:09.200 --> 00:07:11.185
+that it copy the
+file successfully.
+
+140
+00:07:11.185 --> 00:07:13.110
+Now, we're in Windows,
+
+141
+00:07:13.110 --> 00:07:14.735
+we're going to scroll back up.
+
+142
+00:07:14.735 --> 00:07:16.610
+We'll close up some
+of these folders
+
+143
+00:07:16.610 --> 00:07:18.440
+so we can navigate easier.
+
+144
+00:07:18.440 --> 00:07:20.240
+We'll close up system 32.
+
+145
+00:07:20.240 --> 00:07:21.890
+When we look at the
+Windows folder.
+
+146
+00:07:21.890 --> 00:07:23.360
+Under the Windows folder,
+
+147
+00:07:23.360 --> 00:07:26.650
+we're going to expand
+the folder app compact.
+
+148
+00:07:26.650 --> 00:07:28.280
+Underneath the Windows folder,
+
+149
+00:07:28.280 --> 00:07:30.275
+we're going to expand
+the folder app compact.
+
+150
+00:07:30.275 --> 00:07:32.195
+We're going to highlight
+the program's folder
+
+151
+00:07:32.195 --> 00:07:33.665
+underneath the app compact,
+
+152
+00:07:33.665 --> 00:07:35.480
+and we see our AmCache hive.
+
+153
+00:07:35.480 --> 00:07:37.670
+We're going to go ahead and
+select the AmCache hive,
+
+154
+00:07:37.670 --> 00:07:39.770
+right-click export files.
+
+155
+00:07:39.770 --> 00:07:41.405
+We're going to go
+back to the folder
+
+156
+00:07:41.405 --> 00:07:43.415
+on our desktop or
+wherever you saved it,
+
+157
+00:07:43.415 --> 00:07:44.975
+where you put your
+Registry files.
+
+158
+00:07:44.975 --> 00:07:46.310
+We're going to select that folder
+
+159
+00:07:46.310 --> 00:07:48.790
+Win 10 Registry and click "Okay".
+
+160
+00:07:48.790 --> 00:07:50.420
+Now, we're done in
+the Windows folder,
+
+161
+00:07:50.420 --> 00:07:51.800
+so we'll go ahead
+and close that up.
+
+162
+00:07:51.800 --> 00:07:52.850
+Now, we're going to expand the
+
+163
+00:07:52.850 --> 00:07:54.680
+Users folder and we're
+going to click on
+
+164
+00:07:54.680 --> 00:07:57.275
+the Ivan user and we're
+going to select the
+
+165
+00:07:57.275 --> 00:08:00.190
+NT.dat file from
+the file list pane.
+
+166
+00:08:00.190 --> 00:08:03.000
+We're going to right-click
+Export Files and we'll choose
+
+167
+00:08:03.000 --> 00:08:07.190
+that same file Win 10
+Registry and click "Okay",
+
+168
+00:08:07.190 --> 00:08:09.155
+then we're going to
+select the Ivan user
+
+169
+00:08:09.155 --> 00:08:10.470
+or whichever user you prefer,
+
+170
+00:08:10.470 --> 00:08:12.080
+but let's stay with
+the Ivan user.
+
+171
+00:08:12.080 --> 00:08:13.535
+We're going to check app data.
+
+172
+00:08:13.535 --> 00:08:14.690
+After we expand Ivan,
+
+173
+00:08:14.690 --> 00:08:16.190
+we're going to expand app data.
+
+174
+00:08:16.190 --> 00:08:17.570
+We're going to expand local.
+
+175
+00:08:17.570 --> 00:08:18.860
+After we expand local,
+
+176
+00:08:18.860 --> 00:08:20.510
+we're going to expand Microsoft.
+
+177
+00:08:20.510 --> 00:08:22.505
+We're going to scroll
+down, expand Window.
+
+178
+00:08:22.505 --> 00:08:24.065
+We're going to highlight
+the Windows folder.
+
+179
+00:08:24.065 --> 00:08:26.420
+Once you highlight the
+Windows folder and again,
+
+180
+00:08:26.420 --> 00:08:29.900
+that's app data under
+the user app data,
+
+181
+00:08:29.900 --> 00:08:33.500
+local, Microsoft highlight
+the Windows folder.
+
+182
+00:08:33.500 --> 00:08:34.970
+We're going to look over in
+
+183
+00:08:34.970 --> 00:08:36.545
+the right-hand file list pane,
+
+184
+00:08:36.545 --> 00:08:38.545
+and we see our User Class.dat.
+
+185
+00:08:38.545 --> 00:08:40.150
+We're going to go ahead
+and highlight the User
+
+186
+00:08:40.150 --> 00:08:43.340
+Class.dat, right-click
+Export File.
+
+187
+00:08:43.340 --> 00:08:46.805
+We're going to choose our same
+folder or Win 10 Registry.
+
+188
+00:08:46.805 --> 00:08:48.020
+I'm going to click "Okay".
+
+189
+00:08:48.020 --> 00:08:52.099
+Now, we've exported
+all our registry files
+
+190
+00:08:52.099 --> 00:08:54.875
+from within the file
+system in Windows.
+
+191
+00:08:54.875 --> 00:08:57.240
+That is the end of
+the walk-through.

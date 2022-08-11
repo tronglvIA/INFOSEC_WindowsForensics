@@ -1,0 +1,907 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:04.600
+We are talking about the Fat file
+system here in course eight And
+
+2
+00:00:04.600 --> 00:00:09.535
+in module before we're going to talk
+about the file allocation table,
+
+3
+00:00:09.535 --> 00:00:13.661
+we're going to take a look at
+how it works and how we read it.
+
+4
+00:00:14.840 --> 00:00:18.340
+The facts of the file
+allocation table is the call.
+
+5
+00:00:18.340 --> 00:00:23.686
+What they do is they track cluster
+allocation which clusters are in use being
+
+6
+00:00:23.686 --> 00:00:30.040
+occupied by a file and which clusters are
+not in use and available to be written to?
+
+7
+00:00:30.040 --> 00:00:30.540
+Yeah.
+
+8
+00:00:31.640 --> 00:00:37.551
+File allocation table has an entry for
+every cluster on the volume.
+
+9
+00:00:39.940 --> 00:00:45.825
+Fat one and fat too should be the same
+because Fat too is a backup for
+
+10
+00:00:45.825 --> 00:00:48.540
+recovery purposes.
+
+11
+00:00:48.540 --> 00:00:51.314
+If that one becomes corrupted,
+
+12
+00:00:51.314 --> 00:00:56.461
+they are located in the system
+area on all versions of that.
+
+13
+00:00:57.640 --> 00:01:04.001
+And again, they're used to track
+cluster allocation status,
+
+14
+00:01:04.001 --> 00:01:08.829
+whether the cluster is
+being occupied by a file or
+
+15
+00:01:08.829 --> 00:01:14.129
+it's available to be written
+to each of these entries
+
+16
+00:01:14.129 --> 00:01:19.193
+which represents a cluster
+on the drive will give us
+
+17
+00:01:19.193 --> 00:01:24.256
+the location of the next
+cluster of that file here is
+
+18
+00:01:24.256 --> 00:01:29.491
+kind of a visual example of
+what the facts do we have?
+
+19
+00:01:29.491 --> 00:01:33.917
+Our system area and our fats
+
+20
+00:01:33.917 --> 00:01:38.920
+are in the system area now out in
+
+21
+00:01:38.920 --> 00:01:44.116
+the data area we have our files,
+
+22
+00:01:44.116 --> 00:01:49.511
+we have a file here just written.
+
+23
+00:01:49.511 --> 00:01:54.618
+And cluster too, cluster two Points to
+
+24
+00:01:54.618 --> 00:02:00.661
+cluster six where the rest
+of this file lives.
+
+25
+00:02:02.340 --> 00:02:07.240
+So this file is what we call fragmented.
+
+26
+00:02:07.240 --> 00:02:08.139
+Yeah.
+
+27
+00:02:08.139 --> 00:02:10.861
+In other words it's not
+right next to each other.
+
+28
+00:02:13.040 --> 00:02:15.140
+Part of it is in cluster too.
+
+29
+00:02:15.140 --> 00:02:17.361
+And then the other part
+of it is in cluster six.
+
+30
+00:02:19.040 --> 00:02:24.195
+If we look at cluster three,
+Cluster three points us to
+
+31
+00:02:24.195 --> 00:02:29.361
+cluster four and
+then we have an end of file marker E o f.
+
+32
+00:02:30.540 --> 00:02:34.611
+This would be called a contiguous
+file Because cluster
+
+33
+00:02:34.611 --> 00:02:37.940
+three is right next to cluster four.
+
+34
+00:02:37.940 --> 00:02:42.970
+And then looking at our diagram and
+cluster five, we just have an end
+
+35
+00:02:42.970 --> 00:02:48.530
+of file marker which this tells me that
+the file occupying Cluster five only
+
+36
+00:02:48.530 --> 00:02:53.851
+needs one cluster so it's not big
+enough to need more than one cluster.
+
+37
+00:02:55.340 --> 00:02:58.761
+A fat writes the data to
+the first available cluster.
+
+38
+00:02:59.940 --> 00:03:02.844
+So if we deleted one of these and
+
+39
+00:03:02.844 --> 00:03:07.551
+wrote a new file it could
+go into this empty space.
+
+40
+00:03:07.551 --> 00:03:13.117
+Now we're going to see Type three
+Types of entries in the fat,
+
+41
+00:03:13.117 --> 00:03:18.573
+you're going to see this marker,
+a first offense offense or
+
+42
+00:03:18.573 --> 00:03:23.024
+less and
+that indicates end of file that tells us
+
+43
+00:03:23.024 --> 00:03:27.142
+we're either at the end
+of a cluster chain or
+
+44
+00:03:27.142 --> 00:03:32.708
+if it's only occupies one cluster
+will just see that marker
+
+45
+00:03:32.708 --> 00:03:37.861
+in the cluster that represents
+that file on the draft.
+
+46
+00:03:39.940 --> 00:03:42.540
+You could see 000000.
+
+47
+00:03:42.540 --> 00:03:46.772
+And this indicates that
+the cluster is not being used,
+
+48
+00:03:46.772 --> 00:03:49.440
+it's available to be written to or
+
+49
+00:03:49.440 --> 00:03:54.592
+we'll see a pointer to the next
+cluster And down here we can see this
+
+50
+00:03:54.592 --> 00:04:00.540
+is what a fat table is going to look
+like when we view it with our tools.
+
+51
+00:04:00.540 --> 00:04:06.240
+This F A f f f f Os.
+
+52
+00:04:06.240 --> 00:04:12.241
+This is what we call a media descriptor
+generally indicates fixed disk but
+
+53
+00:04:12.241 --> 00:04:16.010
+it's what we call a media descriptor.
+
+54
+00:04:16.010 --> 00:04:21.520
+These next four bites Tell us
+the version of Fat one looking at and
+
+55
+00:04:21.520 --> 00:04:27.861
+since they were all maxed out at ff ff
+ff We know we're looking at Fat 32.
+
+56
+00:04:29.240 --> 00:04:33.240
+Fat 32 has four byte entries.
+
+57
+00:04:33.240 --> 00:04:37.354
+Fat 12 and 16 Have to bite entries for
+each cluster but
+
+58
+00:04:37.354 --> 00:04:43.361
+we are going to focus on fat 32 because
+that's most likely what we'll see today.
+
+59
+00:04:45.040 --> 00:04:46.601
+So four Byte entries.
+
+60
+00:04:47.930 --> 00:04:52.790
+These next four bites represent
+cluster two because our cluster
+
+61
+00:04:52.790 --> 00:04:56.751
+numbering out on our drives
+is going to start it too.
+
+62
+00:04:57.940 --> 00:05:03.011
+So this represents cluster too and
+it's pointing to would have
+
+63
+00:05:03.011 --> 00:05:08.370
+to translate that number but
+it's pointing to another cost around
+
+64
+00:05:08.370 --> 00:05:14.110
+in the drive this would be the Filed
+clustered 3's representation and
+
+65
+00:05:14.110 --> 00:05:19.084
+cluster to re has an end of file
+marker which means the file that
+
+66
+00:05:19.084 --> 00:05:23.581
+is occupying cluster three
+only takes up one cluster And
+
+67
+00:05:23.581 --> 00:05:29.940
+we had the four bytes for close to four
+and we have an end of file marker.
+
+68
+00:05:29.940 --> 00:05:33.240
+Cluster five we have
+an entire file marker.
+
+69
+00:05:33.240 --> 00:05:39.061
+Now we look at cluster six Cluster
+six points to cluster seven.
+
+70
+00:05:40.240 --> 00:05:45.653
+If we look at the four bytes that
+represent cluster seven in our fat table,
+
+71
+00:05:45.653 --> 00:05:49.040
+They pointed to cluster eight 9 10.
+
+72
+00:05:49.040 --> 00:05:53.240
+It just goes you can see this
+is a long continuous file.
+
+73
+00:05:53.240 --> 00:06:01.761
+Yes this is showing us what
+we have in our fat tables.
+
+74
+00:06:02.940 --> 00:06:07.884
+It's the same fat table we looked at
+in the previous slide we have our media
+
+75
+00:06:07.884 --> 00:06:11.251
+descriptor for bites,
+then we have our fat type.
+
+76
+00:06:13.030 --> 00:06:17.161
+Then this The next four bytes
+represents cluster too.
+
+77
+00:06:19.440 --> 00:06:24.700
+And cluster two points
+out to cluster 42656.
+
+78
+00:06:24.700 --> 00:06:30.236
+If we translated and
+these are red the Lindy in again,
+
+79
+00:06:30.236 --> 00:06:37.640
+If we translated 0000 86 Ao
+would come up with 42,665.
+
+80
+00:06:37.640 --> 00:06:40.640
+So that's what cluster to cluster to.
+
+81
+00:06:40.640 --> 00:06:41.751
+Points to that cluster.
+
+82
+00:06:43.940 --> 00:06:50.404
+Now if we look at cluster three,
+Hesitant to file marker close to 400 and
+
+83
+00:06:50.404 --> 00:06:56.340
+a file marker five And
+then cluster six Points to cluster seven.
+
+84
+00:06:56.340 --> 00:07:02.920
+We look at the entry for cluster seven It
+points to eight Mr eight points to nine.
+
+85
+00:07:02.920 --> 00:07:05.911
+And this file just goes
+on to the very end.
+
+86
+00:07:05.911 --> 00:07:11.261
+We have clustered 20 down
+here Pointing to cluster 21.
+
+87
+00:07:13.140 --> 00:07:15.561
+So that would be how we
+would look at our fat table.
+
+88
+00:07:16.840 --> 00:07:20.290
+We're going to do a walk through and
+take a look at this on disk.
+
+89
+00:07:20.290 --> 00:07:26.194
+So please attach your NPR Bhd
+note that this number of your
+
+90
+00:07:26.194 --> 00:07:32.140
+attached virtual hard drive so
+we can locate it.
+
+91
+00:07:32.140 --> 00:07:36.970
+And please open up active disk editor for
+our walk through.
+
+92
+00:07:36.970 --> 00:07:40.821
+The first thing we're going
+to do is attach R V H.
+
+93
+00:07:40.821 --> 00:07:42.340
+D.
+
+94
+00:07:42.340 --> 00:07:49.740
+So we'd go to actions,
+attach PhD would navigate out.
+
+95
+00:07:49.740 --> 00:07:51.431
+Find R M B R V H.
+
+96
+00:07:51.431 --> 00:07:51.931
+D.
+
+97
+00:07:53.740 --> 00:07:58.311
+Mhm click open and it will attach the V H.
+
+98
+00:07:58.311 --> 00:07:59.740
+D.
+For us.
+
+99
+00:07:59.740 --> 00:08:00.850
+Yeah.
+
+100
+00:08:00.850 --> 00:08:01.740
+Yeah.
+
+101
+00:08:01.740 --> 00:08:05.240
+Once we've done that, mm hmm.
+
+102
+00:08:05.240 --> 00:08:06.251
+We can see R V H.
+
+103
+00:08:06.251 --> 00:08:07.500
+D.
+
+104
+00:08:07.500 --> 00:08:09.051
+Remember the drive number.
+
+105
+00:08:10.840 --> 00:08:12.040
+Mhm.
+
+106
+00:08:12.040 --> 00:08:15.940
+Now we're going to open
+Active disk editor.
+
+107
+00:08:15.940 --> 00:08:16.640
+Mhm.
+
+108
+00:08:16.640 --> 00:08:23.070
+Once Active disk editor opens,
+we're going to open a logical volume,
+
+109
+00:08:23.070 --> 00:08:28.855
+again the same logical volume we did for
+our last walk through and
+
+110
+00:08:28.855 --> 00:08:36.740
+we're going to take a look at the fat file
+table and see how our tool shows it to us.
+
+111
+00:08:36.740 --> 00:08:37.251
+Yes.
+
+112
+00:08:39.150 --> 00:08:42.200
+And I'm going to show you
+an easier way to read it.
+
+113
+00:08:42.200 --> 00:08:45.661
+So we're going to select open disk.
+
+114
+00:08:46.740 --> 00:08:47.940
+Mhm.
+
+115
+00:08:47.940 --> 00:08:52.420
+We're going to select volumes because
+we want to look at the volume,
+
+116
+00:08:52.420 --> 00:08:53.861
+not a physical disk.
+
+117
+00:08:54.940 --> 00:08:59.370
+And we are going to
+select our fat 32 volume.
+
+118
+00:08:59.370 --> 00:09:02.840
+That is 200 MB in size.
+
+119
+00:09:02.840 --> 00:09:08.240
+My name is Dr S and
+we're going to open it.
+
+120
+00:09:08.240 --> 00:09:09.640
+Okay.
+
+121
+00:09:09.640 --> 00:09:10.440
+Yeah.
+
+122
+00:09:10.440 --> 00:09:16.740
+Again when it opens by default this tool
+will take you to the volume boot record.
+
+123
+00:09:16.740 --> 00:09:17.340
+Mhm.
+
+124
+00:09:17.340 --> 00:09:21.255
+We've already taken a look at this so
+
+125
+00:09:21.255 --> 00:09:26.181
+we know how many sectors
+we have per cluster And
+
+126
+00:09:26.181 --> 00:09:34.240
+just in case it's four sectors per
+cluster In 512 bytes per sector.
+
+127
+00:09:34.240 --> 00:09:39.267
+Yeah, now we're going to go
+up to the navigate button and
+
+128
+00:09:39.267 --> 00:09:44.084
+we're going to navigate to Fat one and
+we look at this,
+
+129
+00:09:44.084 --> 00:09:46.702
+it's a little hard to read But
+
+130
+00:09:46.702 --> 00:09:52.340
+we know each one of our entries
+is four bytes in length.
+
+131
+00:09:52.340 --> 00:09:58.981
+So what we're going to do is we're
+going to go to file mhm Preferences and
+
+132
+00:09:58.981 --> 00:10:05.388
+we're going to change our view in
+bytes per line from 16 to 4 and
+
+133
+00:10:05.388 --> 00:10:10.283
+we're going to click OK once
+that opens up it makes it
+
+134
+00:10:10.283 --> 00:10:14.961
+a little bit easier for
+us to read our fat table.
+
+135
+00:10:16.740 --> 00:10:21.661
+The first entry at our fat table is
+going to be the media descriptor.
+
+136
+00:10:22.740 --> 00:10:23.240
+Mhm.
+
+137
+00:10:24.340 --> 00:10:32.440
+And we have F a f f f f o f and
+this usually indicates a fixed disk.
+
+138
+00:10:32.440 --> 00:10:37.694
+Our next entry, our next four byte
+entry in our fat table is going to tell
+
+139
+00:10:37.694 --> 00:10:43.440
+us what version of fat we're looking
+at and we can see we have ff ff ff ff.
+
+140
+00:10:43.440 --> 00:10:46.461
+So we know we're looking at Fat 32.
+
+141
+00:10:48.260 --> 00:10:54.420
+This next entry down here represents
+cluster too because cluster
+
+142
+00:10:54.420 --> 00:11:00.020
+numbering starts at two out on the volume,
+so cluster too,
+
+143
+00:11:00.020 --> 00:11:06.750
+Cluster two in this particular fat
+table has an end of file marker in it.
+
+144
+00:11:06.750 --> 00:11:11.540
+That means that the file occupying
+cluster to only needs one cluster.
+
+145
+00:11:11.540 --> 00:11:15.700
+We looked down,
+we see our entry for cluster three.
+
+146
+00:11:15.700 --> 00:11:21.117
+This entry represents cluster three,
+it's telling us its allocation status,
+
+147
+00:11:21.117 --> 00:11:26.151
+it's telling us it is allocated and
+it doesn't point to another cluster.
+
+148
+00:11:26.151 --> 00:11:31.440
+So we know that the file and
+cluster three only takes up one cluster.
+
+149
+00:11:31.440 --> 00:11:34.990
+We look at the Representation for
+Cluster four.
+
+150
+00:11:34.990 --> 00:11:37.872
+We see the same thing,
+
+151
+00:11:37.872 --> 00:11:42.726
+we look at the entry for cluster five,
+
+152
+00:11:42.726 --> 00:11:49.270
+we see the same thing 6789 10, 11, 12.
+
+153
+00:11:49.270 --> 00:11:56.040
+Now, when we look at the entry for
+cluster 13.
+
+154
+00:11:56.040 --> 00:12:01.840
+Mhm And we highlight it little indian.
+
+155
+00:12:01.840 --> 00:12:05.117
+Yeah, We can see that the entry for
+
+156
+00:12:05.117 --> 00:12:10.541
+cluster 13 these four bytes
+represent close to 13 and
+
+157
+00:12:10.541 --> 00:12:16.756
+they have a pointer in them and
+that pointer is telling us to go to,
+
+158
+00:12:16.756 --> 00:12:23.536
+we look at our data interpreter,
+cluster 14, we look at the entry for
+
+159
+00:12:23.536 --> 00:12:29.140
+cluster 14 and
+that's pointing us to cluster 15.
+
+160
+00:12:29.140 --> 00:12:30.580
+Mhm.
+
+161
+00:12:30.580 --> 00:12:31.111
+We could see it.
+
+162
+00:12:31.111 --> 00:12:32.541
+Our data interpreter or zero.
+
+163
+00:12:32.541 --> 00:12:33.761
+f is 15.
+
+164
+00:12:36.040 --> 00:12:43.156
+So we look at the representation
+the entry in our Table for
+
+165
+00:12:43.156 --> 00:12:48.651
+cluster 15 And it points to cluster 16.
+
+166
+00:12:49.780 --> 00:12:54.281
+We look at the fat table entry for
+
+167
+00:12:54.281 --> 00:12:58.283
+cluster 16 right below and
+
+168
+00:12:58.283 --> 00:13:03.140
+it points us to cluster 17.
+
+169
+00:13:03.140 --> 00:13:08.223
+So we look at the entry for cluster 17 And
+
+170
+00:13:08.223 --> 00:13:12.440
+it points us to cluster 18.
+
+171
+00:13:12.440 --> 00:13:17.522
+And when we look at the four
+Byte fat table entry For
+
+172
+00:13:17.522 --> 00:13:22.440
+cluster 18 we see an end of file marker.
+
+173
+00:13:22.440 --> 00:13:23.540
+Mm hmm.
+
+174
+00:13:23.540 --> 00:13:25.940
+The company people.
+
+175
+00:13:25.940 --> 00:13:30.251
+Yeah, if we continue down the table.
+
+176
+00:13:31.340 --> 00:13:32.580
+Mhm.
+
+177
+00:13:32.580 --> 00:13:35.940
+We can see that.
+
+178
+00:13:35.940 --> 00:13:36.740
+Yeah.
+
+179
+00:13:36.740 --> 00:13:37.251
+Mhm.
+
+180
+00:13:38.830 --> 00:13:42.380
+Cluster 19 also has an end
+of file marker in it.
+
+181
+00:13:42.380 --> 00:13:45.171
+Cluster 20 has an end
+of file marker in it.
+
+182
+00:13:46.240 --> 00:13:47.060
+Yeah.
+
+183
+00:13:47.060 --> 00:13:50.540
+We look at the Fat Table entry for
+Claim 21.
+
+184
+00:13:50.540 --> 00:13:53.894
+We can see all zeros and
+we know that all zeros
+
+185
+00:13:53.894 --> 00:13:58.891
+means that the clusters are marked
+as available to be written to.
+
+186
+00:14:00.440 --> 00:14:01.840
+Mhm.
+
+187
+00:14:01.840 --> 00:14:03.840
+Know that.
+
+188
+00:14:03.840 --> 00:14:09.188
+To see a cluster in the middle of
+the table marked is available to be
+
+189
+00:14:09.188 --> 00:14:14.840
+written to maybe an indication
+that a file was deleted there.
+
+190
+00:14:14.840 --> 00:14:15.340
+Mhm.
+
+191
+00:14:16.710 --> 00:14:22.028
+If we look down in our fat table,
+we see more into file markers and
+
+192
+00:14:22.028 --> 00:14:26.166
+we see more files that
+are contiguous meaning that
+
+193
+00:14:26.166 --> 00:14:29.840
+the clusters are one
+right after the other.
+
+194
+00:14:29.840 --> 00:14:34.791
+They're not fragmented but we're not
+jumping from one cluster to another.
+
+195
+00:14:38.580 --> 00:14:42.440
+And that would be how we would
+take a look at our fat table.
+
+196
+00:14:42.440 --> 00:14:42.940
+Yeah.

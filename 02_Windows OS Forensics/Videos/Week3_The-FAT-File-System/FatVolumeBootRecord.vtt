@@ -1,0 +1,933 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.444
+Course A, the FAT file system
+
+2
+00:00:02.444 --> 00:00:04.620
+or I'm module 2 and
+in this module,
+
+3
+00:00:04.620 --> 00:00:06.060
+but we're going to talk about
+
+4
+00:00:06.060 --> 00:00:10.680
+the volume boot
+record. Next slide.
+
+5
+00:00:10.680 --> 00:00:14.340
+The FAT 32 volume boot record,
+
+6
+00:00:14.340 --> 00:00:19.489
+it's located in the first
+sector of the volume,
+
+7
+00:00:19.489 --> 00:00:22.435
+which is going to be
+logical sectors 0.
+
+8
+00:00:22.435 --> 00:00:24.785
+Now, don't confuse this
+
+9
+00:00:24.785 --> 00:00:26.915
+with the first
+sector of the disk,
+
+10
+00:00:26.915 --> 00:00:28.985
+which is Physical sector 0.
+
+11
+00:00:28.985 --> 00:00:32.945
+This is the first sector
+of the logical volume.
+
+12
+00:00:32.945 --> 00:00:35.255
+This file is going to contain
+
+13
+00:00:35.255 --> 00:00:38.615
+information about the volume.
+
+14
+00:00:38.615 --> 00:00:41.300
+Some of the information of
+
+15
+00:00:41.300 --> 00:00:44.120
+interest to us in the
+volume boot record.
+
+16
+00:00:44.120 --> 00:00:47.780
+What we're going
+to see the OEM ID,
+
+17
+00:00:47.780 --> 00:00:52.540
+which will most
+likely be MS-DOS5.0.
+
+18
+00:00:53.260 --> 00:00:58.570
+This will be the volume ON
+
+19
+00:00:58.570 --> 00:01:05.265
+OEM MID for operating
+systems, Windows 2009.
+
+20
+00:01:05.265 --> 00:01:09.190
+Most likely that's the only
+MID we're going to see.
+
+21
+00:01:09.190 --> 00:01:12.025
+We're going to be interested
+in bytes per sector,
+
+22
+00:01:12.025 --> 00:01:14.365
+which is usually going to be 512.
+
+23
+00:01:14.365 --> 00:01:17.515
+We're usually going to have
+512 bytes in a sector.
+
+24
+00:01:17.515 --> 00:01:20.815
+We also need to know how many
+sectors are in a cluster.
+
+25
+00:01:20.815 --> 00:01:22.570
+This is going to
+be very important
+
+26
+00:01:22.570 --> 00:01:24.325
+when we're navigating the disk.
+
+27
+00:01:24.325 --> 00:01:26.860
+Sectors per cluster varies.
+
+28
+00:01:26.860 --> 00:01:30.790
+It can either be selected
+by the operating system
+
+29
+00:01:30.790 --> 00:01:32.170
+or the user does have
+
+30
+00:01:32.170 --> 00:01:35.780
+the option to change
+that if they would like.
+
+31
+00:01:35.780 --> 00:01:38.025
+We're going to see
+the number of FATs.
+
+32
+00:01:38.025 --> 00:01:42.635
+There should be two, one
+is for backup purposes.
+
+33
+00:01:42.635 --> 00:01:44.650
+We're going to see
+hidden sectors.
+
+34
+00:01:44.650 --> 00:01:47.050
+These are sectors
+proceeding the volume.
+
+35
+00:01:47.050 --> 00:01:50.545
+These are the sectors
+on the physical drive
+
+36
+00:01:50.545 --> 00:01:55.175
+that are in front of or
+preceding the volume itself.
+
+37
+00:01:55.175 --> 00:01:57.915
+We're going to see total sectors.
+
+38
+00:01:57.915 --> 00:02:00.760
+Now, total sectors, times
+
+39
+00:02:00.760 --> 00:02:05.170
+sector signs will give us
+the size of the volume.
+
+40
+00:02:05.170 --> 00:02:07.510
+We need to know how
+big the volume is that
+
+41
+00:02:07.510 --> 00:02:10.135
+we're looking at. Next slide.
+
+42
+00:02:10.135 --> 00:02:13.345
+This is more information
+that we're going to look at
+
+43
+00:02:13.345 --> 00:02:16.375
+in the FAT 32 volume boot record.
+
+44
+00:02:16.375 --> 00:02:18.445
+We're going to look
+at sectors per FAT,
+
+45
+00:02:18.445 --> 00:02:20.695
+how many sectors are in each FAT?
+
+46
+00:02:20.695 --> 00:02:23.780
+We want to know the
+starting cluster
+
+47
+00:02:23.780 --> 00:02:26.250
+of the root directory because
+
+48
+00:02:26.250 --> 00:02:27.905
+the root directory is going to be
+
+49
+00:02:27.905 --> 00:02:29.690
+a very important part of
+
+50
+00:02:29.690 --> 00:02:32.300
+the FAT file system that
+we need to look at.
+
+51
+00:02:32.300 --> 00:02:35.105
+That's usually going
+to be clustered too.
+
+52
+00:02:35.105 --> 00:02:36.650
+We also want to know where
+
+53
+00:02:36.650 --> 00:02:39.425
+the backup boot
+sector is located.
+
+54
+00:02:39.425 --> 00:02:43.595
+The backup boot sector will
+usually be in cluster 6.
+
+55
+00:02:43.595 --> 00:02:46.700
+We're going to want to know
+the volume serial number
+
+56
+00:02:46.700 --> 00:02:49.100
+because most likely you're
+going to be looking at
+
+57
+00:02:49.100 --> 00:02:51.500
+FAT on removable media
+and we're going to need
+
+58
+00:02:51.500 --> 00:02:53.690
+the volume serial number to track
+
+59
+00:02:53.690 --> 00:02:56.855
+that drive across volumes.
+
+60
+00:02:56.855 --> 00:02:59.390
+We're also going to be
+interested in the volume name,
+
+61
+00:02:59.390 --> 00:03:01.910
+note the volume name in
+
+62
+00:03:01.910 --> 00:03:05.420
+the boot record is not going to
+
+63
+00:03:05.420 --> 00:03:07.475
+be the user-created volume name
+
+64
+00:03:07.475 --> 00:03:09.515
+that's going to be in
+the root directory.
+
+65
+00:03:09.515 --> 00:03:13.565
+It'll usually say no name
+in the volume boot record.
+
+66
+00:03:13.565 --> 00:03:16.295
+We're going to want to
+know the file system type.
+
+67
+00:03:16.295 --> 00:03:19.295
+That's also information
+in the boot record.
+
+68
+00:03:19.295 --> 00:03:21.020
+Now, do not confuse
+
+69
+00:03:21.020 --> 00:03:23.995
+the volume boot record with
+the master boot record.
+
+70
+00:03:23.995 --> 00:03:26.090
+The master boot record relates to
+
+71
+00:03:26.090 --> 00:03:29.420
+the physical dense and
+volume boot record relates
+
+72
+00:03:29.420 --> 00:03:33.345
+to the logical
+volume. Next slide.
+
+73
+00:03:33.345 --> 00:03:36.810
+We can see here in the chart,
+
+74
+00:03:36.810 --> 00:03:38.870
+all the important information we
+
+75
+00:03:38.870 --> 00:03:40.820
+just talked about in the chart
+
+76
+00:03:40.820 --> 00:03:45.220
+shows us the offsets where we
+can find that information.
+
+77
+00:03:45.220 --> 00:03:47.674
+These offsets are relative
+
+78
+00:03:47.674 --> 00:03:49.535
+to the start of the
+Data Structure.
+
+79
+00:03:49.535 --> 00:03:51.950
+If we're looking at the
+volume boot record,
+
+80
+00:03:51.950 --> 00:03:53.870
+the offsets you see,
+
+81
+00:03:53.870 --> 00:03:57.850
+they're relative to the start
+of a volume boot record,
+
+82
+00:03:57.850 --> 00:04:00.285
+not the start of
+the physical drive.
+
+83
+00:04:00.285 --> 00:04:02.340
+Just keep that in mind.
+
+84
+00:04:02.340 --> 00:04:04.950
+The start of the Data Structure.
+
+85
+00:04:04.950 --> 00:04:07.440
+Next slide. This is
+
+86
+00:04:07.440 --> 00:04:10.530
+a look at a FAT 32
+volume book record.
+
+87
+00:04:10.530 --> 00:04:11.930
+This is what it's
+going to look like.
+
+88
+00:04:11.930 --> 00:04:14.675
+We'll look at it with our tools.
+
+89
+00:04:14.675 --> 00:04:18.020
+It's located on logical sector
+
+90
+00:04:18.020 --> 00:04:21.005
+0 and these values
+
+91
+00:04:21.005 --> 00:04:24.590
+are going to be
+interpreted little-endian.
+
+92
+00:04:24.590 --> 00:04:28.895
+The volume boot record is going
+to be one sector in size,
+
+93
+00:04:28.895 --> 00:04:32.980
+it's 512 bytes, one
+sector. Next slide.
+
+94
+00:04:32.980 --> 00:04:37.025
+Now we're going to do a
+walk-through and take a look
+
+95
+00:04:37.025 --> 00:04:41.680
+at the volume boot record
+with active disk editor.
+
+96
+00:04:41.680 --> 00:04:45.715
+I need you to please
+attach your MBR underscore
+
+97
+00:04:45.715 --> 00:04:51.515
+VHD virtual hard drive
+and remember to note
+
+98
+00:04:51.515 --> 00:04:54.800
+the disk number of
+
+99
+00:04:54.800 --> 00:04:59.270
+their VHD in the volume letters
+
+100
+00:04:59.270 --> 00:05:01.325
+assign to your
+virtual hard drive.
+
+101
+00:05:01.325 --> 00:05:05.345
+I'm also going to need you
+to open active disk editor.
+
+102
+00:05:05.345 --> 00:05:11.490
+The first thing we need to
+do is attach our MDR VHD.
+
+103
+00:05:11.490 --> 00:05:14.935
+We're going to go to
+do disk management.
+
+104
+00:05:14.935 --> 00:05:17.384
+Once you're in disk management,
+
+105
+00:05:17.384 --> 00:05:22.640
+we're going to go to
+Actions. Attach VHD.
+
+106
+00:05:22.640 --> 00:05:29.060
+We're going to browse to
+where we saved our MBR VHD.
+
+107
+00:05:29.060 --> 00:05:33.470
+Mine is on my desktop in a
+folder called Class VHD.
+
+108
+00:05:33.470 --> 00:05:36.460
+We're going to
+select the MBR VHD.
+
+109
+00:05:36.460 --> 00:05:39.160
+We're going to click Open.
+
+110
+00:05:40.550 --> 00:05:48.700
+We're going to click Okay
+and the VHD will attach.
+
+111
+00:05:49.190 --> 00:05:52.780
+Once you've attached the VHD,
+
+112
+00:05:52.780 --> 00:06:00.440
+note the disk number and
+the logical volume letters.
+
+113
+00:06:03.950 --> 00:06:08.860
+Next we're going to open
+active disk editor.
+
+114
+00:06:09.950 --> 00:06:13.500
+Once active disk editors open,
+
+115
+00:06:13.500 --> 00:06:19.600
+locate the physical
+disk, expand it.
+
+116
+00:06:21.140 --> 00:06:24.105
+We're going to select
+
+117
+00:06:24.105 --> 00:06:30.090
+FAT 32 A is the volume that
+we're going to look at.
+
+118
+00:06:30.090 --> 00:06:35.265
+So right-click open
+and disk editor.
+
+119
+00:06:35.265 --> 00:06:37.830
+Once it opens, it
+should open right
+
+120
+00:06:37.830 --> 00:06:40.785
+to your volume boot record.
+
+121
+00:06:40.785 --> 00:06:43.110
+Because it's logical
+sector zero and we're
+
+122
+00:06:43.110 --> 00:06:45.390
+looking at the
+logical drive if it
+
+123
+00:06:45.390 --> 00:06:50.860
+doesn't simply go to navigate
+and go to boot sector zero.
+
+124
+00:06:51.980 --> 00:06:54.030
+Once you've done that, we're
+
+125
+00:06:54.030 --> 00:06:55.290
+going to take a look at some of
+
+126
+00:06:55.290 --> 00:06:59.920
+the information we went
+over in our slides.
+
+127
+00:07:00.680 --> 00:07:04.845
+We have the OMED,
+
+128
+00:07:04.845 --> 00:07:10.030
+which we expect is MSDOS5.0.
+
+129
+00:07:14.090 --> 00:07:23.200
+You can see that it's
+located at offset 03.
+
+130
+00:07:25.190 --> 00:07:30.600
+Next, we have our
+bytes per sector.
+
+131
+00:07:30.600 --> 00:07:33.810
+Now remember these values
+are red little endian.
+
+132
+00:07:33.810 --> 00:07:37.390
+It'll be read from left to right.
+
+133
+00:07:38.000 --> 00:07:43.245
+If we take a look down
+and our data interpreter,
+
+134
+00:07:43.245 --> 00:07:48.675
+we can see the 16 bit
+unsigned value is 512.
+
+135
+00:07:48.675 --> 00:07:52.410
+Our bytes per sector are 512.
+
+136
+00:07:52.410 --> 00:07:55.560
+If we look up, we can see
+
+137
+00:07:55.560 --> 00:07:58.560
+that is what our
+tool is telling us.
+
+138
+00:07:58.560 --> 00:08:01.960
+We have 512 bytes per sector.
+
+139
+00:08:03.680 --> 00:08:07.870
+Next we're going to look
+at sectors per cluster.
+
+140
+00:08:08.030 --> 00:08:10.500
+We can see that it's two.
+
+141
+00:08:10.500 --> 00:08:13.635
+We have two sectors per cluster.
+
+142
+00:08:13.635 --> 00:08:18.250
+So our clusters will
+be 1024 in size.
+
+143
+00:08:22.220 --> 00:08:25.590
+You can see the number
+of FATs is two,
+
+144
+00:08:25.590 --> 00:08:27.990
+which is what we'd expect to see.
+
+145
+00:08:27.990 --> 00:08:32.740
+That's located at
+offset hexidecimal 10.
+
+146
+00:08:36.530 --> 00:08:39.825
+We can see we have
+a media descriptor,
+
+147
+00:08:39.825 --> 00:08:42.765
+and our media descriptor is F8.
+
+148
+00:08:42.765 --> 00:08:47.140
+F8 indicates fixed disk.
+
+149
+00:08:51.950 --> 00:08:56.850
+We can see we have
+hidden sectors,
+
+150
+00:08:56.850 --> 00:08:59.460
+which these are the sectors
+proceeding the volume.
+
+151
+00:08:59.460 --> 00:09:01.650
+The sectors before
+the logical volume
+
+152
+00:09:01.650 --> 00:09:03.645
+that are on the physical disk.
+
+153
+00:09:03.645 --> 00:09:07.390
+Again, this value is
+red little endian.
+
+154
+00:09:07.670 --> 00:09:12.030
+We can see that we
+have a 128 sectors
+
+155
+00:09:12.030 --> 00:09:14.080
+proceeding the volume.
+
+156
+00:09:14.870 --> 00:09:21.370
+Total sectors, the next
+value we want to look at.
+
+157
+00:09:22.340 --> 00:09:27.130
+This tells us how many total
+sectors are on the volume,
+
+158
+00:09:29.210 --> 00:09:38.055
+and this is a 32 bit value.
+
+159
+00:09:38.055 --> 00:09:41.310
+If we look at our data
+interpreter and we
+
+160
+00:09:41.310 --> 00:09:44.625
+look at the unsigned
+32-bit value,
+
+161
+00:09:44.625 --> 00:09:52.320
+we have 204,800 sectors.
+
+162
+00:09:52.320 --> 00:09:55.780
+That is what our
+tool is reporting.
+
+163
+00:09:55.880 --> 00:09:58.650
+If we multiply the
+total number of
+
+164
+00:09:58.650 --> 00:10:02.160
+sectors times the sector size,
+
+165
+00:10:02.160 --> 00:10:06.315
+that will account for all
+of the data on the volume.
+
+166
+00:10:06.315 --> 00:10:07.710
+We're doing an exam,
+
+167
+00:10:07.710 --> 00:10:09.045
+we want to be able to account for
+
+168
+00:10:09.045 --> 00:10:11.590
+all the data on the volume.
+
+169
+00:10:11.660 --> 00:10:18.310
+We can also see
+sectors per FAT 769,
+
+170
+00:10:18.500 --> 00:10:22.530
+and that would be located
+right here in the hex,
+
+171
+00:10:22.530 --> 00:10:25.840
+and again it's red little endian.
+
+172
+00:10:27.410 --> 00:10:33.490
+Our root cluster is cluster 2.
+
+173
+00:10:33.710 --> 00:10:39.700
+We can see that in the hex
+root cluster, cluster 2,
+
+174
+00:10:41.690 --> 00:10:52.800
+backup boot sector, it
+offset hexadecimal 32.
+
+175
+00:10:52.800 --> 00:10:55.410
+Again, we're navigating from
+
+176
+00:10:55.410 --> 00:10:57.615
+the start of the
+volume boot record,
+
+177
+00:10:57.615 --> 00:11:00.420
+not the start at
+the physical desk.
+
+178
+00:11:00.420 --> 00:11:07.540
+We can see our backup boot
+sector is located in Sector 6.
+
+179
+00:11:11.840 --> 00:11:18.720
+We can see our volume
+serial number is
+
+180
+00:11:18.720 --> 00:11:26.650
+located at offset hexadecimal 43.
+
+181
+00:11:28.610 --> 00:11:31.770
+That's our volume serial number.
+
+182
+00:11:31.770 --> 00:11:34.860
+Now considering that in
+this case we do have
+
+183
+00:11:34.860 --> 00:11:36.540
+a fixed disk because we
+
+184
+00:11:36.540 --> 00:11:38.550
+have attached to
+virtual hard drive.
+
+185
+00:11:38.550 --> 00:11:41.190
+But if we were using
+a thumb drive,
+
+186
+00:11:41.190 --> 00:11:43.200
+a volume serial number would be
+
+187
+00:11:43.200 --> 00:11:45.240
+important to track the use of
+
+188
+00:11:45.240 --> 00:11:48.390
+that USB device on this system
+
+189
+00:11:48.390 --> 00:11:50.640
+and also on other systems
+
+190
+00:11:50.640 --> 00:11:53.110
+that it may have
+been plugged into.
+
+191
+00:11:54.620 --> 00:11:58.020
+You see our volume
+label is no name,
+
+192
+00:11:58.020 --> 00:12:01.230
+which is what we expect to see
+in the volume boot record.
+
+193
+00:12:01.230 --> 00:12:04.005
+If there was a
+user-created volume label
+
+194
+00:12:04.005 --> 00:12:05.969
+that would be in
+the root directory.
+
+195
+00:12:05.969 --> 00:12:07.710
+We're going to take a look
+at the root directory
+
+196
+00:12:07.710 --> 00:12:09.850
+in our next module.
+
+197
+00:12:10.550 --> 00:12:14.210
+We can also see our
+file system type.
+
+198
+00:12:14.210 --> 00:12:17.790
+Our file system is FAT 32,
+
+199
+00:12:22.430 --> 00:12:25.595
+and down at the
+end of the sector,
+
+200
+00:12:25.595 --> 00:12:31.550
+we have our boot sector
+signature as 55 AA,
+
+201
+00:12:31.550 --> 00:12:34.140
+which is what we expect to see.
+
+202
+00:12:35.450 --> 00:12:40.400
+That is all the important
+information contained in
+
+203
+00:12:40.400 --> 00:12:45.390
+the FAT 32 volume boot record.

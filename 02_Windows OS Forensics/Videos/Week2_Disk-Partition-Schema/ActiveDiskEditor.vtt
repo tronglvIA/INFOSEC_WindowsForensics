@@ -1,0 +1,529 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:04.330
+We are on course three and
+we're on module three.
+
+2
+00:00:04.330 --> 00:00:07.970
+And in this module we're going to
+take a look at active disk editor.
+
+3
+00:00:07.970 --> 00:00:12.905
+This is the tool we're going to be
+using throughout this path to look
+
+4
+00:00:12.905 --> 00:00:16.951
+at the data on disk and
+the actual system structures.
+
+5
+00:00:18.640 --> 00:00:20.626
+When we open up at the disk editor,
+
+6
+00:00:20.626 --> 00:00:23.930
+this is the first screen we're
+going to be presented with.
+
+7
+00:00:23.930 --> 00:00:29.340
+I'd like you to notice here is you
+have the option to open a disk.
+
+8
+00:00:29.340 --> 00:00:33.940
+We can't open a disk image file or
+you can look at your own computer.
+
+9
+00:00:33.940 --> 00:00:37.721
+We have the ability here
+to open a physical disk.
+
+10
+00:00:37.721 --> 00:00:42.241
+If we were to choose, open a desk well
+represented with a menu that showed us all
+
+11
+00:00:42.241 --> 00:00:46.040
+these physical disks
+attached to our computer.
+
+12
+00:00:46.040 --> 00:00:48.951
+So we could go ahead and
+open a physical desk.
+
+13
+00:00:51.640 --> 00:00:58.661
+We also have the option to open a logical
+volume as well as open a physical disk.
+
+14
+00:00:59.840 --> 00:01:04.605
+And we're going to be doing both of
+those things and we'll have our walk
+
+15
+00:01:04.605 --> 00:01:09.698
+through at the end of this module but
+we can also open the logical volume and
+
+16
+00:01:09.698 --> 00:01:13.751
+we do that by selecting the volume and
+then clicking open.
+
+17
+00:01:15.540 --> 00:01:19.867
+One of the nice things about this tool
+is it has something called the template
+
+18
+00:01:19.867 --> 00:01:24.124
+manager which will highlight the data
+structures that we want to look at and
+
+19
+00:01:24.124 --> 00:01:25.770
+there's a drop down arrow.
+
+20
+00:01:25.770 --> 00:01:30.873
+We can select the type of data we want
+to look at that would be a master boot
+
+21
+00:01:30.873 --> 00:01:36.090
+record with petition table are Nt Fs,
+food sectors, fat food sectors.
+
+22
+00:01:36.090 --> 00:01:39.651
+We're going to look at every single one
+of these things throughout this path.
+
+23
+00:01:40.840 --> 00:01:42.761
+Industrial is going to help us do that.
+
+24
+00:01:45.300 --> 00:01:51.411
+It has to borrow items which are like
+shortcuts that we're going to use to.
+
+25
+00:01:51.411 --> 00:01:56.346
+We're going to use very often is this
+navigation and this go to sector.
+
+26
+00:01:56.346 --> 00:02:01.750
+Navigation deals with system data
+structures such as the boot sector,
+
+27
+00:02:01.750 --> 00:02:03.191
+a root directory or
+
+28
+00:02:03.191 --> 00:02:09.539
+other types of data structures that we
+may want to look at a master file table.
+
+29
+00:02:09.539 --> 00:02:14.196
+Whereas go to sector is going
+to take us to an actual specific
+
+30
+00:02:14.196 --> 00:02:17.561
+location on the disk, a numbered sector.
+
+31
+00:02:19.440 --> 00:02:23.040
+We're going to do our walk
+through now inactive disk editor.
+
+32
+00:02:23.040 --> 00:02:26.601
+So I want you to go ahead and
+open active disk editor and
+
+33
+00:02:26.601 --> 00:02:32.340
+this is what the icon looks like if you
+have not downloaded, here's the URL.
+
+34
+00:02:32.340 --> 00:02:34.940
+Where you could go out and
+downloaded from.
+
+35
+00:02:34.940 --> 00:02:39.694
+So go ahead and pause the video and
+download it and open it up and
+
+36
+00:02:39.694 --> 00:02:41.351
+we will get started.
+
+37
+00:02:42.540 --> 00:02:45.670
+Okay, we're going to
+start artist editor demo.
+
+38
+00:02:45.670 --> 00:02:48.621
+The first thing we need to
+do is open disk editor.
+
+39
+00:02:48.621 --> 00:02:50.670
+So navigate to the shortcut mayan.
+
+40
+00:02:50.670 --> 00:02:56.161
+I have down here on my task bar and
+we're going to run active disk editor.
+
+41
+00:02:59.740 --> 00:03:03.543
+Once it opens, we're going to
+be presented with the screen and
+
+42
+00:03:03.543 --> 00:03:05.460
+you can see we can open a disc.
+
+43
+00:03:05.460 --> 00:03:07.340
+We can open a file.
+
+44
+00:03:07.340 --> 00:03:11.200
+We can open an image or
+we can look at the computer
+
+45
+00:03:11.200 --> 00:03:15.361
+that the program is installed on for
+our purposes.
+
+46
+00:03:15.361 --> 00:03:21.001
+Right now we're going to go ahead and
+open disk and when we do that,
+
+47
+00:03:21.001 --> 00:03:27.061
+we're going to be presented with
+a bunch of disks that we can work with.
+
+48
+00:03:30.240 --> 00:03:35.940
+We're going to pick whichever
+disk you would like to.
+
+49
+00:03:35.940 --> 00:03:40.261
+I'm going to go ahead and
+pick this physical disk and click open.
+
+50
+00:03:41.740 --> 00:03:46.709
+And when I do that it
+opens on my computer And
+
+51
+00:03:46.709 --> 00:03:50.861
+it opens to sector zero by default.
+
+52
+00:03:52.540 --> 00:03:55.661
+Now you can see we have our
+shortcuts up here on the task bar.
+
+53
+00:03:56.840 --> 00:04:02.340
+We also have,
+I dropped out menu to open the file.
+
+54
+00:04:02.340 --> 00:04:08.740
+We can add a disk image for navigation.
+
+55
+00:04:08.740 --> 00:04:13.080
+We have it up here,
+you can go to offset sector.
+
+56
+00:04:13.080 --> 00:04:14.868
+If you click partition table,
+
+57
+00:04:14.868 --> 00:04:19.561
+it's going to take us right to where we
+are the boot sector for the physical disk.
+
+58
+00:04:20.839 --> 00:04:25.558
+We also have the navigation
+shortcuts up here, go to offset,
+
+59
+00:04:25.558 --> 00:04:28.140
+go to sector and navigate.
+
+60
+00:04:28.140 --> 00:04:29.781
+We have the two shortcuts again.
+
+61
+00:04:29.781 --> 00:04:31.840
+And we also have partition table.
+
+62
+00:04:31.840 --> 00:04:35.151
+We also have the individual partitions.
+
+63
+00:04:35.151 --> 00:04:39.621
+We can navigate to each of our partitions
+that are on our disk that we're
+
+64
+00:04:39.621 --> 00:04:40.451
+looking at.
+
+65
+00:04:43.640 --> 00:04:47.840
+One of the tools we're going to use
+a lot up here is where templates are.
+
+66
+00:04:47.840 --> 00:04:48.601
+Now to do this.
+
+67
+00:04:48.601 --> 00:04:52.134
+When you click the dropdown arrow,
+use your scroll
+
+68
+00:04:52.134 --> 00:04:57.000
+wheel on your mouse because if you
+just try to scroll, it disappears.
+
+69
+00:04:57.000 --> 00:05:00.061
+So when you use the drop down
+arrow use your scroll wheel.
+
+70
+00:05:03.040 --> 00:05:07.420
+So that is how we get to our
+different types of templates,
+
+71
+00:05:07.420 --> 00:05:11.361
+which are going to use quite
+a bit during this path.
+
+72
+00:05:12.840 --> 00:05:14.461
+And we opened a physical disk.
+
+73
+00:05:15.940 --> 00:05:18.551
+Now let's open a volume
+on the physical disk.
+
+74
+00:05:19.640 --> 00:05:23.505
+So we would go to file, open again and
+
+75
+00:05:23.505 --> 00:05:28.619
+now I'll scroll down to
+the disk that I opened and
+
+76
+00:05:28.619 --> 00:05:33.608
+I'll pick a drive letter
+when I open volume T and
+
+77
+00:05:33.608 --> 00:05:38.261
+I'll click open and
+it opens up the volume.
+
+78
+00:05:39.740 --> 00:05:44.529
+Now when you're navigating on the physical
+disk and we click go to sector,
+
+79
+00:05:44.529 --> 00:05:47.961
+it's only going to allow
+you to navigate in sectors.
+
+80
+00:05:50.240 --> 00:05:51.991
+I cannot navigate in clusters.
+
+81
+00:05:51.991 --> 00:05:53.601
+If I click on that,
+
+82
+00:05:53.601 --> 00:06:00.040
+nothing will happen if I use the extended
+volume and I go go to sector.
+
+83
+00:06:00.040 --> 00:06:03.479
+Now I have the option of
+navigating in either sectors or
+
+84
+00:06:03.479 --> 00:06:07.233
+clusters because I'm in
+the logical volume at this point.
+
+85
+00:06:07.233 --> 00:06:10.261
+And this is just how this
+particular tool works.
+
+86
+00:06:12.740 --> 00:06:17.125
+Now if I want to navigate to a sector,
+
+87
+00:06:17.125 --> 00:06:23.361
+I'm going to go ahead and
+pick a sector number in here.
+
+88
+00:06:24.640 --> 00:06:30.514
+Type one end I say, okay,
+
+89
+00:06:30.514 --> 00:06:38.340
+now it's taken me to a sector.
+
+90
+00:06:38.340 --> 00:06:42.627
+There's not much on this particular drive,
+so
+
+91
+00:06:42.627 --> 00:06:46.269
+you really can't see too much here, but
+
+92
+00:06:46.269 --> 00:06:52.269
+it will take you to the numbered
+sector that you picked if we pick a So
+
+93
+00:06:52.269 --> 00:06:57.305
+I want to look at the FT
+structure the master file table,
+
+94
+00:06:57.305 --> 00:07:00.221
+I can pick that right from that.
+
+95
+00:07:00.221 --> 00:07:01.504
+Drop down menu and
+
+96
+00:07:01.504 --> 00:07:06.391
+will take me right to the start of
+the Master file table and see here.
+
+97
+00:07:06.391 --> 00:07:07.270
+I'm set on.
+
+98
+00:07:07.270 --> 00:07:12.996
+If we look at our template
+were set on NTS boot sector,
+
+99
+00:07:12.996 --> 00:07:18.977
+we would have to turn around and
+pick The one We wanted and
+
+100
+00:07:18.977 --> 00:07:25.240
+it is not a master boot record,
+this is a master file sale.
+
+101
+00:07:25.240 --> 00:07:31.570
+So we need to find the template for the
+master file table, a Master file record.
+
+102
+00:07:31.570 --> 00:07:36.330
+So we're going to be looking for and
+
+103
+00:07:36.330 --> 00:07:40.950
+TFS file record and we click that.
+
+104
+00:07:40.950 --> 00:07:45.440
+It gives us the correct template for
+the m f t file record.
+
+105
+00:07:45.440 --> 00:07:50.108
+And if we ever needed to set the position,
+we can set the template
+
+106
+00:07:50.108 --> 00:07:55.401
+position by just right clicking and
+clicking, set template position.
+
+107
+00:07:58.440 --> 00:08:01.940
+And this shows us the structure
+of this file record.
+
+108
+00:08:01.940 --> 00:08:08.061
+We're going to cover what all this data
+on this disk means throughout this path.
+
+109
+00:08:09.340 --> 00:08:14.100
+But I just want to show you
+how to use this tool from
+
+110
+00:08:14.100 --> 00:08:18.860
+the drop down options,
+the quick access menu or
+
+111
+00:08:18.860 --> 00:08:24.351
+from the file navigation,
+open file in the template.
+
+112
+00:08:27.640 --> 00:08:29.071
+How to use the templates.

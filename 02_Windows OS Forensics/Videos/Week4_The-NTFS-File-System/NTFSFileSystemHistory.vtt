@@ -1,0 +1,722 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.355
+In Course 9, we're going to
+discuss the NTFS file system.
+
+2
+00:00:05.355 --> 00:00:09.510
+An overview of what we'll
+be covering in this course.
+
+3
+00:00:09.510 --> 00:00:11.010
+We're going to talk about
+
+4
+00:00:11.010 --> 00:00:12.780
+the data structures that make up
+
+5
+00:00:12.780 --> 00:00:14.730
+the NTFS file system like
+
+6
+00:00:14.730 --> 00:00:18.915
+the Volume Boot Record and
+the Master File Table.
+
+7
+00:00:18.915 --> 00:00:21.600
+We're also going to take a
+look at the attributes that
+
+8
+00:00:21.600 --> 00:00:25.110
+make up file entries in
+the Master File Table.
+
+9
+00:00:25.110 --> 00:00:29.220
+We're going to cover NTFS
+date and time format.
+
+10
+00:00:29.220 --> 00:00:31.680
+We're going to talk
+about file creation,
+
+11
+00:00:31.680 --> 00:00:33.450
+what happens when
+we create a file in
+
+12
+00:00:33.450 --> 00:00:37.035
+the NTFS file system and what
+happens when we delete it.
+
+13
+00:00:37.035 --> 00:00:38.550
+We're also going to talk about
+
+14
+00:00:38.550 --> 00:00:42.805
+the recovery
+limitations with NTFS.
+
+15
+00:00:42.805 --> 00:00:46.065
+Course 9, Module 1,
+
+16
+00:00:46.065 --> 00:00:48.235
+we're going to talk
+about the history
+
+17
+00:00:48.235 --> 00:00:50.755
+of the NTFS file system.
+
+18
+00:00:50.755 --> 00:00:56.315
+NTFS was originally a joint
+collaboration with IBM.
+
+19
+00:00:56.315 --> 00:01:01.240
+It is compliant with what
+they call POSIX requirements.
+
+20
+00:01:01.240 --> 00:01:03.700
+POSIX requires a
+certain amount of
+
+21
+00:01:03.700 --> 00:01:06.260
+functionality from
+the file system,
+
+22
+00:01:06.260 --> 00:01:10.660
+like the ability for a file
+to have more than one name
+
+23
+00:01:10.660 --> 00:01:16.085
+or a hard link and also
+case-sensitive file naming.
+
+24
+00:01:16.085 --> 00:01:20.455
+Neither FAT nor HPFS
+supports these features,
+
+25
+00:01:20.455 --> 00:01:21.940
+which is another reason why
+
+26
+00:01:21.940 --> 00:01:25.550
+a new file system was
+required for Windows NT.
+
+27
+00:01:25.550 --> 00:01:27.680
+NTFS does support
+
+28
+00:01:27.680 --> 00:01:31.055
+both hard links and
+case-sensitive naming.
+
+29
+00:01:31.055 --> 00:01:35.105
+If you want to run in a
+POSIX compliant environment,
+
+30
+00:01:35.105 --> 00:01:36.650
+you would need at least one
+
+31
+00:01:36.650 --> 00:01:41.890
+NTFS disk partition
+on your computer.
+
+32
+00:01:41.890 --> 00:01:46.470
+The first release was Windows NT,
+
+33
+00:01:46.470 --> 00:01:51.210
+and that was Version
+1.0 Windows NT 3.1.
+
+34
+00:01:51.210 --> 00:01:57.285
+Then we went to Version
+1.2 in Windows NT 3.51.
+
+35
+00:01:57.285 --> 00:01:59.030
+These two versions offered
+
+36
+00:01:59.030 --> 00:02:00.920
+some administrative controls as
+
+37
+00:02:00.920 --> 00:02:02.960
+well as that POSIX requirements.
+
+38
+00:02:02.960 --> 00:02:05.780
+We could also have
+compressed files and
+
+39
+00:02:05.780 --> 00:02:08.645
+User Access Control,
+user access control.
+
+40
+00:02:08.645 --> 00:02:10.985
+Each user had their
+own recycle bin
+
+41
+00:02:10.985 --> 00:02:13.255
+and each user could
+have their own account.
+
+42
+00:02:13.255 --> 00:02:16.385
+That is something we
+did not have with FAT.
+
+43
+00:02:16.385 --> 00:02:18.630
+The modern version of
+
+44
+00:02:18.630 --> 00:02:23.280
+Windows NTFS that you're
+going to see is Version 3.1,
+
+45
+00:02:23.280 --> 00:02:25.130
+and that's with all installations
+
+46
+00:02:25.130 --> 00:02:27.785
+of Windows XP and above.
+
+47
+00:02:27.785 --> 00:02:31.670
+What we had here that we
+didn't have before was we now
+
+48
+00:02:31.670 --> 00:02:35.230
+have rollback and more
+robust logging features,
+
+49
+00:02:35.230 --> 00:02:37.360
+so we can recover our data and
+
+50
+00:02:37.360 --> 00:02:40.205
+rollback our file system
+to a stable state.
+
+51
+00:02:40.205 --> 00:02:43.355
+It can also handle
+larger volumes.
+
+52
+00:02:43.355 --> 00:02:45.335
+When we got to Windows 8,
+
+53
+00:02:45.335 --> 00:02:47.539
+we had some faster file recovery
+
+54
+00:02:47.539 --> 00:02:50.110
+and we could use
+some cross-platform.
+
+55
+00:02:50.110 --> 00:02:53.330
+We had those built-in
+applications that we could use
+
+56
+00:02:53.330 --> 00:02:56.420
+cross-platform on cell
+phones and other devices.
+
+57
+00:02:56.420 --> 00:02:58.040
+We went to Windows 10,
+
+58
+00:02:58.040 --> 00:03:01.025
+we got a lot of extended
+logging features,
+
+59
+00:03:01.025 --> 00:03:02.510
+a lot of rollback features,
+
+60
+00:03:02.510 --> 00:03:04.190
+and a lot of logging,
+
+61
+00:03:04.190 --> 00:03:08.190
+which is helpful to us
+as forensic examiners.
+
+62
+00:03:08.500 --> 00:03:12.455
+Almost on any modern
+version of Windows,
+
+63
+00:03:12.455 --> 00:03:14.000
+Windows Vista and above,
+
+64
+00:03:14.000 --> 00:03:16.160
+are going to require an NTFS
+
+65
+00:03:16.160 --> 00:03:19.345
+formatted volume to
+be installed on.
+
+66
+00:03:19.345 --> 00:03:22.480
+When talking about NTFS,
+we need to remember,
+
+67
+00:03:22.480 --> 00:03:26.380
+everything in NTFS
+is stored as a file.
+
+68
+00:03:26.380 --> 00:03:29.115
+You'll hear that a lot
+throughout this course.
+
+69
+00:03:29.115 --> 00:03:30.785
+When we talk about offsets,
+
+70
+00:03:30.785 --> 00:03:33.125
+we're talking about
+offsets relative
+
+71
+00:03:33.125 --> 00:03:35.845
+to the start of the data
+structure we're examining.
+
+72
+00:03:35.845 --> 00:03:37.320
+If we're looking at
+
+73
+00:03:37.320 --> 00:03:42.305
+the Volume Boot Record and
+we're talking about Offset 03,
+
+74
+00:03:42.305 --> 00:03:45.425
+that would be from the start
+of the Volume Boot Record,
+
+75
+00:03:45.425 --> 00:03:49.110
+not from the start of
+the physical disk.
+
+76
+00:03:49.510 --> 00:03:54.545
+The entire logical volume is
+now considered a data area.
+
+77
+00:03:54.545 --> 00:03:57.845
+Unlike FAT where we had a
+system area and a data area,
+
+78
+00:03:57.845 --> 00:04:00.770
+in NTFS, the entire
+logical volume
+
+79
+00:04:00.770 --> 00:04:03.685
+is considered the data area.
+
+80
+00:04:03.685 --> 00:04:07.740
+We have something on NTFS
+called the Master File Table.
+
+81
+00:04:07.740 --> 00:04:10.640
+The Master File
+Table is an index of
+
+82
+00:04:10.640 --> 00:04:15.540
+every file on the entire
+volume, including itself.
+
+83
+00:04:15.740 --> 00:04:21.244
+The Master File Table will
+include the NTFS system files,
+
+84
+00:04:21.244 --> 00:04:23.960
+and those will begin
+with a dollar sign,
+
+85
+00:04:23.960 --> 00:04:27.500
+and those are considered
+metadata files.
+
+86
+00:04:27.500 --> 00:04:30.444
+These files get created
+
+87
+00:04:30.444 --> 00:04:34.245
+when the NTFS volume
+is formatted.
+
+88
+00:04:34.245 --> 00:04:36.240
+Metadata files.
+
+89
+00:04:36.240 --> 00:04:39.125
+These are information about
+
+90
+00:04:39.125 --> 00:04:42.385
+other files, external metadata.
+
+91
+00:04:42.385 --> 00:04:46.595
+All the files are going
+to have a metadata file.
+
+92
+00:04:46.595 --> 00:04:49.760
+The first 26 records
+
+93
+00:04:49.760 --> 00:04:52.670
+in the Master File Table
+are going to be these
+
+94
+00:04:52.670 --> 00:04:55.890
+metadata system
+files because even
+
+95
+00:04:55.890 --> 00:04:59.585
+though everything is
+considered the data area,
+
+96
+00:04:59.585 --> 00:05:01.820
+the file system still
+needs to operate.
+
+97
+00:05:01.820 --> 00:05:04.540
+So you're going to need
+to have system files.
+
+98
+00:05:04.540 --> 00:05:09.660
+Records 12-23 are reserved
+for future use and Records
+
+99
+00:05:09.660 --> 00:05:12.180
+24 through 26 are used for
+
+100
+00:05:12.180 --> 00:05:15.670
+transaction logs
+and error recovery.
+
+101
+00:05:15.670 --> 00:05:18.650
+The first user-created file will
+
+102
+00:05:18.650 --> 00:05:21.740
+usually be somewhere
+around Record 35.
+
+103
+00:05:21.740 --> 00:05:26.180
+When we talk about these
+metadata files, in this table,
+
+104
+00:05:26.180 --> 00:05:28.370
+you can see the very first entry
+
+105
+00:05:28.370 --> 00:05:29.930
+in the Master File Table will be
+
+106
+00:05:29.930 --> 00:05:32.100
+zero and that will be
+
+107
+00:05:32.100 --> 00:05:34.935
+a record for the Master
+File Table itself.
+
+108
+00:05:34.935 --> 00:05:37.530
+The next entry, Entry 1,
+
+109
+00:05:37.530 --> 00:05:42.040
+in the Master File Table
+will be the MFT Mirror,
+
+110
+00:05:42.040 --> 00:05:44.780
+which is a backup of
+
+111
+00:05:44.780 --> 00:05:46.010
+the first few entries of
+
+112
+00:05:46.010 --> 00:05:49.540
+the Master File Table
+for recovery purposes.
+
+113
+00:05:49.540 --> 00:05:55.140
+Then you can see the third
+entry will be $Volume.
+
+114
+00:05:55.140 --> 00:05:58.605
+We can see Entry number 5
+is represented by a dot.
+
+115
+00:05:58.605 --> 00:06:00.975
+This is the root directory,
+
+116
+00:06:00.975 --> 00:06:03.150
+the Root File Name Index.
+
+117
+00:06:03.150 --> 00:06:05.660
+These would be a listing
+of files that are in
+
+118
+00:06:05.660 --> 00:06:08.855
+the root of the directory,
+the root of the volume.
+
+119
+00:06:08.855 --> 00:06:11.330
+Seven will be $Boot,
+
+120
+00:06:11.330 --> 00:06:14.080
+and this is going to
+be our Boot Sector.
+
+121
+00:06:14.080 --> 00:06:17.655
+Then we see Entry 11 is extended.
+
+122
+00:06:17.655 --> 00:06:20.495
+These are going to contain
+our extended attributes.
+
+123
+00:06:20.495 --> 00:06:23.440
+I've talked about the ones
+that are highlighted.
+
+124
+00:06:23.440 --> 00:06:26.100
+If you can see, there
+were several others.
+
+125
+00:06:26.100 --> 00:06:28.915
+The ones that are not
+highlighted, like LogFile,
+
+126
+00:06:28.915 --> 00:06:34.075
+simply keeps track of logging
+for rollback purposes.
+
+127
+00:06:34.075 --> 00:06:36.740
+Bitmap. We talked about
+
+128
+00:06:36.740 --> 00:06:40.040
+bitmaps when we talked about
+the exFAT file system.
+
+129
+00:06:40.040 --> 00:06:43.315
+This is what tracks
+cluster allocation.
+
+130
+00:06:43.315 --> 00:06:47.530
+BadClus obviously keeps track
+
+131
+00:06:47.530 --> 00:06:50.390
+of the bad clusters
+on the volume.
+
+132
+00:06:50.390 --> 00:06:53.270
+We have Secure and UpCase.
+
+133
+00:06:53.270 --> 00:06:56.875
+Secure keeps track
+of security features
+
+134
+00:06:56.875 --> 00:07:01.445
+and UpCase keeps track
+of upper and lowercase.
+
+135
+00:07:01.445 --> 00:07:06.330
+This is for case-specific
+file naming.
+
+136
+00:07:06.330 --> 00:07:08.955
+It'll convert upper to lowercase,
+
+137
+00:07:08.955 --> 00:07:10.480
+so we can search the volume,
+
+138
+00:07:10.480 --> 00:07:14.000
+but also allows
+case-specific file naming.
+
+139
+00:07:14.000 --> 00:07:16.385
+We have one called Quota.
+
+140
+00:07:16.385 --> 00:07:17.950
+Quotas can be put on
+
+141
+00:07:17.950 --> 00:07:21.275
+how much data certain
+users are allowed to use.
+
+142
+00:07:21.275 --> 00:07:23.160
+ObjectID.
+
+143
+00:07:23.160 --> 00:07:25.000
+Each object does have
+
+144
+00:07:25.000 --> 00:07:29.185
+an identifier that is
+recorded in ObjectID.
+
+145
+00:07:29.185 --> 00:07:30.775
+Then we have Reparse,
+
+146
+00:07:30.775 --> 00:07:33.095
+which would be a reparse point.
+
+147
+00:07:33.095 --> 00:07:35.720
+The ones we highlighted are
+the ones we're going to talk
+
+148
+00:07:35.720 --> 00:07:38.359
+about throughout this course.
+
+149
+00:07:38.359 --> 00:07:41.600
+I just wanted to make you
+aware that there are 26 of
+
+150
+00:07:41.600 --> 00:07:45.200
+them and these are our
+system metadata files.
+
+151
+00:07:45.200 --> 00:07:49.225
+They are the first 26 entries
+in the Master File Table.
+
+152
+00:07:49.225 --> 00:07:51.420
+In our next module,
+
+153
+00:07:51.420 --> 00:07:52.680
+we're going to talk about
+
+154
+00:07:52.680 --> 00:07:56.330
+the NTFS Volume Boot
+Record and discuss
+
+155
+00:07:56.330 --> 00:07:58.940
+the information contained in
+
+156
+00:07:58.940 --> 00:08:02.130
+the boot record and
+how we would read it.

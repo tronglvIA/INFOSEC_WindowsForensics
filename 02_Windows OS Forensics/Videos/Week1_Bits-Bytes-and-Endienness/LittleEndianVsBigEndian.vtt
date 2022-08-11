@@ -1,0 +1,208 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:05.901
+We're on course two
+module four endianness.
+
+2
+00:00:05.901 --> 00:00:09.801
+Endianness refers to how we
+interpret the byte order.
+
+3
+00:00:11.040 --> 00:00:15.640
+Big endian is interpreted
+from left to right.
+
+4
+00:00:15.640 --> 00:00:20.953
+The way we would normally read
+something little Endian is interpreted
+
+5
+00:00:20.953 --> 00:00:25.994
+from right to left, which is not
+how we're used to reading data but
+
+6
+00:00:25.994 --> 00:00:31.757
+we must be careful to make sure that
+we're interpreting the bites correctly
+
+7
+00:00:31.757 --> 00:00:37.161
+because if we interpret a value that's
+supposed to be little endian and
+
+8
+00:00:37.161 --> 00:00:42.923
+we interpreted big Endian or vice versa,
+we're going to get vastly different
+
+9
+00:00:42.923 --> 00:00:48.325
+numeric values as we can see here in
+our slide we have a hexi decimal value
+
+10
+00:00:48.325 --> 00:00:53.951
+down there which is four bytes lung
+which would be a double word 32 bits.
+
+11
+00:00:55.330 --> 00:01:00.337
+And if we interpret it big Endian
+
+12
+00:01:00.337 --> 00:01:06.461
+we get a value of 723004625.
+
+13
+00:01:07.640 --> 00:01:13.046
+Now to convert that big
+Endian value two little
+
+14
+00:01:13.046 --> 00:01:20.840
+Endian in big Endian it's 2B
+18 2C D1 read left to right.
+
+15
+00:01:20.840 --> 00:01:28.351
+If we read it right to
+left It is D1 2C 18 2B.
+
+16
+00:01:29.740 --> 00:01:34.248
+This is important because right
+now big Endian 2B would be
+
+17
+00:01:34.248 --> 00:01:37.040
+the most significant value.
+
+18
+00:01:37.040 --> 00:01:39.992
+And we know if we that
+were assigned integer and
+
+19
+00:01:39.992 --> 00:01:44.440
+we were looking at it and
+we were interpreting it big Endian.
+
+20
+00:01:44.440 --> 00:01:49.861
+That farthest left nipple of two would
+mean that it was not a negative value.
+
+21
+00:01:51.140 --> 00:01:55.306
+But if we're interpreting
+that value little Endian and
+
+22
+00:01:55.306 --> 00:02:00.445
+it's assigned integer D1 now becomes
+our most significant byte and
+
+23
+00:02:00.445 --> 00:02:03.790
+our most significant nibble becomes D.
+
+24
+00:02:03.790 --> 00:02:08.938
+Which is greater than eight which would
+mean that we would have a negative value
+
+25
+00:02:08.938 --> 00:02:13.710
+and it would be a vastly different number,
+interpreted little Endian.
+
+26
+00:02:13.710 --> 00:02:17.839
+If it were assigned integer it
+would be a negative number but
+
+27
+00:02:17.839 --> 00:02:20.470
+even not being assigned integer.
+
+28
+00:02:20.470 --> 00:02:25.746
+When we interpret it as little Endian,
+the most significant byte becomes D1.
+
+29
+00:02:25.746 --> 00:02:28.740
+And the next byte would be to 2C 18 2B.
+
+30
+00:02:28.740 --> 00:02:33.133
+And we can see the difference in
+our values between the value of
+
+31
+00:02:33.133 --> 00:02:38.940
+interpreting that big Endian versus
+interpreting that little Endian.
+
+32
+00:02:38.940 --> 00:02:41.211
+This is something we really
+want to be careful of.
+
+33
+00:02:41.211 --> 00:02:46.986
+When we're reading data from disk, whether
+it's supposed to be interpreted big
+
+34
+00:02:46.986 --> 00:02:52.425
+Endian or a little Endian to talk properly
+interpret this data, we gotta know
+
+35
+00:02:52.425 --> 00:02:58.310
+how the operating system or the file
+system is going to interpret the data.
+
+36
+00:02:58.310 --> 00:03:02.600
+Intel processors process
+little Endian intel
+
+37
+00:03:02.600 --> 00:03:06.451
+processors tend to read a little Endian.
+
+38
+00:03:06.451 --> 00:03:07.322
+For the most part,
+
+39
+00:03:07.322 --> 00:03:11.240
+there are some exceptions which we
+will talk about throughout the path.
+
+40
+00:03:11.240 --> 00:03:17.781
+Motorola processors interpret things in
+big Endian again with some exceptions.
+
+41
+00:03:19.240 --> 00:03:26.240
+And our next course we're going to start
+talking about more of the data on disk.
+
+42
+00:03:26.240 --> 00:03:30.811
+We're going to start talking
+about how we would interpret our
+
+43
+00:03:30.811 --> 00:03:34.660
+dis structure itself and
+disk partition scheme is

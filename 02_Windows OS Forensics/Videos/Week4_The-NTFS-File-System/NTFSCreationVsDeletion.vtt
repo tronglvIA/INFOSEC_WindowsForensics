@@ -1,0 +1,595 @@
+WEBVTT
+
+1
+00:00:00.310 --> 00:00:05.000
+We're talking about the NTFS file system.
+
+2
+00:00:05.000 --> 00:00:12.538
+And in this module, we're going to talk
+about NTFS file creation and deletion.
+
+3
+00:00:12.538 --> 00:00:20.440
+When a file or directory is created in
+NTFS, these are the steps that happened.
+
+4
+00:00:20.440 --> 00:00:25.061
+A file record is created in
+the master file table for that file.
+
+5
+00:00:26.140 --> 00:00:33.600
+The bitmap for the MFT record is changed
+to indicate the record is allocated.
+
+6
+00:00:33.600 --> 00:00:38.588
+Now that's a bitmap relating to the MFT
+is going to show that that file
+
+7
+00:00:38.588 --> 00:00:41.361
+record within the MFT is allocated.
+
+8
+00:00:42.540 --> 00:00:48.537
+The record header allocation flag
+shows it as an allocated file or
+
+9
+00:00:48.537 --> 00:00:53.343
+directory, depending on if it's a file or
+folder.
+
+10
+00:00:53.343 --> 00:00:57.999
+The attributes are written
+to the FFT file record.
+
+11
+00:00:57.999 --> 00:01:03.734
+If the data is non resident,
+the $Bitmap file is updated
+
+12
+00:01:03.734 --> 00:01:10.040
+to represent the clusters
+allocated to store the data.
+
+13
+00:01:10.040 --> 00:01:13.712
+So if it's non resident, the $Bitmap file,
+
+14
+00:01:13.712 --> 00:01:18.891
+that system file we talked about
+at the beginning of this course,
+
+15
+00:01:18.891 --> 00:01:24.839
+will be updated to represent the clusters
+are allocated to store the data.
+
+16
+00:01:24.839 --> 00:01:29.277
+When a file is deleted,
+the record header sequence count,
+
+17
+00:01:29.277 --> 00:01:34.720
+remember we talked about that sequence
+byte, that is increased by one.
+
+18
+00:01:34.720 --> 00:01:37.336
+That happens when the file is deleted.
+
+19
+00:01:37.336 --> 00:01:43.096
+The record header allocation flag,
+we're talking about the file record,
+
+20
+00:01:43.096 --> 00:01:46.161
+indicates a deleted file or directory.
+
+21
+00:01:47.240 --> 00:01:51.140
+That's what happens to
+the file record in the MFT.
+
+22
+00:01:51.140 --> 00:01:54.862
+The bitmap for the master file table,
+
+23
+00:01:54.862 --> 00:02:00.211
+the $MFT bitmap is changed
+to show that the file record
+
+24
+00:02:00.211 --> 00:02:05.459
+within the MFT is now unallocated and
+able to be used.
+
+25
+00:02:05.459 --> 00:02:11.219
+If the file data is non resident,
+not residing within the MFT,
+
+26
+00:02:11.219 --> 00:02:17.861
+the $Bitmap file is updated to
+indicate the clusters are unallocated.
+
+27
+00:02:19.440 --> 00:02:24.468
+The data itself does not become
+overwritten until if it's
+
+28
+00:02:24.468 --> 00:02:29.597
+a resident file,
+the master file table entry is reused, or
+
+29
+00:02:29.597 --> 00:02:35.251
+if it's non resident,
+the data is overwritten out on the drive.
+
+30
+00:02:36.940 --> 00:02:38.910
+We're going to do a walkthrough.
+
+31
+00:02:38.910 --> 00:02:43.270
+We're going to create a file and
+then delete it and
+
+32
+00:02:43.270 --> 00:02:48.829
+the items we're going to need
+are going to be Active Disk Editor,
+
+33
+00:02:48.829 --> 00:02:51.990
+NTFS VHD, and Windows Explorer.
+
+34
+00:02:51.990 --> 00:02:54.738
+Okay, the first thing we're
+going to need to do for
+
+35
+00:02:54.738 --> 00:02:57.540
+our walk through is attach our VHD.
+
+36
+00:02:57.540 --> 00:02:59.840
+So we're going to go to Disk Management.
+
+37
+00:02:59.840 --> 00:03:04.440
+Then we're going to go to Actions,
+Attach VHD.
+
+38
+00:03:04.440 --> 00:03:09.340
+We're going to navigate out to
+where we saved our NTFS VHD.
+
+39
+00:03:09.340 --> 00:03:14.311
+We're going to select it and hit Open.
+
+40
+00:03:14.311 --> 00:03:17.389
+Once we're sure we have the right VHD,
+
+41
+00:03:17.389 --> 00:03:20.946
+we're going to click OK and
+the VHD will mount.
+
+42
+00:03:23.478 --> 00:03:29.310
+Once your virtual hard drive mounts,
+note the disk number and the drive letter,
+
+43
+00:03:29.310 --> 00:03:34.455
+the volume we're going to use for
+this walk through is going to be the first
+
+44
+00:03:34.455 --> 00:03:39.086
+NTFS volume on this drive which
+should be your second volume in,
+
+45
+00:03:39.086 --> 00:03:43.251
+titled NTFS, and
+it should be 200 megabytes in size.
+
+46
+00:03:44.840 --> 00:03:46.295
+So remember the drive letter.
+
+47
+00:03:46.295 --> 00:03:48.351
+Mine is B but yours could be different.
+
+48
+00:03:50.940 --> 00:03:56.651
+Then we're going to go ahead and
+create a file on that drive.
+
+49
+00:03:58.540 --> 00:04:01.726
+So bring up your NTFSB
+in File Explorer and
+
+50
+00:04:01.726 --> 00:04:06.287
+I've created a text document
+here called Delete Me.txt.
+
+51
+00:04:06.287 --> 00:04:13.581
+To create a text document,
+all you have to do is right click New,
+
+52
+00:04:13.581 --> 00:04:18.861
+Text Document, then name it Delete Me.txt.
+
+53
+00:04:20.040 --> 00:04:24.340
+Once you've done that, go ahead and
+open it up and put some data in there.
+
+54
+00:04:24.340 --> 00:04:27.054
+I just wrote,
+this is a file that I will delete.
+
+55
+00:04:27.054 --> 00:04:29.640
+Then we will recover it later.
+
+56
+00:04:29.640 --> 00:04:34.829
+You can write anything you want in there
+but just put some data in there and
+
+57
+00:04:34.829 --> 00:04:39.101
+then hit File, Save, and
+then go ahead and close the file.
+
+58
+00:04:42.840 --> 00:04:47.474
+Once you've done that, go ahead and
+open up Active Disk Editor.
+
+59
+00:04:50.320 --> 00:04:58.191
+When Active Disk Editor launches
+you're going to go to open Disk and
+
+60
+00:04:58.191 --> 00:05:06.540
+now we're going to go to Volumes
+in our selection bar next to Disk.
+
+61
+00:05:06.540 --> 00:05:11.576
+We're going to select volumes and we're
+going to select that NTFS volume again,
+
+62
+00:05:11.576 --> 00:05:17.140
+mine's B, yours could be different,
+and we're going to select open.
+
+63
+00:05:17.140 --> 00:05:21.532
+Now when it opens up, it's going to take
+us to the volume boot record like it
+
+64
+00:05:21.532 --> 00:05:24.711
+usually does but
+we want to browse the file records.
+
+65
+00:05:24.711 --> 00:05:29.261
+So we're going to select browse file
+records right under the Edit button.
+
+66
+00:05:30.940 --> 00:05:35.724
+And we're going to scroll down and
+we're going to find that Delete Me.txt and
+
+67
+00:05:35.724 --> 00:05:39.361
+we're going to take a look at
+its file record for a minute.
+
+68
+00:05:44.640 --> 00:05:49.531
+It starts with our S Key file, so we know
+we're looking at an NTFS file record.
+
+69
+00:05:51.840 --> 00:05:59.561
+You can see the flags and the flags
+indicate that it is a allocated file.
+
+70
+00:06:00.840 --> 00:06:08.540
+Hexi decimal 0 1 indicates it is
+in use and it is not a directory.
+
+71
+00:06:08.540 --> 00:06:10.961
+So that indicates allocated file.
+
+72
+00:06:13.640 --> 00:06:17.639
+So we could see that it's allocated,
+we could see the attributes,
+
+73
+00:06:17.639 --> 00:06:19.688
+we could see the data attributes.
+
+74
+00:06:19.688 --> 00:06:23.676
+We can see that in our case this
+is a resident data attribute and
+
+75
+00:06:23.676 --> 00:06:24.914
+the data is there.
+
+76
+00:06:24.914 --> 00:06:29.840
+This is a file that I will delete
+then we will recover it later.
+
+77
+00:06:29.840 --> 00:06:32.761
+What I want you to do is note
+the sector number we're on.
+
+78
+00:06:34.240 --> 00:06:36.833
+So go ahead and
+write that sector number down.
+
+79
+00:06:40.540 --> 00:06:45.440
+136 630 is what my
+
+80
+00:06:45.440 --> 00:06:49.361
+sector number is.
+
+81
+00:06:51.340 --> 00:06:54.061
+Yours may be different but
+just write your sector number down.
+
+82
+00:06:55.640 --> 00:06:59.484
+Okay, now what we're going to do is we're
+going to is we're going to go ahead and
+
+83
+00:06:59.484 --> 00:07:00.476
+close the volume.
+
+84
+00:07:02.940 --> 00:07:04.708
+And we're going to close
+Active Disk Editor.
+
+85
+00:07:06.640 --> 00:07:09.559
+We're going to bring up
+File Explorer again.
+
+86
+00:07:11.830 --> 00:07:15.351
+Now we're going to
+highlight Delete Me.txt.
+
+87
+00:07:16.420 --> 00:07:18.070
+We're going to hold down our Shift key.
+
+88
+00:07:18.070 --> 00:07:21.880
+We're going to right click and
+we're going to delete this file.
+
+89
+00:07:21.880 --> 00:07:24.960
+And it's going to ask you if you're
+sure you want to permanently delete it.
+
+90
+00:07:24.960 --> 00:07:26.614
+And we're going to say yes.
+
+91
+00:07:26.614 --> 00:07:31.340
+By holding down the shift key,
+we're bypassing the recycle bin.
+
+92
+00:07:31.340 --> 00:07:33.300
+I'll show you it is not
+in the recycle bin.
+
+93
+00:07:38.940 --> 00:07:42.631
+That's not the same file but
+it is not in the recycle bin.
+
+94
+00:07:42.631 --> 00:07:45.155
+There's no Delete Me.txt
+in the recycle bin.
+
+95
+00:07:49.560 --> 00:07:55.392
+Now what we're going to do is
+we're going to go ahead and
+
+96
+00:07:55.392 --> 00:07:58.940
+go to Active Disk Editor.
+
+97
+00:07:58.940 --> 00:08:00.927
+So we're going to relaunch
+Active Disk Editor.
+
+98
+00:08:06.940 --> 00:08:08.284
+We're going to open disk again.
+
+99
+00:08:11.940 --> 00:08:13.712
+We're going to select volumes.
+
+100
+00:08:17.140 --> 00:08:22.685
+We're going to select our NTFS volume
+that we were working with before.
+
+101
+00:08:22.685 --> 00:08:24.561
+We're going to click Open.
+
+102
+00:08:26.440 --> 00:08:31.061
+Now we're going to, again, go to
+Browse File Records right under Edit.
+
+103
+00:08:32.240 --> 00:08:38.451
+And we're going to scroll through and
+we no longer see Delete Me.txt.
+
+104
+00:08:40.140 --> 00:08:43.463
+It's no longer listed here.
+
+105
+00:08:43.463 --> 00:08:46.920
+So now we're going to
+navigate out to that sector.
+
+106
+00:08:46.920 --> 00:08:54.859
+So we're going to go go to sector, And
+
+107
+00:08:54.859 --> 00:08:57.461
+we're going to go ahead and
+type in the sector.
+
+108
+00:09:05.092 --> 00:09:06.374
+And we're going to click OK.
+
+109
+00:09:08.640 --> 00:09:14.240
+We can see it takes us
+out to a file record.
+
+110
+00:09:14.240 --> 00:09:20.011
+So change your template
+to say NTFS MFT Record,
+
+111
+00:09:20.011 --> 00:09:24.917
+highlight the F in file, right click and
+
+112
+00:09:24.917 --> 00:09:27.961
+set template position.
+
+113
+00:09:29.040 --> 00:09:32.140
+Now we can see the offsets
+in our file record.
+
+114
+00:09:32.140 --> 00:09:34.960
+We can see that it's an AASCII file.
+
+115
+00:09:37.240 --> 00:09:41.000
+We look at the flags now,
+the flags have changed.
+
+116
+00:09:41.000 --> 00:09:47.213
+They're no longer 01,
+they're 00 which says it is not
+
+117
+00:09:48.331 --> 00:09:54.061
+so it's able to be written to and
+it is not a directory.
+
+118
+00:09:56.140 --> 00:10:00.947
+So it is an unallocated
+file at this point,
+
+119
+00:10:00.947 --> 00:10:04.157
+deleted unallocated file.
+
+120
+00:10:07.540 --> 00:10:12.276
+And we noticed the sequence
+byte has changed from
+
+121
+00:10:12.276 --> 00:10:16.240
+01 to 02 because we deleted it.
+
+122
+00:10:16.240 --> 00:10:21.452
+So the sequence byte has implemented
+by one and the flags have changed.
+
+123
+00:10:27.240 --> 00:10:33.711
+So in our next module, we're going to talk
+about how we would recover that file.
+
+124
+00:10:34.840 --> 00:10:39.829
+But I just wanted to show you the changes
+that will happen in the MFT Record.
+
+125
+00:10:39.829 --> 00:10:43.148
+Your sequence byte will
+increase by one and
+
+126
+00:10:43.148 --> 00:10:46.661
+your flags will show
+that it is unallocated.

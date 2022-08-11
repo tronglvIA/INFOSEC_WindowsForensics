@@ -1,0 +1,871 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:04.640
+We're talking about the exFat
+File system in course 10.
+
+2
+00:00:04.640 --> 00:00:09.323
+And in this module, module four, we're
+going to talk about file creation and
+
+3
+00:00:09.323 --> 00:00:10.640
+deletion.
+
+4
+00:00:10.640 --> 00:00:15.429
+Well, when we create a file an exFAT,
+what happens is the directory
+
+5
+00:00:15.429 --> 00:00:20.490
+entry sets are created and we took
+a look at those directory entry sets.
+
+6
+00:00:20.490 --> 00:00:27.751
+In the last module, the bitmap entries for
+the allocation clusters are set to one.
+
+7
+00:00:29.340 --> 00:00:34.332
+The FATs get updated if any of
+the files are fragmented and
+
+8
+00:00:34.332 --> 00:00:41.150
+data gets written into the clusters
+that cluster, that data area.
+
+9
+00:00:41.150 --> 00:00:47.990
+When we delete a file, the directory
+entry set flags get set to not in use.
+
+10
+00:00:47.990 --> 00:00:51.429
+And we did see that in
+our last walk through.
+
+11
+00:00:51.429 --> 00:00:57.309
+The Bitmap entries from the cluster
+allocated to the file are set to 0.
+
+12
+00:00:57.309 --> 00:01:00.360
+So the Bitmap entries get set to 0 and
+
+13
+00:01:00.360 --> 00:01:05.570
+then the clusters are marked
+as available for use.
+
+14
+00:01:05.570 --> 00:01:11.433
+The FATs may or may not be zeroed out
+depending the file directory data,
+
+15
+00:01:11.433 --> 00:01:16.710
+the data that gets written out in
+the cluster heat the actual data
+
+16
+00:01:16.710 --> 00:01:22.300
+in the file remains unchanged until
+it is overwritten by a new file.
+
+17
+00:01:22.300 --> 00:01:24.590
+So that data stays there.
+
+18
+00:01:24.590 --> 00:01:29.530
+The point is to the data,
+the Bitmap entries go away.
+
+19
+00:01:29.530 --> 00:01:32.740
+The directory flags get set to Not in Use.
+
+20
+00:01:32.740 --> 00:01:38.113
+The directories themselves
+will not be overwritten unless
+
+21
+00:01:38.113 --> 00:01:43.061
+a new filed directory enter
+occupies that same space.
+
+22
+00:01:43.061 --> 00:01:44.241
+We're going to do a walkthrough.
+
+23
+00:01:44.241 --> 00:01:47.899
+We're going to create a file and
+we're going to delete a file and we're
+
+24
+00:01:47.899 --> 00:01:52.810
+going to take a look at Active Disk Editor
+and see what happens when we do that.
+
+25
+00:01:52.810 --> 00:01:57.287
+The items were going to need for
+this walkthrough as we're going to need
+
+26
+00:01:57.287 --> 00:02:02.161
+Active Disk Editor are exFAT virtual
+hard drive in Windows File Explorer.
+
+27
+00:02:03.940 --> 00:02:05.940
+Let's begin our walk through.
+
+28
+00:02:05.940 --> 00:02:11.440
+First thing we need to do if you're VHD
+is not attached, you need to attach it.
+
+29
+00:02:11.440 --> 00:02:16.432
+You go to Actions, attach VHD navigate out
+
+30
+00:02:16.432 --> 00:02:20.323
+to where you saved the exFAT VHD.
+
+31
+00:02:20.323 --> 00:02:24.213
+You'd select it click Open and
+
+32
+00:02:24.213 --> 00:02:29.006
+then click OK and your VHD will mount.
+
+33
+00:02:29.006 --> 00:02:34.969
+Once your VHD is mounted, make note of
+the drive number and the drive letter,
+
+34
+00:02:34.969 --> 00:02:40.330
+the volume letter from my and
+his f yours will probably be different.
+
+35
+00:02:40.330 --> 00:02:46.520
+Now let's open Windows file Explorer and
+navigate to the exFAT drive.
+
+36
+00:02:49.298 --> 00:02:54.012
+We can see on there there should be two
+files, one called long file name and
+
+37
+00:02:54.012 --> 00:02:55.851
+one called short file name.
+
+38
+00:02:57.640 --> 00:03:02.248
+What we're going to do is we're going to
+
+39
+00:03:02.248 --> 00:03:07.624
+create a file so
+you can right click New and
+
+40
+00:03:07.624 --> 00:03:12.692
+we're just going to do a text document and
+
+41
+00:03:12.692 --> 00:03:16.551
+we can call this NewDoc_1.
+
+42
+00:03:18.340 --> 00:03:22.561
+So once you've created it,
+let's open it up and put some data on it.
+
+43
+00:03:23.940 --> 00:03:25.640
+You can write what you would like.
+
+44
+00:03:25.640 --> 00:03:29.668
+I am just going to
+
+45
+00:03:29.668 --> 00:03:34.703
+write this is a new
+
+46
+00:03:34.703 --> 00:03:40.076
+text document that
+
+47
+00:03:40.076 --> 00:03:45.112
+I have created and
+
+48
+00:03:45.112 --> 00:03:49.153
+will delete.
+
+49
+00:03:49.153 --> 00:03:50.861
+And once you've done that, just save it.
+
+50
+00:03:53.840 --> 00:03:58.562
+Close it and you can go ahead and
+
+51
+00:03:58.562 --> 00:04:02.940
+minimize File Explorer.
+
+52
+00:04:02.940 --> 00:04:08.961
+Now we have Active Disk Editor open, we're
+going to go ahead and select open disk.
+
+53
+00:04:10.640 --> 00:04:12.500
+We're going to navigate to volumes.
+
+54
+00:04:12.500 --> 00:04:17.171
+So across the top toolbar here
+we're going to select volumes and
+
+55
+00:04:17.171 --> 00:04:19.890
+we're going to find our exFAT volume.
+
+56
+00:04:19.890 --> 00:04:24.779
+And we're going to double click
+it when you select it and
+
+57
+00:04:24.779 --> 00:04:30.117
+click Open and it opens to our
+volume boot record in exFAT.
+
+58
+00:04:30.117 --> 00:04:34.961
+Up here to get on the top toolbar,
+we're going to select Browse File Records.
+
+59
+00:04:37.740 --> 00:04:42.591
+If you don't see your file
+record there for your new file,
+
+60
+00:04:42.591 --> 00:04:46.751
+go ahead and close and
+reopen Active Disk Editor.
+
+61
+00:04:48.540 --> 00:04:50.551
+So close your exFAT volume.
+
+62
+00:04:52.840 --> 00:04:57.661
+Close Active Disk Editor and just go
+ahead and relaunch Active Disk Editor.
+
+63
+00:05:05.440 --> 00:05:12.240
+Once you have relaunched Active Disk
+Editor you should see the file NewDoc.txt.
+
+64
+00:05:12.240 --> 00:05:18.003
+And we're going to go ahead and
+take a look at the file record for
+
+65
+00:05:18.003 --> 00:05:23.140
+that file and
+we see we have our file records.
+
+66
+00:05:23.140 --> 00:05:25.740
+Go ahead and set your template position.
+
+67
+00:05:25.740 --> 00:05:30.472
+We have the directory entry record below
+
+68
+00:05:30.472 --> 00:05:34.786
+that we have our stream extension and
+
+69
+00:05:34.786 --> 00:05:39.518
+below that we have our file name entry and
+
+70
+00:05:39.518 --> 00:05:43.851
+we went over these in the last block.
+
+71
+00:05:46.740 --> 00:05:50.631
+So here's all our information
+in our directory entry.
+
+72
+00:05:50.631 --> 00:05:55.602
+We can see that is the entry
+type is a hexidecimal
+
+73
+00:05:55.602 --> 00:06:00.461
+85 which tells us that
+is an allocated file.
+
+74
+00:06:02.840 --> 00:06:06.830
+We have a second count which tells us we
+have two more directory entries besides
+
+75
+00:06:06.830 --> 00:06:08.291
+this one we're looking at.
+
+76
+00:06:08.291 --> 00:06:12.761
+So we have two additional entries and
+those are the stream and the file name.
+
+77
+00:06:14.740 --> 00:06:20.451
+We have our checks on for
+air checking we have our file attributes
+
+78
+00:06:20.451 --> 00:06:25.844
+which if we go ahead on the left
+hand side expand attributes,
+
+79
+00:06:25.844 --> 00:06:29.461
+we can see that is an archive attribute.
+
+80
+00:06:30.840 --> 00:06:33.240
+Remember all these values
+are read little indian.
+
+81
+00:06:33.240 --> 00:06:40.238
+We have our reserve bites and then we're
+going to have our created date and time.
+
+82
+00:06:40.238 --> 00:06:43.440
+Our modified date and time.
+
+83
+00:06:43.440 --> 00:06:45.361
+Our last access date and time.
+
+84
+00:06:47.140 --> 00:06:53.876
+Then we're going to have our created
+10 millisecond refinement time.
+
+85
+00:06:53.876 --> 00:06:57.051
+Our last modified 10
+millisecond refinement time.
+
+86
+00:06:58.740 --> 00:07:03.750
+And we have our universal time code
+
+87
+00:07:03.750 --> 00:07:11.361
+are UTC offset created modified and
+last accessed.
+
+88
+00:07:12.940 --> 00:07:18.361
+Moving down to our stream extension and
+set our template position.
+
+89
+00:07:19.540 --> 00:07:21.262
+An extreme extension,
+
+90
+00:07:21.262 --> 00:07:26.351
+we have our entry type which tells
+us it is allocated because it is C0.
+
+91
+00:07:28.540 --> 00:07:32.240
+Then we have our secondary flags.
+
+92
+00:07:32.240 --> 00:07:35.281
+And if we go ahead and
+expand that, that's a packed byte.
+
+93
+00:07:35.281 --> 00:07:38.275
+So we're going to have
+to look at the bits.
+
+94
+00:07:38.275 --> 00:07:43.696
+And it's a three, so
+allocation is turned on and
+
+95
+00:07:43.696 --> 00:07:46.746
+now FAT chain is turned on.
+
+96
+00:07:46.746 --> 00:07:50.130
+So we do not have a entry
+in the FATs which
+
+97
+00:07:50.130 --> 00:07:54.861
+means this file is not fragmented and
+it is allocated.
+
+98
+00:07:58.040 --> 00:08:02.257
+Then we have our name length,
+
+99
+00:08:02.257 --> 00:08:08.338
+the number of characters in the file name.
+
+100
+00:08:08.338 --> 00:08:13.175
+We have a name,
+hash we have our valid data
+
+101
+00:08:13.175 --> 00:08:18.300
+length which is are initialized file size.
+
+102
+00:08:18.300 --> 00:08:22.861
+Which is 63 bytes are reserved.
+
+103
+00:08:23.940 --> 00:08:32.340
+Our first cluster number which is
+cluster 18 hexidecimal 1 2, decimal 18.
+
+104
+00:08:32.340 --> 00:08:37.942
+And we have again our file size which
+is the actual size of the file and
+
+105
+00:08:37.942 --> 00:08:43.660
+we can see it's 63 bytes in length
+moving down or a file name entry.
+
+106
+00:08:44.840 --> 00:08:49.558
+Go ahead and
+set your temple position again we have we
+
+107
+00:08:49.558 --> 00:08:54.386
+can see our file type describes
+as hexidecimal C1 and
+
+108
+00:08:54.386 --> 00:08:59.761
+we know that it's allocated
+by that it's in use reserved.
+
+109
+00:09:01.640 --> 00:09:04.578
+And then we have our file name.
+
+110
+00:09:04.578 --> 00:09:12.161
+And we can see the file name and
+ask it's off to the right NewText_1.txt.
+
+111
+00:09:15.340 --> 00:09:20.844
+So let's go ahead and
+we're going to close this and
+
+112
+00:09:20.844 --> 00:09:26.761
+we're going to go ahead and
+close Active Disk Editor.
+
+113
+00:09:29.340 --> 00:09:31.651
+We're gonnna bring up our File Explorer.
+
+114
+00:09:34.240 --> 00:09:37.773
+Now we're going to select NewDoc_1.txt or
+
+115
+00:09:37.773 --> 00:09:42.461
+whatever you named our new
+document that we just created.
+
+116
+00:09:43.740 --> 00:09:47.370
+We're going to hold down our
+shift key right click and
+
+117
+00:09:47.370 --> 00:09:52.691
+we're going to delete the file and Windows
+is going to ask us if we're sure and
+
+118
+00:09:52.691 --> 00:09:57.810
+we're going to say Yes and
+we no longer see the file there.
+
+119
+00:09:57.810 --> 00:10:04.061
+Let's go ahead now and launch Active Disk
+Editor now that we've deleted our file.
+
+120
+00:10:10.540 --> 00:10:16.667
+Once Active Disk Editor
+open select Open Disk.
+
+121
+00:10:16.667 --> 00:10:20.861
+We're going to select volumes because
+we want to look at the exFAT volume.
+
+122
+00:10:22.540 --> 00:10:27.966
+We're going to select our exFAT volume and
+click Open once our exFAT
+
+123
+00:10:27.966 --> 00:10:33.740
+volume opens it's going to take
+us to the volume boot record.
+
+124
+00:10:33.740 --> 00:10:38.340
+But we're going to go ahead and
+open up Browse File Records and
+
+125
+00:10:38.340 --> 00:10:45.640
+we look in our file records, we no longer
+see the document NewTextFile_1.txt.
+
+126
+00:10:45.640 --> 00:10:48.580
+So let's go ahead and
+take a look at the root directory.
+
+127
+00:10:48.580 --> 00:10:52.931
+You can scroll down the root directory and
+
+128
+00:10:52.931 --> 00:10:57.285
+locate some of the unallocated entries.
+
+129
+00:10:57.285 --> 00:11:02.718
+And you can see them because we're
+looking for this hexadecimal 05 and
+
+130
+00:11:02.718 --> 00:11:08.140
+I locate the directory entry for
+new text document down here.
+
+131
+00:11:08.140 --> 00:11:13.490
+Then we see the 05 entry with
+an additional entries of two more entries.
+
+132
+00:11:13.490 --> 00:11:18.277
+And I see the 40 stream extension and
+the 41 file name and
+
+133
+00:11:18.277 --> 00:11:24.332
+we can see the file name and ask
+the NewDoc_1.txt is what I name the file.
+
+134
+00:11:24.332 --> 00:11:26.243
+Now an Active Disk Editor,
+
+135
+00:11:26.243 --> 00:11:30.640
+if I set template position it
+is not reading this correctly.
+
+136
+00:11:30.640 --> 00:11:36.908
+It reads the type and the secondary
+entry count our check some are hash but
+
+137
+00:11:36.908 --> 00:11:42.764
+now we have accustomed to find but
+we know these are our file times and
+
+138
+00:11:42.764 --> 00:11:46.510
+they're 4 by 32 bit MSDOS timestamps.
+
+139
+00:11:46.510 --> 00:11:50.630
+Red little indian should be
+are created time modified.
+
+140
+00:11:50.630 --> 00:11:54.915
+Last access our millisecond time count for
+
+141
+00:11:54.915 --> 00:12:00.050
+created our millisecond time count for
+modified.
+
+142
+00:12:00.050 --> 00:12:06.890
+And then we have our UTC universal time
+code offsets in the 15 minute increments.
+
+143
+00:12:06.890 --> 00:12:09.330
+And we just have reserved
+bites here at the end.
+
+144
+00:12:09.330 --> 00:12:15.054
+These are three UTC offsets for
+created modified less access and
+
+145
+00:12:15.054 --> 00:12:18.940
+the remainder of the bytes are unused.
+
+146
+00:12:18.940 --> 00:12:23.370
+Moving down to our stream
+extension which is right here.
+
+147
+00:12:23.370 --> 00:12:24.293
+I'm going to go ahead and
+
+148
+00:12:24.293 --> 00:12:28.040
+set template position anyway even though
+it's not going to read it correctly.
+
+149
+00:12:28.040 --> 00:12:30.964
+It does tell me the type,
+the entry type and
+
+150
+00:12:30.964 --> 00:12:35.240
+we can see that is
+an unallocated stream extension.
+
+151
+00:12:35.240 --> 00:12:41.248
+I do have my secondary flags here so
+I'm able to open them up and
+
+152
+00:12:41.248 --> 00:12:44.731
+I can see that it is not fragmented.
+
+153
+00:12:44.731 --> 00:12:49.595
+I can see that I have my
+name length name hash,
+
+154
+00:12:49.595 --> 00:12:55.108
+we need to find the starting cluster for
+this file.
+
+155
+00:12:55.108 --> 00:12:59.394
+And so we'll find the offset to
+the starting cluster which we know is 14.
+
+156
+00:12:59.394 --> 00:13:03.409
+So we will go down one line and over 4 and
+
+157
+00:13:03.409 --> 00:13:07.182
+this would be my starting cluster and
+
+158
+00:13:07.182 --> 00:13:12.427
+again this is a 4 byte value,
+read little indian.
+
+159
+00:13:12.427 --> 00:13:17.581
+So when I looked down at my hexa
+interpreter I can see my starting
+
+160
+00:13:17.581 --> 00:13:24.306
+cluster is still cluster 18 and then we
+have our data length which is 63 bytes.
+
+161
+00:13:24.306 --> 00:13:27.741
+So cluster 18,
+let's see if the data is still there.
+
+162
+00:13:27.741 --> 00:13:31.362
+So we're going to navigate out and
+we have go to sector but
+
+163
+00:13:31.362 --> 00:13:33.840
+we want to go to cluster 18.
+
+164
+00:13:33.840 --> 00:13:38.215
+So I'm going to type in 18 here,
+we're going to say okay and
+
+165
+00:13:38.215 --> 00:13:40.160
+we go out to cluster 18.
+
+166
+00:13:40.160 --> 00:13:42.361
+We can see that our data is still there.
+
+167
+00:13:43.740 --> 00:13:47.740
+This is a new text document that we
+created and we're going to delete.
+
+168
+00:13:47.740 --> 00:13:50.940
+So here's our data out on the drive.
+
+169
+00:13:50.940 --> 00:13:55.320
+So even though I permanently deleted
+this file, I use shift delete.
+
+170
+00:13:55.320 --> 00:13:57.290
+I didn't send it to the recycle bin.
+
+171
+00:13:57.290 --> 00:14:02.040
+The data remains out on the drive and
+its directory entry for
+
+172
+00:14:02.040 --> 00:14:04.520
+the most part remains intact.
+
+173
+00:14:04.520 --> 00:14:07.492
+So if we wanted to recover
+this file we could and
+
+174
+00:14:07.492 --> 00:14:10.640
+we're going to talk about
+that in the next module.
+
+175
+00:14:10.640 --> 00:14:15.530
+I just wanted to show you how the data
+changes when we delete a file.
+
+176
+00:14:15.530 --> 00:14:18.430
+What happens to our directory entries?
+
+177
+00:14:18.430 --> 00:14:22.130
+Also keep in mind that
+when we delete a file,
+
+178
+00:14:22.130 --> 00:14:26.032
+not only do the directory entries change,
+but
+
+179
+00:14:26.032 --> 00:14:32.140
+the Bitmap entries for
+the clusters are going to be set to 0.
+
+180
+00:14:32.140 --> 00:14:37.054
+And if this war fragmented file and
+it did have a FAT table entry,
+
+181
+00:14:37.054 --> 00:14:39.335
+the FATs would be zeroed out.
+
+182
+00:14:39.335 --> 00:14:44.344
+That directory entry will
+remain unchanged until we make
+
+183
+00:14:44.344 --> 00:14:49.471
+a new file that occupies that
+space in the root directory.
+
+184
+00:14:49.471 --> 00:14:53.816
+So that directory entry will be there
+until it is overwritten by a new
+
+185
+00:14:53.816 --> 00:14:55.360
+file directory entry.
+
+186
+00:14:55.360 --> 00:15:00.085
+In our next module, we're going to
+take a look at exFAT file recovery and
+
+187
+00:15:00.085 --> 00:15:02.961
+how we would go about
+recovering this file.

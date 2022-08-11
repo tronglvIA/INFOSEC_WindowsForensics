@@ -1,0 +1,1136 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:04.120
+In course 9,
+we're covering the NTFS file system.
+
+2
+00:00:04.120 --> 00:00:05.969
+And in this module, module 3,
+
+3
+00:00:05.969 --> 00:00:09.740
+we're going to be talking
+about the master file table.
+
+4
+00:00:09.740 --> 00:00:15.340
+The master file table is considered
+the heart of the NTFS file system.
+
+5
+00:00:15.340 --> 00:00:22.860
+It stores information needed by
+the system to retrieve files and folders.
+
+6
+00:00:22.860 --> 00:00:28.262
+Every file and every directory will
+have at least one entry in the master
+
+7
+00:00:28.262 --> 00:00:33.640
+file table, and this includes
+the master file table itself.
+
+8
+00:00:33.640 --> 00:00:36.244
+Files can have more than one entry.
+
+9
+00:00:37.940 --> 00:00:43.440
+Each file entry tracks
+the allocation status of the file.
+
+10
+00:00:43.440 --> 00:00:46.961
+Is it allocated in use or unallocated,
+
+11
+00:00:46.961 --> 00:00:51.349
+considered able to be
+filled by the file system?
+
+12
+00:00:52.879 --> 00:00:58.007
+It will show the file dates and
+times, it'll show the file names,
+
+13
+00:00:58.007 --> 00:01:01.496
+and it will show
+the location of the content.
+
+14
+00:01:01.496 --> 00:01:06.256
+And that content will either be resident
+in the master file table itself,
+
+15
+00:01:06.256 --> 00:01:09.240
+or somewhere out on the drive.
+
+16
+00:01:09.240 --> 00:01:14.024
+And our file dates and
+times those would be things like created,
+
+17
+00:01:14.024 --> 00:01:17.490
+access, modified, and record change time.
+
+18
+00:01:17.490 --> 00:01:22.740
+Record change means there's a change
+to the master file table record itself.
+
+19
+00:01:22.740 --> 00:01:29.240
+Now the master file table is
+a collection of individual file records.
+
+20
+00:01:29.240 --> 00:01:32.661
+Every file is going to have
+a record in the master file table.
+
+21
+00:01:33.840 --> 00:01:37.461
+These records are sequentially numbered,
+starting with zero.
+
+22
+00:01:38.640 --> 00:01:43.534
+And we talked about that
+a little bit in our last module,
+
+23
+00:01:43.534 --> 00:01:48.127
+how the first 26 records
+were those system files.
+
+24
+00:01:48.127 --> 00:01:52.551
+The record length is usually 1024 bytes.
+
+25
+00:01:53.740 --> 00:01:59.340
+New records are created on
+a first available basis.
+
+26
+00:01:59.340 --> 00:02:04.656
+If a record is marked as not being in use,
+unallocated,
+
+27
+00:02:04.656 --> 00:02:11.540
+it will be reused, so
+they do get overwritten fairly quickly.
+
+28
+00:02:11.540 --> 00:02:19.154
+Now the file record itself has a header,
+and it begins with the asking word file.
+
+29
+00:02:19.154 --> 00:02:24.380
+And the file header contains information
+about the file, it's called the file
+
+30
+00:02:24.380 --> 00:02:30.040
+record header and it contains information
+about that specific file record.
+
+31
+00:02:30.040 --> 00:02:34.840
+The file record itself is made
+up of things we call attribute.
+
+32
+00:02:34.840 --> 00:02:40.666
+Each of these attributes contains certain
+type of information about the file record,
+
+33
+00:02:40.666 --> 00:02:43.791
+and we're going to see
+that when we look at them.
+
+34
+00:02:43.791 --> 00:02:48.715
+And each record ends with
+a footer of hexadecimal FF FF FF,
+
+35
+00:02:48.715 --> 00:02:53.753
+and that's how we know we're
+at the end of the file record.
+
+36
+00:02:55.140 --> 00:03:00.128
+This is an example of what a master
+file table file record will look
+
+37
+00:03:00.128 --> 00:03:01.951
+like in our hex editor.
+
+38
+00:03:03.040 --> 00:03:08.252
+We can see right at the top,
+we have that word file,
+
+39
+00:03:08.252 --> 00:03:11.840
+an offset key to the right.
+
+40
+00:03:11.840 --> 00:03:17.593
+We will always see that, and that starts
+at offset zero of the file record.
+
+41
+00:03:19.640 --> 00:03:24.323
+Then we can see we have
+down at offset 10 for
+
+42
+00:03:24.323 --> 00:03:30.140
+a value of 2 bites,
+this is the sequence number.
+
+43
+00:03:30.140 --> 00:03:35.291
+The sequence number tells us how many
+times the file records has been used and
+
+44
+00:03:35.291 --> 00:03:36.427
+it increments.
+
+45
+00:03:36.427 --> 00:03:40.940
+In other words, it goes up one
+every time the file is deleted.
+
+46
+00:03:40.940 --> 00:03:44.802
+So it increments on deletion,
+not allocation.
+
+47
+00:03:46.640 --> 00:03:52.968
+And then we have our allocation status
+flag outlined here off in orange,
+
+48
+00:03:52.968 --> 00:03:58.800
+and we can see it is 01 00, and
+that would be red little Indian.
+
+49
+00:03:58.800 --> 00:04:02.117
+All these values are read little Indian,
+and
+
+50
+00:04:02.117 --> 00:04:07.110
+that would be 0001, and
+that tells us it's been used one time.
+
+51
+00:04:07.110 --> 00:04:10.951
+So this is the first time that
+this file record has been used.
+
+52
+00:04:12.740 --> 00:04:18.639
+Next we see our attributes,
+we can see that the first attribute
+
+53
+00:04:18.639 --> 00:04:24.240
+highlighted in pink starts
+with a hexadecimal 10.
+
+54
+00:04:24.240 --> 00:04:27.872
+This is called a standard
+information attribute,
+
+55
+00:04:27.872 --> 00:04:31.087
+and we're going to learn
+how we read read this.
+
+56
+00:04:31.087 --> 00:04:34.613
+We go down, and we see our next attribute
+
+57
+00:04:34.613 --> 00:04:39.400
+highlighted in green starts
+with a hexadecimal 30.
+
+58
+00:04:39.400 --> 00:04:45.440
+This would be a file name attribute, so
+this will tell us the name of the file.
+
+59
+00:04:45.440 --> 00:04:51.640
+Then our next attribute, highlighted in
+yellow, starts with a hexadecimal 80.
+
+60
+00:04:51.640 --> 00:04:56.579
+This is a data attribute, and this is
+going to either contain the data for
+
+61
+00:04:56.579 --> 00:05:02.340
+the file, or it'll tell us where
+the data is located out on the disk.
+
+62
+00:05:02.340 --> 00:05:07.146
+Our next attribute,
+down at the bottom highlighted in purple,
+
+63
+00:05:07.146 --> 00:05:12.540
+starts with a hexadecimal B0,
+and that is a bit map attribute.
+
+64
+00:05:12.540 --> 00:05:17.213
+And then we can see the end of file marker
+
+65
+00:05:17.213 --> 00:05:21.326
+highlighted in gray as FF FF FF FF.
+
+66
+00:05:21.326 --> 00:05:25.329
+So this is what our master file
+table record will look like,
+
+67
+00:05:25.329 --> 00:05:27.261
+we view it in our hex editor.
+
+68
+00:05:29.240 --> 00:05:34.152
+Now these are some of the values we're
+going to find in our file record header,
+
+69
+00:05:34.152 --> 00:05:35.940
+beginning at offset 00.
+
+70
+00:05:35.940 --> 00:05:39.251
+We're going to see that signature,
+that asking word file.
+
+71
+00:05:40.340 --> 00:05:44.658
+If there was a problem with it,
+we would see the word BAAD,
+
+72
+00:05:44.658 --> 00:05:48.461
+which means it's bad,
+it's corrupt in some way.
+
+73
+00:05:49.640 --> 00:05:51.500
+But normally, you'll see the word file.
+
+74
+00:05:55.240 --> 00:05:59.281
+We're also going to see,
+highlighted in blue here, an offset 10.
+
+75
+00:05:59.281 --> 00:06:02.058
+The sequence count which we looked at, and
+
+76
+00:06:02.058 --> 00:06:06.140
+that is a count of times
+the record has been deleted.
+
+77
+00:06:06.140 --> 00:06:11.158
+Remember increments on deletion,
+and then down at offset 16,
+
+78
+00:06:11.158 --> 00:06:18.040
+highlighted in green on our chart, we're
+going to see the allocation status fla gs.
+
+79
+00:06:18.040 --> 00:06:22.695
+If we see an allocation status
+flag at offset 16 of 00,
+
+80
+00:06:22.695 --> 00:06:26.440
+that indicates the deleted file.
+
+81
+00:06:26.440 --> 00:06:33.940
+If we see a hexadecimal value of 01,
+that indicates an allocated file.
+
+82
+00:06:33.940 --> 00:06:40.613
+If we see hexadecimal value of 02,
+that indicates a deleted directory.
+
+83
+00:06:40.613 --> 00:06:45.951
+And hexadecimal 03 would
+indicate in allocated directory.
+
+84
+00:06:47.040 --> 00:06:51.532
+As you can see there is a lot of
+information in the file record header,
+
+85
+00:06:51.532 --> 00:06:56.411
+the ones that are highlighted here in the
+chart are the ones that we are going to
+
+86
+00:06:56.411 --> 00:06:58.835
+talk about throughout this course.
+
+87
+00:06:58.835 --> 00:07:01.285
+The file record attributes,
+
+88
+00:07:01.285 --> 00:07:06.192
+the attributes are the things
+that make up the file record.
+
+89
+00:07:06.192 --> 00:07:10.680
+And we saw that attribute that
+started with the hexadecimal 10, and
+
+90
+00:07:10.680 --> 00:07:14.195
+I told you that was a standard
+information attribute.
+
+91
+00:07:14.195 --> 00:07:19.282
+And that's going to contain our file
+permissions, it's going to contain
+
+92
+00:07:19.282 --> 00:07:25.156
+all our date and time stamps created,
+accessed, modified and record changed.
+
+93
+00:07:25.156 --> 00:07:29.729
+And this will always be
+a resident attribute.
+
+94
+00:07:29.729 --> 00:07:34.577
+What that means is the information in this
+attribute will always be contained within
+
+95
+00:07:34.577 --> 00:07:36.940
+the master file table itself.
+
+96
+00:07:36.940 --> 00:07:39.547
+This data will not be
+somewhere out on the drive,
+
+97
+00:07:39.547 --> 00:07:41.461
+it will be in the master file table.
+
+98
+00:07:44.140 --> 00:07:48.402
+We looked at the attribute that
+began with the hexadecimal 30, and
+
+99
+00:07:48.402 --> 00:07:50.920
+I said that was the file name attribute.
+
+100
+00:07:50.920 --> 00:07:53.949
+And this is going to contain
+the name of the file,
+
+101
+00:07:53.949 --> 00:07:56.720
+it will also have dates and times in it.
+
+102
+00:07:56.720 --> 00:08:01.840
+But those dates and times relate
+to the file name, not the file.
+
+103
+00:08:01.840 --> 00:08:06.572
+If you were to rename the file,
+there would be a change in the dates and
+
+104
+00:08:06.572 --> 00:08:08.951
+times in the file name attribute.
+
+105
+00:08:10.040 --> 00:08:11.933
+And this again is always resident,
+
+106
+00:08:11.933 --> 00:08:15.351
+meaning it will always be located
+within the master file table.
+
+107
+00:08:17.440 --> 00:08:20.887
+And then we talked about
+the attribute hexadecimal 80.
+
+108
+00:08:20.887 --> 00:08:25.336
+This is going to be our data attribute,
+and it's either going to contain
+
+109
+00:08:25.336 --> 00:08:30.661
+the actual file data right there in the
+master file table, if it's a small file.
+
+110
+00:08:30.661 --> 00:08:33.885
+Or it will have pointers
+to the files data,
+
+111
+00:08:33.885 --> 00:08:37.660
+where we can find the data
+within the file system.
+
+112
+00:08:39.039 --> 00:08:46.110
+We're going to take a look at a master
+file table entry for this walkthrough?
+
+113
+00:08:46.110 --> 00:08:52.440
+We're going to need active
+disk editor in our NTFS VHD.
+
+114
+00:08:52.440 --> 00:08:57.840
+The first thing we need to do on
+our walk through is attach RVHD.
+
+115
+00:08:57.840 --> 00:09:02.460
+So we're going to go to disk management,
+
+116
+00:09:02.460 --> 00:09:07.090
+We're going to go to actions attach VHD.
+
+117
+00:09:07.090 --> 00:09:11.821
+We're going to browse to
+the location where our VHD is saved,
+
+118
+00:09:11.821 --> 00:09:17.140
+and we're looking for the NTFS VHD,
+mine is on my desktop.
+
+119
+00:09:17.140 --> 00:09:21.950
+We're going to select it and
+click Open, and
+
+120
+00:09:21.950 --> 00:09:26.625
+once we do that we're going to hit Okay,
+and
+
+121
+00:09:26.625 --> 00:09:30.111
+the virtual drive will mount.
+
+122
+00:09:30.111 --> 00:09:35.894
+Once we've done that,
+note the drive number, the disk number and
+
+123
+00:09:35.894 --> 00:09:40.862
+the volume we're going to be
+looking at is the second NTFS.
+
+124
+00:09:40.862 --> 00:09:47.500
+The first NTFS volume on the drive,
+our first volume is Fat 32.
+
+125
+00:09:47.500 --> 00:09:54.040
+The next volume in will be NTFS,
+200 megabytes in size, that's the volume.
+
+126
+00:09:54.040 --> 00:09:57.551
+Make note of the letter minus B,
+yours may be different.
+
+127
+00:09:59.640 --> 00:10:03.740
+Next we're going to go ahead and
+launch active disk editor.
+
+128
+00:10:03.740 --> 00:10:07.873
+Once it launches,
+we're going to select open disk.
+
+129
+00:10:09.308 --> 00:10:14.291
+In the bar up top,
+we're going to select volumes because
+
+130
+00:10:14.291 --> 00:10:18.140
+we're going to be looking at a volume.
+
+131
+00:10:18.140 --> 00:10:23.934
+We're going to select NTFS volume,
+and my drive letter was B,
+
+132
+00:10:23.934 --> 00:10:29.851
+yours may have been different,
+And we're going to click Open.
+
+133
+00:10:29.851 --> 00:10:33.987
+Now when it opens up it immediately
+takes us to the volume boot record,
+
+134
+00:10:33.987 --> 00:10:37.400
+which we talked about in the last module.
+
+135
+00:10:37.400 --> 00:10:41.622
+But what I want you to
+do is at the top here,
+
+136
+00:10:41.622 --> 00:10:49.114
+just under the edit you're going to
+see browse file records, select that.
+
+137
+00:10:49.114 --> 00:10:54.740
+And we do that, we can see a list of
+the file records that are on the volume.
+
+138
+00:10:54.740 --> 00:11:01.681
+And we see we have MFT, MFT mirror,
+do you pit map bad cloths?
+
+139
+00:11:01.681 --> 00:11:08.961
+These are all our system files here in
+red, we're going to select resident.txt.
+
+140
+00:11:08.961 --> 00:11:14.261
+This is a user created file,
+all the red ones are those metadata
+
+141
+00:11:14.261 --> 00:11:20.240
+system files we talked about at
+the beginning of this course.
+
+142
+00:11:20.240 --> 00:11:25.541
+So we select resident.txt,
+and now we're taking
+
+143
+00:11:25.541 --> 00:11:30.851
+a look at the file record for
+that particular file.
+
+144
+00:11:31.940 --> 00:11:36.500
+We can see it starts with
+the ask file in the header,
+
+145
+00:11:36.500 --> 00:11:40.280
+you can see the sequence number is 02.
+
+146
+00:11:40.280 --> 00:11:47.340
+It does have a link count, and
+we can see that the flags are 01.
+
+147
+00:11:47.340 --> 00:11:53.248
+And if we go ahead to the left
+hand pain and expand flags,
+
+148
+00:11:53.248 --> 00:11:59.080
+it tells us that it is in use and
+it's not a directory.
+
+149
+00:11:59.080 --> 00:12:03.760
+So this would mean it's an allocated file,
+so
+
+150
+00:12:03.760 --> 00:12:10.140
+01 is an allocated file, and
+its sequence number is two.
+
+151
+00:12:10.140 --> 00:12:15.040
+As we looked down,
+we start to see the attributes.
+
+152
+00:12:15.040 --> 00:12:20.609
+The first attribute
+hexadecimal 10 00 00 00,
+
+153
+00:12:20.609 --> 00:12:24.380
+This tells us the type of attribute.
+
+154
+00:12:24.380 --> 00:12:29.282
+This is extended information attribute,
+this is the attribute that's
+
+155
+00:12:29.282 --> 00:12:34.117
+going to have all our file times in it,
+created, access, and modified.
+
+156
+00:12:34.117 --> 00:12:40.040
+Even the attributes themselves do have
+headers, this is the attribute header.
+
+157
+00:12:40.040 --> 00:12:42.560
+It'll tell you the attribute type,
+
+158
+00:12:42.560 --> 00:12:46.440
+the length of the attribute
+including the header.
+
+159
+00:12:46.440 --> 00:12:50.040
+It'll tell you the length of just
+the attribute without the header.
+
+160
+00:12:50.040 --> 00:12:53.801
+It will tell you the offset
+to the data from
+
+161
+00:12:53.801 --> 00:12:58.240
+the beginning of the attribute header.
+
+162
+00:12:58.240 --> 00:13:03.585
+And we could see it says 18, so
+we'd go down one line over eight,
+
+163
+00:13:03.585 --> 00:13:07.040
+which would take us right to here.
+
+164
+00:13:07.040 --> 00:13:09.428
+And this is the attribute itself, and
+
+165
+00:13:09.428 --> 00:13:14.340
+inside the attribute is where we're
+going to find our dates and times.
+
+166
+00:13:14.340 --> 00:13:18.264
+This is our file created time, and again,
+
+167
+00:13:18.264 --> 00:13:22.200
+this is translated as a windows file time.
+
+168
+00:13:22.200 --> 00:13:25.700
+We can see the date is august 15th 2020.
+
+169
+00:13:25.700 --> 00:13:31.985
+We can see our file modified time,
+
+170
+00:13:31.985 --> 00:13:36.537
+our record change time,
+
+171
+00:13:36.537 --> 00:13:41.318
+and our last asks us time.
+
+172
+00:13:41.318 --> 00:13:45.422
+For this particular file,
+these are all the same,
+
+173
+00:13:45.422 --> 00:13:50.570
+we see file permissions, and
+these again are going to be flags.
+
+174
+00:13:50.570 --> 00:13:54.372
+So we look at our file permissions
+over on the left hand side,
+
+175
+00:13:54.372 --> 00:13:57.750
+we can expand that,
+we can see our flags that are set.
+
+176
+00:13:57.750 --> 00:14:01.150
+You can see there are quite
+a few flags and NTFS,
+
+177
+00:14:01.150 --> 00:14:06.690
+we have a lot of file permissions, and
+we have our archive and a security ID.
+
+178
+00:14:06.690 --> 00:14:12.535
+We also have this is a security ID here,
+237.
+
+179
+00:14:12.535 --> 00:14:15.939
+273, sorry, 273 B0 security,
+
+180
+00:14:15.939 --> 00:14:20.351
+and our file permissions
+we can see our security ID.
+
+181
+00:14:21.410 --> 00:14:25.879
+And our file permissions tell us it
+is a archive file, so that it would
+
+182
+00:14:25.879 --> 00:14:31.540
+be the information we would get from
+the standard information attribute.
+
+183
+00:14:31.540 --> 00:14:35.422
+Our file times, our attribute,
+
+184
+00:14:35.422 --> 00:14:40.976
+in this case it was archive and
+our security ID.
+
+185
+00:14:40.976 --> 00:14:46.174
+Moving down to the next attribute,
+attribute 30,
+
+186
+00:14:46.174 --> 00:14:52.040
+accessible 30,
+this is our file name attribute.
+
+187
+00:14:52.040 --> 00:14:54.480
+This will be the file name attribute, and
+
+188
+00:14:54.480 --> 00:14:57.010
+this is going to contain
+the name of the file.
+
+189
+00:14:57.010 --> 00:15:01.500
+It will also contain times,
+these times are relevant
+
+190
+00:15:01.500 --> 00:15:06.499
+to the file name only,
+not the actual contents of the file.
+
+191
+00:15:06.499 --> 00:15:08.496
+And again, the header,
+
+192
+00:15:08.496 --> 00:15:13.361
+the attribute header is going to
+tell us the same information.
+
+193
+00:15:14.840 --> 00:15:18.530
+We're going to have the type of attribute,
+you're going to have the length of
+
+194
+00:15:18.530 --> 00:15:22.651
+the attribute, including the header in
+the length and not including the header.
+
+195
+00:15:22.651 --> 00:15:26.549
+And then you will have the offset to
+the attribute, the offset to the content,
+
+196
+00:15:26.549 --> 00:15:28.746
+which again is almost
+always going to be 18.
+
+197
+00:15:28.746 --> 00:15:33.823
+So down one line, and over 12345678
+
+198
+00:15:33.823 --> 00:15:39.175
+takes us right to the content
+of the attribute.
+
+199
+00:15:42.640 --> 00:15:47.077
+This does tell us where the parent
+directory of this file is,
+
+200
+00:15:47.077 --> 00:15:51.340
+what record number the parent
+directory of this file is and
+
+201
+00:15:51.340 --> 00:15:56.661
+it would be MFT record number five is
+the parent of this particular file.
+
+202
+00:15:59.640 --> 00:16:06.346
+Again, we have created, modified,
+
+203
+00:16:06.346 --> 00:16:11.600
+record changed last access.
+
+204
+00:16:11.600 --> 00:16:15.487
+These dates and times, like I said,
+are relevant to the file name.
+
+205
+00:16:15.487 --> 00:16:20.031
+We change the file name, we'll see
+a change in these dates and times, and
+
+206
+00:16:20.031 --> 00:16:22.840
+then we actually have
+the file name itself.
+
+207
+00:16:22.840 --> 00:16:29.514
+And we can see the file
+name is resident.txt,
+
+208
+00:16:29.514 --> 00:16:33.470
+this is the resident file.
+
+209
+00:16:33.470 --> 00:16:38.480
+This is an example of a file whose data is
+contained within the master file table.
+
+210
+00:16:38.480 --> 00:16:42.602
+If the data was somewhere else,
+and the file is too big to fit in
+
+211
+00:16:42.602 --> 00:16:46.984
+the master file table,
+we would see something called a run list.
+
+212
+00:16:46.984 --> 00:16:51.670
+And we're going to talk about
+run list in the next module.
+
+213
+00:16:51.670 --> 00:16:54.500
+If we scroll down, we can see the data.
+
+214
+00:16:54.500 --> 00:17:01.213
+This is a file, that is resident, and
+this is the first user created file,
+
+215
+00:17:01.213 --> 00:17:05.280
+and the first time this
+record has been used.
+
+216
+00:17:05.280 --> 00:17:08.865
+But we know it's not because we saw 02,
+
+217
+00:17:08.865 --> 00:17:14.499
+which indicates that the record
+has been used has been deleted and
+
+218
+00:17:14.499 --> 00:17:19.124
+reused, and
+that would be a look at a MFT file record.
+
+219
+00:17:19.124 --> 00:17:23.719
+And again, we have the header,
+the record header and
+
+220
+00:17:23.719 --> 00:17:27.420
+then the attributes that make up the file.
+
+221
+00:17:27.420 --> 00:17:32.790
+There is one more attribute in here,
+it's an attribute accessible 40.
+
+222
+00:17:32.790 --> 00:17:36.202
+This would be an object ID, and
+
+223
+00:17:36.202 --> 00:17:40.929
+an object identifier is
+just going to tell you
+
+224
+00:17:40.929 --> 00:17:45.790
+a unique grid a global unique identifier.
+
+225
+00:17:45.790 --> 00:17:51.180
+A grid for this particular file,
+and that's the grid right here.
+
+226
+00:17:51.180 --> 00:17:55.887
+This grid uniquely identifies
+this particular file, and
+
+227
+00:17:55.887 --> 00:17:59.259
+those attributes are hexadecimal 40.
+
+228
+00:17:59.259 --> 00:18:03.593
+And if you see those, you will have
+a globally unique identifier for
+
+229
+00:18:03.593 --> 00:18:07.851
+that particular file, which may be
+useful if you are searching for
+
+230
+00:18:07.851 --> 00:18:09.700
+the file across the volume.
+
+231
+00:18:09.700 --> 00:18:14.589
+Just wanted to point that out, that is
+not one of the attributes that we're
+
+232
+00:18:14.589 --> 00:18:18.570
+concentrating on,
+b ut it is a good attribute to know about.
+
+233
+00:18:18.570 --> 00:18:22.665
+This is the master file table file record,
+
+234
+00:18:22.665 --> 00:18:26.680
+and that was the record for that one file.
+
+235
+00:18:26.680 --> 00:18:31.403
+And in this particular case it's
+a small file and the data is resident,
+
+236
+00:18:31.403 --> 00:18:34.961
+meaning within the master
+file table record itself.
+
+237
+00:18:37.950 --> 00:18:42.402
+In our next module,
+we're going to talk about data runs.
+
+238
+00:18:42.402 --> 00:18:44.850
+And how we interpret them and
+
+239
+00:18:44.850 --> 00:18:50.161
+locate the data out on the disk
+when it's not a resident file.
