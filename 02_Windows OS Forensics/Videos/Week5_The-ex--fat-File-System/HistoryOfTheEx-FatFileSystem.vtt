@@ -1,0 +1,319 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.175
+In this course, Course 10,
+
+2
+00:00:02.175 --> 00:00:06.630
+we're going to be talking
+about the exFAT file system.
+
+3
+00:00:06.630 --> 00:00:10.740
+This course is going to cover
+
+4
+00:00:10.740 --> 00:00:13.275
+knowledge of critical
+data structures
+
+5
+00:00:13.275 --> 00:00:15.120
+in the FAT file system.
+
+6
+00:00:15.120 --> 00:00:17.190
+We're going to understand how
+
+7
+00:00:17.190 --> 00:00:19.575
+the FAT file does file recovery.
+
+8
+00:00:19.575 --> 00:00:23.280
+We're going to talk about
+the exFAT directory tree,
+
+9
+00:00:23.280 --> 00:00:26.415
+and folder, and file recovery
+
+10
+00:00:26.415 --> 00:00:29.265
+limitations within
+the FAT file system.
+
+11
+00:00:29.265 --> 00:00:32.910
+In Module 1, we're
+going to talk about
+
+12
+00:00:32.910 --> 00:00:34.650
+file system overview and
+
+13
+00:00:34.650 --> 00:00:37.170
+history of the exFAT file system.
+
+14
+00:00:37.170 --> 00:00:44.255
+exFAT was first supported
+by Windows CE in 2006.
+
+15
+00:00:44.255 --> 00:00:49.550
+It has a maximum volume
+size of 64 zettabytes.
+
+16
+00:00:49.550 --> 00:00:52.115
+That is a very large volume.
+
+17
+00:00:52.115 --> 00:00:55.945
+This file system was
+designed for large volumes.
+
+18
+00:00:55.945 --> 00:01:00.800
+It's file size limitation
+is 16 exabytes.
+
+19
+00:01:00.800 --> 00:01:04.460
+It's designed for large
+volumes and large files.
+
+20
+00:01:04.460 --> 00:01:08.185
+It's used mainly
+on external media,
+
+21
+00:01:08.185 --> 00:01:11.465
+it is cross-platform, it will run
+
+22
+00:01:11.465 --> 00:01:14.690
+on Windows, Mac, and Linux.
+
+23
+00:01:14.690 --> 00:01:17.840
+If you have a removable
+media that you
+
+24
+00:01:17.840 --> 00:01:21.590
+intend to use on different
+operating systems,
+
+25
+00:01:21.590 --> 00:01:25.610
+you would probably want to
+format that volume exFAT.
+
+26
+00:01:25.610 --> 00:01:28.865
+Now the volume structure,
+
+27
+00:01:28.865 --> 00:01:34.980
+we have a volume boot
+sector like we have in FAT,
+
+28
+00:01:34.980 --> 00:01:37.800
+we have a backup boot sector,
+
+29
+00:01:37.800 --> 00:01:40.725
+and we have one FAT.
+
+30
+00:01:40.725 --> 00:01:42.660
+We don't have the two FATs,
+
+31
+00:01:42.660 --> 00:01:45.075
+we only have one FAT in exFAT,
+
+32
+00:01:45.075 --> 00:01:46.950
+one file allocation table.
+
+33
+00:01:46.950 --> 00:01:49.720
+Then we have the data area,
+
+34
+00:01:49.720 --> 00:01:53.165
+which is also referred
+to as a cluster heap.
+
+35
+00:01:53.165 --> 00:01:57.250
+So we do have a system
+area and a data area.
+
+36
+00:01:57.250 --> 00:02:00.120
+The system area has
+our boot record,
+
+37
+00:02:00.120 --> 00:02:01.320
+our backup boot record,
+
+38
+00:02:01.320 --> 00:02:03.135
+and our file allocation table.
+
+39
+00:02:03.135 --> 00:02:07.775
+The data area is where we
+store our files and folders.
+
+40
+00:02:07.775 --> 00:02:10.920
+Now, we only have one FAT table.
+
+41
+00:02:11.420 --> 00:02:14.390
+This version of FAT does use
+
+42
+00:02:14.390 --> 00:02:17.935
+a full 32 bytes for its entries.
+
+43
+00:02:17.935 --> 00:02:22.220
+It's going to have a media
+descriptor of FF, FF,
+
+44
+00:02:22.220 --> 00:02:26.795
+FF, F8, and that is
+the same as FAT32.
+
+45
+00:02:26.795 --> 00:02:33.555
+The difference with FAT32
+and exFAT is exFAT,
+
+46
+00:02:33.555 --> 00:02:38.000
+the file allocation table
+only tracks fragmented files.
+
+47
+00:02:38.000 --> 00:02:40.625
+If a file is not fragmented,
+
+48
+00:02:40.625 --> 00:02:44.485
+it won't have an entry in
+the file allocation table.
+
+49
+00:02:44.485 --> 00:02:47.160
+The file allocation table does
+
+50
+00:02:47.160 --> 00:02:50.505
+not track cluster allocation.
+
+51
+00:02:50.505 --> 00:02:53.820
+ExFAT uses a bitmap to track
+
+52
+00:02:53.820 --> 00:02:58.920
+cluster allocation like NTFS.
+
+53
+00:02:58.920 --> 00:03:02.990
+There are two system
+files we're going to
+
+54
+00:03:02.990 --> 00:03:06.440
+see in exFAT that we
+don't see in FAT32,
+
+55
+00:03:06.440 --> 00:03:10.200
+and that's the bitmap
+and the UpCase table.
+
+56
+00:03:10.200 --> 00:03:11.630
+The bitmap, like I said,
+
+57
+00:03:11.630 --> 00:03:13.955
+is used to track
+cluster allocation.
+
+58
+00:03:13.955 --> 00:03:15.845
+It tracks what
+clusters are in use,
+
+59
+00:03:15.845 --> 00:03:19.600
+and what clusters are
+available to be written to.
+
+60
+00:03:19.600 --> 00:03:23.865
+The UpCase table is just a
+table of unicode characters.
+
+61
+00:03:23.865 --> 00:03:26.505
+This is used for searching.
+
+62
+00:03:26.505 --> 00:03:28.140
+It converts the characters
+
+63
+00:03:28.140 --> 00:03:31.480
+so you can do a
+search of the drive.
+
+64
+00:03:31.940 --> 00:03:34.490
+The system files will
+
+65
+00:03:34.490 --> 00:03:37.190
+have an entry in
+the root directory,
+
+66
+00:03:37.190 --> 00:03:40.370
+but that directory entry
+does not have a filename.
+
+67
+00:03:40.370 --> 00:03:42.170
+We'll look at that when we look
+
+68
+00:03:42.170 --> 00:03:44.305
+at the exFAT root directory.
+
+69
+00:03:44.305 --> 00:03:46.340
+In our next module,
+
+70
+00:03:46.340 --> 00:03:47.900
+we're going to take a look at
+
+71
+00:03:47.900 --> 00:03:50.730
+the exFAT volume boot record.

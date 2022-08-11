@@ -1,0 +1,278 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.675
+In this course we're talking
+about the Windows Registry.
+
+2
+00:00:03.675 --> 00:00:06.960
+In this module, we're going
+to talk about the location
+
+3
+00:00:06.960 --> 00:00:10.800
+of the Registry files
+within our forensic image.
+
+4
+00:00:10.800 --> 00:00:14.580
+The file path to find are SAM,
+
+5
+00:00:14.580 --> 00:00:16.875
+security, software, and system,
+
+6
+00:00:16.875 --> 00:00:19.915
+sometimes referred to as the 4Ss,
+
+7
+00:00:19.915 --> 00:00:23.275
+is going to be from the root,
+
+8
+00:00:23.275 --> 00:00:25.155
+the Windows directory,
+
+9
+00:00:25.155 --> 00:00:29.880
+System32 and then we
+highlight the config folder.
+
+10
+00:00:29.880 --> 00:00:32.030
+When we look to the right,
+
+11
+00:00:32.030 --> 00:00:34.370
+we can see our SAM,
+
+12
+00:00:34.370 --> 00:00:36.170
+security, software, and system
+
+13
+00:00:36.170 --> 00:00:39.250
+files listed in the files path.
+
+14
+00:00:39.250 --> 00:00:43.250
+We would be able to
+export these files using
+
+15
+00:00:43.250 --> 00:00:48.865
+a tool such as FTK imager.
+
+16
+00:00:48.865 --> 00:00:51.145
+Now, like I said,
+
+17
+00:00:51.145 --> 00:00:53.270
+each user on the
+system will have their
+
+18
+00:00:53.270 --> 00:00:55.985
+very own ntuser.dat file.
+
+19
+00:00:55.985 --> 00:00:59.840
+You're going to find that
+beneath the user's profile.
+
+20
+00:00:59.840 --> 00:01:04.575
+You would go to the root users,
+
+21
+00:01:04.575 --> 00:01:07.430
+expand the user's folder and then
+
+22
+00:01:07.430 --> 00:01:12.300
+highlight the user that
+you want to investigate.
+
+23
+00:01:12.300 --> 00:01:16.355
+Then, you look to the right
+and in the file list page,
+
+24
+00:01:16.355 --> 00:01:20.005
+you would see that
+user's ntuser.dat file.
+
+25
+00:01:20.005 --> 00:01:24.195
+Using FTK imager, you
+can export this file.
+
+26
+00:01:24.195 --> 00:01:28.210
+We'll get to do that
+in our walkthrough.
+
+27
+00:01:28.370 --> 00:01:32.375
+The UsrClass.dat file, again,
+
+28
+00:01:32.375 --> 00:01:34.070
+is specific to each user.
+
+29
+00:01:34.070 --> 00:01:36.245
+Every user will
+have one of these.
+
+30
+00:01:36.245 --> 00:01:40.040
+You would again drill
+down from root users,
+
+31
+00:01:40.040 --> 00:01:44.280
+locate the particular user
+that you are interested in,
+
+32
+00:01:44.280 --> 00:01:46.605
+then you would have to go to
+
+33
+00:01:46.605 --> 00:01:50.400
+app data and you expand app data.
+
+34
+00:01:50.400 --> 00:01:52.875
+You'd expand local,
+
+35
+00:01:52.875 --> 00:01:56.520
+then you scroll down
+and expand Microsoft.
+
+36
+00:01:56.520 --> 00:01:59.280
+Then you would highlight
+the Windows folder.
+
+37
+00:01:59.280 --> 00:02:02.195
+Then you would look to the
+right and the files pan.
+
+38
+00:02:02.195 --> 00:02:06.755
+You can see that particularly
+users UsrClass.dat file.
+
+39
+00:02:06.755 --> 00:02:10.385
+Again, you can use FTK
+imager to export the file.
+
+40
+00:02:10.385 --> 00:02:13.715
+If you're exporting
+multiple NT users
+
+41
+00:02:13.715 --> 00:02:16.655
+or multiple UsrClass.dat files,
+
+42
+00:02:16.655 --> 00:02:18.770
+I highly recommend that you name
+
+43
+00:02:18.770 --> 00:02:21.475
+them uniquely so that
+you know which is which.
+
+44
+00:02:21.475 --> 00:02:25.400
+The AmCache hive
+is a system file.
+
+45
+00:02:25.400 --> 00:02:28.040
+It's not part of the users like
+
+46
+00:02:28.040 --> 00:02:31.115
+the NT user or the UsrClass.dat,
+
+47
+00:02:31.115 --> 00:02:35.405
+and it's going to be located
+under the Windows directory.
+
+48
+00:02:35.405 --> 00:02:36.725
+So from the root,
+
+49
+00:02:36.725 --> 00:02:38.930
+we will expand Windows,
+
+50
+00:02:38.930 --> 00:02:42.210
+and then we would
+expand AppCompat,
+
+51
+00:02:42.210 --> 00:02:44.805
+and then we're going
+to highlight programs.
+
+52
+00:02:44.805 --> 00:02:47.775
+When you look to the right
+when the file was pan,
+
+53
+00:02:47.775 --> 00:02:51.555
+you would see the
+Amcache.hve file,
+
+54
+00:02:51.555 --> 00:02:54.300
+that is the AmCache hive file.
+
+55
+00:02:54.300 --> 00:03:00.045
+Again, you can export this
+using a tool like FTK imager.
+
+56
+00:03:00.045 --> 00:03:02.700
+Now we're going to do our
+registry walkthrough.
+
+57
+00:03:02.700 --> 00:03:04.370
+We're going to take
+a look at our image
+
+58
+00:03:04.370 --> 00:03:05.510
+and we're going to find
+
+59
+00:03:05.510 --> 00:03:08.990
+these files and export
+them using FTK imager.
+
+60
+00:03:08.990 --> 00:03:10.565
+So we're going to need
+
+61
+00:03:10.565 --> 00:03:15.820
+our Windows 10 VMDK
+and FTK imager.

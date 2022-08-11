@@ -1,0 +1,641 @@
+WEBVTT
+
+1
+00:00:00.140 --> 00:00:05.084
+Course nine, the NTFS file system,
+and we're on module two.
+
+2
+00:00:05.084 --> 00:00:10.540
+In module two, we're going to talk
+about the NTFS volume boot record.
+
+3
+00:00:10.540 --> 00:00:16.880
+Now in the NTFS volume boot record,
+we'll see represented as dollar boot.
+
+4
+00:00:16.880 --> 00:00:21.716
+And we talked about that when we
+saw our system metadata files,
+
+5
+00:00:21.716 --> 00:00:27.662
+dollar boot was our boot sector, and this
+is going to be our volume boot record.
+
+6
+00:00:29.840 --> 00:00:32.300
+It is sector 0 of the volume.
+
+7
+00:00:33.403 --> 00:00:38.114
+Not the physical disk, but
+the volume we're looking at.
+
+8
+00:00:38.114 --> 00:00:42.248
+And we can see the information
+contained in here,
+
+9
+00:00:42.248 --> 00:00:48.067
+we're going to see our OEM ID or
+operating system, it's going to be NTFS.
+
+10
+00:00:48.067 --> 00:00:54.740
+We're going to see our bytes per sector,
+our sectors per cluster.
+
+11
+00:00:54.740 --> 00:00:59.540
+We're going to get total sectors in
+the volume, and the volume serial number.
+
+12
+00:00:59.540 --> 00:01:03.478
+Now all this information is related
+to the volume structure and
+
+13
+00:01:03.478 --> 00:01:04.970
+the size of the volume.
+
+14
+00:01:04.970 --> 00:01:07.563
+Also contained in the volume boot record,
+
+15
+00:01:07.563 --> 00:01:11.940
+we're going to get information
+regarding the master file table.
+
+16
+00:01:11.940 --> 00:01:16.014
+We're going to get the starting
+cluster of the master file table,
+
+17
+00:01:16.014 --> 00:01:20.465
+the starting cluster of the MFT mirror
+that backup copy of the first few
+
+18
+00:01:20.465 --> 00:01:23.240
+entries of the master file table.
+
+19
+00:01:23.240 --> 00:01:28.961
+And we're also going to see our master
+file table record size in clusters.
+
+20
+00:01:30.440 --> 00:01:35.348
+This is what our volume boot record
+is going to look at it when we
+
+21
+00:01:35.348 --> 00:01:37.813
+view it through a hex editor.
+
+22
+00:01:37.813 --> 00:01:42.661
+You can see here right at offset 03,
+starts at OEM ID and
+
+23
+00:01:42.661 --> 00:01:46.709
+if we look to the right and
+ask if we can see NTFS.
+
+24
+00:01:49.040 --> 00:01:55.210
+If we go down to 0B,
+we could see our bytes per sector.
+
+25
+00:01:55.210 --> 00:01:59.145
+And they're highlighted in red there,
+it's 0002, and
+
+26
+00:01:59.145 --> 00:02:02.190
+remember that's going to
+be read little Indian.
+
+27
+00:02:02.190 --> 00:02:05.495
+So the 02, 00.
+
+28
+00:02:05.495 --> 00:02:10.520
+Right next to that highlighted in green,
+we see our sectors per cluster,
+
+29
+00:02:10.520 --> 00:02:15.561
+that value is one byte long, so
+we don't need to worry about indian this.
+
+30
+00:02:15.561 --> 00:02:20.526
+And if we go to offset 28 and
+remember we're counting from the start
+
+31
+00:02:20.526 --> 00:02:24.643
+of the volume boot record,
+start at the data structure.
+
+32
+00:02:24.643 --> 00:02:30.844
+So we go down two lines and
+over eight we could see here highlighted
+
+33
+00:02:30.844 --> 00:02:35.917
+in yellow is going to be our
+total sectors in the volume,
+
+34
+00:02:35.917 --> 00:02:42.040
+starts with EF, 6F,
+OF and then 0000000000.
+
+35
+00:02:42.040 --> 00:02:44.852
+Again, that would be
+read little indian and
+
+36
+00:02:44.852 --> 00:02:48.051
+that will give us the total
+sectors in the volume.
+
+37
+00:02:49.410 --> 00:02:54.213
+Then we see down it offset 30 and
+we're talking about three lines
+
+38
+00:02:54.213 --> 00:02:59.185
+down from the start of the volume
+boot records, you count one, two,
+
+39
+00:02:59.185 --> 00:03:03.510
+three, you can see it highlighted in pink,
+it is A A, A4.
+
+40
+00:03:03.510 --> 00:03:08.299
+And remember that will be read little
+indians, so that would be read A4, AA,
+
+41
+00:03:08.299 --> 00:03:12.158
+and that will be the starting
+cluster of the master file table.
+
+42
+00:03:14.040 --> 00:03:19.128
+Now in offset 38 highlighted in blue,
+it starts with 02 and
+
+43
+00:03:19.128 --> 00:03:25.040
+then it just has 0000 all the way
+out the remainder of the bites.
+
+44
+00:03:25.040 --> 00:03:28.994
+This is starting cluster of
+the master file table mirror and
+
+45
+00:03:28.994 --> 00:03:32.340
+that will almost always be clustered two.
+
+46
+00:03:32.340 --> 00:03:36.507
+And again it's read little indian,
+it will almost always be cluster two for
+
+47
+00:03:36.507 --> 00:03:37.491
+your MFT mirror.
+
+48
+00:03:38.640 --> 00:03:41.904
+Now if we go down to offset 40, so
+
+49
+00:03:41.904 --> 00:03:46.407
+you would count four lines down,
+two, three,
+
+50
+00:03:46.407 --> 00:03:51.372
+four, we can see our master
+file table record size.
+
+51
+00:03:51.372 --> 00:03:57.547
+And that is highlighted again in pink and
+it starts with F6, 000000,
+
+52
+00:03:57.547 --> 00:04:02.679
+again that will be read little indian and
+converted to decimal.
+
+53
+00:04:04.740 --> 00:04:10.994
+We can see at offset 48 is going to
+be our volume serial number and
+
+54
+00:04:10.994 --> 00:04:14.771
+that is again highlighted in yellow,
+
+55
+00:04:14.771 --> 00:04:19.137
+four lines down eight
+bytes over we see 9F,
+
+56
+00:04:19.137 --> 00:04:24.010
+34, 03, 76, 70, 03, 76, B2.
+
+57
+00:04:24.010 --> 00:04:28.521
+And we would read that little indian,
+and that is our volume serial number.
+
+58
+00:04:28.521 --> 00:04:32.188
+And that serial number will
+be unique to this volume,
+
+59
+00:04:32.188 --> 00:04:35.461
+so we'll identify this
+volume specifically.
+
+60
+00:04:37.540 --> 00:04:42.136
+We're going to do a walk through of the
+volume boot record with active disk editor
+
+61
+00:04:42.136 --> 00:04:43.940
+and take a look at it.
+
+62
+00:04:43.940 --> 00:04:46.249
+The items you're going to need for
+
+63
+00:04:46.249 --> 00:04:52.340
+the walk through we're going to need
+active disk editor and our NFTS VHD.
+
+64
+00:04:52.340 --> 00:04:57.140
+The first thing we need to
+do is attach are NTFS VHD.
+
+65
+00:04:57.140 --> 00:04:59.151
+So we're going to go to disk management.
+
+66
+00:05:00.740 --> 00:05:05.842
+If you don't know where it is,
+is just down in your Windows Search,
+
+67
+00:05:05.842 --> 00:05:11.041
+go ahead and type in disk And
+it should come up create and
+
+68
+00:05:11.041 --> 00:05:17.061
+format hard disks and partitions, and
+that will bring up disk management.
+
+69
+00:05:19.240 --> 00:05:25.940
+Once this management is open,
+we're going to go to actions attach VHD.
+
+70
+00:05:25.940 --> 00:05:31.954
+We're going to navigate out to where you
+saved the VHD mine is on my desktop,
+
+71
+00:05:31.954 --> 00:05:38.551
+and we're going to go ahead and attach the
+NTFS VHD, click open and it will attach.
+
+72
+00:05:40.440 --> 00:05:43.989
+Once we're there,
+we're going to take a look at this.
+
+73
+00:05:46.061 --> 00:05:51.253
+Remember the drive, the disk number and
+
+74
+00:05:51.253 --> 00:05:54.161
+your volume letters.
+
+75
+00:05:55.940 --> 00:06:03.916
+We want to go to the volume
+that is NTFS 200 megabits,
+
+76
+00:06:03.916 --> 00:06:08.338
+the second volume on the disk.
+
+77
+00:06:08.338 --> 00:06:11.111
+Mine is B,
+yours maybe a different drive letter.
+
+78
+00:06:11.111 --> 00:06:15.380
+But this is the volume we're going to
+be looking at in active disk editor.
+
+79
+00:06:15.380 --> 00:06:20.351
+So remember the disk number and
+the volume letter, the volume label.
+
+80
+00:06:22.140 --> 00:06:26.283
+Okay, so now we're going to
+open up active disk editor and
+
+81
+00:06:26.283 --> 00:06:28.407
+we're going to say open disk.
+
+82
+00:06:32.040 --> 00:06:37.328
+We're going to look at volumes because
+we're looking at our NTFS volume,
+
+83
+00:06:37.328 --> 00:06:42.840
+and mine was B the second volume
+in with a size of 200 mega bytes.
+
+84
+00:06:42.840 --> 00:06:46.806
+And we're going to go ahead and
+click open.
+
+85
+00:06:46.806 --> 00:06:50.480
+And it will open right to
+the volume boot record.
+
+86
+00:06:50.480 --> 00:06:55.178
+If it did not, you can just go
+to navigation, boot sector and
+
+87
+00:06:55.178 --> 00:06:58.603
+that'll take you to the volume but record.
+
+88
+00:06:58.603 --> 00:07:04.851
+This is in sector zero of the volume,
+the logical volume, not the physical disk.
+
+89
+00:07:06.740 --> 00:07:10.786
+And we're going to take a look at
+the structures we talked about in our
+
+90
+00:07:10.786 --> 00:07:11.661
+PowerPoint.
+
+91
+00:07:12.940 --> 00:07:19.101
+And we see we have the file system
+right here highlighted in green and
+
+92
+00:07:19.101 --> 00:07:24.736
+it is NTFS and we can see that
+nasky over to the right it is NTFS.
+
+93
+00:07:28.140 --> 00:07:34.840
+Now we're going to take a look
+at how many bytes per sector.
+
+94
+00:07:34.840 --> 00:07:39.375
+And again,
+this is read little indian, so B02,
+
+95
+00:07:39.375 --> 00:07:43.285
+00, and that is 512 bytes per sector.
+
+96
+00:07:43.285 --> 00:07:47.530
+And then highlighted
+in green at offset 0D,
+
+97
+00:07:47.530 --> 00:07:52.556
+we have sectors per cluster,
+so we have eight sectors
+
+98
+00:07:52.556 --> 00:07:57.375
+per cluster, and
+our sector size is 512 bytes.
+
+99
+00:07:59.840 --> 00:08:03.930
+Now we want to take a look at offset 28,
+and
+
+100
+00:08:03.930 --> 00:08:09.600
+we're going to talk about
+the total sectors in the volume.
+
+101
+00:08:09.600 --> 00:08:14.659
+So we would go down two lines,
+one, two, and over eight,
+
+102
+00:08:14.659 --> 00:08:20.840
+and this is going to give us the total
+number of sectors in our volume.
+
+103
+00:08:20.840 --> 00:08:25.207
+And again, it is read little indian,
+
+104
+00:08:25.207 --> 00:08:29.710
+so it would be read from right to left and
+
+105
+00:08:29.710 --> 00:08:34.580
+it tells us the total number of sectors.
+
+106
+00:08:34.580 --> 00:08:39.539
+In this case it's 409,599.
+
+107
+00:08:39.539 --> 00:08:41.600
+So that's how many sectors
+are in this volume.
+
+108
+00:08:41.600 --> 00:08:46.515
+So that's all the data we want to
+account for when we're doing our exam.
+
+109
+00:08:46.515 --> 00:08:53.395
+Now we need to know the starting cluster
+of the MFT, and that is down at offset 30.
+
+110
+00:08:53.395 --> 00:08:58.720
+So we would count three lines down one,
+two, three.
+
+111
+00:08:58.720 --> 00:09:02.911
+This is a starting cluster
+of the master file table,
+
+112
+00:09:02.911 --> 00:09:06.840
+it starts a cluster number 17,066.
+
+113
+00:09:06.840 --> 00:09:11.797
+We go over to offset 38, and
+this is the starting cluster
+
+114
+00:09:11.797 --> 00:09:16.840
+of the MFT mirror, and
+as we expect it is cluster two.
+
+115
+00:09:16.840 --> 00:09:22.340
+Again, this would be read little
+indian and that would be cluster two.
+
+116
+00:09:22.340 --> 00:09:27.322
+Now we want to take a look at the MFT,
+the master file table
+
+117
+00:09:27.322 --> 00:09:31.884
+record size, and
+that will be down at offset 40.
+
+118
+00:09:31.884 --> 00:09:37.150
+And now again we're counting from
+the start of the volume boot record,
+
+119
+00:09:37.150 --> 00:09:43.090
+the start of the data structure down
+four lines, one, two, three, four.
+
+120
+00:09:43.090 --> 00:09:50.149
+And this is going to tell us
+the clusters per file record,
+
+121
+00:09:50.149 --> 00:09:55.540
+and that is F6 and we can see it is 246.
+
+122
+00:09:55.540 --> 00:10:00.818
+Now we want to take a look at
+the volume serial number and
+
+123
+00:10:00.818 --> 00:10:04.440
+that would be an offset 48.
+
+124
+00:10:04.440 --> 00:10:10.239
+So we're already at 40, so
+if we just go over to offset 48
+
+125
+00:10:10.239 --> 00:10:15.261
+we can see the volume serial
+number in hexadecimal.
+
+126
+00:10:17.740 --> 00:10:21.274
+And if we're going to translate that to
+decimal we would need to read a little
+
+127
+00:10:21.274 --> 00:10:23.440
+indian and translate it to decimal.
+
+128
+00:10:23.440 --> 00:10:26.951
+But the volume serial number
+is unique to that volume.
+
+129
+00:10:28.340 --> 00:10:32.010
+So this will be helpful
+to us in forensics.
+
+130
+00:10:32.010 --> 00:10:37.740
+Anything that identifies something
+uniquely is helpful in forensics.
+
+131
+00:10:37.740 --> 00:10:45.270
+So that's the information that was
+contained in the NTFS volume boot record,
+
+132
+00:10:45.270 --> 00:10:50.300
+this is where it is, and
+this is how we would read it.
+
+133
+00:10:50.300 --> 00:10:58.041
+In our next section we are going to
+talk about the master file table.
+
+134
+00:10:58.041 --> 00:10:59.361
+End of block.

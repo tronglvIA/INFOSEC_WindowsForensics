@@ -1,0 +1,348 @@
+WEBVTT
+
+1
+00:00:00.140 --> 00:00:01.190
+Course 8.
+
+2
+00:00:01.190 --> 00:00:04.440
+We're going to talk about
+the FAT file system.
+
+3
+00:00:04.440 --> 00:00:05.558
+Next slide.
+
+4
+00:00:12.040 --> 00:00:15.170
+An overview of what this
+course is going to cover.
+
+5
+00:00:15.170 --> 00:00:19.240
+We're going to talk about the history and
+versions of FAT.
+
+6
+00:00:19.240 --> 00:00:23.159
+We're going to talk about the data
+structures that make up the FAT file
+
+7
+00:00:23.159 --> 00:00:27.161
+system, things like the root directory and
+the volume boot record.
+
+8
+00:00:28.340 --> 00:00:31.730
+We're also going to talk about
+the directory structure within the FAT
+
+9
+00:00:31.730 --> 00:00:32.940
+file system.
+
+10
+00:00:32.940 --> 00:00:37.740
+We're going to talk about file and
+directory creation and deletion.
+
+11
+00:00:37.740 --> 00:00:40.140
+What happens when we create a file?
+
+12
+00:00:40.140 --> 00:00:41.840
+What happens when we delete it?
+
+13
+00:00:41.840 --> 00:00:43.568
+What occurs when we create a directory?
+
+14
+00:00:43.568 --> 00:00:46.540
+And what happens when we
+delete that directory?
+
+15
+00:00:46.540 --> 00:00:51.582
+We're also going to talk about recovering
+data in the FAT file system and
+
+16
+00:00:51.582 --> 00:00:54.670
+some of the limitations of data recovery.
+
+17
+00:00:54.670 --> 00:00:56.572
+Next slide.
+
+18
+00:01:00.547 --> 00:01:03.223
+Course 8, Module 1.
+
+19
+00:01:03.223 --> 00:01:09.684
+We're going to talk about an overview
+of the FAT file system and its history.
+
+20
+00:01:09.684 --> 00:01:10.810
+Next slide.
+
+21
+00:01:13.704 --> 00:01:18.833
+Let's start out by defining
+what a file system is.
+
+22
+00:01:18.833 --> 00:01:23.765
+A file system is a method of reading,
+writing, tracking,
+
+23
+00:01:23.765 --> 00:01:26.636
+and recovering data from a drive.
+
+24
+00:01:26.636 --> 00:01:31.050
+Your file system tracks the location
+of the data on your drive so
+
+25
+00:01:31.050 --> 00:01:36.540
+it knows where all your files,
+folders, and applications are.
+
+26
+00:01:36.540 --> 00:01:39.945
+So when we double click on a file or
+an application,
+
+27
+00:01:39.945 --> 00:01:43.681
+the file system knows where
+to go to retrieve that data.
+
+28
+00:01:43.681 --> 00:01:49.776
+It also tracks which clusters are in use,
+being occupied by a file.
+
+29
+00:01:49.776 --> 00:01:53.652
+And which clusters are available for
+
+30
+00:01:53.652 --> 00:01:58.784
+us to write a file to, or
+save an application to.
+
+31
+00:01:58.784 --> 00:02:00.096
+Next slide.
+
+32
+00:02:02.804 --> 00:02:06.140
+The history of the FAT file system.
+
+33
+00:02:06.140 --> 00:02:11.881
+When we started out with FAT12,
+which was 2 to the 12th power of bits,
+
+34
+00:02:11.881 --> 00:02:15.084
+that's how many bits we had to work with.
+
+35
+00:02:15.084 --> 00:02:22.727
+Which gave us 4,096 maximum clusters for
+the volume.
+
+36
+00:02:22.727 --> 00:02:28.201
+So we can only have 4,096
+clusters on a FAT12 volume.
+
+37
+00:02:28.201 --> 00:02:35.370
+Now FAT16 which was 2 to the 16th
+power of bits to work with.
+
+38
+00:02:35.370 --> 00:02:42.240
+And this gave us 65,536 maximum
+clusters for the volume.
+
+39
+00:02:42.240 --> 00:02:43.632
+So it's better but
+
+40
+00:02:43.632 --> 00:02:48.243
+it's still not something you're
+going to see very often today.
+
+41
+00:02:48.243 --> 00:02:50.710
+Considering the size of drives,
+
+42
+00:02:50.710 --> 00:02:55.640
+these file systems really
+are not going to be applicable.
+
+43
+00:02:55.640 --> 00:02:56.632
+Next slide.
+
+44
+00:02:59.156 --> 00:03:02.997
+The next version of FAT we see
+in the evolution is FAT32.
+
+45
+00:03:02.997 --> 00:03:08.416
+Now FAT32 you will see
+today on removable media,
+
+46
+00:03:08.416 --> 00:03:12.827
+and it is possible to
+format a partition on
+
+47
+00:03:12.827 --> 00:03:17.879
+an internal drive on
+a Windows system FAT32.
+
+48
+00:03:17.879 --> 00:03:22.590
+FAT32 uses 28 bits not 32,
+
+49
+00:03:22.590 --> 00:03:25.792
+4 bits are reserved.
+
+50
+00:03:25.792 --> 00:03:32.252
+So it's 2 to the 28th power of
+bits that we have to work with.
+
+51
+00:03:32.252 --> 00:03:37.783
+Which gives us 268,435,456
+
+52
+00:03:37.783 --> 00:03:45.272
+maximum clusters that we
+can have on a FAT32 volume.
+
+53
+00:03:45.272 --> 00:03:48.061
+Now that's quite a bit more
+than we had with FAT16.
+
+54
+00:03:49.840 --> 00:03:54.061
+The latest version of FAT is ExFAT.
+
+55
+00:03:54.061 --> 00:03:58.732
+An ExFAT does use all 32 bits, so
+we have 32 bits to work with in ExFAT.
+
+56
+00:03:58.732 --> 00:04:02.821
+Which is 2 to the 32nd power.
+
+57
+00:04:02.821 --> 00:04:07.566
+And you can see the number on
+the slide of maximum clusters it is
+
+58
+00:04:07.566 --> 00:04:10.130
+quite a bit larger than FAT32.
+
+59
+00:04:10.130 --> 00:04:15.676
+And we are going to have a whole
+section on ExFAT throughout this path.
+
+60
+00:04:15.676 --> 00:04:16.442
+Next slide.
+
+61
+00:04:19.424 --> 00:04:24.461
+The FAT file system overview, well we
+have a system area and a data area.
+
+62
+00:04:26.040 --> 00:04:30.298
+Now in FAT12 and 16,
+the system area which comprised of
+
+63
+00:04:30.298 --> 00:04:34.998
+the volume boot records, FAT1 and
+2, and the root directory.
+
+64
+00:04:34.998 --> 00:04:40.061
+And then we had our files and
+folders saved out in the data area.
+
+65
+00:04:41.540 --> 00:04:46.284
+Now because the root directory was
+in the system area on FAT12 and
+
+66
+00:04:46.284 --> 00:04:49.431
+16, the size was limited to one cluster.
+
+67
+00:04:49.431 --> 00:04:55.574
+So we only had one cluster to work with
+when we were addressing our files.
+
+68
+00:04:55.574 --> 00:04:58.761
+So that did cause some issues.
+
+69
+00:04:59.840 --> 00:05:02.540
+So we went to FAT32.
+
+70
+00:05:02.540 --> 00:05:10.240
+Now in FAT32, the volume boot record is
+in the system area and so is FAT1 and 2.
+
+71
+00:05:10.240 --> 00:05:15.478
+But the root directory in FAT32
+was moved out to the data area to
+
+72
+00:05:15.478 --> 00:05:21.395
+allow the root directory to expand
+beyond that one cluster limitation,
+
+73
+00:05:21.395 --> 00:05:27.801
+allowing us to write a lot more files,
+folders, directories to our volumes.
+
+74
+00:05:32.640 --> 00:05:37.679
+In our next module, we're going to talk
+about the FAT volume boot record and
+
+75
+00:05:37.679 --> 00:05:42.161
+see the important information
+that is contained in that record.

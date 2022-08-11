@@ -1,0 +1,846 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.545
+We're on Course 9 talking
+about the NTFS file system.
+
+2
+00:00:04.545 --> 00:00:07.140
+In this module, Module 6,
+
+3
+00:00:07.140 --> 00:00:11.025
+we're going to talk about
+NTFS file recovery.
+
+4
+00:00:11.025 --> 00:00:13.350
+As we saw in our last module,
+
+5
+00:00:13.350 --> 00:00:15.660
+when we delete a file and NTFS,
+
+6
+00:00:15.660 --> 00:00:19.395
+the data will remain intact
+until it is overwritten.
+
+7
+00:00:19.395 --> 00:00:22.830
+Its MFT file record
+will also remain
+
+8
+00:00:22.830 --> 00:00:28.380
+intact until this is
+reused by another file.
+
+9
+00:00:28.380 --> 00:00:31.350
+Data that is non-resident
+
+10
+00:00:31.350 --> 00:00:35.790
+remains until it is
+overwritten by new a file.
+
+11
+00:00:35.790 --> 00:00:38.129
+If the data is resident,
+
+12
+00:00:38.129 --> 00:00:43.170
+it will remain until the
+MFT file record is re-used.
+
+13
+00:00:43.610 --> 00:00:47.400
+How do we find these
+unallocated files?
+
+14
+00:00:47.400 --> 00:00:52.765
+Well, we can search for file
+records using the word file.
+
+15
+00:00:52.765 --> 00:00:55.470
+In a keyword search,
+
+16
+00:00:55.470 --> 00:00:57.755
+we could do a grep search using
+
+17
+00:00:57.755 --> 00:01:00.930
+a regular expression for
+
+18
+00:01:00.930 --> 00:01:03.560
+deleted file records as we
+see up here on the screen,
+
+19
+00:01:03.560 --> 00:01:05.120
+that would be the expression.
+
+20
+00:01:05.120 --> 00:01:11.355
+We will be looking for
+/x46/x49/x4C4.5, which is file.
+
+21
+00:01:11.355 --> 00:01:15.990
+Then we'd be going to an
+offset {18} and looking for a
+
+22
+00:01:15.990 --> 00:01:19.960
+[/x00/x02] to either indicate
+
+23
+00:01:19.960 --> 00:01:23.515
+a deleted file or
+deleted directory.
+
+24
+00:01:23.515 --> 00:01:25.850
+Our forensic tools are able to
+
+25
+00:01:25.850 --> 00:01:28.475
+search for deleted file records.
+
+26
+00:01:28.475 --> 00:01:31.935
+We could examine the recycle
+bin if the file which
+
+27
+00:01:31.935 --> 00:01:33.305
+just set to the recycle bin
+
+28
+00:01:33.305 --> 00:01:35.420
+they're not permanently deleted.
+
+29
+00:01:35.420 --> 00:01:38.660
+We could use keyword searches
+if we know the name of
+
+30
+00:01:38.660 --> 00:01:42.575
+the file or some data that
+was contained in the file.
+
+31
+00:01:42.575 --> 00:01:45.950
+We can search for
+the data using grep,
+
+32
+00:01:45.950 --> 00:01:49.610
+but we could carve for files
+and using file headers
+
+33
+00:01:49.610 --> 00:01:52.990
+and then we'll talk about
+that would cover file carbon.
+
+34
+00:01:52.990 --> 00:01:55.580
+But those are some
+ways we can recover
+
+35
+00:01:55.580 --> 00:01:59.050
+deleted files in the
+NTFS file system.
+
+36
+00:01:59.050 --> 00:02:01.350
+A. We're going to do
+another walk-through.
+
+37
+00:02:01.350 --> 00:02:03.410
+The items you're going to
+need for this walk-through,
+
+38
+00:02:03.410 --> 00:02:05.675
+we're going to need
+active disk editor.
+
+39
+00:02:05.675 --> 00:02:09.080
+We're going to need our NTFS VHD,
+
+40
+00:02:09.080 --> 00:02:12.430
+and we're going to need our
+regular expression documents.
+
+41
+00:02:12.430 --> 00:02:15.800
+The first thing we're going
+to need to do for a module is
+
+42
+00:02:15.800 --> 00:02:18.860
+mount our NTFS VHD.
+
+43
+00:02:18.860 --> 00:02:21.140
+We're going to go
+to disk management.
+
+44
+00:02:21.140 --> 00:02:25.995
+We're going to go to
+Actions, attach VHD.
+
+45
+00:02:25.995 --> 00:02:28.040
+We're going to
+navigate out to where
+
+46
+00:02:28.040 --> 00:02:30.715
+the VHD say they're not computer.
+
+47
+00:02:30.715 --> 00:02:32.685
+Mine is on my desktop.
+
+48
+00:02:32.685 --> 00:02:35.685
+We're going to
+select the NTFS VHD.
+
+49
+00:02:35.685 --> 00:02:37.545
+We're going to click Open,
+
+50
+00:02:37.545 --> 00:02:40.570
+and then you're
+going to say, okay.
+
+51
+00:02:41.740 --> 00:02:44.975
+Once you attach your VHD,
+
+52
+00:02:44.975 --> 00:02:47.810
+note the disk number
+
+53
+00:02:47.810 --> 00:02:50.075
+and the volume you're
+going to be working with,
+
+54
+00:02:50.075 --> 00:02:54.490
+this the second volume in
+our first NTFS volume.
+
+55
+00:02:54.490 --> 00:02:57.500
+It should be 200
+megabytes in size and
+
+56
+00:02:57.500 --> 00:03:01.830
+the volume should
+be labeled NTFS.
+
+57
+00:03:02.810 --> 00:03:05.220
+Once you've done that,
+
+58
+00:03:05.220 --> 00:03:09.990
+we're going to go ahead and
+open up active disk editor.
+
+59
+00:03:14.590 --> 00:03:20.730
+Once active disk editor
+opens, select open disk.
+
+60
+00:03:22.130 --> 00:03:24.695
+Now, we're going to select
+
+61
+00:03:24.695 --> 00:03:29.080
+volumes from a selection
+bar on the top.
+
+62
+00:03:29.080 --> 00:03:32.270
+Then we're going to
+select our disk.
+
+63
+00:03:32.270 --> 00:03:34.505
+My unmounted is B.
+
+64
+00:03:34.505 --> 00:03:36.860
+There is maybe a
+different drive letter
+
+65
+00:03:36.860 --> 00:03:39.270
+and we're going to click Open,
+
+66
+00:03:39.560 --> 00:03:44.670
+and it's going to open up
+to our volume boot record.
+
+67
+00:03:45.500 --> 00:03:49.910
+Now, let's go to
+
+68
+00:03:49.910 --> 00:03:52.385
+our browser file records
+
+69
+00:03:52.385 --> 00:03:56.310
+right underneath the
+Edit next to Unicode.
+
+70
+00:03:57.230 --> 00:04:01.020
+We're going to look for
+that file, deleteme.
+
+71
+00:04:01.020 --> 00:04:04.095
+TXT.
+
+72
+00:04:04.095 --> 00:04:08.170
+We see it is not here.
+
+73
+00:04:08.390 --> 00:04:12.075
+Now, we do know the sector,
+
+74
+00:04:12.075 --> 00:04:15.460
+but let's find it
+without using that.
+
+75
+00:04:15.470 --> 00:04:20.765
+We're going to use
+the find function.
+
+76
+00:04:20.765 --> 00:04:25.940
+Go to Find, and I want you to go
+
+77
+00:04:25.940 --> 00:04:29.840
+ahead and paste that
+regular expression
+
+78
+00:04:29.840 --> 00:04:32.135
+in from your regular
+expression document.
+
+79
+00:04:32.135 --> 00:04:37.245
+Highlight it, Right-click, Copy,
+
+80
+00:04:37.245 --> 00:04:41.980
+then Left-click here
+and select Paste.
+
+81
+00:04:42.880 --> 00:04:45.620
+Once you've done that,
+
+82
+00:04:45.620 --> 00:04:49.895
+it should look like the
+one up here on the screen.
+
+83
+00:04:49.895 --> 00:04:52.230
+You should have
+
+84
+00:04:56.540 --> 00:05:02.850
+/x46/x49/x4C/x45.
+
+85
+00:05:02.850 --> 00:05:14.400
+{18}
+
+86
+00:05:14.400 --> 00:05:18.620
+[/x00/x02].
+
+87
+00:05:18.620 --> 00:05:23.790
+Make sure you check the box
+for use regular expression.
+
+88
+00:05:25.100 --> 00:05:30.010
+Then go ahead and
+select, Find All.
+
+89
+00:05:30.850 --> 00:05:36.875
+This will take a minute to
+run through as it goes.
+
+90
+00:05:36.875 --> 00:05:39.805
+It does go pretty quickly.
+
+91
+00:05:39.805 --> 00:05:44.120
+You can see and our
+find results paint.
+
+92
+00:05:44.120 --> 00:05:45.650
+If this is not showing,
+
+93
+00:05:45.650 --> 00:05:47.240
+just go to View,
+
+94
+00:05:47.240 --> 00:05:49.685
+go to Windows and
+make sure you have
+
+95
+00:05:49.685 --> 00:05:55.230
+the checkmark in find
+results, this will show up.
+
+96
+00:05:55.270 --> 00:05:58.710
+Let's look at our results.
+
+97
+00:05:59.830 --> 00:06:04.100
+Well, it appears that
+
+98
+00:06:04.100 --> 00:06:07.470
+is not the file record
+we're looking for.
+
+99
+00:06:09.130 --> 00:06:14.370
+That looks like it's a directory.
+
+100
+00:06:17.190 --> 00:06:20.660
+Still looks like a directory.
+
+101
+00:06:22.080 --> 00:06:25.340
+It's still a directory.
+
+102
+00:06:26.760 --> 00:06:32.530
+Here we are. We found
+our file record.
+
+103
+00:06:32.530 --> 00:06:35.210
+Well, let's take a look at it.
+
+104
+00:06:37.770 --> 00:06:41.020
+We know it's an NTFS file record
+
+105
+00:06:41.020 --> 00:06:43.790
+because we have the ASCII file,
+
+106
+00:06:46.260 --> 00:06:54.730
+and we can see our sequence
+number is still two.
+
+107
+00:06:55.140 --> 00:06:57.400
+The file is deleted.
+
+108
+00:06:57.400 --> 00:07:00.070
+Originally it was a 01
+when we first created it,
+
+109
+00:07:00.070 --> 00:07:02.020
+and now it's a 02,
+
+110
+00:07:02.020 --> 00:07:04.870
+and we can see our flag is 00,
+
+111
+00:07:04.870 --> 00:07:10.435
+which indicate an unallocated
+file, deleted file.
+
+112
+00:07:10.435 --> 00:07:12.910
+But, what's important too to
+
+113
+00:07:12.910 --> 00:07:15.520
+remember is our attributes
+are still here.
+
+114
+00:07:15.520 --> 00:07:20.095
+We still have all our
+dates and times created,
+
+115
+00:07:20.095 --> 00:07:25.585
+modified, record change,
+last access time.
+
+116
+00:07:25.585 --> 00:07:32.080
+We still have our flags,
+our file permissions.
+
+117
+00:07:32.080 --> 00:07:35.420
+We still have our filename
+
+118
+00:07:35.550 --> 00:07:39.860
+with the filename,
+dates, and times.
+
+119
+00:07:42.200 --> 00:07:44.620
+We still have all our filename,
+
+120
+00:07:44.620 --> 00:07:46.850
+dates, and times down here.
+
+121
+00:07:47.370 --> 00:07:50.410
+We still know the
+parent directory.
+
+122
+00:07:50.410 --> 00:07:52.570
+Now, this parent
+directory may be deleted,
+
+123
+00:07:52.570 --> 00:07:55.910
+but we still do know where
+the parent directory is.
+
+124
+00:07:57.210 --> 00:08:03.170
+It's MFT record number 5
+and we can look at that.
+
+125
+00:08:04.320 --> 00:08:07.670
+You can see our record change,
+
+126
+00:08:11.670 --> 00:08:15.650
+and you see our allocated size,
+
+127
+00:08:17.760 --> 00:08:20.260
+our real size, and because it's
+
+128
+00:08:20.260 --> 00:08:22.970
+deleted you're
+getting zeros here.
+
+129
+00:08:31.020 --> 00:08:34.660
+We can see the length
+of the file name.
+
+130
+00:08:34.660 --> 00:08:39.310
+We can see the filename,
+Delete Me.txt.
+
+131
+00:08:39.310 --> 00:08:44.360
+We can still see our object ID.
+
+132
+00:08:44.490 --> 00:08:49.015
+We still have our globally
+unique identifier
+
+133
+00:08:49.015 --> 00:08:51.925
+in our data attribute.
+
+134
+00:08:51.925 --> 00:08:57.440
+We still have the data that
+we wrote into our file.
+
+135
+00:08:58.410 --> 00:09:00.910
+That is one way to search
+
+136
+00:09:00.910 --> 00:09:04.945
+for deleted master
+file table records.
+
+137
+00:09:04.945 --> 00:09:07.135
+Well, let's try another way.
+
+138
+00:09:07.135 --> 00:09:11.260
+Let's try and ask the file search
+
+139
+00:09:11.260 --> 00:09:15.580
+using the word delete me,
+
+140
+00:09:15.580 --> 00:09:17.005
+and see what we come up with.
+
+141
+00:09:17.005 --> 00:09:20.185
+We'll go ahead and click
+
+142
+00:09:20.185 --> 00:09:21.640
+on our ''Find window'' and we'll
+
+143
+00:09:21.640 --> 00:09:24.055
+remove all so we clear that up.
+
+144
+00:09:24.055 --> 00:09:29.870
+We'll go back to the
+start of our MFT record.
+
+145
+00:09:30.810 --> 00:09:32.950
+Go ahead and click on ''Dollar
+
+146
+00:09:32.950 --> 00:09:35.275
+MFT'' just to bring
+it back to the start.
+
+147
+00:09:35.275 --> 00:09:37.240
+We'll go back to our find.
+
+148
+00:09:37.240 --> 00:09:45.445
+Now, in NTFS, we use Unicode.
+
+149
+00:09:45.445 --> 00:09:48.490
+Click Restore Defaults on this,
+
+150
+00:09:48.490 --> 00:09:52.460
+but in NTFS we use Unicode.
+
+151
+00:09:52.770 --> 00:09:56.170
+Don't use ANS up here,
+
+152
+00:09:56.170 --> 00:09:59.690
+or you will not get a hit.
+
+153
+00:10:01.950 --> 00:10:07.100
+In Unicode, we're going
+to write, Delete Me.
+
+154
+00:10:09.330 --> 00:10:13.820
+Now, icon space, you
+may not have this.
+
+155
+00:10:15.000 --> 00:10:19.015
+The other thing we want
+to check is Ignore Case.
+
+156
+00:10:19.015 --> 00:10:20.965
+We want to ignore case on this.
+
+157
+00:10:20.965 --> 00:10:22.390
+Most of the time unless you're
+
+158
+00:10:22.390 --> 00:10:25.720
+sure when you're doing a
+keyword search like this,
+
+159
+00:10:25.720 --> 00:10:27.715
+you want to ignore case.
+
+160
+00:10:27.715 --> 00:10:31.160
+Then, I'm going to
+select Find all.
+
+161
+00:10:31.980 --> 00:10:35.900
+We'll take a minute
+to run through here.
+
+162
+00:10:42.110 --> 00:10:46.395
+Once it's finished, we'll
+look in our Find Pane again.
+
+163
+00:10:46.395 --> 00:10:48.120
+Again, If you don't have this,
+
+164
+00:10:48.120 --> 00:10:49.655
+use the View button,
+
+165
+00:10:49.655 --> 00:10:52.390
+Windows, and make sure
+
+166
+00:10:52.390 --> 00:10:54.655
+you have the final
+results checked.
+
+167
+00:10:54.655 --> 00:10:58.190
+Let's take a look at our results.
+
+168
+00:10:58.370 --> 00:11:03.665
+That doesn't look right.
+
+169
+00:11:03.665 --> 00:11:11.510
+No, no.
+
+170
+00:11:17.960 --> 00:11:20.640
+This one does.
+
+171
+00:11:20.640 --> 00:11:27.730
+Let's try putting our
+template manager.
+
+172
+00:11:29.720 --> 00:11:38.290
+Yes, this is our NTFS file record
+
+173
+00:11:38.290 --> 00:11:42.875
+for the file to deleteme.txt.
+
+174
+00:11:42.875 --> 00:11:46.960
+We can see where it hit
+in the dark yellow.
+
+175
+00:11:47.700 --> 00:11:50.560
+But, we needed to
+search in Unicode.
+
+176
+00:11:50.560 --> 00:11:54.400
+Remember, NTFS writes
+data in Unicode.
+
+177
+00:11:54.400 --> 00:11:57.380
+Very important to remember that.
+
+178
+00:11:58.800 --> 00:12:01.315
+We still have all the information
+
+179
+00:12:01.315 --> 00:12:02.860
+like we had before
+when we looked at
+
+180
+00:12:02.860 --> 00:12:07.100
+it and we searched with
+our regular expression.
+
+181
+00:12:07.890 --> 00:12:13.090
+This is one way we can
+recover a file or two ways
+
+182
+00:12:13.090 --> 00:12:14.920
+you could recover a file in
+
+183
+00:12:14.920 --> 00:12:17.590
+NTFS by searching
+for the file record.
+
+184
+00:12:17.590 --> 00:12:19.690
+We could use a
+regular expression,
+
+185
+00:12:19.690 --> 00:12:22.195
+or if we did know the
+name of the file,
+
+186
+00:12:22.195 --> 00:12:23.995
+we could use the
+name of the file,
+
+187
+00:12:23.995 --> 00:12:27.410
+but just remember to
+search in Unicode.

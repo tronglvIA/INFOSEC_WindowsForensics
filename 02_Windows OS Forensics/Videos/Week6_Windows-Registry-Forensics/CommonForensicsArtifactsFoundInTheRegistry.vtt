@@ -1,0 +1,3007 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.804
+In course 6, we're talking
+about the Windows registry, and
+
+2
+00:00:03.804 --> 00:00:05.526
+in this module, module 4,
+
+3
+00:00:05.526 --> 00:00:11.040
+we're going to talk about some common
+forensic artifacts found in the registry.
+
+4
+00:00:11.040 --> 00:00:16.045
+Talking about the SAM hive file, and
+SAM stands for security account manager.
+
+5
+00:00:16.045 --> 00:00:24.148
+SAM, is a root key of
+the HKEY LOCAL MACHINE hive key.
+
+6
+00:00:24.148 --> 00:00:29.478
+The file path to the SAM file
+within an image would be,
+
+7
+00:00:29.478 --> 00:00:34.453
+Under the root Windows\System32\config and
+
+8
+00:00:34.453 --> 00:00:37.540
+then we would see the SAM file.
+
+9
+00:00:37.540 --> 00:00:45.100
+To create a user account,
+we can do that through control panel,
+
+10
+00:00:45.100 --> 00:00:51.125
+user accounts or manage,
+local users and groups.
+
+11
+00:00:51.125 --> 00:00:53.192
+The SAM file is protected and
+
+12
+00:00:53.192 --> 00:00:59.234
+not able to be edited when you're viewing
+it through the live machine and Regedit.
+
+13
+00:00:59.234 --> 00:01:04.652
+The SAM file stores and
+organizes information about
+
+14
+00:01:04.652 --> 00:01:10.315
+every user on the system such as,
+login information,
+
+15
+00:01:10.315 --> 00:01:15.748
+login password, hashes,
+and group information.
+
+16
+00:01:18.164 --> 00:01:24.650
+There are built in accounts like
+administrator, default account, and guest.
+
+17
+00:01:24.650 --> 00:01:28.022
+And then we have the user created account,
+so
+
+18
+00:01:28.022 --> 00:01:33.360
+we can see the user name of Ivan,
+Deejo, and new user, and new user 2.
+
+19
+00:01:33.360 --> 00:01:35.731
+User B user, created accounts and
+
+20
+00:01:35.731 --> 00:01:42.040
+the built in accounts would be
+the administrator, default, and the guest.
+
+21
+00:01:42.040 --> 00:01:45.516
+When we view the SAM registry hive and
+a registry tool,
+
+22
+00:01:45.516 --> 00:01:48.640
+it's going to look like
+it does on the slide.
+
+23
+00:01:48.640 --> 00:01:52.172
+We're going to have SAM, and underneath
+SAM we're going to have domains, and
+
+24
+00:01:52.172 --> 00:01:55.551
+underneath domains, we're going to
+have a sub folder called accounts.
+
+25
+00:01:56.620 --> 00:02:01.194
+When expand that, we're going to
+see users, then we expand users and
+
+26
+00:02:01.194 --> 00:02:02.891
+we're going to see names.
+
+27
+00:02:04.840 --> 00:02:11.740
+This is how we resolve a user name to a
+user security ID, that are known as a SID.
+
+28
+00:02:11.740 --> 00:02:17.169
+The security ID can be broken down into
+three parts, the issuing authority,
+
+29
+00:02:17.169 --> 00:02:22.096
+the machine or domain ID, and
+then the rid, or relative identifier,
+
+30
+00:02:22.096 --> 00:02:26.740
+which identifies each
+individual user on the system.
+
+31
+00:02:26.740 --> 00:02:31.429
+In Windows 10, user created accounts start
+
+32
+00:02:31.429 --> 00:02:36.355
+with the rid 1001, in Windows 7 and below,
+
+33
+00:02:36.355 --> 00:02:40.817
+they start with the user account 1000.
+
+34
+00:02:40.817 --> 00:02:42.545
+The software hive.
+
+35
+00:02:42.545 --> 00:02:47.936
+The software hive is also a root
+key of the HKEY LOCAL MACHINE hive,
+
+36
+00:02:47.936 --> 00:02:52.267
+and you can find it down
+the same file path, the root or
+
+37
+00:02:52.267 --> 00:02:58.645
+C:\Windows\System32\config, and
+then we can see the software file.
+
+38
+00:02:58.645 --> 00:03:02.397
+The software file which will
+show us things such as,
+
+39
+00:03:02.397 --> 00:03:07.518
+installed programs and applications,
+the type of operating system,
+
+40
+00:03:07.518 --> 00:03:11.957
+and the operating system installed date,
+information about
+
+41
+00:03:11.957 --> 00:03:17.340
+wireless networks that may have
+been connected to by the machine.
+
+42
+00:03:17.340 --> 00:03:21.951
+We can see file association
+like default applications.
+
+43
+00:03:23.140 --> 00:03:28.760
+We can see login information, and
+we can also see attached devices.
+
+44
+00:03:28.760 --> 00:03:34.540
+User logon information,
+will be in a subkey named Winlogon.
+
+45
+00:03:34.540 --> 00:03:36.972
+And the file path after that is
+
+46
+00:03:36.972 --> 00:03:41.651
+Microsoft\WindowsNT\CurrentVersion\Winlo-
+gon.
+
+47
+00:03:42.740 --> 00:03:48.419
+Subkey name is LogonUI, and
+the file path to that, is under
+
+48
+00:03:48.419 --> 00:03:55.366
+Microsoft\Windows\CurrentVersion\Authenti-
+cation\LogonUI.
+
+49
+00:03:55.366 --> 00:04:00.441
+These are 2 subkeys where we can find user
+
+50
+00:04:00.441 --> 00:04:06.251
+logon information such
+as the last logon user.
+
+51
+00:04:08.340 --> 00:04:11.761
+There are also auto start locations,
+and software hard file.
+
+52
+00:04:12.930 --> 00:04:15.642
+And these are programs
+that will run it start up,
+
+53
+00:04:15.642 --> 00:04:19.561
+when you build it into Windows
+without any interaction from the user.
+
+54
+00:04:21.240 --> 00:04:23.922
+There are two subkeys here,
+the run and the run once subkey.
+
+55
+00:04:23.922 --> 00:04:30.760
+The paths of the run key is under
+Microsoft\Windows\CurrentVersion\Run,
+
+56
+00:04:30.760 --> 00:04:35.249
+malware can be hidden in this key for
+persistence and
+
+57
+00:04:35.249 --> 00:04:39.443
+it will start every time
+the system is rebooted.
+
+58
+00:04:42.640 --> 00:04:45.963
+The software hive,
+is going to show us installed programs and
+
+59
+00:04:45.963 --> 00:04:50.017
+applications under the subkey called
+uninstalled, and the path to that
+
+60
+00:04:50.017 --> 00:04:53.380
+Microsoft\Windows\CurrentVersion\Uninst-
+all.
+
+61
+00:04:53.380 --> 00:04:56.566
+And these are going to show us all
+the programs that actually installed on
+
+62
+00:04:56.566 --> 00:04:57.161
+the system.
+
+63
+00:04:58.640 --> 00:05:03.351
+Even if the program has been deleted, you
+will still see it under the uninstall key.
+
+64
+00:05:04.640 --> 00:05:09.282
+We'll also see the operating
+system installed date and
+
+65
+00:05:09.282 --> 00:05:11.562
+time, and the release ID.
+
+66
+00:05:11.562 --> 00:05:15.454
+This is the subkey named currentversion,
+and
+
+67
+00:05:15.454 --> 00:05:21.340
+the location is
+Microsoft\WindowsNT\CurrentVersion.
+
+68
+00:05:21.340 --> 00:05:25.745
+So you see the type of file system,
+whether it's Windows 10,
+
+69
+00:05:25.745 --> 00:05:30.161
+Windows 7, you'll see the build number,
+and the release ID.
+
+70
+00:05:30.161 --> 00:05:36.034
+The system file, some of the artifacts
+we can find within the system file
+
+71
+00:05:36.034 --> 00:05:41.618
+can determine the current control set,
+we can find a computer name,
+
+72
+00:05:41.618 --> 00:05:46.336
+the last shutdown time,
+settings for the crash dump, and
+
+73
+00:05:46.336 --> 00:05:52.401
+the location of the crash dump on
+the file system, services are set to run,
+
+74
+00:05:52.401 --> 00:05:57.147
+whether or not the page file
+is being cleared at shutdown.
+
+75
+00:05:57.147 --> 00:06:02.763
+We can see prefetch settings,
+last access file time settings,
+
+76
+00:06:02.763 --> 00:06:08.587
+and we can also see the time zone
+information, or the system time,
+
+77
+00:06:08.587 --> 00:06:12.864
+the time that that computer
+is currently set to.
+
+78
+00:06:12.864 --> 00:06:19.477
+Now to determine the current controls set,
+we need to use the select key.
+
+79
+00:06:19.477 --> 00:06:23.040
+And the select he is
+right under the group.
+
+80
+00:06:23.040 --> 00:06:28.020
+So in the system hive, would expand
+the root and highlight the select key.
+
+81
+00:06:28.020 --> 00:06:32.023
+And we would look at
+the value name current, and
+
+82
+00:06:32.023 --> 00:06:37.727
+this will tell us whether it's 1 or
+2, is usually control set 1,
+
+83
+00:06:37.727 --> 00:06:43.740
+and 2 is usually the less known good for
+recovery purposes.
+
+84
+00:06:43.740 --> 00:06:48.486
+But the current value tells us
+which control set was loaded as
+
+85
+00:06:48.486 --> 00:06:54.040
+the current control set when
+the system was left shut down.
+
+86
+00:06:54.040 --> 00:06:58.964
+The system time, will be under
+the subkey name Timezone Information.
+
+87
+00:06:58.964 --> 00:07:01.466
+And the path to that is going to be,
+
+88
+00:07:01.466 --> 00:07:06.301
+the current
+ControlSet\Control\TimeZoneInformation.
+
+89
+00:07:07.540 --> 00:07:12.440
+The value name we're going to look at is,
+Time Zone Key Name.
+
+90
+00:07:12.440 --> 00:07:16.640
+And this will tell us the time
+zone that the computer is set to.
+
+91
+00:07:16.640 --> 00:07:20.761
+This is what it would look
+like in a registry viewer.
+
+92
+00:07:22.440 --> 00:07:25.125
+And we can see when we look
+at time zone key name, and
+
+93
+00:07:25.125 --> 00:07:27.340
+we see Eastern Standard Time.
+
+94
+00:07:27.340 --> 00:07:32.640
+So that's the time zone, that the computer
+was set to when it was shut down.
+
+95
+00:07:32.640 --> 00:07:37.390
+And also right beneath time zone key name,
+we see active time bias.
+
+96
+00:07:37.390 --> 00:07:41.461
+This was the active time bias, since at
+the time the computer was last shut down.
+
+97
+00:07:43.040 --> 00:07:49.239
+We can see that we do have daylight time,
+and that -60.
+
+98
+00:07:49.239 --> 00:07:53.920
+Standard time bias,
+we can see at the top as bias, and
+
+99
+00:07:53.920 --> 00:07:57.361
+that's 300 minutes from UTC time.
+
+100
+00:07:59.740 --> 00:08:05.651
+And we can also see when daylight time
+starts and when standard time starts.
+
+101
+00:08:06.660 --> 00:08:10.932
+We also have a subkey in the system
+file called Computer Name, and
+
+102
+00:08:10.932 --> 00:08:13.736
+this will tell us
+the name of the computer.
+
+103
+00:08:13.736 --> 00:08:19.140
+And that's located in
+the ControlSet001\Control\ComputerName.
+
+104
+00:08:19.140 --> 00:08:21.151
+And the value name is ComputerName.
+
+105
+00:08:24.240 --> 00:08:28.188
+Now the computer name can be
+given by the manufacturer or
+
+106
+00:08:28.188 --> 00:08:33.340
+the user can change the computer
+name to one specific to them.
+
+107
+00:08:33.340 --> 00:08:37.240
+We also have a subkey
+called Memory Management.
+
+108
+00:08:37.240 --> 00:08:42.277
+This is what determines whether or
+not the page file is cleared at shutdown.
+
+109
+00:08:42.277 --> 00:08:44.048
+And the page file, again,
+
+110
+00:08:44.048 --> 00:08:49.440
+is one of those spot files that spots
+information from random access memory.
+
+111
+00:08:49.440 --> 00:08:54.002
+So this may be a location on
+the hard drive where we can get
+
+112
+00:08:54.002 --> 00:08:57.413
+information that was once stored in RAM.
+
+113
+00:08:57.413 --> 00:08:59.548
+The path to that is called
+
+114
+00:08:59.548 --> 00:09:05.761
+ControlSet001\Control\Session
+Manager\Memory Management.
+
+115
+00:09:06.770 --> 00:09:11.879
+Now, when we look at the value,
+ClearPageFileAtShutdown,
+
+116
+00:09:11.879 --> 00:09:18.082
+a value of 0 indicates that the page
+file is not being cleared at shutdown.
+
+117
+00:09:18.082 --> 00:09:20.184
+If there was a value of 1,
+
+118
+00:09:20.184 --> 00:09:26.124
+the value of 1 indicates that the page
+file is being cleared at shutdown.
+
+119
+00:09:26.124 --> 00:09:31.451
+We also have in the system file
+a location called Services.
+
+120
+00:09:31.451 --> 00:09:35.320
+And services is an auto start location.
+
+121
+00:09:35.320 --> 00:09:40.346
+This is another location that
+starts without user interaction
+
+122
+00:09:40.346 --> 00:09:46.430
+when we boot into Windows, and this
+lists the services that run at startup.
+
+123
+00:09:47.930 --> 00:09:53.140
+This is also a possible location for
+persistent malware.
+
+124
+00:09:53.140 --> 00:09:58.141
+So if you're doing incident response,
+you would want to check here under
+
+125
+00:09:58.141 --> 00:10:03.397
+Services,and you'd also want to
+check the run in the i for malware.
+
+126
+00:10:03.397 --> 00:10:08.532
+The last shutdown time, which is the last
+time the computer was shut down,
+
+127
+00:10:08.532 --> 00:10:13.340
+not pulling the plug, but
+went through a full shutdown.
+
+128
+00:10:13.340 --> 00:10:19.839
+The location for that is going to
+be ControlSet001\Control\Windows.
+
+129
+00:10:19.839 --> 00:10:23.602
+The value name is going to
+be Shutdown Time and
+
+130
+00:10:23.602 --> 00:10:30.240
+the time format is in 64-bit
+Little Endian Windows file time.
+
+131
+00:10:30.240 --> 00:10:34.290
+And we can decode that
+time with our decoder?
+
+132
+00:10:34.290 --> 00:10:38.447
+The system file also contains the crash
+dump settings in a subkey named
+
+133
+00:10:38.447 --> 00:10:40.440
+CrashControl.
+
+134
+00:10:40.440 --> 00:10:45.403
+The location would be under
+the ControlSet001 being the current
+
+135
+00:10:45.403 --> 00:10:48.461
+control set, Control, CrashControl.
+
+136
+00:10:49.640 --> 00:10:55.461
+The value name we want to look
+at is Dumpfile and MinidumpDir.
+
+137
+00:10:57.740 --> 00:11:02.340
+These subkeys give us the location
+within the file system where
+
+138
+00:11:02.340 --> 00:11:04.740
+the dump file is located.
+
+139
+00:11:04.740 --> 00:11:06.053
+In the system file,
+
+140
+00:11:06.053 --> 00:11:11.840
+we're going to find information on USB
+connected devices and mounted volumes.
+
+141
+00:11:11.840 --> 00:11:16.234
+There are two subkeys,
+
+142
+00:11:16.234 --> 00:11:21.640
+USBSTORE and Mounted Devices.
+
+143
+00:11:21.640 --> 00:11:26.694
+The file path to USBSTORE would
+be the current control set,
+
+144
+00:11:26.694 --> 00:11:32.675
+in this case, 001,
+Enum\USBSTOR is the location for USBSTORE.
+
+145
+00:11:32.675 --> 00:11:37.424
+Location for Mounted Devices going to be
+
+146
+00:11:37.424 --> 00:11:41.621
+off of the Root\MountedDevices.
+
+147
+00:11:42.640 --> 00:11:47.065
+When we look at the USBSTOR key and
+expand it,
+
+148
+00:11:47.065 --> 00:11:52.073
+we can see the serial
+numbers highlighted in blue,
+
+149
+00:11:52.073 --> 00:11:57.561
+outlined in red here beneath
+the device descriptions.
+
+150
+00:11:58.840 --> 00:12:03.661
+Those would be the serial numbers of the
+devices that were attached to the system.
+
+151
+00:12:05.230 --> 00:12:09.748
+If we expand the property subkey,
+we're going to see some GUIDs beneath it.
+
+152
+00:12:09.748 --> 00:12:15.931
+If we look at the GUID
+beginning with 83 DA,
+
+153
+00:12:15.931 --> 00:12:21.139
+we can see keys starting with 003,
+
+154
+00:12:21.139 --> 00:12:25.534
+00A, 0064, 0065,
+
+155
+00:12:25.534 --> 00:12:28.976
+0066 and 0067.
+
+156
+00:12:28.976 --> 00:12:29.476
+The 0064 subkey gives us the first install
+date and time of that particular USB
+
+157
+00:12:29.476 --> 00:12:34.917
+device.
+The 0065 subkey will
+
+158
+00:12:34.917 --> 00:12:41.890
+give us the last install date and
+
+159
+00:12:41.890 --> 00:12:48.179
+time of that USB device.
+The 006
+
+160
+00:12:48.179 --> 00:12:53.896
+subkey will give us the last time
+the device was attached to the system,
+
+161
+00:12:53.896 --> 00:12:59.231
+the last arrival date and time,
+and the 0067 tells us when that
+
+162
+00:12:59.231 --> 00:13:04.490
+USB device was last removed from
+the system, last removal date.
+
+163
+00:13:05.740 --> 00:13:10.789
+So we can get quite a bit of information
+about each of these USB devices,
+
+164
+00:13:10.789 --> 00:13:13.398
+the serial numbers and four dates and
+
+165
+00:13:13.398 --> 00:13:19.940
+times regarding the device being connected
+and disconnected from the system.
+
+166
+00:13:19.940 --> 00:13:24.836
+We look at MountedDevices and
+this is mapping devices to drive letters,
+
+167
+00:13:24.836 --> 00:13:30.340
+but it's not just USB device,
+this is any volume mounted to the system.
+
+168
+00:13:30.340 --> 00:13:34.712
+So if you mounted a true volume or
+a virtual hard drive,
+
+169
+00:13:34.712 --> 00:13:39.040
+it would also show up in
+the MountedDevices subkey.
+
+170
+00:13:39.040 --> 00:13:43.451
+We can see this is what it would look
+like viewing it through a registry tool.
+
+171
+00:13:45.140 --> 00:13:48.818
+And we can see we have DoS device E.
+
+172
+00:13:48.818 --> 00:13:55.608
+And if you look to the right in
+DoS device E past the number sign,
+
+173
+00:13:55.608 --> 00:13:59.851
+we see a serial number for a USB device.
+
+174
+00:14:01.040 --> 00:14:08.191
+The NT user hive will contain information
+like recently accessed documents,
+
+175
+00:14:08.191 --> 00:14:14.489
+typed URLs, user assist, run and
+run once, and a Word Wheel query.
+
+176
+00:14:14.489 --> 00:14:18.129
+Now the run and
+run once keys in this hive,
+
+177
+00:14:18.129 --> 00:14:24.340
+a specific program set to run at
+startup for that particular user.
+
+178
+00:14:24.340 --> 00:14:27.580
+When we looked at it in the software file,
+
+179
+00:14:27.580 --> 00:14:32.501
+that was programs that were set to run and
+start up system wide.
+
+180
+00:14:32.501 --> 00:14:39.240
+Typed URLs are URLs that are typed into
+the Internet Explorer address bar.
+
+181
+00:14:39.240 --> 00:14:43.138
+So this only applies to
+Internet Explorer and
+
+182
+00:14:43.138 --> 00:14:49.805
+this becomes populated when a user types
+or uses the auto complete function to
+
+183
+00:14:49.805 --> 00:14:55.740
+type a web address into
+the Internet Explorer address bar.
+
+184
+00:14:55.740 --> 00:14:59.029
+And the paths of this file is going to be
+
+185
+00:14:59.029 --> 00:15:04.414
+Software\Microsoft\InternetExplore\TypedU-
+RLs.
+
+186
+00:15:04.414 --> 00:15:09.646
+Word Wheel query keeps
+track of searches conducted
+
+187
+00:15:09.646 --> 00:15:16.227
+by the user from the start menu and
+within the Windows Explorer.
+
+188
+00:15:16.227 --> 00:15:19.377
+It's going to contain an MRU order,
+
+189
+00:15:19.377 --> 00:15:24.159
+most recently used order,
+a key last access date and
+
+190
+00:15:24.159 --> 00:15:29.840
+time, and the search term
+that was typed by the user.
+
+191
+00:15:29.840 --> 00:15:36.840
+And the file path for this is
+Software\Microsoft\Windows\CurrentVersion-
+
+192
+00:15:36.840 --> 00:15:40.340
+\Explorer\WordWheelQuery.
+
+193
+00:15:40.340 --> 00:15:45.806
+The recent docs subkey tracks recently
+used documents, and these documents
+
+194
+00:15:45.806 --> 00:15:51.451
+were accessed by the specific user
+whose NT user hive you're viewing.
+
+195
+00:15:52.740 --> 00:15:57.570
+It also has recent docs broken
+down by file extension.
+
+196
+00:15:57.570 --> 00:16:02.302
+And the file path to recent
+docs is going to be software
+
+197
+00:16:02.302 --> 00:16:07.927
+Microsoft Windows current
+version Explorer recent docks.
+
+198
+00:16:07.927 --> 00:16:14.947
+UserAssists key maintains a list of
+items such as programs shortcuts and
+
+199
+00:16:14.947 --> 00:16:19.791
+control panel Apple IDs,
+that a user has access.
+
+200
+00:16:21.170 --> 00:16:26.470
+And it's put here for
+ease abuse by the user.
+
+201
+00:16:26.470 --> 00:16:30.670
+So it makes these programs
+accessible from the start menu.
+
+202
+00:16:30.670 --> 00:16:36.733
+So the more you use a program it
+will become included in this list.
+
+203
+00:16:36.733 --> 00:16:42.639
+It will be accessible from
+the start menu for convenience.
+
+204
+00:16:42.639 --> 00:16:47.369
+The file path of this
+particular he is software
+
+205
+00:16:47.369 --> 00:16:53.446
+Microsoft Windows current
+version Explorer user assist.
+
+206
+00:16:53.446 --> 00:16:58.071
+And this is specific to
+each particular user
+
+207
+00:16:58.071 --> 00:17:02.573
+because it's in the nt user dot high file.
+
+208
+00:17:02.573 --> 00:17:10.651
+So we can see what documents that user
+had recently accessed the run and run.
+
+209
+00:17:10.651 --> 00:17:11.691
+One sub key.
+
+210
+00:17:12.970 --> 00:17:15.763
+These are programs that
+are again set to run and
+
+211
+00:17:15.763 --> 00:17:18.550
+start up with any
+interaction from the user.
+
+212
+00:17:18.550 --> 00:17:20.891
+The user may not even
+be with their running.
+
+213
+00:17:22.370 --> 00:17:26.590
+These programs are specific to that user.
+
+214
+00:17:26.590 --> 00:17:32.894
+So when that user logs into the system,
+these programs will run and
+
+215
+00:17:32.894 --> 00:17:38.430
+the path to that sub key is
+going to be software Microsoft.
+
+216
+00:17:38.430 --> 00:17:39.410
+Windows.
+
+217
+00:17:39.410 --> 00:17:43.950
+Current version run now that we've
+talked about all these artifacts,
+
+218
+00:17:43.950 --> 00:17:48.881
+were going to do a walk through and take
+a look at them in the Windows registry.
+
+219
+00:17:50.570 --> 00:17:56.050
+The items were going to need
+our the exported registry
+
+220
+00:17:56.050 --> 00:18:01.276
+files that we exported
+from our forensic image,
+
+221
+00:18:01.276 --> 00:18:06.629
+our Windows VM DK file and
+our registry Explorer,
+
+222
+00:18:06.629 --> 00:18:15.051
+our specialized tools to view the registry
+end of block and this walkthrough.
+
+223
+00:18:15.051 --> 00:18:18.591
+We're going to take a look
+at the registry files,
+
+224
+00:18:18.591 --> 00:18:24.444
+some of the rhetoric files that we
+exported during our previous walkthrough.
+
+225
+00:18:24.444 --> 00:18:26.524
+And we're going to look at them and
+
+226
+00:18:26.524 --> 00:18:31.005
+take a look at the artifacts we
+talked about throughout this course.
+
+227
+00:18:31.005 --> 00:18:33.645
+We're going to start with the Sand file,
+
+228
+00:18:33.645 --> 00:18:36.940
+which is the one up here
+SAM file right at the top.
+
+229
+00:18:36.940 --> 00:18:40.939
+We're going to expand
+it would expand route,
+
+230
+00:18:40.939 --> 00:18:45.350
+expand SAM and expand domain accounts.
+
+231
+00:18:45.350 --> 00:18:50.829
+And then users underneath users
+you can see separate folders
+
+232
+00:18:50.829 --> 00:18:55.880
+identified by each user's
+rid relative identifier and
+
+233
+00:18:55.880 --> 00:18:58.800
+it's written in hexi decimal.
+
+234
+00:18:58.800 --> 00:19:01.260
+Now we're going to spend names.
+
+235
+00:19:01.260 --> 00:19:07.870
+Now what we're doing here is resolving
+a user name to a user relative identifier.
+
+236
+00:19:07.870 --> 00:19:10.370
+I'm going to start with Ivan.
+
+237
+00:19:10.370 --> 00:19:11.370
+Okay.
+
+238
+00:19:11.370 --> 00:19:16.595
+So we select Ivan and
+we look over to the right under values and
+
+239
+00:19:16.595 --> 00:19:21.717
+then we look down to the type viewer and
+we can see in the value
+
+240
+00:19:21.717 --> 00:19:28.770
+type The Hexi decimal rid of three
+E 9 which converts to decimal 1001.
+
+241
+00:19:28.770 --> 00:19:33.333
+So Ivan's relative identify
+where those last four
+
+242
+00:19:33.333 --> 00:19:36.960
+digits on his sid are going to be 1001.
+
+243
+00:19:36.960 --> 00:19:41.267
+And this will help us identify the Ivan
+user in other places on the system,
+
+244
+00:19:41.267 --> 00:19:42.740
+such as the recycle bin.
+
+245
+00:19:42.740 --> 00:19:47.421
+So this would be how we
+would resolve a user name to
+
+246
+00:19:47.421 --> 00:19:50.990
+a user's read using the SAM file.
+
+247
+00:19:50.990 --> 00:19:56.080
+Now we can go ahead and take a look at
+exodus Imo 39 that folder under users.
+
+248
+00:19:56.080 --> 00:20:01.530
+And we do see under we have a value
+name called force password reset.
+
+249
+00:20:01.530 --> 00:20:02.790
+And that is zero.
+
+250
+00:20:02.790 --> 00:20:06.340
+So there are no force password resets for
+the Ivan user.
+
+251
+00:20:06.340 --> 00:20:08.360
+And then we have a user password hint.
+
+252
+00:20:08.360 --> 00:20:09.670
+We can highlight that.
+
+253
+00:20:09.670 --> 00:20:14.891
+And down in the esky we can see that
+the user's password hint is our goal.
+
+254
+00:20:16.569 --> 00:20:18.920
+And this would be the same for
+another user.
+
+255
+00:20:18.920 --> 00:20:20.781
+If we choose D joe the user name.
+
+256
+00:20:20.781 --> 00:20:26.092
+De joe we can see in the value
+type that that users grid and
+
+257
+00:20:26.092 --> 00:20:31.570
+hexi decimal is three EA and
+their decimal 1002.
+
+258
+00:20:31.570 --> 00:20:35.270
+We can go ahead and
+take a look at three EA.
+
+259
+00:20:35.270 --> 00:20:40.820
+And we can see they do not
+have a force password reset.
+
+260
+00:20:40.820 --> 00:20:43.317
+They do have an internet user name and
+
+261
+00:20:43.317 --> 00:20:48.300
+we can see the email address associated
+with that internet user name.
+
+262
+00:20:48.300 --> 00:20:51.267
+They have an internet
+security identifier and
+
+263
+00:20:51.267 --> 00:20:54.970
+they have an internet you
+ID unique identifier.
+
+264
+00:20:54.970 --> 00:20:57.641
+So we have an internet user name for
+the user.
+
+265
+00:20:57.641 --> 00:21:01.600
+De joe we didn't have with the user Ivan.
+
+266
+00:21:01.600 --> 00:21:04.590
+Now let's take a look
+at the software file.
+
+267
+00:21:04.590 --> 00:21:07.670
+So we're going to go ahead and
+expand the software file.
+
+268
+00:21:07.670 --> 00:21:09.050
+Going to expand route.
+
+269
+00:21:09.050 --> 00:21:11.060
+We're going to expand Microsoft.
+
+270
+00:21:11.060 --> 00:21:16.170
+We're going to scroll down to Windows and
+T expand Windows and T.
+
+271
+00:21:16.170 --> 00:21:18.370
+And we're going to
+highlight current version.
+
+272
+00:21:18.370 --> 00:21:22.937
+This is going to show us information
+relating to the operating system,
+
+273
+00:21:22.937 --> 00:21:25.231
+tells us where the system route is.
+
+274
+00:21:25.231 --> 00:21:25.771
+Under C.
+
+275
+00:21:25.771 --> 00:21:27.170
+Windows.
+
+276
+00:21:27.170 --> 00:21:27.970
+Mhm.
+
+277
+00:21:27.970 --> 00:21:33.170
+It gives us our current build number,
+the addition ideas professional.
+
+278
+00:21:33.170 --> 00:21:38.493
+It gives us are installed date and that's
+in you next time and we'll convert that in
+
+279
+00:21:38.493 --> 00:21:44.420
+a second, it tells us the product name is
+Windows 10 pro and the release ID is 1903.
+
+280
+00:21:44.420 --> 00:21:47.770
+So let's go ahead and
+convert that installed day.
+
+281
+00:21:47.770 --> 00:21:52.788
+We want to click on it,
+highlight it right click and
+
+282
+00:21:52.788 --> 00:21:56.181
+we're going to copy the value data.
+
+283
+00:21:58.470 --> 00:22:02.401
+So we're copying that value
+data this time is in UNIX.
+
+284
+00:22:03.570 --> 00:22:09.920
+We want to convert it, we're going to use
+decode, we're going to right click paste.
+
+285
+00:22:09.920 --> 00:22:13.091
+So we've pasted the value data in there.
+
+286
+00:22:14.370 --> 00:22:19.260
+Now we're going to hit decode,
+we decode it.
+
+287
+00:22:19.260 --> 00:22:25.881
+We're going to scroll down till we see
+you next time and we see UNIX seconds.
+
+288
+00:22:27.370 --> 00:22:30.281
+UTC time and unique seconds local time.
+
+289
+00:22:31.970 --> 00:22:40.870
+So the UTC time,
+It's going to be 2020 0202 At 21 57.
+
+290
+00:22:40.870 --> 00:22:44.970
+And the local time is
+going to be the same date.
+
+291
+00:22:44.970 --> 00:22:48.560
+But the time is going to be 1657-02.
+
+292
+00:22:48.560 --> 00:22:54.398
+And that's because of the time zone
+I'm currently in is central time and
+
+293
+00:22:54.398 --> 00:22:57.091
+that is -5 hours from UTC time.
+
+294
+00:22:58.870 --> 00:23:03.191
+So that's how we would decode the date and
+time for the install date.
+
+295
+00:23:04.370 --> 00:23:08.567
+So we now know the different
+users rids their relative
+
+296
+00:23:08.567 --> 00:23:13.270
+identifiers has been resolved
+to their user names.
+
+297
+00:23:13.270 --> 00:23:15.601
+We know what type of operating system.
+
+298
+00:23:15.601 --> 00:23:20.774
+We're looking at the version,
+the release I'd in the installed date and
+
+299
+00:23:20.774 --> 00:23:26.770
+time and the path to the operating system,
+which will usually be see Windows.
+
+300
+00:23:26.770 --> 00:23:30.717
+Now, let's take a look
+at some wireless network
+
+301
+00:23:30.717 --> 00:23:35.070
+information staying under Windows and T.
+
+302
+00:23:35.070 --> 00:23:40.070
+We're going to expand the current version
+and we're looking for network list.
+
+303
+00:23:40.070 --> 00:23:44.093
+We're going to scroll down
+until we find network list with
+
+304
+00:23:44.093 --> 00:23:46.570
+a highlight network list.
+
+305
+00:23:46.570 --> 00:23:52.164
+And you can see it lists the different
+networks that the device was attached to,
+
+306
+00:23:52.164 --> 00:23:57.830
+and we can see a first connected and
+a last connected time for these networks.
+
+307
+00:23:57.830 --> 00:24:02.390
+So it shows us the network's first
+connection and last connection time.
+
+308
+00:24:02.390 --> 00:24:05.146
+And it shows us a Gateway Mac address.
+
+309
+00:24:05.146 --> 00:24:10.004
+All this can be very useful information
+and our investigation to know
+
+310
+00:24:10.004 --> 00:24:15.112
+which networks the computer connected to,
+when they first connected,
+
+311
+00:24:15.112 --> 00:24:20.327
+when it was last connected, and
+the Gateway Mac address of that network.
+
+312
+00:24:20.327 --> 00:24:23.070
+We can see they're all wired networks.
+
+313
+00:24:23.070 --> 00:24:27.641
+The next thing we're going to take
+a look at is user login information.
+
+314
+00:24:29.020 --> 00:24:34.250
+And we talked about it in the course, but
+we're going to take a look at it here.
+
+315
+00:24:34.250 --> 00:24:38.210
+It's going to be under Microsoft Windows.
+
+316
+00:24:38.210 --> 00:24:42.313
+So we're going to scroll
+back up close Windows NT and
+
+317
+00:24:42.313 --> 00:24:46.320
+we're going to expand the Windows Folder.
+
+318
+00:24:46.320 --> 00:24:50.210
+We're going to go to Microsoft Windows,
+Currentversion.
+
+319
+00:24:50.210 --> 00:24:53.420
+We're going to expand Currentversion.
+
+320
+00:24:53.420 --> 00:24:56.320
+And we're going to expand authentication.
+
+321
+00:24:56.320 --> 00:25:00.691
+Once we've expanded authentication,
+we're going to expand Logonui.
+
+322
+00:25:00.691 --> 00:25:02.950
+I we're going to go ahead and
+highlight it.
+
+323
+00:25:02.950 --> 00:25:07.690
+We can see when we look,
+it tells us the last logged on user's SED.
+
+324
+00:25:07.690 --> 00:25:11.957
+Now this is another place where knowing
+the user's rid is going to be important to
+
+325
+00:25:11.957 --> 00:25:13.520
+identify that user.
+
+326
+00:25:13.520 --> 00:25:18.748
+And when we looked at the SAM file,
+we saw that the User 1001 was Ivan sort
+
+327
+00:25:18.748 --> 00:25:23.920
+of telling us that Ivan is the last
+logged on, user logged on SAM user Ivan.
+
+328
+00:25:23.920 --> 00:25:27.948
+So we know that Ivan was
+the last logged on user and
+
+329
+00:25:27.948 --> 00:25:30.820
+we also have a key last write time.
+
+330
+00:25:30.820 --> 00:25:36.476
+So we know when Ivan was last logged on,
+which was 2020 03 17 and
+
+331
+00:25:36.476 --> 00:25:40.180
+he was the last user to
+log on to this computer.
+
+332
+00:25:40.180 --> 00:25:43.500
+Now we're going to take
+a look at file association.
+
+333
+00:25:43.500 --> 00:25:47.010
+So under route,
+we want the classes sub key.
+
+334
+00:25:47.010 --> 00:25:53.441
+We're going to expand classes and
+we can see whole bunch of file extensions.
+
+335
+00:25:54.520 --> 00:25:59.580
+Now, what this key shows us is the default
+program to open these types of files.
+
+336
+00:25:59.580 --> 00:26:02.636
+So if I were to look at
+something like a D O C X,
+
+337
+00:26:02.636 --> 00:26:09.020
+it's going to tell me it's a doc file and
+it's going to tell me it's open with list.
+
+338
+00:26:09.020 --> 00:26:12.820
+There is really not
+a default program set here.
+
+339
+00:26:12.820 --> 00:26:13.910
+There's a list.
+
+340
+00:26:13.910 --> 00:26:18.030
+So it could be word pad or
+it could be libre office.
+
+341
+00:26:18.030 --> 00:26:23.779
+Now, if we take a look at pdf's,
+locate pdf's, expand it and
+
+342
+00:26:23.779 --> 00:26:29.203
+open with and pdf's are set,
+it does have a default program
+
+343
+00:26:29.203 --> 00:26:34.820
+because this says open with
+product IDs and it is chrome.
+
+344
+00:26:34.820 --> 00:26:38.420
+So pd's are set to open with chrome.
+
+345
+00:26:38.420 --> 00:26:41.620
+They actually have a default program set.
+
+346
+00:26:41.620 --> 00:26:44.320
+Whereas documents do not,
+they have a list.
+
+347
+00:26:44.320 --> 00:26:49.340
+So you can open a document,
+either word pad or leave our office.
+
+348
+00:26:49.340 --> 00:26:51.741
+We're going to take a look
+at attached devices.
+
+349
+00:26:51.741 --> 00:26:55.260
+Now we're going to look for
+the key sub key portable devices.
+
+350
+00:26:55.260 --> 00:26:59.570
+So that's going to be in
+Microsoft Windows portable devices.
+
+351
+00:26:59.570 --> 00:27:03.440
+So again, I'm going to scroll
+to the top and close this up.
+
+352
+00:27:03.440 --> 00:27:06.334
+I'm going to go to Microsoft Windows and
+
+353
+00:27:06.334 --> 00:27:10.620
+we're going to look at
+the portable devices sub key.
+
+354
+00:27:10.620 --> 00:27:14.066
+Once we've located our
+portable devices sub key,
+
+355
+00:27:14.066 --> 00:27:17.751
+we're going to go ahead and
+expand it and we see devices,
+
+356
+00:27:17.751 --> 00:27:22.670
+we're going to drill down and underneath
+there, we see a list of devices.
+
+357
+00:27:22.670 --> 00:27:27.383
+And if you hover over there you
+can see the device name and
+
+358
+00:27:27.383 --> 00:27:30.540
+we can see the device serial number.
+
+359
+00:27:30.540 --> 00:27:36.030
+This right here, starting with 07
+would be this devices serial number.
+
+360
+00:27:36.030 --> 00:27:41.160
+This device this here this 158
+this is the devices serial number.
+
+361
+00:27:41.160 --> 00:27:45.790
+If we click on it, we can see
+the friendly name of the device.
+
+362
+00:27:45.790 --> 00:27:47.520
+It's called hack tools.
+
+363
+00:27:47.520 --> 00:27:52.291
+This one friendly name does not
+have a real friendly name, but
+
+364
+00:27:52.291 --> 00:27:55.070
+we can see it was mounted as drive F.
+
+365
+00:27:55.070 --> 00:27:59.756
+We can see that this one was mounted
+asdrive G and it is a Kingston
+
+366
+00:27:59.756 --> 00:28:04.620
+data traveler that appears to just
+be a generic USB flash drive.
+
+367
+00:28:04.620 --> 00:28:07.990
+And this device has a friendly
+name of max storage and
+
+368
+00:28:07.990 --> 00:28:10.520
+that would be the serial number.
+
+369
+00:28:10.520 --> 00:28:14.060
+We also have a last
+write time on this keys.
+
+370
+00:28:14.060 --> 00:28:18.701
+Keys last write time should be the last
+time the device was attached to
+
+371
+00:28:18.701 --> 00:28:19.599
+the system.
+
+372
+00:28:19.599 --> 00:28:21.820
+So we have serial numbers.
+
+373
+00:28:21.820 --> 00:28:26.705
+We may have a friendly name if
+the volume was given a name by the user,
+
+374
+00:28:26.705 --> 00:28:30.820
+such as Mac,
+such as mac storage and hack tools.
+
+375
+00:28:30.820 --> 00:28:35.760
+And we do see drive letters for the other
+volumes that do not have a volume label.
+
+376
+00:28:35.760 --> 00:28:37.720
+Our user created volume label.
+
+377
+00:28:37.720 --> 00:28:42.160
+We can see that one was mounted as drive
+G and one was mounted his drive F.
+
+378
+00:28:42.160 --> 00:28:45.514
+And we can see the last times
+that they were attached
+
+379
+00:28:45.514 --> 00:28:48.868
+to the system in the last
+right times on these keys so
+
+380
+00:28:48.868 --> 00:28:54.120
+we can get some information also on USB
+connected devices in the software file.
+
+381
+00:28:54.120 --> 00:28:58.758
+We're going to take a look at programs
+that were installed on the system and
+
+382
+00:28:58.758 --> 00:29:02.810
+the software file and
+the path to that is going to be Microsoft.
+
+383
+00:29:02.810 --> 00:29:07.611
+Windows Current version Uninstall
+will navigate there under
+
+384
+00:29:07.611 --> 00:29:09.880
+the root under Microsoft.
+
+385
+00:29:09.880 --> 00:29:11.480
+When scroll down to Windows.
+
+386
+00:29:11.480 --> 00:29:15.762
+We're going to expand Windows,
+we're going to expand current version and
+
+387
+00:29:15.762 --> 00:29:20.450
+we're looking for the uninstalled sub key,
+going to expand uninstall.
+
+388
+00:29:20.450 --> 00:29:25.429
+And we're going to see information
+about the programs that were installed
+
+389
+00:29:25.429 --> 00:29:29.820
+on the system and scroll through and
+look at the information.
+
+390
+00:29:29.820 --> 00:29:34.398
+We can see the program name,
+where the path the install location,
+
+391
+00:29:34.398 --> 00:29:38.670
+the path to where the file is installed,
+the application.
+
+392
+00:29:38.670 --> 00:29:42.910
+We can see the version and
+the display name as you scroll through.
+
+393
+00:29:42.910 --> 00:29:47.616
+You can see the install source and
+the program name, the publisher and
+
+394
+00:29:47.616 --> 00:29:49.490
+what its display name is.
+
+395
+00:29:49.490 --> 00:29:54.131
+And this is C++ run time
+each of these liquids
+
+396
+00:29:54.131 --> 00:29:58.720
+over here in the key name sub folder.
+
+397
+00:29:58.720 --> 00:30:03.720
+These grids will be the same for
+every we were office heavy
+
+398
+00:30:03.720 --> 00:30:09.320
+C++ run time for
+that particular growth and library.
+
+399
+00:30:09.320 --> 00:30:12.212
+You can see the installed dates and again,
+
+400
+00:30:12.212 --> 00:30:17.041
+that would be in UNIX and we would have
+to decode that the same way we did.
+
+401
+00:30:18.120 --> 00:30:21.741
+We install date and
+time again the install dating UNIX.
+
+402
+00:30:23.220 --> 00:30:27.641
+You usually have a display version.
+
+403
+00:30:28.920 --> 00:30:34.220
+You're going to have the uninstalled
+string where the path to uninstall is.
+
+404
+00:30:34.220 --> 00:30:38.420
+You have the installed source and
+you'll have the display name.
+
+405
+00:30:38.420 --> 00:30:40.550
+This is VM ware tools we're looking at.
+
+406
+00:30:40.550 --> 00:30:45.112
+So all this information can be very
+useful in your investigation if
+
+407
+00:30:45.112 --> 00:30:49.999
+somebody says I didn't have a certain
+program installed on my computer
+
+408
+00:30:49.999 --> 00:30:55.320
+because even if they've deleted
+the program from the computer.
+
+409
+00:30:55.320 --> 00:30:59.720
+You can still find information
+in the uninstall key.
+
+410
+00:30:59.720 --> 00:31:05.289
+Now we're going to take a look
+at the auto start location and
+
+411
+00:31:05.289 --> 00:31:10.398
+that's going to be
+Microsoft Windows current version
+
+412
+00:31:10.398 --> 00:31:16.780
+run programs under the run key start
+when you boot into Windows and
+
+413
+00:31:16.780 --> 00:31:22.380
+this particular run key is
+located in the software file.
+
+414
+00:31:22.380 --> 00:31:27.039
+So this is system wide settings for
+programs to run its start up,
+
+415
+00:31:27.039 --> 00:31:29.799
+there is also a run key in the NT user and
+
+416
+00:31:29.799 --> 00:31:34.620
+that would be user specific
+programs set to run at startup.
+
+417
+00:31:34.620 --> 00:31:37.941
+But this run key and
+software is a system wide setting.
+
+418
+00:31:39.020 --> 00:31:41.891
+So we're going to look at
+Microsoft Windows current version.
+
+419
+00:31:41.891 --> 00:31:45.370
+Run and we're in Microsoft Windows
+current version.
+
+420
+00:31:45.370 --> 00:31:50.320
+But we want to see the run key and
+there is the run key.
+
+421
+00:31:50.320 --> 00:31:56.722
+And when we highlight the run key, we can
+see the programs that are set to run and
+
+422
+00:31:56.722 --> 00:32:03.000
+start up security, health,
+the inbox tray and VM ware user processes.
+
+423
+00:32:03.000 --> 00:32:06.726
+So you can see these programs
+are set to run at startup.
+
+424
+00:32:06.726 --> 00:32:10.327
+Malware can be installed in this key for
+persistence and
+
+425
+00:32:10.327 --> 00:32:15.075
+then that malware will continue to run
+every time the system is rebooted,
+
+426
+00:32:15.075 --> 00:32:17.539
+every time you log back into Windows.
+
+427
+00:32:17.539 --> 00:32:20.419
+So this can be a location for malware,
+
+428
+00:32:20.419 --> 00:32:24.829
+you should also check the Run
+once key directly under Run,
+
+429
+00:32:24.829 --> 00:32:30.320
+there's nothing there, but
+that could also be a location for malware.
+
+430
+00:32:30.320 --> 00:32:35.062
+Next, we're going to take a look at the
+system high file, they're going to expand
+
+431
+00:32:35.062 --> 00:32:38.913
+system, and we're going to take
+a look at the current control set.
+
+432
+00:32:38.913 --> 00:32:43.290
+So we're going to expand route, now,
+there's only one control set on this
+
+433
+00:32:43.290 --> 00:32:46.616
+particular virtual machine but
+usually there's two.
+
+434
+00:32:46.616 --> 00:32:50.972
+How you determine what was the last used
+control set of the current control set,
+
+435
+00:32:50.972 --> 00:32:52.804
+is you highlight the select key.
+
+436
+00:32:52.804 --> 00:32:56.546
+When you highlight the select key,
+you look at the user data and
+
+437
+00:32:56.546 --> 00:33:00.643
+it's going to tell you that the current
+control set is control set one,
+
+438
+00:33:00.643 --> 00:33:03.272
+in this case it's also
+the last known good.
+
+439
+00:33:03.272 --> 00:33:07.150
+Usually the last known good
+will be control set to if
+
+440
+00:33:07.150 --> 00:33:10.856
+you have more than one
+control set on the system.
+
+441
+00:33:10.856 --> 00:33:13.054
+So now we're going to take
+a look at the computer name.
+
+442
+00:33:13.054 --> 00:33:16.761
+So we're going to stay in control set one,
+expand it,
+
+443
+00:33:16.761 --> 00:33:21.750
+we're going to expand control and
+we're going to look for computer name.
+
+444
+00:33:21.750 --> 00:33:25.282
+We're going to highlight computer name,
+go ahead and expand computer name, and
+
+445
+00:33:25.282 --> 00:33:27.453
+underneath it you'll see
+computer name again.
+
+446
+00:33:27.453 --> 00:33:32.430
+This tells us the name of the computer,
+and this is the name of my computer,
+
+447
+00:33:32.430 --> 00:33:36.311
+desktop and then it has a number and
+some letters after it.
+
+448
+00:33:36.311 --> 00:33:40.362
+Now when you're examining
+multiple computers,
+
+449
+00:33:40.362 --> 00:33:43.449
+computer name can be very important,
+
+450
+00:33:43.449 --> 00:33:47.892
+you always want to document
+that as part of your report.
+
+451
+00:33:47.892 --> 00:33:51.776
+Let's take a look at
+the last shutdown time, and
+
+452
+00:33:51.776 --> 00:33:56.916
+that's going to be in control set one,
+control and then Windows.
+
+453
+00:33:56.916 --> 00:34:03.060
+So we're in control set one control and
+scroll down to Windows and
+
+454
+00:34:03.060 --> 00:34:07.876
+we're going to take a look
+at the last shutdown time.
+
+455
+00:34:07.876 --> 00:34:11.856
+We see shutdown time right here,
+and again,
+
+456
+00:34:11.856 --> 00:34:18.585
+this is something that's going to need
+to be decoded, it's in hexadecimal.
+
+457
+00:34:22.499 --> 00:34:27.281
+It's 8 bytes long, so
+it's 64 bit Windows file time.
+
+458
+00:34:27.281 --> 00:34:32.407
+So what we can do here
+is copy value data and
+
+459
+00:34:32.407 --> 00:34:36.661
+we can use our decode to decode it.
+
+460
+00:34:36.661 --> 00:34:43.960
+You're going to have to take out the
+dashes, decode does not like the dashes.
+
+461
+00:34:43.960 --> 00:34:48.790
+Once you have removed the dashes,
+we want to make sure we tell it it's
+
+462
+00:34:48.790 --> 00:34:52.368
+hexadecimal and
+it is going to be a little Indian.
+
+463
+00:34:52.368 --> 00:34:56.086
+So hexadecimal little Indian,
+and then we decode,
+
+464
+00:34:56.086 --> 00:35:01.248
+now we're looking at Windows file time and
+we can see Windows file time.
+
+465
+00:35:01.248 --> 00:35:07.960
+So it's telling us that
+the last shutdown time,
+
+466
+00:35:07.960 --> 00:35:12.052
+because that's what looking at,
+
+467
+00:35:12.052 --> 00:35:19.108
+was 2020/03/16 at 23:07:25.
+
+468
+00:35:19.108 --> 00:35:25.854
+Now, that's local time, and we can
+see it's offset from UTC by -4 hours.
+
+469
+00:35:25.854 --> 00:35:33.462
+The UTC time Would be +4 hours,
+
+470
+00:35:33.462 --> 00:35:41.555
+so it's going to be
+2020 03:17 at 03:07:25.
+
+471
+00:35:47.332 --> 00:35:52.321
+So when you add four to this, you will
+get The following day at three o'clock in
+
+472
+00:35:52.321 --> 00:35:55.051
+the morning, 3:07 and 25 seconds.
+
+473
+00:35:57.605 --> 00:36:02.016
+So that's how we would decode that,
+
+474
+00:36:02.016 --> 00:36:09.573
+it is hexadecimal little Indian,
+and it is Windows file time.
+
+475
+00:36:09.573 --> 00:36:13.909
+It's 64 bit Windows file time, but
+
+476
+00:36:13.909 --> 00:36:18.245
+you'd select Windows file time, and
+
+477
+00:36:18.245 --> 00:36:22.987
+it gives it to you in
+both the local time and
+
+478
+00:36:22.987 --> 00:36:28.155
+you can see the time offset,
+and in UTC time.
+
+479
+00:36:28.155 --> 00:36:31.531
+We want to now take a look
+at the crash dump settings,
+
+480
+00:36:31.531 --> 00:36:36.491
+crash dump can be saved and that's
+going to depend on the registry settings.
+
+481
+00:36:36.491 --> 00:36:43.453
+So that happens when you get like the blue
+screen of death in your computer crashes,
+
+482
+00:36:43.453 --> 00:36:49.033
+it will dump part of the memory
+into what's called the crash dump.
+
+483
+00:36:49.033 --> 00:36:55.978
+And that would be another place
+you'd look for to find memory RAM,
+
+484
+00:36:55.978 --> 00:37:00.951
+random access memory on
+the hard drive itself.
+
+485
+00:37:00.951 --> 00:37:05.482
+So that would be under control set one,
+
+486
+00:37:05.482 --> 00:37:08.649
+control, crash control.
+
+487
+00:37:08.649 --> 00:37:15.094
+So we're in control set one
+control Windows [COUGH]
+
+488
+00:37:26.141 --> 00:37:30.725
+So control set one control and
+we're looking for crash control.
+
+489
+00:37:41.787 --> 00:37:46.702
+I like crash control And
+
+490
+00:37:46.702 --> 00:37:52.714
+we can see the location of the dump file.
+
+491
+00:37:52.714 --> 00:37:57.982
+Crash control is enabled and
+we have a dump file, and
+
+492
+00:37:57.982 --> 00:38:03.249
+the path is a system route and
+the dump file is going to be
+
+493
+00:38:03.249 --> 00:38:08.537
+named memory.dmp and
+it's going to dump the memory.
+
+494
+00:38:08.537 --> 00:38:11.381
+Now crash control settings vary,
+it is enabled.
+
+495
+00:38:14.973 --> 00:38:17.130
+Anything but
+a zero in here means it's enabled.
+
+496
+00:38:17.130 --> 00:38:22.657
+Depending on which settings and
+options the user chooses and
+
+497
+00:38:22.657 --> 00:38:27.637
+how much of the memory they
+want to dump into this memory
+
+498
+00:38:27.637 --> 00:38:32.424
+dump file will determine
+the number of the setting.
+
+499
+00:38:32.424 --> 00:38:38.448
+But if there's a number other than zero
+in here, it means that it is enabled and
+
+500
+00:38:38.448 --> 00:38:42.282
+it will tell you the location
+of the memory dump and
+
+501
+00:38:42.282 --> 00:38:48.615
+then you can analyze that with something
+like volatility or another memory tool.
+
+502
+00:38:48.615 --> 00:38:52.432
+Now we're going to take a look at
+services set to run at startup and
+
+503
+00:38:52.432 --> 00:38:56.189
+that's going to be under the root
+control set one and services.
+
+504
+00:39:02.116 --> 00:39:09.236
+So under the root control set one,
+we expand services.
+
+505
+00:39:09.236 --> 00:39:14.182
+These are all the services that
+are set to run at startup,
+
+506
+00:39:14.182 --> 00:39:18.818
+and you can see this quite
+a few things running when you
+
+507
+00:39:18.818 --> 00:39:23.677
+start up Windows, and
+this happens by just logging in.
+
+508
+00:39:23.677 --> 00:39:30.143
+So you definitely want to take a look
+here if you're looking for malware,
+
+509
+00:39:30.143 --> 00:39:37.000
+you see all the different services
+that run automatically at startup.
+
+510
+00:39:37.000 --> 00:39:40.949
+>> It should be a good place for
+
+511
+00:39:40.949 --> 00:39:45.073
+persistence to have malware
+
+512
+00:39:45.073 --> 00:39:49.896
+that will persist after reboot.
+
+513
+00:39:49.896 --> 00:39:51.249
+So definitely take a look at services.
+
+514
+00:39:51.249 --> 00:39:58.625
+You can see it's quite a few
+things running at startup.
+
+515
+00:40:02.320 --> 00:40:03.311
+Quite a few services.
+
+516
+00:40:09.904 --> 00:40:13.225
+Now, we're going to check the setting for
+clear page file at shutdown.
+
+517
+00:40:13.225 --> 00:40:17.444
+Page file is another one
+of those swap files with
+
+518
+00:40:17.444 --> 00:40:21.566
+Random Access Memory, RAM volatile memory.
+
+519
+00:40:21.566 --> 00:40:26.526
+So this is another location on the hard
+drive where we may be able to recover
+
+520
+00:40:26.526 --> 00:40:28.450
+some information from RAM.
+
+521
+00:40:28.450 --> 00:40:31.782
+And the location of this
+is control set one,
+
+522
+00:40:31.782 --> 00:40:35.486
+control session manager,
+memory management.
+
+523
+00:40:35.486 --> 00:40:37.311
+So ,we going to take a look at it.
+
+524
+00:40:37.311 --> 00:40:39.328
+Control set one control.
+
+525
+00:40:44.439 --> 00:40:50.522
+Now we want to look at sessions,
+Cross that one control.
+
+526
+00:40:51.668 --> 00:40:52.999
+We want to look at sessions.
+
+527
+00:41:03.041 --> 00:41:08.507
+Source we're going to expand
+sessions manager, And
+
+528
+00:41:08.507 --> 00:41:14.241
+now we're going to look
+at memory management.
+
+529
+00:41:14.241 --> 00:41:18.994
+And we can see the top value
+clear page file at shutdown,
+
+530
+00:41:18.994 --> 00:41:22.726
+the data column shows us a zero.
+
+531
+00:41:22.726 --> 00:41:26.731
+So, the page file is not
+set to clear at shut down.
+
+532
+00:41:28.314 --> 00:41:35.990
+And it shows you that the paging files, Is
+located in the root and its Pagefile.sys.
+
+533
+00:41:39.936 --> 00:41:46.640
+And it shows existing Pagefile, is under
+C, is under the root Pagefile.sys.
+
+534
+00:41:49.863 --> 00:41:53.719
+So, there is a Pagefile.sys there,
+that can be examined and
+
+535
+00:41:53.719 --> 00:41:57.439
+you may find information from RAM,
+Random Access Memory.
+
+536
+00:42:01.683 --> 00:42:04.943
+Now, let's move on to the NTUSER.DAT Hive.
+
+537
+00:42:08.329 --> 00:42:13.657
+So scroll to the top, go ahead and
+just close up system and
+
+538
+00:42:13.657 --> 00:42:17.220
+let's look at the NTUSER.DAT Hive.
+
+539
+00:42:17.220 --> 00:42:22.544
+Now, every user on the system
+has their own NTUSER.DAT Hive,
+
+540
+00:42:22.544 --> 00:42:25.568
+this is Ivan's NTUSER.DAT Hive.
+
+541
+00:42:25.568 --> 00:42:28.906
+When you're exporting NTUSER.DAT Hives,
+
+542
+00:42:28.906 --> 00:42:34.627
+it's a good idea to know who's
+Hive somewhere in the file name.
+
+543
+00:42:34.627 --> 00:42:38.072
+Or you can get confused.
+
+544
+00:42:38.072 --> 00:42:42.240
+So, the first thing we're going to look at
+is, we're going to look at recent docs.
+
+545
+00:42:44.705 --> 00:42:48.026
+Documents that were recently
+used by this particular user.
+
+546
+00:42:49.860 --> 00:42:55.335
+And the file path is going to be
+
+547
+00:42:55.335 --> 00:43:02.479
+underneath the route, Software,
+
+548
+00:43:02.479 --> 00:43:09.493
+Microsoft Windows Current version,
+
+549
+00:43:11.950 --> 00:43:19.560
+We need to go down to Explorer,
+Expand Explorer,
+
+550
+00:43:23.916 --> 00:43:28.169
+Underneath the Explorer,
+we're going to find recent docs.
+
+551
+00:43:32.377 --> 00:43:37.653
+When we highlight this key,
+this particular tool gives
+
+552
+00:43:37.653 --> 00:43:42.377
+us a very nice breakdown
+of the recent documents.
+
+553
+00:43:44.177 --> 00:43:48.325
+You can see the recent documents,
+you can see their MIU position.
+
+554
+00:44:00.935 --> 00:44:03.899
+Now we expand recent docs key,
+
+555
+00:44:03.899 --> 00:44:08.804
+you can see that they're
+broken down by file type.
+
+556
+00:44:08.804 --> 00:44:13.314
+We can see extensions for JPGs, PDFs,
+
+557
+00:44:13.314 --> 00:44:19.127
+Power points, ZIP files, So
+
+558
+00:44:19.127 --> 00:44:25.251
+they're broken down by document type.
+
+559
+00:44:27.194 --> 00:44:33.047
+Each of these sub keys for document type
+does have its own key last write time.
+
+560
+00:44:35.145 --> 00:44:39.603
+When we're looking at
+the recent docs key as a whole,
+
+561
+00:44:39.603 --> 00:44:44.653
+you're going to see some of them
+will have the last write time,
+
+562
+00:44:44.653 --> 00:44:52.183
+and that's coming from the last write
+time Of each particular file type.
+
+563
+00:45:00.876 --> 00:45:06.159
+And you can scroll down,
+you can see that all the recent documents,
+
+564
+00:45:06.159 --> 00:45:11.271
+and if something is showing up in here,
+it was accessed by a user.
+
+565
+00:45:11.271 --> 00:45:15.220
+So if somebody says,
+I didn't know that was on my computer and
+
+566
+00:45:15.220 --> 00:45:19.750
+it's showing up in recent docks,
+it was accessed by that particular user.
+
+567
+00:45:32.699 --> 00:45:38.194
+If we take a look at PDFs,
+
+568
+00:45:40.542 --> 00:45:42.919
+We can see when the last PDF was accessed,
+
+569
+00:45:51.611 --> 00:45:52.323
+And what it was.
+
+570
+00:45:55.636 --> 00:45:56.851
+And then it goes down.
+
+571
+00:46:01.358 --> 00:46:05.577
+You can see MIU position
+0 is the most recent one,
+
+572
+00:46:05.577 --> 00:46:10.317
+down to MIU position 18 would
+be the least recent one.
+
+573
+00:46:12.799 --> 00:46:15.641
+That's how you read the MIU
+orders from top to bottom.
+
+574
+00:46:21.635 --> 00:46:27.051
+So, the 0 is always going
+to be the most recent,
+
+575
+00:46:27.051 --> 00:46:31.676
+the higher numbers will be least recent or
+
+576
+00:46:31.676 --> 00:46:37.375
+prior to that date,
+that less right key date time.
+
+577
+00:46:39.221 --> 00:46:44.098
+But if you're interested in PDFs,
+you could check there,
+
+578
+00:46:44.098 --> 00:46:48.405
+you can look at doc's,
+You can look at HTMLs,
+
+579
+00:46:50.551 --> 00:46:55.793
+All your different file types, or you can
+look at the recent docs key as a whole.
+
+580
+00:47:13.743 --> 00:47:19.607
+The next thing we're going to
+talk about is typed URLs sub key.
+
+581
+00:47:19.607 --> 00:47:26.749
+URLs that are typed into the search bar,
+the Windows Explorer search bar.
+
+582
+00:47:29.010 --> 00:47:29.791
+No.
+
+583
+00:47:32.236 --> 00:47:38.518
+So we're going to go into Software
+Microsoft Internet Explorer typed URLs.
+
+584
+00:47:38.518 --> 00:47:43.659
+And these are typed into
+the Internet Explorer search bar.
+
+585
+00:47:43.659 --> 00:47:48.040
+So if you're using IE and you type
+a search term into the search bar, or
+
+586
+00:47:48.040 --> 00:47:52.588
+something is completed by auto complete,
+it will show up in typed URLS.
+
+587
+00:47:52.588 --> 00:47:56.338
+But if you're using another browser,
+it's not going to,
+
+588
+00:47:56.338 --> 00:47:59.039
+this is a Internet Explorer feature only.
+
+589
+00:47:59.039 --> 00:48:06.141
+So we can take a look
+at software Microsoft.
+
+590
+00:48:06.141 --> 00:48:10.061
+And now we're looking for
+Internet Explorer,
+
+591
+00:48:10.061 --> 00:48:15.161
+expand Internet Explorer and
+we're looking for tight URLs.
+
+592
+00:48:15.161 --> 00:48:18.372
+We only see one URL,type there.
+
+593
+00:48:18.372 --> 00:48:23.273
+What doesn't look like this particular
+user used Internet Explorer
+
+594
+00:48:23.273 --> 00:48:24.798
+as his main browser.
+
+595
+00:48:24.798 --> 00:48:29.619
+So we would want to look for other browser
+information elsewhere in the system.
+
+596
+00:48:29.619 --> 00:48:32.546
+We're going to take a look at the run and
+
+597
+00:48:32.546 --> 00:48:38.244
+run one ski in the end to user dot that
+high file and this key is user specific.
+
+598
+00:48:38.244 --> 00:48:42.455
+In other words, these are programs
+set to run it start up for
+
+599
+00:48:42.455 --> 00:48:46.666
+that particular user and
+the path of that is going to be under
+
+600
+00:48:46.666 --> 00:48:50.565
+software Once we expand the root
+of the Nt user dot dad.
+
+601
+00:48:50.565 --> 00:48:57.693
+Hi, we're going to be under software
+Microsoft Windows current version.
+
+602
+00:48:57.693 --> 00:48:59.645
+And then we're looking for the run key.
+
+603
+00:48:59.645 --> 00:49:00.778
+R-U-N key.
+
+604
+00:49:00.778 --> 00:49:03.269
+Here's the run key.
+
+605
+00:49:03.269 --> 00:49:07.153
+And for the Ivan user we
+can see that one drive and
+
+606
+00:49:07.153 --> 00:49:10.760
+google drive sync are set
+to run at startup.
+
+607
+00:49:10.760 --> 00:49:16.502
+So if we're doing an investigation,
+we know we've got a one drive and play and
+
+608
+00:49:16.502 --> 00:49:22.073
+a google drive and play and it gives us
+the locations to those executed bals.
+
+609
+00:49:22.073 --> 00:49:26.987
+We can gain some additional information
+about our case that we know now that
+
+610
+00:49:26.987 --> 00:49:31.981
+we need to look for a one drive and
+that there's a google drive sync going on.
+
+611
+00:49:31.981 --> 00:49:34.395
+So we want to check for google drive also.
+
+612
+00:49:34.395 --> 00:49:40.445
+Now we're going to take a look at
+Word wheel query and Word wheel query
+
+613
+00:49:40.445 --> 00:49:46.914
+deals with search terms typed into
+the Windows Explorer Bar by the user and
+
+614
+00:49:46.914 --> 00:49:51.529
+the Windows Explorer,
+not the Internet Explorer.
+
+615
+00:49:51.529 --> 00:49:56.777
+So you're searching within the file
+system for a file and that's going to be
+
+616
+00:49:56.777 --> 00:50:02.202
+under Software Microsoft, Windows
+current version, which is where we are.
+
+617
+00:50:02.202 --> 00:50:05.745
+So we're going to scroll up and
+find Explorer.
+
+618
+00:50:05.745 --> 00:50:10.596
+I'm going to expand Explorer and
+we're going to scroll down to find
+
+619
+00:50:10.596 --> 00:50:15.130
+word wheel query and
+we can see two things in ward, real query.
+
+620
+00:50:15.130 --> 00:50:17.950
+We've got electric grid in drugs.
+
+621
+00:50:17.950 --> 00:50:23.860
+So at some point in time I haven't
+either brought up a file Explorer and
+
+622
+00:50:23.860 --> 00:50:26.965
+searched for these in this box here or
+
+623
+00:50:26.965 --> 00:50:31.889
+he searched down at the bottom
+in the Windows search pain.
+
+624
+00:50:31.889 --> 00:50:35.276
+So we know he was interested
+in electric grid and drugs.
+
+625
+00:50:35.276 --> 00:50:40.636
+Again, the position order zero would
+be the most recent, followed by one.
+
+626
+00:50:40.636 --> 00:50:44.687
+This can be very helpful in
+an investigation to find out what
+
+627
+00:50:44.687 --> 00:50:48.332
+the user was searching for
+and within their own system
+
+628
+00:50:48.332 --> 00:50:52.964
+gives us an indication what was
+going on with that particular user.
+
+629
+00:50:52.964 --> 00:50:58.424
+And that concludes our
+windows registry walkthrough.
+
+630
+00:50:58.424 --> 00:51:04.184
+So we've got taken a look at quite a bit
+of information in this walkthrough,
+
+631
+00:51:04.184 --> 00:51:08.423
+both system wide settings and
+user specific settings.
+
+632
+00:51:08.423 --> 00:51:11.518
+There's a lot more to the registry.
+
+633
+00:51:11.518 --> 00:51:15.120
+But this is just a basic
+overview of the Windows registry.

@@ -1,0 +1,166 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:05.194
+In this course, Course Six, we're going to
+be discussing the Windows registry.
+
+2
+00:00:05.194 --> 00:00:09.010
+An overview of this course,
+we're going to understand the purpose and
+
+3
+00:00:09.010 --> 00:00:13.040
+structure of the files that
+make up the Windows registry.
+
+4
+00:00:13.040 --> 00:00:14.914
+We're going to identify and
+
+5
+00:00:14.914 --> 00:00:20.440
+extract important data from both
+the live and the non live registry.
+
+6
+00:00:20.440 --> 00:00:22.498
+We're going to learn how to interpret and
+
+7
+00:00:22.498 --> 00:00:26.040
+understand the data that we
+find in the Windows registry.
+
+8
+00:00:26.040 --> 00:00:30.420
+We're going to learn to locate
+the registry files within the computer's
+
+9
+00:00:30.420 --> 00:00:32.340
+operating system.
+
+10
+00:00:32.340 --> 00:00:35.300
+We're going to examine
+the registry files and
+
+11
+00:00:35.300 --> 00:00:38.590
+locate data significant
+to the investigation.
+
+12
+00:00:38.590 --> 00:00:44.079
+In our first module, we're going to talk
+about the registry overview and history.
+
+13
+00:00:44.079 --> 00:00:48.601
+Microsoft defines the Windows
+registry as a hierarchical database
+
+14
+00:00:48.601 --> 00:00:53.677
+designed to store information that is
+necessary to configure the system for
+
+15
+00:00:53.677 --> 00:00:58.540
+one or more users, applications,
+and hardware devices.
+
+16
+00:00:58.540 --> 00:01:03.759
+The Windows registry replaced
+the old configuration and
+
+17
+00:01:03.759 --> 00:01:12.040
+initialization ini files used in older
+versions of Windows prior to Windows NT.
+
+18
+00:01:12.040 --> 00:01:17.056
+The registry, in my opinion,
+is perhaps one of the most overlooked
+
+19
+00:01:17.056 --> 00:01:22.240
+treasure trove of forensic
+artifacts on a Windows system.
+
+20
+00:01:22.240 --> 00:01:26.280
+It is a great source of both evidence and
+supporting evidence.
+
+21
+00:01:26.280 --> 00:01:31.318
+It's useful in validating our findings
+throughout the investigation.
+
+22
+00:01:31.318 --> 00:01:36.900
+Some of the artifacts that are contained
+within the registry are user information,
+
+23
+00:01:36.900 --> 00:01:41.695
+information specific to each user
+on the system, system information,
+
+24
+00:01:41.695 --> 00:01:44.461
+and application specific information.
+
+25
+00:01:45.940 --> 00:01:51.210
+The registry also acts as a sort of
+log file as it does track the system
+
+26
+00:01:51.210 --> 00:01:57.740
+changes and user created changes
+are also often tracked in the registry.
+
+27
+00:01:57.740 --> 00:02:02.256
+The type of case that you're
+investigating will determine
+
+28
+00:02:02.256 --> 00:02:06.151
+the type of information
+that you're looking for.
+
+29
+00:02:06.151 --> 00:02:07.945
+And this is true not only in the registry,
+
+30
+00:02:07.945 --> 00:02:10.061
+but throughout the entire
+Windows file system.
+
+31
+00:02:11.140 --> 00:02:15.284
+So if you're looking at a fraud or
+harassment or child exploitation case,
+
+32
+00:02:15.284 --> 00:02:20.340
+each of these cases, you'll be looking for
+different types of information.
+
+33
+00:02:20.340 --> 00:02:25.047
+In our next module,
+we're going to talk about the structure of
+
+34
+00:02:25.047 --> 00:02:29.861
+the Windows registry and
+what makes up the Windows registry.

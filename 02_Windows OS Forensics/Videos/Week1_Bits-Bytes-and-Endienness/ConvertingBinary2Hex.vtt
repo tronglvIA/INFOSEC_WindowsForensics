@@ -1,0 +1,463 @@
+WEBVTT
+
+1
+00:00:00.240 --> 00:00:05.861
+Course two Module 2 converting binary
+numbers to hexi decimal numbers.
+
+2
+00:00:07.040 --> 00:00:10.781
+Hexadecimal again is a base 16 numbering.
+
+3
+00:00:10.781 --> 00:00:17.761
+System numbers and letters are used
+to represent zero through 15.
+
+4
+00:00:19.540 --> 00:00:24.761
+Zero through nine are just the digits
+zero through nine, 10 through 15.
+
+5
+00:00:25.840 --> 00:00:31.461
+The numeric values of 10 through 15
+are represented as the letters A to F.
+
+6
+00:00:33.540 --> 00:00:38.940
+Hexadecimal is used as an easier to
+understand representation of binary data.
+
+7
+00:00:38.940 --> 00:00:43.677
+What that means is our tools are not
+going to show us a binary representation
+
+8
+00:00:43.677 --> 00:00:48.140
+of the data because it would
+just be too much to look at.
+
+9
+00:00:48.140 --> 00:00:52.840
+That's why we use hexdecimal
+because it is more compact and
+
+10
+00:00:52.840 --> 00:00:55.661
+much easier to interpret and view.
+
+11
+00:00:57.740 --> 00:01:01.820
+But remember,
+data is not stored on disk in hex.
+
+12
+00:01:01.820 --> 00:01:05.671
+It is stored in binary and
+again, that's either a wonder.
+
+13
+00:01:05.671 --> 00:01:10.240
+Zero, a positive or
+negative charge on the disk itself.
+
+14
+00:01:10.240 --> 00:01:15.323
+Your forensic tools will perform
+the conversion to hex for
+
+15
+00:01:15.323 --> 00:01:18.140
+you to convert by an area to hex.
+
+16
+00:01:18.140 --> 00:01:22.755
+The first thing we want to do is we want
+to split the bite into two nibbles and
+
+17
+00:01:22.755 --> 00:01:26.193
+we talked about bites and
+nipples in our last section.
+
+18
+00:01:26.193 --> 00:01:29.947
+A bite being an eight bit value and
+a nibble being Half a bite,
+
+19
+00:01:29.947 --> 00:01:31.061
+a four bit value.
+
+20
+00:01:32.340 --> 00:01:34.072
+So we would go ahead and
+
+21
+00:01:34.072 --> 00:01:39.040
+in this case in our example we
+have the hexdecimal number five f.
+
+22
+00:01:39.040 --> 00:01:42.340
+So we're going to split that,
+the left and right nipple.
+
+23
+00:01:42.340 --> 00:01:47.461
+The left nipple would be the five and
+the right nibble would be the f.
+
+24
+00:01:49.140 --> 00:01:54.084
+going to take our columns and
+we're going to re
+
+25
+00:01:54.084 --> 00:01:59.029
+weight them Instead of having 1,248,
+
+26
+00:01:59.029 --> 00:02:02.120
+16 32 64 and 1 28.
+
+27
+00:02:02.120 --> 00:02:07.951
+We're going to have columns
+numbered 1248 And 1248.
+
+28
+00:02:09.539 --> 00:02:11.060
+We'll start with the F.
+
+29
+00:02:11.060 --> 00:02:15.240
+We know the numeric value of F is 15.
+
+30
+00:02:15.240 --> 00:02:20.573
+So we're going to go ahead and
+put a one in the eight column,
+
+31
+00:02:20.573 --> 00:02:26.027
+one in the four column and
+a one in the two columns and a one.
+
+32
+00:02:26.027 --> 00:02:31.581
+The one call the numeric
+
+33
+00:02:31.581 --> 00:02:37.340
+value of five is five.
+
+34
+00:02:37.340 --> 00:02:40.904
+So we would have a zero
+in the eight column,
+
+35
+00:02:40.904 --> 00:02:46.851
+a one in the four column 80 in the to
+column and a one in the ones column.
+
+36
+00:02:49.640 --> 00:02:55.061
+And that is how we would convert our
+hex a decibel number to decimate.
+
+37
+00:02:56.940 --> 00:03:02.835
+We would now have to go ahead and
+re wait the columns for
+
+38
+00:03:02.835 --> 00:03:07.814
+each nibble back to
+their original numbers,
+
+39
+00:03:07.814 --> 00:03:12.138
+which again would be 1,2,4,8,
+
+40
+00:03:12.138 --> 00:03:15.561
+16,32, 64, 128.
+
+41
+00:03:18.940 --> 00:03:21.491
+Here we can see our columns are related.
+
+42
+00:03:22.540 --> 00:03:28.440
+We have R one R two or four or
+eight or 16 32 60 four and 1 28.
+
+43
+00:03:28.440 --> 00:03:32.713
+We would again go through
+the same process we
+
+44
+00:03:32.713 --> 00:03:37.332
+did before adding all
+these numbers together,
+
+45
+00:03:37.332 --> 00:03:43.104
+I would add the 64 to 16 plus
+eight plus four plus two plus
+
+46
+00:03:43.104 --> 00:03:50.861
+1 which would convert our hexidecimal
+value back into a decimal Value of 95.
+
+47
+00:03:55.340 --> 00:04:00.599
+Of note is the least significant bit
+is the bit furthest to the right and
+
+48
+00:04:00.599 --> 00:04:06.484
+that would be the ones column in this case
+and the most significant bit is always
+
+49
+00:04:06.484 --> 00:04:13.140
+going to be the bit Further to the left
+and in this case that is the 1/28 column.
+
+50
+00:04:13.140 --> 00:04:16.861
+That will become more important
+as we move through the course.
+
+51
+00:04:19.339 --> 00:04:22.040
+So you can see we have the number 95.
+
+52
+00:04:22.040 --> 00:04:24.461
+We split our two nibbles.
+
+53
+00:04:26.040 --> 00:04:34.340
+We would drop our values down into our
+re rated re weighted columns 84-1.
+
+54
+00:04:34.340 --> 00:04:39.284
+We would have all ones there that
+would give us a total of 15 And
+
+55
+00:04:39.284 --> 00:04:41.840
+15 in Hexi decimal is F.
+
+56
+00:04:41.840 --> 00:04:46.855
+And then we would look to our left
+nipple and we have our columns
+
+57
+00:04:46.855 --> 00:04:51.871
+of 1248 again we would add our
+column values that have ones
+
+58
+00:04:51.871 --> 00:04:58.440
+in them together which would be the four
+And the one and we would get a five.
+
+59
+00:04:58.440 --> 00:05:00.780
+So hexi decimal five f.
+
+60
+00:05:00.780 --> 00:05:04.051
+is decimal 95.
+
+61
+00:05:08.240 --> 00:05:13.291
+Now we're going to take a quick look
+at a decimal value of two bites.
+
+62
+00:05:13.291 --> 00:05:16.140
+And another way to convert it.
+
+63
+00:05:16.140 --> 00:05:21.484
+We talked about decimal hex
+to decimal being A Base
+
+64
+00:05:21.484 --> 00:05:26.575
+16 Numbering System With a column of 016,
+
+65
+00:05:26.575 --> 00:05:29.511
+256 and then 4096.
+
+66
+00:05:29.511 --> 00:05:37.840
+And how this works is the column furthest
+to the right is 16 to the zero power.
+
+67
+00:05:37.840 --> 00:05:42.740
+Next would be 16 to
+the one Which would be 16,
+
+68
+00:05:42.740 --> 00:05:46.564
+16 to the to which would be 256 and
+
+69
+00:05:46.564 --> 00:05:50.641
+16 to 3rd Which would be 4,096.
+
+70
+00:05:52.240 --> 00:05:57.073
+Now we would take our bites and
+
+71
+00:05:57.073 --> 00:06:03.461
+put them in the columns to A and three B.
+
+72
+00:06:06.040 --> 00:06:06.687
+Three B.
+
+73
+00:06:06.687 --> 00:06:09.921
+Being the columns on the left to A.
+
+74
+00:06:09.921 --> 00:06:11.461
+Being the columns to the right.
+
+75
+00:06:13.840 --> 00:06:18.825
+We would multiply three times 4000
+
+76
+00:06:18.825 --> 00:06:23.940
+96 Come up with 12,288.
+
+77
+00:06:23.940 --> 00:06:28.651
+Next we have our hex value
+of B which we know is 11.
+
+78
+00:06:30.240 --> 00:06:35.816
+So we would multiply 11 times 256 and
+
+79
+00:06:35.816 --> 00:06:41.640
+we would get the number of 2816.
+
+80
+00:06:41.640 --> 00:06:46.655
+Next we Would go to our
+16's column 16 to the first
+
+81
+00:06:46.655 --> 00:06:52.461
+power where we have a value of two for
+the two first two and to a.
+
+82
+00:06:53.530 --> 00:06:57.940
+We would multiply 16 times two and
+come up with 32.
+
+83
+00:06:57.940 --> 00:07:04.280
+Now we would go to our column furthest to
+the right which would be our value of A.
+
+84
+00:07:04.280 --> 00:07:09.694
+And we know A in hexidecimal
+decimal number of 10 so
+
+85
+00:07:09.694 --> 00:07:12.910
+16 to the zero power is zero.
+
+86
+00:07:12.910 --> 00:07:14.544
+So we would just have 10.
+
+87
+00:07:14.544 --> 00:07:18.500
+Now we would take all of our numbers and
+add them together.
+
+88
+00:07:18.500 --> 00:07:24.052
+So that is 12 288 plus 2816.
+
+89
+00:07:24.052 --> 00:07:30.991
+For a three A to B for our three B.
+
+90
+00:07:30.991 --> 00:07:39.740
+Excuse me then we would add 32 plus 10 For
+our two a.
+
+91
+00:07:39.740 --> 00:07:45.640
+And we would have a total of 15 146.
+
+92
+00:07:45.640 --> 00:07:51.155
+So the two byte value,
+which would be a word,
+
+93
+00:07:51.155 --> 00:07:58.861
+two bites of hexi decimal
+three B to A is 15,100 and 46.
+
+94
+00:08:00.140 --> 00:08:03.968
+In your path folder there
+are worksheets with
+
+95
+00:08:03.968 --> 00:08:08.601
+hexdecimal two decimal values
+that you can convert and
+
+96
+00:08:08.601 --> 00:08:14.540
+also binary values that you can
+convert from decimal to binary.
+
+97
+00:08:14.540 --> 00:08:19.561
+There's also an answer sheet in there with
+the examples so you can do some practice
+
+98
+00:08:19.561 --> 00:08:25.440
+and make sure you've grasped the concept
+before you move on to the next course.
+
+99
+00:08:25.440 --> 00:08:29.573
+In our next block, we're going to talk
+about negative numbers, how we get
+
+100
+00:08:29.573 --> 00:08:34.050
+a negative number and that's going to
+involve something called a signed integer.

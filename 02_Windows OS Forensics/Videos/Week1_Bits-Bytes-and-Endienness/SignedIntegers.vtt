@@ -1,0 +1,425 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.905
+Course 2, Module 3,
+signed integers.
+
+2
+00:00:04.905 --> 00:00:08.820
+A signed integer is how we would
+
+3
+00:00:08.820 --> 00:00:13.260
+get negative numbers in
+our operating system.
+
+4
+00:00:13.260 --> 00:00:15.045
+We know that we do need
+
+5
+00:00:15.045 --> 00:00:18.435
+negative numbers because
+sometimes we have fragmentation
+
+6
+00:00:18.435 --> 00:00:20.280
+where files for sector may
+
+7
+00:00:20.280 --> 00:00:25.050
+be in front of its
+preceding ones.
+
+8
+00:00:25.050 --> 00:00:26.450
+That's just one example of
+
+9
+00:00:26.450 --> 00:00:27.860
+why you would need
+a negative number.
+
+10
+00:00:27.860 --> 00:00:30.845
+But how do we get
+these negative values?
+
+11
+00:00:30.845 --> 00:00:33.500
+Well, whether a number has
+
+12
+00:00:33.500 --> 00:00:37.985
+the possibility of being a
+positive or a negative number,
+
+13
+00:00:37.985 --> 00:00:40.970
+it being one of these signed
+integers is determined by
+
+14
+00:00:40.970 --> 00:00:42.710
+the operating system code
+
+15
+00:00:42.710 --> 00:00:45.350
+or the programmer
+who wrote that code.
+
+16
+00:00:45.350 --> 00:00:48.700
+These values are what we
+call signed integers.
+
+17
+00:00:48.700 --> 00:00:51.500
+Now, just because it's a
+signed integer doesn't
+
+18
+00:00:51.500 --> 00:00:54.290
+necessarily mean it
+is a negative number.
+
+19
+00:00:54.290 --> 00:00:55.595
+Don't make that mistake.
+
+20
+00:00:55.595 --> 00:00:56.750
+What it means is it has
+
+21
+00:00:56.750 --> 00:00:59.705
+the possibility of being
+a negative number.
+
+22
+00:00:59.705 --> 00:01:01.935
+If a condition is met.
+
+23
+00:01:01.935 --> 00:01:05.630
+That condition is the
+most significant bit.
+
+24
+00:01:05.630 --> 00:01:08.360
+Remember back, I think in
+our last course we talked
+
+25
+00:01:08.360 --> 00:01:10.565
+about the most significant bit
+
+26
+00:01:10.565 --> 00:01:12.560
+is that bit farthest to the left,
+
+27
+00:01:12.560 --> 00:01:15.350
+and the least significant would
+be furthest to the right.
+
+28
+00:01:15.350 --> 00:01:17.765
+If that most significant bit,
+
+29
+00:01:17.765 --> 00:01:21.695
+that furthest to the
+left bit is turned on,
+
+30
+00:01:21.695 --> 00:01:23.770
+meaning there's a
+one in that column.
+
+31
+00:01:23.770 --> 00:01:27.455
+Like we saw when we did
+our binary conversions.
+
+32
+00:01:27.455 --> 00:01:29.495
+If that bit is turned on
+
+33
+00:01:29.495 --> 00:01:32.435
+and you're talking
+about a signed integer,
+
+34
+00:01:32.435 --> 00:01:35.230
+then yes, it is a
+negative number.
+
+35
+00:01:35.230 --> 00:01:38.345
+In order for a signed integer
+to be a negative number,
+
+36
+00:01:38.345 --> 00:01:41.880
+the most significant
+bit must be turned on.
+
+37
+00:01:42.140 --> 00:01:49.110
+Here's an example
+of a number 255.
+
+38
+00:01:49.110 --> 00:01:53.945
+We broke that out into its
+binary representation.
+
+39
+00:01:53.945 --> 00:01:56.050
+You can see that
+the furthest bit,
+
+40
+00:01:56.050 --> 00:01:58.120
+that 128 column for this to
+
+41
+00:01:58.120 --> 00:02:01.480
+the left has a one in
+it and it is turned on.
+
+42
+00:02:01.480 --> 00:02:03.490
+This would be considered
+
+43
+00:02:03.490 --> 00:02:07.310
+a negative number if it
+were a signed integer.
+
+44
+00:02:07.400 --> 00:02:11.135
+Down below, we can
+see a second example.
+
+45
+00:02:11.135 --> 00:02:14.140
+I use the 95 like we
+did the conversion
+
+46
+00:02:14.140 --> 00:02:17.755
+in our last block
+and that number,
+
+47
+00:02:17.755 --> 00:02:20.860
+you could see the
+most significant bit,
+
+48
+00:02:20.860 --> 00:02:24.850
+the 128 column is not turned
+on because 128 will not
+
+49
+00:02:24.850 --> 00:02:28.900
+go into 95.If that
+were a signed integer,
+
+50
+00:02:28.900 --> 00:02:32.540
+that would still be
+a positive number.
+
+51
+00:02:32.540 --> 00:02:36.185
+When we determine the
+actual numeric value
+
+52
+00:02:36.185 --> 00:02:37.670
+of a signed integer,
+
+53
+00:02:37.670 --> 00:02:40.115
+we want to use a tool
+
+54
+00:02:40.115 --> 00:02:42.995
+like data inspector
+or data interpreter.
+
+55
+00:02:42.995 --> 00:02:44.570
+Most of these tools are
+
+56
+00:02:44.570 --> 00:02:46.415
+built into all your
+forensic suite.
+
+57
+00:02:46.415 --> 00:02:48.230
+FTK Imager has one.
+
+58
+00:02:48.230 --> 00:02:51.320
+The tool we're going to use
+throughout this course,
+
+59
+00:02:51.320 --> 00:02:53.930
+active disk editor has one.
+
+60
+00:02:53.930 --> 00:02:56.180
+They are in most of your tools
+
+61
+00:02:56.180 --> 00:02:58.210
+and they're even in free tools.
+
+62
+00:02:58.210 --> 00:02:59.900
+But you don't just put
+
+63
+00:02:59.900 --> 00:03:02.420
+a negative sign in front
+of the positive value,
+
+64
+00:03:02.420 --> 00:03:05.690
+it has a different calculation
+for the negative value.
+
+65
+00:03:05.690 --> 00:03:07.730
+Use a data interpreter or
+
+66
+00:03:07.730 --> 00:03:10.955
+a data inspector or some
+type of data interpreting
+
+67
+00:03:10.955 --> 00:03:12.530
+tool to determine
+
+68
+00:03:12.530 --> 00:03:16.960
+the actual numeric
+value of that number.
+
+69
+00:03:16.960 --> 00:03:19.400
+Now, breaking a
+number all the way
+
+70
+00:03:19.400 --> 00:03:21.200
+out to binary to find out if
+
+71
+00:03:21.200 --> 00:03:25.745
+that last bit is turned on
+is a little bit tiresome.
+
+72
+00:03:25.745 --> 00:03:28.520
+Let's look at this value
+here on our screen.
+
+73
+00:03:28.520 --> 00:03:36.795
+It's 8A, 00,9B,00.The value
+furthest to the left is 8A.
+
+74
+00:03:36.795 --> 00:03:40.570
+If we look at the
+left nibble of eight,
+
+75
+00:03:40.570 --> 00:03:43.175
+if that is a signed integer,
+
+76
+00:03:43.175 --> 00:03:46.955
+and the nibble furthest to
+the left is eight or greater.
+
+77
+00:03:46.955 --> 00:03:49.880
+It will be a negative
+number because
+
+78
+00:03:49.880 --> 00:03:51.680
+that last bit is
+going to be turned
+
+79
+00:03:51.680 --> 00:03:54.170
+on like we saw when we
+did our conversions.
+
+80
+00:03:54.170 --> 00:03:56.255
+If that number is eight,
+
+81
+00:03:56.255 --> 00:03:58.595
+it is going to be
+a negative number,
+
+82
+00:03:58.595 --> 00:04:01.385
+eight or greater on
+the very last nibble.
+
+83
+00:04:01.385 --> 00:04:03.200
+The nibble furthest to the left,
+
+84
+00:04:03.200 --> 00:04:05.570
+the most significant value on
+
+85
+00:04:05.570 --> 00:04:09.250
+a signed integer will mean
+that is a negative number.
+
+86
+00:04:09.250 --> 00:04:11.780
+Because we know that
+last bit is going to be
+
+87
+00:04:11.780 --> 00:04:15.480
+flipped on if that number
+is eight or greater.
+
+88
+00:04:15.970 --> 00:04:18.020
+In our next course,
+
+89
+00:04:18.020 --> 00:04:20.225
+we're going to be talking
+about endianness,
+
+90
+00:04:20.225 --> 00:04:22.550
+how we read our bits
+or data on a disk.
+
+91
+00:04:22.550 --> 00:04:26.520
+This is becoming very important
+throughout the course.

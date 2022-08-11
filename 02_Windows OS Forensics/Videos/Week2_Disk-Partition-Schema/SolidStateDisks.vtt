@@ -1,0 +1,197 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:02.490
+Course 3, module 6.
+
+2
+00:00:02.490 --> 00:00:06.708
+In this module, we're going to
+talk about solid state drives, and
+
+3
+00:00:06.708 --> 00:00:10.861
+some of the ways they differ from
+the traditional spinning disks.
+
+4
+00:00:12.140 --> 00:00:20.240
+Solid state drives do not have cylinders
+or spindles or any moving parts at all.
+
+5
+00:00:20.240 --> 00:00:26.192
+They're made up of NAND flash memory
+chips, and you can see in the slide,
+
+6
+00:00:26.192 --> 00:00:30.608
+see the memory chips,
+we can see the power terminal and
+
+7
+00:00:30.608 --> 00:00:34.840
+the data terminal,
+this is a SATA connection.
+
+8
+00:00:34.840 --> 00:00:41.550
+Solid state drives cannot overwrite
+data like our spinning drives can,
+
+9
+00:00:41.550 --> 00:00:48.150
+so once something is marked as deleted,
+were sent to the recycle pan and
+
+10
+00:00:48.150 --> 00:00:54.040
+no longer in use,
+that area can't simply be overwritten.
+
+11
+00:00:54.040 --> 00:00:59.461
+That area must be white cleaned
+before it can be written to again.
+
+12
+00:01:00.840 --> 00:01:04.350
+And that's different than our
+traditional spinning disks.
+
+13
+00:01:05.840 --> 00:01:09.883
+Data is written to a solid
+state drives called pages, and
+
+14
+00:01:09.883 --> 00:01:14.701
+it's deleted in blocks, and
+blocks are made up of multiple pages.
+
+15
+00:01:14.701 --> 00:01:19.340
+We can think of pages like sectors and
+blocks like clusters.
+
+16
+00:01:19.340 --> 00:01:22.251
+It's not exactly the same, but
+it's a way to think about it.
+
+17
+00:01:23.640 --> 00:01:27.818
+So we're deleting data
+in multiple pages box.
+
+18
+00:01:27.818 --> 00:01:34.767
+Now, a lot of things happen with SSD
+solid state drives behind the scenes,
+
+19
+00:01:34.767 --> 00:01:40.059
+and this happens as soon as
+power is applied to the drive,
+
+20
+00:01:40.059 --> 00:01:44.161
+the user has no control
+on how this happens.
+
+21
+00:01:45.440 --> 00:01:50.540
+Some of the things that happen are wear
+leveling, trim and garbage collection.
+
+22
+00:01:50.540 --> 00:01:55.183
+Now, wear leveling, even it spreads
+out to write across the chips,
+
+23
+00:01:55.183 --> 00:02:00.305
+not to write to the same chip multiple
+times, because each of these chips has
+
+24
+00:02:00.305 --> 00:02:06.140
+a finite amount of writes that it's going
+to be able to do before it goes bad.
+
+25
+00:02:06.140 --> 00:02:11.287
+So by wear leveling, you increase
+the longevity of the drive itself.
+
+26
+00:02:11.287 --> 00:02:18.390
+Trim identifies the areas of the chips
+that are no longer in use and it wipes it.
+
+27
+00:02:18.390 --> 00:02:23.232
+This happens like I said
+behind the scenes, so
+
+28
+00:02:23.232 --> 00:02:29.201
+that's going to change where
+the area of data is stored.
+
+29
+00:02:29.201 --> 00:02:34.025
+Garbage collection actually reorganizes
+the data, putting files that
+
+30
+00:02:34.025 --> 00:02:38.846
+are no longer use or areas of the drives
+that are no more in use on one chip,
+
+31
+00:02:38.846 --> 00:02:42.482
+and taking files from areas
+that are still allocated,
+
+32
+00:02:42.482 --> 00:02:47.251
+that is still in use and moving them
+somewhere else on the drive itself.
+
+33
+00:02:49.140 --> 00:02:52.596
+So it's going to reorganize the data, and
+
+34
+00:02:52.596 --> 00:02:57.881
+then when that happens,
+trim comes through and wipes the chips.
+
+35
+00:02:59.540 --> 00:03:04.640
+So this can change theoretically,
+the hash value of your drive.
+
+36
+00:03:04.640 --> 00:03:06.816
+You just by applying power to it,
+
+37
+00:03:06.816 --> 00:03:11.900
+a write blocker won't stop this from
+happening, there's no way to stop it.
+
+38
+00:03:11.900 --> 00:03:14.851
+It happens as soon as power
+is applied to the disk.
+
+39
+00:03:16.140 --> 00:03:18.950
+So I just want you to be aware of that,
+and
+
+40
+00:03:18.950 --> 00:03:21.861
+that only applies to solid state drives.

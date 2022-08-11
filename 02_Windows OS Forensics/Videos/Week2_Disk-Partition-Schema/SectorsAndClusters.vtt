@@ -1,0 +1,711 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.420
+Course 3, Module 2.
+
+2
+00:00:03.420 --> 00:00:05.550
+In this module,
+we're going to talk
+
+3
+00:00:05.550 --> 00:00:09.250
+about sectors and clusters.
+
+4
+00:00:10.160 --> 00:00:13.965
+Sectors, like we talked
+about in our last section,
+
+5
+00:00:13.965 --> 00:00:18.135
+are formatted during
+low-level formatting.
+
+6
+00:00:18.135 --> 00:00:19.770
+They are written
+to the disk during
+
+7
+00:00:19.770 --> 00:00:21.690
+low-level formatting which is
+
+8
+00:00:21.690 --> 00:00:23.625
+performed by the manufacturer.
+
+9
+00:00:23.625 --> 00:00:25.950
+In order for our
+operating system to be
+
+10
+00:00:25.950 --> 00:00:28.110
+able to read from these sectors,
+
+11
+00:00:28.110 --> 00:00:30.630
+they must have an address for
+
+12
+00:00:30.630 --> 00:00:32.550
+the operating system
+to locate and read
+
+13
+00:00:32.550 --> 00:00:34.740
+and write data to and
+from the sectors.
+
+14
+00:00:34.740 --> 00:00:38.100
+Sectors are also relative
+to the physical disk,
+
+15
+00:00:38.100 --> 00:00:42.865
+which means they can be
+relative to the physical disk,
+
+16
+00:00:42.865 --> 00:00:44.630
+meaning that the disk
+
+17
+00:00:44.630 --> 00:00:47.060
+itself from the
+absolute sector zero,
+
+18
+00:00:47.060 --> 00:00:50.835
+absolute meeting prior
+to the operating system,
+
+19
+00:00:50.835 --> 00:00:53.510
+sectors will have addresses that
+
+20
+00:00:53.510 --> 00:00:56.240
+is relative to the
+physical disk itself
+
+21
+00:00:56.240 --> 00:00:58.640
+and not the volume
+
+22
+00:00:58.640 --> 00:01:02.450
+within the drive itself,
+that physical drive.
+
+23
+00:01:02.450 --> 00:01:05.250
+But we'll talk more about
+that as we go along.
+
+24
+00:01:06.080 --> 00:01:09.410
+Again, this is performed
+by the manufacturer.
+
+25
+00:01:09.410 --> 00:01:13.130
+They are usually
+512 bytes in size.
+
+26
+00:01:13.130 --> 00:01:15.050
+That can vary with
+
+27
+00:01:15.050 --> 00:01:17.390
+advanced format disks
+where then they'll be
+
+28
+00:01:17.390 --> 00:01:20.060
+4,096 bytes in size.
+
+29
+00:01:20.060 --> 00:01:21.390
+But those disks are marked
+
+30
+00:01:21.390 --> 00:01:24.125
+AAF and you will be
+able to recognize them.
+
+31
+00:01:24.125 --> 00:01:27.740
+Sectors are the
+smallest readable unit
+
+32
+00:01:27.740 --> 00:01:31.610
+on a disk and the smallest
+writeable unit on a disk,
+
+33
+00:01:31.610 --> 00:01:34.730
+and that's going to become
+important as we move along.
+
+34
+00:01:34.730 --> 00:01:36.900
+Sector numbering starts at zero,
+
+35
+00:01:36.900 --> 00:01:39.620
+and that's very important to
+remember because when we're
+
+36
+00:01:39.620 --> 00:01:42.330
+locating items on our disk
+
+37
+00:01:42.330 --> 00:01:44.735
+like our partitions
+or a specific file,
+
+38
+00:01:44.735 --> 00:01:46.830
+and we have to calculate
+that numbering,
+
+39
+00:01:46.830 --> 00:01:48.890
+we have to remember
+that it starts at zero,
+
+40
+00:01:48.890 --> 00:01:51.215
+so we must always
+account from zero.
+
+41
+00:01:51.215 --> 00:01:55.405
+Sector numbering can be
+physical or logical.
+
+42
+00:01:55.405 --> 00:01:58.160
+If it's physical, it's usually
+
+43
+00:01:58.160 --> 00:02:00.545
+relating prior to the
+operating system,
+
+44
+00:02:00.545 --> 00:02:03.050
+but it can also be addressed in
+
+45
+00:02:03.050 --> 00:02:05.570
+a physical address or
+a logical address.
+
+46
+00:02:05.570 --> 00:02:07.400
+The physical address
+would be from
+
+47
+00:02:07.400 --> 00:02:09.260
+the start of the disk and
+
+48
+00:02:09.260 --> 00:02:11.120
+the logical address would be from
+
+49
+00:02:11.120 --> 00:02:14.640
+the start of the volume
+or the partition.
+
+50
+00:02:15.160 --> 00:02:17.840
+How are these sectors addressed?
+
+51
+00:02:17.840 --> 00:02:19.370
+Well, we use something called
+
+52
+00:02:19.370 --> 00:02:22.485
+logical block address or an LBA,
+
+53
+00:02:22.485 --> 00:02:26.300
+is what is used on all
+modern hard drives today.
+
+54
+00:02:26.300 --> 00:02:29.480
+When you look at your
+label on your hard drive,
+
+55
+00:02:29.480 --> 00:02:30.740
+as you can see in the diagram on
+
+56
+00:02:30.740 --> 00:02:33.110
+the slide, you can see our disk,
+
+57
+00:02:33.110 --> 00:02:35.285
+we have an LBA, we
+look to the right,
+
+58
+00:02:35.285 --> 00:02:36.980
+highlighted in pink there.
+
+59
+00:02:36.980 --> 00:02:38.800
+We have a number.
+
+60
+00:02:38.800 --> 00:02:41.090
+Now that is the
+logical block address,
+
+61
+00:02:41.090 --> 00:02:42.140
+with status keeping us
+
+62
+00:02:42.140 --> 00:02:45.245
+the total number of
+sectors on the disk.
+
+63
+00:02:45.245 --> 00:02:47.795
+That is the total
+number of sectors.
+
+64
+00:02:47.795 --> 00:02:50.390
+If we wanted to find the
+total number of bytes,
+
+65
+00:02:50.390 --> 00:02:53.900
+we would multiply the LBA
+times our sector size,
+
+66
+00:02:53.900 --> 00:02:55.745
+which is usually going to be 512,
+
+67
+00:02:55.745 --> 00:02:58.160
+and that would give
+us our total number
+
+68
+00:02:58.160 --> 00:03:00.085
+of bytes on the disk.
+
+69
+00:03:00.085 --> 00:03:02.270
+Also on this disk label,
+
+70
+00:03:02.270 --> 00:03:03.350
+we can see a capacity of
+
+71
+00:03:03.350 --> 00:03:05.405
+one terabyte,
+highlighted in blue,
+
+72
+00:03:05.405 --> 00:03:08.225
+we have the serial number
+down here in green,
+
+73
+00:03:08.225 --> 00:03:11.330
+and a model number down
+here highlighted in yellow.
+
+74
+00:03:11.330 --> 00:03:13.790
+These is all important
+information you want to
+
+75
+00:03:13.790 --> 00:03:16.865
+note on your hard drives
+because this serial number
+
+76
+00:03:16.865 --> 00:03:19.790
+is going to be different
+than the serial number
+
+77
+00:03:19.790 --> 00:03:21.260
+on the outside of
+the computer case
+
+78
+00:03:21.260 --> 00:03:23.805
+and you always want
+to make note of that.
+
+79
+00:03:23.805 --> 00:03:26.810
+Like I said, sectors are
+numbered sequentially,
+
+80
+00:03:26.810 --> 00:03:28.429
+so we'll have sector 0,
+
+81
+00:03:28.429 --> 00:03:30.815
+then sector 1, 2, 3, 4,
+
+82
+00:03:30.815 --> 00:03:34.260
+all the way continuing
+to the end of the drive.
+
+83
+00:03:34.820 --> 00:03:38.130
+Legacy addressing
+or cylinder, head,
+
+84
+00:03:38.130 --> 00:03:41.250
+sector, CHS addressing
+is no longer used.
+
+85
+00:03:41.250 --> 00:03:43.400
+This was relative to
+
+86
+00:03:43.400 --> 00:03:45.620
+the structure of the
+physical drive itself.
+
+87
+00:03:45.620 --> 00:03:47.330
+It took into account
+the number of
+
+88
+00:03:47.330 --> 00:03:49.580
+cylinders, heads, and sectors.
+
+89
+00:03:49.580 --> 00:03:51.890
+We looked at cylinders
+
+90
+00:03:51.890 --> 00:03:54.290
+and heads when we looked
+at the physical structure,
+
+91
+00:03:54.290 --> 00:03:57.775
+that is layout, in
+our previous module.
+
+92
+00:03:57.775 --> 00:04:00.980
+This was relative to the
+physical structure of the drive,
+
+93
+00:04:00.980 --> 00:04:04.370
+but it was limited
+to 8.2 gigabytes,
+
+94
+00:04:04.370 --> 00:04:07.310
+and most modern drives
+are going to be much
+
+95
+00:04:07.310 --> 00:04:11.365
+larger than 8.2 gigabytes.
+
+96
+00:04:11.365 --> 00:04:14.390
+This also has to do with
+the number of bytes
+
+97
+00:04:14.390 --> 00:04:16.850
+available to address the sectors,
+
+98
+00:04:16.850 --> 00:04:20.750
+only allowed us to address
+up to 8.2 gigabytes.
+
+99
+00:04:20.750 --> 00:04:22.430
+We're going to talk
+more about sector
+
+100
+00:04:22.430 --> 00:04:25.855
+addressing as we go
+through this course.
+
+101
+00:04:25.855 --> 00:04:28.590
+Clusters. Clusters,
+like we learned,
+
+102
+00:04:28.590 --> 00:04:30.155
+were a group of sectors,
+
+103
+00:04:30.155 --> 00:04:33.085
+and these are written during
+high-level of formatting.
+
+104
+00:04:33.085 --> 00:04:34.790
+When we format a drive,
+
+105
+00:04:34.790 --> 00:04:37.955
+we have the option to
+set the cluster size
+
+106
+00:04:37.955 --> 00:04:41.575
+or it can be set automatically
+by the operating system.
+
+107
+00:04:41.575 --> 00:04:44.840
+Cluster size will vary
+with the size of the disk.
+
+108
+00:04:44.840 --> 00:04:48.230
+The larger the disk, usually
+the larger the cluster size.
+
+109
+00:04:48.230 --> 00:04:50.090
+The most common cluster size
+
+110
+00:04:50.090 --> 00:04:52.160
+you're going to see
+is eight sectors,
+
+111
+00:04:52.160 --> 00:04:55.505
+but it does vary with
+the size of the disk.
+
+112
+00:04:55.505 --> 00:04:59.270
+Cluster numbering starts at one,
+
+113
+00:04:59.270 --> 00:05:00.980
+not zero, like sectors.
+
+114
+00:05:00.980 --> 00:05:03.340
+Cluster numerating starts at one.
+
+115
+00:05:03.340 --> 00:05:05.060
+Clusters are going to be
+
+116
+00:05:05.060 --> 00:05:07.675
+relative to the
+partition of the volume,
+
+117
+00:05:07.675 --> 00:05:09.160
+to that drive letter.
+
+118
+00:05:09.160 --> 00:05:11.480
+Cluster of one would
+start at the beginning,
+
+119
+00:05:11.480 --> 00:05:12.590
+say of our C drive,
+
+120
+00:05:12.590 --> 00:05:14.300
+for example, not at
+
+121
+00:05:14.300 --> 00:05:16.565
+the beginning of the
+physical disk itself.
+
+122
+00:05:16.565 --> 00:05:18.800
+They are relative to the volume.
+
+123
+00:05:18.800 --> 00:05:23.330
+Clusters are the
+smallest allocable unit.
+
+124
+00:05:23.330 --> 00:05:26.465
+What that means is when
+you write a file to disk,
+
+125
+00:05:26.465 --> 00:05:29.600
+the operating system saves a
+certain amount of space for
+
+126
+00:05:29.600 --> 00:05:33.970
+that file and it's going
+to save it in clusters.
+
+127
+00:05:33.970 --> 00:05:37.380
+It's going to save, say,
+two clusters for that file.
+
+128
+00:05:37.380 --> 00:05:40.650
+It can't save 1.5 or
+one and a quarter,
+
+129
+00:05:40.650 --> 00:05:43.185
+it has to save by full clusters.
+
+130
+00:05:43.185 --> 00:05:47.495
+So there will be
+leftover space usually
+
+131
+00:05:47.495 --> 00:05:49.100
+because most files
+aren't going to be
+
+132
+00:05:49.100 --> 00:05:52.310
+exactly the same size
+as the clusters.
+
+133
+00:05:52.310 --> 00:05:54.725
+They won't usually end
+on a cluster boundary.
+
+134
+00:05:54.725 --> 00:05:56.660
+We'll talk more about
+that space that's
+
+135
+00:05:56.660 --> 00:05:59.370
+left over as we go
+through this path.
+
+136
+00:05:59.420 --> 00:06:02.305
+Unpartitioned space.
+
+137
+00:06:02.305 --> 00:06:04.820
+This is space that is going to
+
+138
+00:06:04.820 --> 00:06:07.760
+be prior to the start
+of the logical volume.
+
+139
+00:06:07.760 --> 00:06:11.180
+Before my C drive
+actually starts,
+
+140
+00:06:11.180 --> 00:06:12.230
+there is space on
+
+141
+00:06:12.230 --> 00:06:15.140
+my physical disk prior
+to that logical volume,
+
+142
+00:06:15.140 --> 00:06:18.365
+then that is considered
+unpartitioned space.
+
+143
+00:06:18.365 --> 00:06:21.170
+That's going to be addressed
+in sectors and it's
+
+144
+00:06:21.170 --> 00:06:24.460
+going to be relative to
+the physical disk itself.
+
+145
+00:06:24.460 --> 00:06:26.690
+What we're going to find
+here is usually like
+
+146
+00:06:26.690 --> 00:06:28.760
+our master boot
+record, our boot code,
+
+147
+00:06:28.760 --> 00:06:31.640
+our partition tables and
+we're not going to have
+
+148
+00:06:31.640 --> 00:06:35.155
+cluster addressing in this area.
+
+149
+00:06:35.155 --> 00:06:37.290
+In our next module,
+
+150
+00:06:37.290 --> 00:06:39.830
+we are going to go ahead
+and learn how to use
+
+151
+00:06:39.830 --> 00:06:42.320
+active disk editor so we can take
+
+152
+00:06:42.320 --> 00:06:44.645
+a look at these data
+structures on disk
+
+153
+00:06:44.645 --> 00:06:48.270
+and get a better look into
+what we're talking about.

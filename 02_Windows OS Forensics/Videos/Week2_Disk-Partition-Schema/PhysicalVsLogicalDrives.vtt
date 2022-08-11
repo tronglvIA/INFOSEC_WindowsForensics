@@ -1,0 +1,339 @@
+WEBVTT
+
+1
+00:00:00.040 --> 00:00:04.140
+Course three disk partition schemas.
+
+2
+00:00:04.140 --> 00:00:11.051
+Throughout this course we're going to take
+a look at the logical and physical drives.
+
+3
+00:00:12.140 --> 00:00:16.416
+I don't understand why we need to
+know the difference between those and
+
+4
+00:00:16.416 --> 00:00:17.921
+how that will impact us.
+
+5
+00:00:17.921 --> 00:00:22.869
+During a forensic investigation,
+we're going to take a look at sectors and
+
+6
+00:00:22.869 --> 00:00:24.240
+clusters.
+
+7
+00:00:24.240 --> 00:00:28.692
+We're going to come to understand how to
+recognize those structures on disks and
+
+8
+00:00:28.692 --> 00:00:30.440
+what they mean to us.
+
+9
+00:00:30.440 --> 00:00:33.341
+I'm going to look at different
+partitioning methods,
+
+10
+00:00:33.341 --> 00:00:36.180
+mainly would petition table and
+master boot record and
+
+11
+00:00:36.180 --> 00:00:39.961
+we're going to learn how to locate
+the partitions by reading the table.
+
+12
+00:00:41.040 --> 00:00:44.122
+We're going to learn how to recognize
+the data structures such as
+
+13
+00:00:44.122 --> 00:00:47.170
+what is in the master boot record
+in the master partition table.
+
+14
+00:00:47.170 --> 00:00:52.213
+Also the partition table and we're going
+to learn how to identify different
+
+15
+00:00:52.213 --> 00:00:56.703
+types of file systems by looking
+at the data structures Mulele one,
+
+16
+00:00:56.703 --> 00:01:00.564
+we're going to talk about logical and
+physical drives and
+
+17
+00:01:00.564 --> 00:01:04.061
+what the differences are and
+how we recognize that.
+
+18
+00:01:05.239 --> 00:01:09.161
+We're going to talk about the components
+of the physical hard drive.
+
+19
+00:01:11.840 --> 00:01:15.682
+Well, our physical drive,
+our regular spitting disk is encased and
+
+20
+00:01:15.682 --> 00:01:20.052
+underneath the case, if we were to take
+that apart, we could see some platters
+
+21
+00:01:20.052 --> 00:01:23.940
+would seek a spindle in the middle
+which spins the platters.
+
+22
+00:01:23.940 --> 00:01:28.656
+We would see some heads that go back and
+forth across the disk and write and
+
+23
+00:01:28.656 --> 00:01:31.979
+read data to and from the disk and
+the actuator arm,
+
+24
+00:01:31.979 --> 00:01:37.261
+which is what aligns the heads and moves
+them back and forth across the platters.
+
+25
+00:01:39.140 --> 00:01:41.422
+This is a view of a physical disk and
+
+26
+00:01:41.422 --> 00:01:44.963
+you can see the platters look
+kind of like a CD or DVD and
+
+27
+00:01:44.963 --> 00:01:49.490
+in the middle we have our spindles and
+then we have the actuator arm.
+
+28
+00:01:49.490 --> 00:01:51.861
+And at the end of the actuator
+arm we have the head.
+
+29
+00:01:53.040 --> 00:01:57.741
+Now when we look at the platters, The
+first platter is known as platter zero.
+
+30
+00:01:57.741 --> 00:02:02.561
+That would be the one on top,
+the side facing upward towards us,
+
+31
+00:02:02.561 --> 00:02:07.340
+With besides zero,
+the bottom of that would beside one.
+
+32
+00:02:07.340 --> 00:02:11.960
+And then underneath that the next platter
+would be known as platter one And
+
+33
+00:02:11.960 --> 00:02:14.269
+its top side, it's side facing up,
+
+34
+00:02:14.269 --> 00:02:18.740
+would be side to the side facing
+down would be site three.
+
+35
+00:02:18.740 --> 00:02:24.025
+The heads worked in much the same way the
+top head would behead zero on the first
+
+36
+00:02:24.025 --> 00:02:29.340
+platter, her head on the bottom of
+platter, zero would behead one.
+
+37
+00:02:29.340 --> 00:02:33.564
+Then going down to platter,
+one would have had to on The top and
+
+38
+00:02:33.564 --> 00:02:35.940
+head three on the bottom.
+
+39
+00:02:35.940 --> 00:02:39.812
+We want to talk about the logical
+structure is what we just talked about was
+
+40
+00:02:39.812 --> 00:02:41.700
+the physical layout of a spitting.
+
+41
+00:02:41.700 --> 00:02:47.440
+A traditional hard drive, not an SSD,
+but a regular spinning drive.
+
+42
+00:02:47.440 --> 00:02:51.326
+What we're going to talk about now is
+going to talk about the logical structures
+
+43
+00:02:51.326 --> 00:02:54.470
+on that drive first I want to talk
+about is low level formatting.
+
+44
+00:02:54.470 --> 00:02:59.640
+This is laying down the tracks and
+sectors on the surface of the hardest.
+
+45
+00:02:59.640 --> 00:03:01.808
+This is done at the manufacturer's,
+
+46
+00:03:01.808 --> 00:03:06.161
+it's not something you would have control
+over as a user when you buy a disk.
+
+47
+00:03:06.161 --> 00:03:10.440
+It comes with the tracks and
+sectors already laid down on it.
+
+48
+00:03:10.440 --> 00:03:15.336
+Now a track is the centric circle
+that goes around the disk and
+
+49
+00:03:15.336 --> 00:03:20.440
+you can see it represented our
+diagram there as a white circle.
+
+50
+00:03:20.440 --> 00:03:25.944
+Those would be considered the tracks,
+they're smaller in the middle and
+
+51
+00:03:25.944 --> 00:03:31.180
+as you get out towards the edge of
+the disk, they become larger sectors
+
+52
+00:03:31.180 --> 00:03:35.881
+are I like to think of them as
+little pie pieces, you can see them
+
+53
+00:03:35.881 --> 00:03:41.540
+represented there in the yellow and
+they are wedges within the disk.
+
+54
+00:03:41.540 --> 00:03:46.240
+So a sector could take up
+many tracks within it.
+
+55
+00:03:46.240 --> 00:03:51.280
+But the sector is just a little pipi
+slice of the disk in what you want
+
+56
+00:03:51.280 --> 00:03:56.740
+to remember is is the smallest
+muted of storage on the platter.
+
+57
+00:03:56.740 --> 00:04:01.331
+The sector is the smallest unit
+unit of storage on the platter And
+
+58
+00:04:01.331 --> 00:04:04.231
+they're usually 512 bytes in size.
+
+59
+00:04:04.231 --> 00:04:06.351
+And we'll talk more about
+that as we go through.
+
+60
+00:04:07.440 --> 00:04:12.204
+Now, a cluster is a group of sectors,
+is the easiest way to explain that and
+
+61
+00:04:12.204 --> 00:04:17.495
+that is something that is done during high
+level formatting and talk more about that
+
+62
+00:04:17.495 --> 00:04:23.240
+in the next section, but they can vary in
+size depending on the size of your disk.
+
+63
+00:04:23.240 --> 00:04:24.621
+What you want to remember about.
+
+64
+00:04:24.621 --> 00:04:27.761
+A cluster is a cluster has
+to do with allocation.
+
+65
+00:04:29.240 --> 00:04:31.800
+A cluster is used to store data.
+
+66
+00:04:31.800 --> 00:04:35.660
+It's the area we assign to store.
+
+67
+00:04:35.660 --> 00:04:36.170
+Data.
+
+68
+00:04:36.170 --> 00:04:38.011
+Data is stored in clusters.
+
+69
+00:04:38.011 --> 00:04:40.501
+It's allocated or stored in clusters.
+
+70
+00:04:43.840 --> 00:04:45.161
+In our next module.
+
+71
+00:04:46.540 --> 00:04:49.961
+We're going to talk more about sectors and
+clusters.

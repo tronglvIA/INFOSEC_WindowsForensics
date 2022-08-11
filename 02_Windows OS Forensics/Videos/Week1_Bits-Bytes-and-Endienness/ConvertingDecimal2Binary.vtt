@@ -1,0 +1,655 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:01.380
+In this section,
+we're going to talk
+
+2
+00:00:01.380 --> 00:00:04.185
+about bits, bytes,
+and endianness.
+
+3
+00:00:04.185 --> 00:00:08.820
+We're going to talk about how
+data is laid out on disk,
+
+4
+00:00:08.820 --> 00:00:10.860
+how your tools are reading
+
+5
+00:00:10.860 --> 00:00:14.040
+that data to give you the
+results that they do,
+
+6
+00:00:14.040 --> 00:00:16.650
+and how we would go
+look at that data in
+
+7
+00:00:16.650 --> 00:00:20.799
+its native format to
+validate our tools.
+
+8
+00:00:21.470 --> 00:00:26.190
+Our core concepts, what
+we want to understand,
+
+9
+00:00:26.190 --> 00:00:28.190
+is we want to understand that how
+
+10
+00:00:28.190 --> 00:00:30.275
+the data is stored on the disk.
+
+11
+00:00:30.275 --> 00:00:35.110
+We want to be able to recognize
+data and data patterns.
+
+12
+00:00:35.110 --> 00:00:36.650
+We want to understand how
+
+13
+00:00:36.650 --> 00:00:38.870
+the operating system interprets
+
+14
+00:00:38.870 --> 00:00:41.165
+this data and shows it to us.
+
+15
+00:00:41.165 --> 00:00:44.495
+We want to be able to read
+the data like I said,
+
+16
+00:00:44.495 --> 00:00:46.070
+the way it is stored on
+
+17
+00:00:46.070 --> 00:00:50.730
+disk so we can interpret it
+the way that our tools would.
+
+18
+00:00:50.930 --> 00:00:53.195
+What I want you to
+come away with,
+
+19
+00:00:53.195 --> 00:00:54.875
+the learning objectives are,
+
+20
+00:00:54.875 --> 00:00:56.315
+I want you to understand
+
+21
+00:00:56.315 --> 00:00:57.950
+the different numbering
+systems that we're going to
+
+22
+00:00:57.950 --> 00:01:02.300
+use in computer forensics,
+computer science.
+
+23
+00:01:02.300 --> 00:01:04.280
+We're going to talk
+about decimal,
+
+24
+00:01:04.280 --> 00:01:05.450
+which we all know decimal,
+
+25
+00:01:05.450 --> 00:01:06.905
+that's the one we use every day.
+
+26
+00:01:06.905 --> 00:01:08.990
+That's a base 10
+numbering system.
+
+27
+00:01:08.990 --> 00:01:10.385
+We have our ones column,
+
+28
+00:01:10.385 --> 00:01:11.510
+our tens column, our
+
+29
+00:01:11.510 --> 00:01:13.570
+hundreds column, our
+thousand column.
+
+30
+00:01:13.570 --> 00:01:15.365
+We're going to talk about binary,
+
+31
+00:01:15.365 --> 00:01:17.630
+which is a base 2
+numbering system,
+
+32
+00:01:17.630 --> 00:01:22.945
+which would be one,
+and then 2, 4, 8, 16,
+
+33
+00:01:22.945 --> 00:01:24.675
+continuing down the line,
+
+34
+00:01:24.675 --> 00:01:26.615
+and we're going to talk
+about hexadecimal,
+
+35
+00:01:26.615 --> 00:01:30.665
+which is a base 16 numbering
+system, which goes 0,
+
+36
+00:01:30.665 --> 00:01:36.030
+16, 32, 64, 128, etc.
+
+37
+00:01:36.110 --> 00:01:38.315
+We're also going to talk about
+
+38
+00:01:38.315 --> 00:01:41.600
+endianness, big-endian
+versus little-endian.
+
+39
+00:01:41.600 --> 00:01:44.750
+This talks about how we
+read the data on the disk,
+
+40
+00:01:44.750 --> 00:01:47.680
+which direction, left to
+right or right to left.
+
+41
+00:01:47.680 --> 00:01:50.015
+We're going to talk
+about signed integers,
+
+42
+00:01:50.015 --> 00:01:53.000
+and this is how we
+get negative numbers.
+
+43
+00:01:53.000 --> 00:01:56.150
+We're going to talk about
+hexadecimal and how to convert
+
+44
+00:01:56.150 --> 00:02:00.705
+it to a decimal number
+or a binary number.
+
+45
+00:02:00.705 --> 00:02:02.610
+We're going to talk
+about pact bytes,
+
+46
+00:02:02.610 --> 00:02:04.955
+we're going to talk about
+bits, bytes, and nybbles.
+
+47
+00:02:04.955 --> 00:02:07.400
+We're going to talk about
+flags, file attributes,
+
+48
+00:02:07.400 --> 00:02:10.950
+registry values,
+dates, and times.
+
+49
+00:02:12.290 --> 00:02:14.990
+Our first module,
+we're going to talk
+
+50
+00:02:14.990 --> 00:02:17.330
+about converting
+decimal to binary.
+
+51
+00:02:17.330 --> 00:02:18.935
+What is binary?
+
+52
+00:02:18.935 --> 00:02:22.090
+Binary is actually how the
+data is stored on your disk.
+
+53
+00:02:22.090 --> 00:02:25.385
+Your data is not stored
+in hex on the hard drive,
+
+54
+00:02:25.385 --> 00:02:27.155
+it is stored in binary.
+
+55
+00:02:27.155 --> 00:02:30.365
+In binary we only have
+two possible values,
+
+56
+00:02:30.365 --> 00:02:33.660
+a one or a zero,
+there's nothing else.
+
+57
+00:02:34.040 --> 00:02:38.595
+Bit is one binary digit.
+
+58
+00:02:38.595 --> 00:02:43.445
+A nybble is four
+bits or half a byte.
+
+59
+00:02:43.445 --> 00:02:46.025
+Because there's eight
+bits in a byte.
+
+60
+00:02:46.025 --> 00:02:49.955
+A nybble has a
+possibility of 16 values.
+
+61
+00:02:49.955 --> 00:02:53.255
+A byte, I just gave it
+away is eight bits,
+
+62
+00:02:53.255 --> 00:02:57.359
+and that has 256 possible values.
+
+63
+00:02:57.370 --> 00:03:00.530
+Two bytes is called a word,
+
+64
+00:03:00.530 --> 00:03:03.290
+and that has 16 bits,
+
+65
+00:03:03.290 --> 00:03:09.645
+two bytes, and that has
+65,536 possible values.
+
+66
+00:03:09.645 --> 00:03:13.145
+You see how the more
+bits and bytes we have,
+
+67
+00:03:13.145 --> 00:03:16.315
+the more possible values we have.
+
+68
+00:03:16.315 --> 00:03:20.135
+Next, we have what's called
+the double word or dword.
+
+69
+00:03:20.135 --> 00:03:21.815
+This is four bytes long,
+
+70
+00:03:21.815 --> 00:03:24.709
+which means it's 8 times 4 is 32,
+
+71
+00:03:24.709 --> 00:03:27.070
+so it's 32 bits.
+
+72
+00:03:27.070 --> 00:03:29.150
+You could see on
+the screen it has
+
+73
+00:03:29.150 --> 00:03:31.535
+quite a large number
+of possible values.
+
+74
+00:03:31.535 --> 00:03:35.305
+Next, we go up to what's
+called a quadword.
+
+75
+00:03:35.305 --> 00:03:38.685
+A quadword is 64 bits.
+
+76
+00:03:38.685 --> 00:03:41.535
+A quadword is eight bytes long.
+
+77
+00:03:41.535 --> 00:03:43.575
+It's a quadruple word,
+
+78
+00:03:43.575 --> 00:03:45.780
+so it's double a double word.
+
+79
+00:03:45.780 --> 00:03:49.065
+Instead of four bytes,
+it has eight bytes.
+
+80
+00:03:49.065 --> 00:03:53.900
+You can see as the number
+of bytes we have go up,
+
+81
+00:03:53.900 --> 00:03:56.560
+the possible values go up.
+
+82
+00:03:56.560 --> 00:03:59.030
+This would be one reason
+why you want to have
+
+83
+00:03:59.030 --> 00:04:01.415
+at least an eight-digit password.
+
+84
+00:04:01.415 --> 00:04:03.860
+Because it would be a
+lot harder to crack that
+
+85
+00:04:03.860 --> 00:04:05.270
+many possible values than
+
+86
+00:04:05.270 --> 00:04:08.725
+say if you had a
+four-digit password.
+
+87
+00:04:08.725 --> 00:04:10.840
+You can see the drastic change in
+
+88
+00:04:10.840 --> 00:04:14.965
+possible values you have
+from dword to qword.
+
+89
+00:04:14.965 --> 00:04:17.450
+Now, we talked about decimal
+
+90
+00:04:17.450 --> 00:04:20.375
+being a base 10 numbering system.
+
+91
+00:04:20.375 --> 00:04:23.045
+On the screen, you can see
+we have our ones, tens,
+
+92
+00:04:23.045 --> 00:04:24.200
+hundreds, thousands,
+
+93
+00:04:24.200 --> 00:04:26.620
+ten thousands, hundred
+thousands column.
+
+94
+00:04:26.620 --> 00:04:31.190
+Binary is a base 2
+numbering system.
+
+95
+00:04:31.190 --> 00:04:34.805
+Again, only two
+choices on or off.
+
+96
+00:04:34.805 --> 00:04:39.260
+With that same number, 11,111,
+
+97
+00:04:39.260 --> 00:04:44.880
+you can see it there
+represented in decimal base 10,
+
+98
+00:04:44.880 --> 00:04:48.655
+we can see it down below
+represented in binary.
+
+99
+00:04:48.655 --> 00:04:53.675
+Converting the decimal
+number 95 to binary.
+
+100
+00:04:53.675 --> 00:04:55.970
+The first thing we
+would have to do
+
+101
+00:04:55.970 --> 00:04:59.075
+is we would write out
+our column values.
+
+102
+00:04:59.075 --> 00:05:01.790
+Again, we would
+need eight columns,
+
+103
+00:05:01.790 --> 00:05:03.260
+eight bits in a byte.
+
+104
+00:05:03.260 --> 00:05:05.120
+We have our ones our twos,
+
+105
+00:05:05.120 --> 00:05:06.620
+our fours, our eights,
+
+106
+00:05:06.620 --> 00:05:08.435
+our 16s, our 32s,
+
+107
+00:05:08.435 --> 00:05:11.345
+our 64s, and our 128s.
+
+108
+00:05:11.345 --> 00:05:14.750
+Now, the next thing
+you would have to
+
+109
+00:05:14.750 --> 00:05:17.375
+do is you would take
+
+110
+00:05:17.375 --> 00:05:20.030
+the highest column value
+
+111
+00:05:20.030 --> 00:05:23.180
+that will go into the number
+we're trying to convert.
+
+112
+00:05:23.180 --> 00:05:25.430
+In this case, it is 95,
+
+113
+00:05:25.430 --> 00:05:28.730
+so 128 will not go into 95,
+
+114
+00:05:28.730 --> 00:05:31.795
+so we would put a zero
+in the 128 column.
+
+115
+00:05:31.795 --> 00:05:34.665
+Sixty-four will go into 95,
+
+116
+00:05:34.665 --> 00:05:36.465
+so we would put a one there.
+
+117
+00:05:36.465 --> 00:05:41.870
+We would then
+subtract 64 from 95,
+
+118
+00:05:41.870 --> 00:05:45.269
+which would give us
+a remainder of 31.
+
+119
+00:05:45.320 --> 00:05:48.030
+Thirty-two cannot go into
+
+120
+00:05:48.030 --> 00:05:51.495
+31 so we put a zero
+in the 32 column.
+
+121
+00:05:51.495 --> 00:05:54.900
+Sixteen will go into 31,
+
+122
+00:05:54.900 --> 00:05:58.265
+so we would put a one in
+that column, and again,
+
+123
+00:05:58.265 --> 00:06:03.440
+we would subtract 16 from 31.
+
+124
+00:06:03.440 --> 00:06:05.930
+When we subtract 16 from 31,
+
+125
+00:06:05.930 --> 00:06:08.430
+we get a remainder of 15.
+
+126
+00:06:09.160 --> 00:06:11.794
+Eight will go into 15,
+
+127
+00:06:11.794 --> 00:06:14.305
+so we would put a one
+in the eight-column,
+
+128
+00:06:14.305 --> 00:06:16.130
+and then we would go ahead and
+
+129
+00:06:16.130 --> 00:06:18.680
+subtract and we get a
+remainder of seven.
+
+130
+00:06:18.680 --> 00:06:20.645
+Four will go into seven
+
+131
+00:06:20.645 --> 00:06:22.925
+so we would put a one
+in the fours column.
+
+132
+00:06:22.925 --> 00:06:26.650
+Again we would subtract 4 from 7,
+
+133
+00:06:26.650 --> 00:06:28.925
+which would give us a
+remainder of three.
+
+134
+00:06:28.925 --> 00:06:31.820
+Two will go into three with
+
+135
+00:06:31.820 --> 00:06:34.770
+a remainder of one and
+one will go into one.
+
+136
+00:06:34.770 --> 00:06:38.060
+Now, once we have all our
+values in our columns,
+
+137
+00:06:38.060 --> 00:06:40.130
+we would add those numbers up.
+
+138
+00:06:40.130 --> 00:06:42.830
+Every column with a
+one we would add.
+
+139
+00:06:42.830 --> 00:06:47.790
+We add 64 plus 16, plus 8,
+
+140
+00:06:47.790 --> 00:06:50.655
+plus 4, plus 2,
+
+141
+00:06:50.655 --> 00:06:55.020
+plus 1, which gives
+us a total of 95.
+
+142
+00:06:55.020 --> 00:06:58.655
+In our next module, Module 2,
+
+143
+00:06:58.655 --> 00:06:59.900
+we're going to talk about
+
+144
+00:06:59.900 --> 00:07:03.510
+converting binary to hexadecimal.

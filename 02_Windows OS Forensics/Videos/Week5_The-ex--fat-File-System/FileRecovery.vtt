@@ -1,0 +1,1116 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:02.790
+We're talking about
+the exFAT file system
+
+2
+00:00:02.790 --> 00:00:04.335
+here in Course 10,
+
+3
+00:00:04.335 --> 00:00:06.945
+and in this module, module 5,
+
+4
+00:00:06.945 --> 00:00:10.425
+we're going to talk about
+exFAT file recovery.
+
+5
+00:00:10.425 --> 00:00:12.915
+To recover files in exFAT,
+
+6
+00:00:12.915 --> 00:00:15.000
+we would be looking for
+
+7
+00:00:15.000 --> 00:00:18.225
+those directories that
+were marked as not
+
+8
+00:00:18.225 --> 00:00:19.980
+in use because if we can
+
+9
+00:00:19.980 --> 00:00:23.175
+find those unallocated
+directories,
+
+10
+00:00:23.175 --> 00:00:24.930
+we can get all the information we
+
+11
+00:00:24.930 --> 00:00:27.135
+need to recover the files.
+
+12
+00:00:27.135 --> 00:00:30.935
+So we would search for
+directory entries with
+
+13
+00:00:30.935 --> 00:00:35.750
+the directory entry
+flags set at not in use.
+
+14
+00:00:35.750 --> 00:00:39.620
+We would also search not
+only in the root directory,
+
+15
+00:00:39.620 --> 00:00:42.575
+but also in some
+unallocated clusters,
+
+16
+00:00:42.575 --> 00:00:45.935
+you would search
+unallocated space disk wide
+
+17
+00:00:45.935 --> 00:00:49.895
+to find those directory entries.
+
+18
+00:00:49.895 --> 00:00:53.510
+Remember, if the parent
+folder is deleted,
+
+19
+00:00:53.510 --> 00:00:58.025
+the child entries are
+going to remain unchanged.
+
+20
+00:00:58.025 --> 00:01:03.620
+We would locate the directory
+entry set and we would use
+
+21
+00:01:03.620 --> 00:01:05.540
+the information contained in
+
+22
+00:01:05.540 --> 00:01:07.640
+the directory entry set to
+
+23
+00:01:07.640 --> 00:01:10.705
+recover the file
+using file carving.
+
+24
+00:01:10.705 --> 00:01:12.670
+We'd have the file name,
+
+25
+00:01:12.670 --> 00:01:16.159
+the file size and the
+starting cluster.
+
+26
+00:01:16.159 --> 00:01:19.070
+You could also file curve,
+
+27
+00:01:19.070 --> 00:01:20.780
+which we're going
+to cover later in
+
+28
+00:01:20.780 --> 00:01:24.200
+this path for the file header.
+
+29
+00:01:24.200 --> 00:01:27.185
+If you knew the type of file
+that you were looking for,
+
+30
+00:01:27.185 --> 00:01:30.500
+like a JPEG or a
+document or a PDF.
+
+31
+00:01:30.500 --> 00:01:33.500
+We'll talk about that when
+we cover some file headers
+
+32
+00:01:33.500 --> 00:01:36.785
+and carving later
+on in this path.
+
+33
+00:01:36.785 --> 00:01:39.535
+We're going to do a little
+bit of a walk-through,
+
+34
+00:01:39.535 --> 00:01:42.305
+and I'm going to show you
+how you would go about
+
+35
+00:01:42.305 --> 00:01:45.895
+carving a file using
+the directory entry.
+
+36
+00:01:45.895 --> 00:01:48.300
+The items we're going to need,
+
+37
+00:01:48.300 --> 00:01:50.720
+we are going to need
+active disk editor
+
+38
+00:01:50.720 --> 00:01:53.510
+and our exFAT VHD.
+
+39
+00:01:53.510 --> 00:01:55.265
+We're going to search for
+
+40
+00:01:55.265 --> 00:01:57.440
+unallocated directory entries and
+
+41
+00:01:57.440 --> 00:01:59.320
+then we're going to
+use that information.
+
+42
+00:01:59.320 --> 00:02:02.345
+I'm going to show you how
+we would carve the file.
+
+43
+00:02:02.345 --> 00:02:06.540
+So let's get started
+on our walk-through.
+
+44
+00:02:06.790 --> 00:02:09.845
+Let's get started
+with our walk-through
+
+45
+00:02:09.845 --> 00:02:12.440
+of the exFAT file recovery.
+
+46
+00:02:12.440 --> 00:02:14.645
+The first thing we
+need to do is mount
+
+47
+00:02:14.645 --> 00:02:18.080
+our exFAT virtual hard drive.
+
+48
+00:02:18.080 --> 00:02:20.870
+We're going to go
+into disk management.
+
+49
+00:02:20.870 --> 00:02:25.405
+We're going to go to
+''Actions'', attach VHD.
+
+50
+00:02:25.405 --> 00:02:26.930
+We're going to browse to where
+
+51
+00:02:26.930 --> 00:02:29.330
+VHD is saved on our computer.
+
+52
+00:02:29.330 --> 00:02:32.195
+We're going to ''Select''
+it and remember
+
+53
+00:02:32.195 --> 00:02:36.960
+it's named exFAT VHD.
+
+54
+00:02:38.660 --> 00:02:42.360
+We're going to go
+ahead and open it
+
+55
+00:02:42.360 --> 00:02:46.720
+up, and click ''Okay''.
+
+56
+00:02:46.720 --> 00:02:50.420
+Once you click ''Okay'',
+the drive will mount.
+
+57
+00:02:52.250 --> 00:02:55.000
+Once you've mounted your VHD,
+
+58
+00:02:55.000 --> 00:02:58.525
+go ahead and minimize
+disk management,
+
+59
+00:02:58.525 --> 00:03:00.070
+but before you do that,
+
+60
+00:03:00.070 --> 00:03:04.735
+make note of the drive number,
+
+61
+00:03:04.735 --> 00:03:06.624
+the physical disk number,
+
+62
+00:03:06.624 --> 00:03:12.075
+and the volume letter,
+the drive letter.
+
+63
+00:03:12.075 --> 00:03:13.660
+Mine is F, yours will
+
+64
+00:03:13.660 --> 00:03:15.985
+probably be different
+on your computer.
+
+65
+00:03:15.985 --> 00:03:20.380
+Let me go ahead and
+minimize disk management.
+
+66
+00:03:20.380 --> 00:03:23.780
+Please open up
+active disk editor.
+
+67
+00:03:23.780 --> 00:03:26.750
+When active disk editor opens up,
+
+68
+00:03:26.750 --> 00:03:29.560
+we're going to select Open Disk,
+
+69
+00:03:29.560 --> 00:03:31.790
+and from the top menu bar here
+
+70
+00:03:31.790 --> 00:03:33.380
+we're going to select volumes
+
+71
+00:03:33.380 --> 00:03:35.435
+because we want to look
+at the logical volume,
+
+72
+00:03:35.435 --> 00:03:36.860
+the exFAT volume.
+
+73
+00:03:36.860 --> 00:03:40.940
+We're going to select
+our exFAT volume from
+
+74
+00:03:40.940 --> 00:03:42.830
+the drive letter we noted in
+
+75
+00:03:42.830 --> 00:03:46.800
+disk management and then
+we're going to click "Open".
+
+76
+00:03:49.160 --> 00:03:51.980
+As you can see, by default,
+
+77
+00:03:51.980 --> 00:03:54.170
+it opens to the
+volume boot record,
+
+78
+00:03:54.170 --> 00:03:58.710
+which is logical sector
+zero of the volume.
+
+79
+00:03:59.300 --> 00:04:02.060
+Now we're going to
+go ahead and in
+
+80
+00:04:02.060 --> 00:04:04.820
+the toolbar right under
+
+81
+00:04:04.820 --> 00:04:07.580
+the Edit and right
+next to the Unicode,
+
+82
+00:04:07.580 --> 00:04:10.510
+we're going to open
+browse file records.
+
+83
+00:04:10.510 --> 00:04:14.810
+We can see we have all of our
+file records here and we're
+
+84
+00:04:14.810 --> 00:04:18.905
+looking for the root.
+
+85
+00:04:18.905 --> 00:04:20.660
+But before we go there,
+
+86
+00:04:20.660 --> 00:04:24.020
+we do need some information
+from this volume boot record.
+
+87
+00:04:24.020 --> 00:04:27.020
+What I need to find
+is I need to know
+
+88
+00:04:27.020 --> 00:04:31.115
+how many sectors per cluster.
+
+89
+00:04:31.115 --> 00:04:37.845
+Remember, that
+information is over here.
+
+90
+00:04:37.845 --> 00:04:46.740
+So you're going to be looking
+at offset hexadecimal 6D.
+
+91
+00:04:48.290 --> 00:04:51.735
+We're going to go down
+six lines from the start,
+
+92
+00:04:51.735 --> 00:04:54.645
+1, 2, 3, 4, 5,
+
+93
+00:04:54.645 --> 00:04:58.200
+6 lines down and over to D,
+
+94
+00:04:58.200 --> 00:05:03.150
+and this is where our
+sectors per cluster is.
+
+95
+00:05:04.840 --> 00:05:09.215
+We see our sectors
+per cluster is 0, 3.
+
+96
+00:05:09.215 --> 00:05:14.810
+If we remember back
+that was that shift.
+
+97
+00:05:14.810 --> 00:05:18.230
+That's bytes per sectors
+per cluster shift.
+
+98
+00:05:18.230 --> 00:05:24.870
+We had to take the 3 and we
+took the power of 2 times N,
+
+99
+00:05:24.870 --> 00:05:28.020
+and N would be the number that we
+
+100
+00:05:28.020 --> 00:05:33.030
+have in our sectors
+per cluster shift.
+
+101
+00:05:33.030 --> 00:05:37.875
+Our number is 3, so it would
+be 2 to the power of 3.
+
+102
+00:05:37.875 --> 00:05:39.530
+Then we don't need to
+use our calculator,
+
+103
+00:05:39.530 --> 00:05:41.030
+which we don't really
+have to use a calculator
+
+104
+00:05:41.030 --> 00:05:42.545
+for 2 to the power of 3,
+
+105
+00:05:42.545 --> 00:05:44.365
+it comes out to 8.
+
+106
+00:05:44.365 --> 00:05:50.820
+That's 2 times 2 is 4
+times 2 is 8, so that's 8.
+
+107
+00:05:50.820 --> 00:05:52.830
+We have 8 sectors per
+
+108
+00:05:52.830 --> 00:05:59.760
+cluster and our bytes
+per sector was nine.
+
+109
+00:05:59.760 --> 00:06:01.620
+That would be 2 to the power of
+
+110
+00:06:01.620 --> 00:06:04.700
+9 and we figured that out,
+
+111
+00:06:04.700 --> 00:06:06.680
+and it was 512.
+
+112
+00:06:06.680 --> 00:06:08.765
+We used our calculator
+for that, it was 512,
+
+113
+00:06:08.765 --> 00:06:11.879
+so 512 bytes per sector,
+
+114
+00:06:12.290 --> 00:06:15.970
+8 sectors per cluster.
+
+115
+00:06:16.280 --> 00:06:18.810
+We need to remember
+that information.
+
+116
+00:06:18.810 --> 00:06:20.870
+You can write it down
+if you'd like to.
+
+117
+00:06:20.870 --> 00:06:25.145
+Now, let's go into
+our root directory.
+
+118
+00:06:25.145 --> 00:06:30.525
+From up top where we
+see our Files listed,
+
+119
+00:06:30.525 --> 00:06:32.685
+we're going to select
+the root folder,
+
+120
+00:06:32.685 --> 00:06:35.835
+the root directory and
+this is the directory.
+
+121
+00:06:35.835 --> 00:06:37.940
+Now in the beginning of the
+root directory member we
+
+122
+00:06:37.940 --> 00:06:40.160
+see our volume labels
+the first entry,
+
+123
+00:06:40.160 --> 00:06:42.940
+and that's true on
+all FAT file systems.
+
+124
+00:06:42.940 --> 00:06:44.240
+Then we start to see
+
+125
+00:06:44.240 --> 00:06:47.030
+our directory entry
+sets after our system
+
+126
+00:06:47.030 --> 00:06:49.250
+files or looking for
+a directory entry
+
+127
+00:06:49.250 --> 00:06:51.985
+set that starts with
+hexadecimal 05.
+
+128
+00:06:51.985 --> 00:06:54.935
+Now I can go ahead and
+look at these manually,
+
+129
+00:06:54.935 --> 00:06:58.700
+which on a large drive is
+going to be quite tedious.
+
+130
+00:06:58.700 --> 00:07:00.590
+Most of your forensic tools
+
+131
+00:07:00.590 --> 00:07:02.585
+will be able to
+find these for you.
+
+132
+00:07:02.585 --> 00:07:04.700
+Another way we could find
+
+133
+00:07:04.700 --> 00:07:08.000
+them which still will give
+us a lot of information,
+
+134
+00:07:08.000 --> 00:07:11.930
+but we could use our search
+feature and we could simply
+
+135
+00:07:11.930 --> 00:07:16.505
+search for hexadecimal 05.
+
+136
+00:07:16.505 --> 00:07:17.765
+We could do that.
+
+137
+00:07:17.765 --> 00:07:20.075
+We could say find all,
+
+138
+00:07:20.075 --> 00:07:21.320
+and we'll give it a minute to run
+
+139
+00:07:21.320 --> 00:07:23.030
+through and once it runs through,
+
+140
+00:07:23.030 --> 00:07:23.810
+we're going to have a lot of
+
+141
+00:07:23.810 --> 00:07:24.860
+hits and we'll go through them,
+
+142
+00:07:24.860 --> 00:07:29.150
+but it's going to find
+every hexadecimal 05 on
+
+143
+00:07:29.150 --> 00:07:34.340
+our drive and you can
+see we have 193 hits.
+
+144
+00:07:34.340 --> 00:07:36.260
+Let's scroll through those and we
+
+145
+00:07:36.260 --> 00:07:38.150
+want to find the file
+we were working with
+
+146
+00:07:38.150 --> 00:07:44.130
+before which was newdoc1.txt,
+
+147
+00:07:44.130 --> 00:07:46.190
+so we'll scroll through
+until we get to
+
+148
+00:07:46.190 --> 00:07:49.100
+it and once we get to it,
+
+149
+00:07:49.100 --> 00:07:52.410
+we can see our hit right here.
+
+150
+00:07:52.690 --> 00:07:55.220
+If we click on the
+root directory,
+
+151
+00:07:55.220 --> 00:07:59.105
+it does highlight in
+yellow all the 05 entries,
+
+152
+00:07:59.105 --> 00:08:02.510
+which is a little more
+helpful to us but we see
+
+153
+00:08:02.510 --> 00:08:06.680
+our entry right here and we
+did pass this entry earlier.
+
+154
+00:08:06.680 --> 00:08:09.320
+But we're going to go ahead
+and take a look at it
+
+155
+00:08:09.320 --> 00:08:12.215
+again and the main
+one I'm interested in
+
+156
+00:08:12.215 --> 00:08:14.750
+is going to be the
+one that starts with
+
+157
+00:08:14.750 --> 00:08:17.945
+hexadecimal 04 because this
+is the directory entry.
+
+158
+00:08:17.945 --> 00:08:21.034
+If you remember, the
+directory entry contains
+
+159
+00:08:21.034 --> 00:08:24.755
+all the dates and times
+in that UTC offset.
+
+160
+00:08:24.755 --> 00:08:27.650
+I want to find the
+starting cluster in
+
+161
+00:08:27.650 --> 00:08:32.340
+the file size to carve the
+file and the file name.
+
+162
+00:08:32.620 --> 00:08:35.450
+I'm going to go down
+to my stream-entry,
+
+163
+00:08:35.450 --> 00:08:39.050
+which is going to be
+hexadecimal 40 and from
+
+164
+00:08:39.050 --> 00:08:44.285
+here I want to find
+my starting cluster.
+
+165
+00:08:44.285 --> 00:08:50.300
+If you remember, to find
+our starting cluster,
+
+166
+00:08:50.300 --> 00:08:59.130
+we would go down one
+line and over four.
+
+167
+00:09:00.460 --> 00:09:07.849
+It's a 4-byte value and
+in our hex interpreter,
+
+168
+00:09:07.849 --> 00:09:10.140
+if we look to the right,
+
+169
+00:09:10.420 --> 00:09:15.800
+we can see that the
+value is hexadecimal 18,
+
+170
+00:09:15.800 --> 00:09:19.130
+so cluster 18 is going to be
+the starter of this file.
+
+171
+00:09:19.130 --> 00:09:23.000
+Now I need to look
+at the file size,
+
+172
+00:09:23.000 --> 00:09:25.580
+so I'm going to take a look
+at my next four bytes,
+
+173
+00:09:25.580 --> 00:09:28.385
+and the file size is 63 bits.
+
+174
+00:09:28.385 --> 00:09:29.945
+I highlight these 4 bytes
+
+175
+00:09:29.945 --> 00:09:31.820
+and look to our hex interpreter.
+
+176
+00:09:31.820 --> 00:09:36.395
+That is a 32-bit unsigned value,
+
+177
+00:09:36.395 --> 00:09:39.300
+and it is 63.
+
+178
+00:09:39.550 --> 00:09:43.505
+My starting cluster, let's
+just check it one more time.
+
+179
+00:09:43.505 --> 00:09:46.460
+These four bytes right here
+tell us a starting cluster
+
+180
+00:09:46.460 --> 00:09:52.850
+from 1, 4 to 1,
+
+181
+00:09:52.850 --> 00:10:01.204
+7 will tell us the starting
+cluster and it is cluster 18
+
+182
+00:10:01.204 --> 00:10:04.069
+and then my file size
+
+183
+00:10:04.069 --> 00:10:06.620
+is the next four bytes
+and remember this is red
+
+184
+00:10:06.620 --> 00:10:11.675
+little-endian and the
+file size is 63 bytes.
+
+185
+00:10:11.675 --> 00:10:16.745
+Because it's four bytes and
+each byte is eight bits long,
+
+186
+00:10:16.745 --> 00:10:19.534
+it's a 32-bit value,
+
+187
+00:10:19.534 --> 00:10:22.430
+and it is an unsigned integer,
+
+188
+00:10:22.430 --> 00:10:24.920
+so it is not a negative number.
+
+189
+00:10:24.920 --> 00:10:27.935
+Now what I'm going to do
+is I'm going to navigate
+
+190
+00:10:27.935 --> 00:10:32.015
+up to cluster 18.
+
+191
+00:10:32.015 --> 00:10:33.425
+So go to "Navigation",
+
+192
+00:10:33.425 --> 00:10:37.790
+go to "Sector" and come
+down here in the "Cluster",
+
+193
+00:10:37.790 --> 00:10:40.580
+not "Sector", we're
+going to type in
+
+194
+00:10:40.580 --> 00:10:45.605
+18 in that box and we're
+going to say "Okay."
+
+195
+00:10:45.605 --> 00:10:48.515
+Now, this takes me out
+to where my file is.
+
+196
+00:10:48.515 --> 00:10:50.750
+I'm going to go ahead
+and right-click
+
+197
+00:10:50.750 --> 00:10:53.630
+and I'm going to tag this
+as "Beginning of Block."
+
+198
+00:10:53.630 --> 00:10:56.675
+Now, in the FAT file system,
+
+199
+00:10:56.675 --> 00:10:59.255
+we allocate space in clusters,
+
+200
+00:10:59.255 --> 00:11:03.890
+so I know I need to go
+one full cluster or
+
+201
+00:11:03.890 --> 00:11:06.050
+eight sectors down to
+
+202
+00:11:06.050 --> 00:11:08.705
+find the end of the allocated
+space for this file.
+
+203
+00:11:08.705 --> 00:11:11.090
+All this stuff is
+file slack starting
+
+204
+00:11:11.090 --> 00:11:15.260
+from the hexadecimal 65 where
+I've highlighted right now,
+
+205
+00:11:15.260 --> 00:11:16.970
+all this is file slack,
+
+206
+00:11:16.970 --> 00:11:18.830
+all these zeros are file slack,
+
+207
+00:11:18.830 --> 00:11:21.425
+so that's going to be the
+beginning of my block.
+
+208
+00:11:21.425 --> 00:11:23.855
+Now I'm going to go down
+
+209
+00:11:23.855 --> 00:11:26.300
+eight sectors and I've reached
+
+210
+00:11:26.300 --> 00:11:28.610
+the end of my file right here,
+
+211
+00:11:28.610 --> 00:11:31.160
+and I'm going to mark
+this as "End a Block."
+
+212
+00:11:31.160 --> 00:11:34.190
+Now I have the entire space
+that was allocated to
+
+213
+00:11:34.190 --> 00:11:36.380
+that file highlighted and I could
+
+214
+00:11:36.380 --> 00:11:38.885
+carve this out into a new file.
+
+215
+00:11:38.885 --> 00:11:40.520
+To recover a file,
+
+216
+00:11:40.520 --> 00:11:43.490
+we need to know the file size and
+
+217
+00:11:43.490 --> 00:11:45.170
+the starting cluster or
+
+218
+00:11:45.170 --> 00:11:48.065
+the starting sector depending
+on how you're navigating.
+
+219
+00:11:48.065 --> 00:11:49.490
+That's one way we could do it.
+
+220
+00:11:49.490 --> 00:11:51.590
+Another way I said is
+we could search by
+
+221
+00:11:51.590 --> 00:11:52.970
+file headers if we were looking
+
+222
+00:11:52.970 --> 00:11:54.455
+for a certain type of file,
+
+223
+00:11:54.455 --> 00:11:56.600
+and we will cover
+this later on in
+
+224
+00:11:56.600 --> 00:11:59.555
+the path and file carving.
+
+225
+00:11:59.555 --> 00:12:04.290
+But this is how we would
+carve out our file.
+
+226
+00:12:04.630 --> 00:12:08.690
+You would not change the data on
+
+227
+00:12:08.690 --> 00:12:14.050
+the drive but you
+could go and reach in
+
+228
+00:12:14.050 --> 00:12:17.065
+the bitmap and you
+could go and change
+
+229
+00:12:17.065 --> 00:12:22.580
+all the first hex character of
+
+230
+00:12:22.580 --> 00:12:26.150
+the directory entries
+back to in use and you
+
+231
+00:12:26.150 --> 00:12:27.845
+could go into the FAT Bitmap
+
+232
+00:12:27.845 --> 00:12:30.215
+and re-change that
+if you wanted to.
+
+233
+00:12:30.215 --> 00:12:32.750
+But normally you would
+do it the way I just
+
+234
+00:12:32.750 --> 00:12:35.240
+showed you if you were
+
+235
+00:12:35.240 --> 00:12:40.880
+able to find in unallocated
+directory entry.
+
+236
+00:12:40.880 --> 00:12:44.240
+If you can't find a
+directory entry that is
+
+237
+00:12:44.240 --> 00:12:47.630
+still intact but no
+longer marked as in use,
+
+238
+00:12:47.630 --> 00:12:50.330
+you would have to file carve by
+
+239
+00:12:50.330 --> 00:12:54.245
+file header and that's how
+you would recover the file.
+
+240
+00:12:54.245 --> 00:13:00.035
+That is file recovery in
+the exFAT file system.
+
+241
+00:13:00.035 --> 00:13:03.149
+In our next course,
+
+242
+00:13:03.520 --> 00:13:06.110
+we're going to talk
+about creating
+
+243
+00:13:06.110 --> 00:13:10.470
+a disk image and how we
+go about doing that.
