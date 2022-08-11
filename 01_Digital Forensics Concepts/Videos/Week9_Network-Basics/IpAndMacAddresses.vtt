@@ -1,0 +1,388 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.105
+Welcome back to digital
+forensic concepts.
+
+2
+00:00:03.105 --> 00:00:05.010
+In module two, we're going to
+
+3
+00:00:05.010 --> 00:00:07.560
+talk about IP and MAC addresses.
+
+4
+00:00:07.560 --> 00:00:13.580
+Now in IP address and IP
+stands for Internet Protocol,
+
+5
+00:00:13.580 --> 00:00:17.435
+can be either a V4
+or a V6 address.
+
+6
+00:00:17.435 --> 00:00:22.975
+A V4 address is a
+set of 12 numbers,
+
+7
+00:00:22.975 --> 00:00:26.580
+and it's all decimal numbers,
+
+8
+00:00:26.580 --> 00:00:29.325
+and it's 32 bits.
+
+9
+00:00:29.325 --> 00:00:33.110
+It is going to be separated
+by dots in sets of three.
+
+10
+00:00:33.110 --> 00:00:35.430
+We can see our example
+up on the screen.
+
+11
+00:00:35.430 --> 00:00:42.195
+We have 159.181.222.133.
+
+12
+00:00:42.195 --> 00:00:45.000
+That would be an example
+of an IP V4 address.
+
+13
+00:00:45.000 --> 00:00:48.555
+An IP V6 address is made up of
+
+14
+00:00:48.555 --> 00:00:53.235
+eight two-byte values
+separated with colons,
+
+15
+00:00:53.235 --> 00:00:57.505
+be colon-separated,
+and is 128 bits long.
+
+16
+00:00:57.505 --> 00:01:00.520
+Now, the reason we needed IP V6
+
+17
+00:01:00.520 --> 00:01:04.325
+is because we ran out
+of IP V4 addresses.
+
+18
+00:01:04.325 --> 00:01:09.580
+You can see our example of
+our IP V6 address down below.
+
+19
+00:01:09.580 --> 00:01:12.580
+You can see that
+it has two bytes.
+
+20
+00:01:12.580 --> 00:01:16.510
+We all know that two
+hexadecimal bytes are
+
+21
+00:01:16.510 --> 00:01:21.105
+represented by four characters.
+
+22
+00:01:21.105 --> 00:01:25.050
+We have four digits,
+or it's alphanumeric.
+
+23
+00:01:25.050 --> 00:01:27.360
+It could have letters and digits.
+
+24
+00:01:27.360 --> 00:01:31.445
+Each of those sets of four
+is separated by a colon.
+
+25
+00:01:31.445 --> 00:01:34.455
+Now, we touched on this earlier
+
+26
+00:01:34.455 --> 00:01:38.560
+about traffic comes
+into your router in
+
+27
+00:01:38.560 --> 00:01:41.110
+your network and then the
+router routes it out to
+
+28
+00:01:41.110 --> 00:01:46.340
+the individual computers
+using the IP address.
+
+29
+00:01:46.430 --> 00:01:49.765
+What the router is doing
+is something called
+
+30
+00:01:49.765 --> 00:01:53.240
+NAT or Network
+Address Translation.
+
+31
+00:01:53.240 --> 00:01:59.365
+Now, what it does is it takes
+your private IP address,
+
+32
+00:01:59.365 --> 00:02:02.365
+if I want to send a message
+from my computer and
+
+33
+00:02:02.365 --> 00:02:06.310
+it changes it into a
+public IP address and
+
+34
+00:02:06.310 --> 00:02:09.380
+then sends my message out over
+
+35
+00:02:09.380 --> 00:02:12.560
+the Internet or the
+private network
+
+36
+00:02:12.560 --> 00:02:14.990
+depending on where you are.
+
+37
+00:02:14.990 --> 00:02:17.450
+It can do vice-versa.
+
+38
+00:02:17.450 --> 00:02:22.340
+If it has traffic coming in
+to the public IP address,
+
+39
+00:02:22.340 --> 00:02:26.180
+it needs to translate that
+to the private IP address in
+
+40
+00:02:26.180 --> 00:02:27.500
+order to know which computer on
+
+41
+00:02:27.500 --> 00:02:30.400
+the network to send
+that message to.
+
+42
+00:02:30.400 --> 00:02:33.230
+The public IP address
+is the one used
+
+43
+00:02:33.230 --> 00:02:35.420
+by your gateway, which
+will be your router,
+
+44
+00:02:35.420 --> 00:02:38.015
+your firewall, and
+all your devices
+
+45
+00:02:38.015 --> 00:02:39.500
+inside the network are going to
+
+46
+00:02:39.500 --> 00:02:41.885
+have private IP addresses.
+
+47
+00:02:41.885 --> 00:02:46.450
+They usually start
+with a 192 or 168.
+
+48
+00:02:46.940 --> 00:02:49.095
+Now, we're going to talk about
+
+49
+00:02:49.095 --> 00:02:52.650
+Domain Name Service or DNS.
+
+50
+00:02:52.650 --> 00:02:58.490
+DNS is the service that
+translates your web address,
+
+51
+00:02:58.490 --> 00:03:01.325
+like say, InfoSec Institute.com,
+
+52
+00:03:01.325 --> 00:03:03.910
+into an IP address.
+
+53
+00:03:03.910 --> 00:03:08.524
+It will also translate the
+IP address back to the URL.
+
+54
+00:03:08.524 --> 00:03:13.030
+It is a hierarchical and
+decentralized system.
+
+55
+00:03:13.030 --> 00:03:15.350
+Your administrator can configure
+
+56
+00:03:15.350 --> 00:03:17.200
+what type of DNS you use.
+
+57
+00:03:17.200 --> 00:03:19.370
+There are some examples
+up there on the screen,
+
+58
+00:03:19.370 --> 00:03:20.810
+we have open DNS,
+
+59
+00:03:20.810 --> 00:03:23.725
+Google DNS, and advantage DNS.
+
+60
+00:03:23.725 --> 00:03:26.000
+Your network administrators will
+
+61
+00:03:26.000 --> 00:03:28.535
+configure which DNS
+they're going to use.
+
+62
+00:03:28.535 --> 00:03:31.375
+That stands for
+Domain Name Service.
+
+63
+00:03:31.375 --> 00:03:33.710
+Now, a MAC address,
+
+64
+00:03:33.710 --> 00:03:35.240
+which this would be
+
+65
+00:03:35.240 --> 00:03:37.940
+how switches route traffic
+through the MAC address,
+
+66
+00:03:37.940 --> 00:03:40.225
+whereas routers use the IP.
+
+67
+00:03:40.225 --> 00:03:44.120
+Our MAC address is burnt
+into our network card.
+
+68
+00:03:44.120 --> 00:03:46.370
+Every single one of our
+devices is going to
+
+69
+00:03:46.370 --> 00:03:49.040
+have this unique MAC address.
+
+70
+00:03:49.040 --> 00:03:52.860
+It's unique to each
+device on the network.
+
+71
+00:03:53.360 --> 00:03:56.460
+The MAC address is made up of
+
+72
+00:03:56.460 --> 00:04:00.005
+six one-byte hexadecimal numbers
+
+73
+00:04:00.005 --> 00:04:02.015
+that are separated by colons.
+
+74
+00:04:02.015 --> 00:04:04.360
+We can see an example down there.
+
+75
+00:04:04.360 --> 00:04:06.270
+This again is hexadecimal,
+
+76
+00:04:06.270 --> 00:04:07.980
+so it will be alphanumeric.
+
+77
+00:04:07.980 --> 00:04:11.080
+It's E0:15:B2:AB:FE:61.
+
+78
+00:04:15.860 --> 00:04:21.280
+This is an example
+of a MAC address.
+
+79
+00:04:24.080 --> 00:04:26.570
+In our next module,
+
+80
+00:04:26.570 --> 00:04:30.205
+we're going to cover
+network protocols.
+
+81
+00:04:30.205 --> 00:04:32.870
+These are the protocols
+and the rules that are
+
+82
+00:04:32.870 --> 00:04:35.450
+used on the network
+that allows us to
+
+83
+00:04:35.450 --> 00:04:38.090
+route traffic from
+our machines to
+
+84
+00:04:38.090 --> 00:04:39.710
+the internet or from
+
+85
+00:04:39.710 --> 00:04:43.470
+our machines to another
+computer in our local network.

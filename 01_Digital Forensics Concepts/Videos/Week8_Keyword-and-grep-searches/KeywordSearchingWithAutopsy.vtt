@@ -1,0 +1,744 @@
+WEBVTT
+
+1
+00:00:00.140 --> 00:00:03.560
+>> Welcome back to digital
+forensic concepts.
+
+2
+00:00:03.560 --> 00:00:07.840
+In this course, we're talking
+about Keyword incorrect searching.
+
+3
+00:00:07.840 --> 00:00:12.350
+In this module, Module four,
+we're going to talk about Keyword
+
+4
+00:00:12.350 --> 00:00:16.340
+searching with the open
+source tool Autopsy.
+
+5
+00:00:16.340 --> 00:00:20.440
+Autopsy has built in
+keywords capabilities.
+
+6
+00:00:20.440 --> 00:00:22.580
+You can search for an exact match.
+
+7
+00:00:22.580 --> 00:00:28.440
+You can search for a substring match and
+you can search using regular expression.
+
+8
+00:00:28.440 --> 00:00:32.706
+Like we talked about in our last module.
+
+9
+00:00:32.706 --> 00:00:38.740
+Autopsy has built in and
+user created keyword lists.
+
+10
+00:00:38.740 --> 00:00:45.940
+You can use the built in keyword lists or
+you can create your own keyword list.
+
+11
+00:00:45.940 --> 00:00:50.745
+It also has built in regular expressions
+for phone numbers, IP addresses,
+
+12
+00:00:50.745 --> 00:00:54.540
+email addresses, URL's and
+credit card numbers.
+
+13
+00:00:54.540 --> 00:00:59.350
+We're going to do a demo with autopsy,
+and we're going to do some keywords and
+
+14
+00:00:59.350 --> 00:01:01.140
+grew up searches.
+
+15
+00:01:01.140 --> 00:01:06.575
+The version of autopsy
+we're using is 4.170 and
+
+16
+00:01:06.575 --> 00:01:10.940
+we're going to use the Ivan the mdk image.
+
+17
+00:01:10.940 --> 00:01:12.300
+Let's start our walk through.
+
+18
+00:01:12.300 --> 00:01:18.240
+>> Hello and welcome to our keyword
+searching with autopsy demo.
+
+19
+00:01:18.240 --> 00:01:18.961
+As you can see.
+
+20
+00:01:18.961 --> 00:01:21.025
+We've opened up autopsy And
+
+21
+00:01:21.025 --> 00:01:26.840
+our version is 4.17.0 which is
+the most recent version of autopsy.
+
+22
+00:01:26.840 --> 00:01:28.880
+We can see up here in
+the right hand corner.
+
+23
+00:01:28.880 --> 00:01:32.680
+We have a selection called keyword lists.
+
+24
+00:01:32.680 --> 00:01:37.643
+And if we click on that, we can see
+we have built in keyword lists and
+
+25
+00:01:37.643 --> 00:01:41.368
+they are regular expressions for
+phone numbers,
+
+26
+00:01:41.368 --> 00:01:46.840
+IP addresses, email addresses URL's and
+credit card numbers.
+
+27
+00:01:46.840 --> 00:01:50.540
+Now you can search for
+as many of these as you like at one time.
+
+28
+00:01:50.540 --> 00:01:54.950
+You can also go to manage lists and
+you can create a new list.
+
+29
+00:01:54.950 --> 00:01:56.250
+You would have to name it.
+
+30
+00:01:56.250 --> 00:02:01.667
+And we're going to name our list hacking,
+and we're going to say Ok.
+
+31
+00:02:01.667 --> 00:02:08.050
+And now we can create our new keywords And
+we'll just put some keywords in here.
+
+32
+00:02:08.050 --> 00:02:14.640
+Hacking, hackers, Russian grid and
+we could keep going on.
+
+33
+00:02:14.640 --> 00:02:16.981
+There are also some drugs in this case.
+
+34
+00:02:16.981 --> 00:02:19.820
+So we could use the word drugs, narcotics.
+
+35
+00:02:19.820 --> 00:02:23.817
+And you have the choice of doing
+an exact match, a sub string match,
+
+36
+00:02:23.817 --> 00:02:25.590
+which would be part of a word.
+
+37
+00:02:25.590 --> 00:02:29.550
+Or we can use the regular expression, but
+we didn't choose regular expressions.
+
+38
+00:02:29.550 --> 00:02:31.504
+But we could have, we say Ok.
+
+39
+00:02:31.504 --> 00:02:33.940
+And it creates our list hacking.
+
+40
+00:02:33.940 --> 00:02:39.290
+So now when we reopen keyword lists, we
+see our hacking keyword list here, and we
+
+41
+00:02:39.290 --> 00:02:44.510
+can choose that and we can choose search
+and it will search for those keywords.
+
+42
+00:02:44.510 --> 00:02:48.340
+We can also do a keyword search,
+for just a single word.
+
+43
+00:02:48.340 --> 00:02:51.056
+And in this case I'm going
+to use the word hacking, and
+
+44
+00:02:51.056 --> 00:02:52.910
+I'm going to go with an exact match.
+
+45
+00:02:52.910 --> 00:02:57.896
+And I'm going to click search, and
+we can see we get a lot of hits right away
+
+46
+00:02:57.896 --> 00:03:01.940
+in the web cache artifacts and
+we can see we get a lot of hits.
+
+47
+00:03:01.940 --> 00:03:05.140
+We have 350 hits right off the bat.
+
+48
+00:03:05.140 --> 00:03:08.913
+Now I'm going to go back to my keyword
+lists and we choose my hacking list, and
+
+49
+00:03:08.913 --> 00:03:12.687
+I'm going to click search, and this is
+going to take a little bit longer because
+
+50
+00:03:12.687 --> 00:03:16.260
+it's searching more than one key word,
+when it comes back pretty fast.
+
+51
+00:03:16.260 --> 00:03:21.152
+And now we can see our hits and
+when we click on one of our files,
+
+52
+00:03:21.152 --> 00:03:23.990
+we can see the hit highlighted.
+
+53
+00:03:23.990 --> 00:03:28.262
+We can see the file that comes from, and
+it gives us information about the file
+
+54
+00:03:28.262 --> 00:03:32.240
+like the creative date and
+some other information down below.
+
+55
+00:03:32.240 --> 00:03:36.480
+And we have a full path to the file,
+and this is in web cache.
+
+56
+00:03:36.480 --> 00:03:41.130
+We also have web history and
+it tells us the URL, the title,
+
+57
+00:03:41.130 --> 00:03:46.524
+this was a download tells us the program
+that it was downloaded with,
+
+58
+00:03:46.524 --> 00:03:48.770
+and the domain it came from.
+
+59
+00:03:48.770 --> 00:03:51.810
+Okay, now we're going to
+do some grip searches.
+
+60
+00:03:51.810 --> 00:03:54.519
+So we're going to use our
+keyword search list, and
+
+61
+00:03:54.519 --> 00:03:59.240
+we're going to do some phone number
+searches and some email address searches.
+
+62
+00:03:59.240 --> 00:04:02.550
+And we're going to go ahead and
+search and see what we get for hits.
+
+63
+00:04:02.550 --> 00:04:05.220
+And we have 114 results.
+
+64
+00:04:05.220 --> 00:04:06.231
+And let's take a look.
+
+65
+00:04:06.231 --> 00:04:12.326
+This is email and we can see we've
+got a Vladimir Oler email address,
+
+66
+00:04:12.326 --> 00:04:17.640
+and we have the Ivan zero
+democracy email address.
+
+67
+00:04:17.640 --> 00:04:19.983
+You notice that Vladimir has a .RU.
+
+68
+00:04:19.983 --> 00:04:23.440
+That usually means it's
+coming from Russia.
+
+69
+00:04:23.440 --> 00:04:31.840
+And we also found another email
+address agendas6120 @gmail.com.
+
+70
+00:04:31.840 --> 00:04:34.850
+So you can go through here and
+find some email addresses.
+
+71
+00:04:34.850 --> 00:04:40.420
+You can look at account artifacts and
+we have some reg ripper results.
+
+72
+00:04:40.420 --> 00:04:46.140
+We have a new email address,
+djohndeb2005@gmail.com.
+
+73
+00:04:46.140 --> 00:04:47.528
+And we have our path,
+
+74
+00:04:47.528 --> 00:04:52.240
+we don't seem to have any phone
+numbers in this particular image.
+
+75
+00:04:52.240 --> 00:04:55.791
+And we can go ahead and
+we could do a search for I.
+
+76
+00:04:55.791 --> 00:05:00.901
+P addresses and you can see these hits
+because of the way the IP address.
+
+77
+00:05:00.901 --> 00:05:02.840
+This is not an IP address.
+
+78
+00:05:02.840 --> 00:05:06.799
+But because of the way that
+regular expression is written,
+
+79
+00:05:06.799 --> 00:05:08.311
+it is hitting on this.
+
+80
+00:05:08.311 --> 00:05:13.114
+Because remember it was one or three and
+a dot one or three on the 30.1 or
+
+81
+00:05:13.114 --> 00:05:17.159
+three on the 30.1 or
+three on the dot, and this is 111.
+
+82
+00:05:17.159 --> 00:05:19.881
+So you are going to get
+some false hits and
+
+83
+00:05:19.881 --> 00:05:23.084
+you will get that with
+keyword searching tool,
+
+84
+00:05:23.084 --> 00:05:27.630
+you'll get hits on Keywords that
+may not be related to your case.
+
+85
+00:05:27.630 --> 00:05:32.173
+So we can uncheck that one and
+we can look at URL's and search, and
+
+86
+00:05:32.173 --> 00:05:37.635
+I'm sure we will get quite a bit back on
+URL's and start the search completes.
+
+87
+00:05:37.635 --> 00:05:42.487
+And we've got something in web
+bookmarks and this gives us the URL,
+
+88
+00:05:42.487 --> 00:05:45.892
+the title,
+the date the bookmark was created,
+
+89
+00:05:45.892 --> 00:05:52.240
+the application that created it which
+is Internet Explorer and the domain.
+
+90
+00:05:52.240 --> 00:05:55.440
+Again we have web history
+which we've seen before.
+
+91
+00:05:55.440 --> 00:05:57.230
+We have the URL.
+
+92
+00:05:57.230 --> 00:06:01.598
+The access state,
+the reference URL and the domain.
+
+93
+00:06:01.598 --> 00:06:04.132
+And we have cookies, Web cookies and
+
+94
+00:06:04.132 --> 00:06:08.240
+we'll talk more about what
+cookies are in another course.
+
+95
+00:06:08.240 --> 00:06:13.040
+But we do have the WWW Wired.com.
+
+96
+00:06:13.040 --> 00:06:15.240
+We have the date and time.
+
+97
+00:06:15.240 --> 00:06:16.790
+We have a name.
+
+98
+00:06:16.790 --> 00:06:21.140
+We have the process program
+name which is Firefox.
+
+99
+00:06:21.140 --> 00:06:26.630
+So we've seen Firefox, Chrome and
+Internet Explorer running.
+
+100
+00:06:26.630 --> 00:06:30.230
+So this gives us an idea of what
+browses are installed also.
+
+101
+00:06:30.230 --> 00:06:32.710
+And we have a date that
+this cookie was created.
+
+102
+00:06:32.710 --> 00:06:36.240
+So this website was visited on
+the state when the cookie was created.
+
+103
+00:06:36.240 --> 00:06:37.990
+And we have the domain name.
+
+104
+00:06:37.990 --> 00:06:42.440
+So you can get quite a bit of
+information out of these hits.
+
+105
+00:06:42.440 --> 00:06:45.740
+We found email addresses,
+we've seen websites visited.
+
+106
+00:06:45.740 --> 00:06:49.054
+It's also web form history artifact, and
+
+107
+00:06:49.054 --> 00:06:53.900
+we can see the domain,
+the date created and the date access.
+
+108
+00:06:53.900 --> 00:06:56.140
+You can see a web search artifact.
+
+109
+00:06:56.140 --> 00:06:59.701
+And the text was Russian hack
+is what he was searching for.
+
+110
+00:06:59.701 --> 00:07:04.976
+And that was with the Firefox browser and
+that is the date and time of the search,
+
+111
+00:07:04.976 --> 00:07:09.940
+is also a hit in recent docks and
+we have the path and the date and time.
+
+112
+00:07:09.940 --> 00:07:14.540
+We have web cache and in our web cache
+we have the date that was created.
+
+113
+00:07:14.540 --> 00:07:18.020
+We have the data expires and
+we have our URL.
+
+114
+00:07:18.020 --> 00:07:21.640
+And that's we're actually
+getting a hit on is the URL.
+
+115
+00:07:21.640 --> 00:07:25.830
+We do have 1002.
+
+116
+00:07:25.830 --> 00:07:29.240
+I'm sorry.
+We have 12,039 hits.
+
+117
+00:07:29.240 --> 00:07:31.500
+So this would be a lot
+to go through manually.
+
+118
+00:07:31.500 --> 00:07:34.420
+You might want to narrow your
+search criteria little bit.
+
+119
+00:07:34.420 --> 00:07:39.685
+We also have a hit in our red ripper
+report, and we have that email address,
+
+120
+00:07:39.685 --> 00:07:43.940
+and it's hitting in the SAM
+file under a user Dennis.
+
+121
+00:07:43.940 --> 00:07:48.440
+So just from doing these keyword searches
+we were able to get email addresses.
+
+122
+00:07:48.440 --> 00:07:54.640
+We were able to see domains that
+the user visited with dates and times.
+
+123
+00:07:54.640 --> 00:07:58.730
+We're able to see bookmarks,
+what he had on his bookmarks bar,
+
+124
+00:07:58.730 --> 00:08:01.030
+which might be interesting to us.
+
+125
+00:08:01.030 --> 00:08:05.696
+And with the web cookie,
+the date on the cookie shows
+
+126
+00:08:05.696 --> 00:08:10.230
+that a website,
+this happens to be google.com.
+
+127
+00:08:10.230 --> 00:08:13.830
+But it does show us the date it
+was visited, the date and time.
+
+128
+00:08:13.830 --> 00:08:18.780
+We've also found out that there
+were three different browsers used.
+
+129
+00:08:18.780 --> 00:08:24.090
+And this is just from doing
+a URL regular expression search.
+
+130
+00:08:24.090 --> 00:08:28.575
+If we search our hacking keyword list,
+and I am going to go ahead and
+
+131
+00:08:28.575 --> 00:08:33.473
+go to the top of this list, and
+I'm going to sort on names for a minute,
+
+132
+00:08:33.473 --> 00:08:38.481
+when I'm trying to find downloads but
+I'm not seeing some right here.
+
+133
+00:08:38.481 --> 00:08:44.346
+But we do have recent documents and he
+have a drugs hit on our drugs keyword and
+
+134
+00:08:44.346 --> 00:08:49.021
+this is in the sea users Ivan
+downloads drug dealing 101 We
+
+135
+00:08:49.021 --> 00:08:53.991
+can see it's a recent document but
+it is coming from downloads.
+
+136
+00:08:53.991 --> 00:08:59.930
+These are coming from downloads, and this
+is the hit on grid, grid cyber attack.
+
+137
+00:08:59.930 --> 00:09:03.905
+And we can see the date and
+time, is a hit on our hacking,
+
+138
+00:09:03.905 --> 00:09:09.000
+hacking the US tried it, pdf and
+that would be in Ivan's google drive.
+
+139
+00:09:09.000 --> 00:09:12.174
+So we now know there's a google drive and
+play, and we have a date and
+
+140
+00:09:12.174 --> 00:09:14.840
+time when it was accessed
+on the google drive.
+
+141
+00:09:14.840 --> 00:09:18.840
+This is the basics of hacking and
+penetration pdf.
+
+142
+00:09:18.840 --> 00:09:23.178
+And again it's in downloads,, and
+we have date and time it was accessed, and
+
+143
+00:09:23.178 --> 00:09:26.240
+we still will have our
+Mac times are modified.
+
+144
+00:09:26.240 --> 00:09:30.740
+Change time is referring to a change
+made to the master file table.
+
+145
+00:09:30.740 --> 00:09:33.461
+Access time and created time and
+
+146
+00:09:33.461 --> 00:09:39.021
+they are all pretty much the same and
+our web auto fill artifacts.
+
+147
+00:09:39.021 --> 00:09:42.564
+We have a search history for
+images of drugs,
+
+148
+00:09:42.564 --> 00:09:47.440
+drug images and we have a date and
+time when that was done.
+
+149
+00:09:47.440 --> 00:09:51.545
+So keyword searches do give
+us a lot of information and
+
+150
+00:09:51.545 --> 00:09:56.140
+they're going to add a lot
+of relevance to our cases.
+
+151
+00:09:56.140 --> 00:10:00.631
+There's a lot of things you're going to
+find in a keyword search that you might
+
+152
+00:10:00.631 --> 00:10:03.898
+not find had you just manually
+look through the different
+
+153
+00:10:03.898 --> 00:10:05.682
+artifacts in the file system.
+
+154
+00:10:05.682 --> 00:10:10.090
+And we will cover this in another path,
+all the artifacts in the file system.
+
+155
+00:10:10.090 --> 00:10:15.450
+In our next course, we're going to
+cover report writing and peer review.
+
+156
+00:10:15.450 --> 00:10:17.081
+End of demonstration.

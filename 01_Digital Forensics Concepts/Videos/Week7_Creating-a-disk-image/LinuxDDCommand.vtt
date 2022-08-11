@@ -1,0 +1,1032 @@
+WEBVTT
+
+1
+00:00:00.140 --> 00:00:02.930
+Welcome back to the computer
+forensics path.
+
+2
+00:00:02.930 --> 00:00:10.440
+And this course course 11 we're talking
+about creating a forensic image.
+
+3
+00:00:10.440 --> 00:00:14.140
+This is actually acquiring our disk image.
+
+4
+00:00:14.140 --> 00:00:17.340
+We've covered sterilizing
+our target media.
+
+5
+00:00:17.340 --> 00:00:20.614
+We talked about validating our tools.
+
+6
+00:00:20.614 --> 00:00:25.619
+We've talked about creating
+a clone have a hard drive and
+
+7
+00:00:25.619 --> 00:00:29.904
+we also talked about
+creating a forensic image.
+
+8
+00:00:29.904 --> 00:00:35.186
+In this module,
+module five, we're going to
+
+9
+00:00:35.186 --> 00:00:40.480
+talk about using the DG
+in D CFLDD commands.
+
+10
+00:00:40.480 --> 00:00:47.564
+Now let's talk about the syntax
+of the Lennox DD command.
+
+11
+00:00:47.564 --> 00:00:53.126
+DD the IF that we're going to use
+to execute this command stands for
+
+12
+00:00:53.126 --> 00:00:55.140
+input file.
+
+13
+00:00:55.140 --> 00:00:57.673
+This is the file that we're copying and
+
+14
+00:00:57.673 --> 00:01:02.203
+this is very important to remember
+because if you confuse the input and
+
+15
+00:01:02.203 --> 00:01:05.761
+the output file you're going to
+override the evidence.
+
+16
+00:01:08.140 --> 00:01:12.661
+The OF is the output file.
+
+17
+00:01:13.940 --> 00:01:17.151
+This is where we're writing
+the evidence to our target media.
+
+18
+00:01:18.240 --> 00:01:20.361
+This is what we would have sterilized.
+
+19
+00:01:22.040 --> 00:01:24.561
+And OF stands for output file.
+
+20
+00:01:25.740 --> 00:01:29.370
+DD stands for just duplicate.
+
+21
+00:01:29.370 --> 00:01:34.540
+So we're duplicating a disk,
+we're creating a forensic image.
+
+22
+00:01:34.540 --> 00:01:39.276
+We need to tell the software
+the program what
+
+23
+00:01:39.276 --> 00:01:44.530
+file we're copying and
+we were copying it to.
+
+24
+00:01:44.530 --> 00:01:49.037
+So what dr are we copying And
+this works on a full disk or
+
+25
+00:01:49.037 --> 00:01:51.551
+it would work on a partition.
+
+26
+00:01:52.640 --> 00:01:55.914
+But we have to tell it
+what we're copying and
+
+27
+00:01:55.914 --> 00:02:01.740
+where we're copying it to to create
+a duplicate copy of a partition.
+
+28
+00:02:01.740 --> 00:02:04.740
+And we're talking about using Lennox.
+
+29
+00:02:04.740 --> 00:02:09.843
+We're going to use the pseudo so
+we can get permission if you're
+
+30
+00:02:09.843 --> 00:02:15.721
+not already locked in his room then
+we'd use the DD for just duplicate I F.
+
+31
+00:02:15.721 --> 00:02:23.219
+For our input file and we have the equal
+sign and then the path to the input file.
+
+32
+00:02:23.219 --> 00:02:27.332
+In this we're copying
+a petition sda one and
+
+33
+00:02:27.332 --> 00:02:33.840
+then the output file Is going to
+be in a directory called Case one.
+
+34
+00:02:33.840 --> 00:02:42.161
+And I'm naming that file disc a one
+dot tv now to copy the physical disk.
+
+35
+00:02:43.440 --> 00:02:50.402
+But again, we would need to use the Sudo
+command if we weren't route D D and
+
+36
+00:02:50.402 --> 00:02:55.113
+then our input file is going to be S D,
+a s D b, S D C,
+
+37
+00:02:55.113 --> 00:03:01.640
+depending on what you know what
+dr letter we are mounted as.
+
+38
+00:03:01.640 --> 00:03:07.440
+So it would be S D and
+then A B, C, D E etcetera.
+
+39
+00:03:07.440 --> 00:03:11.630
+And then the output file again,
+we're going to tell the directory and
+
+40
+00:03:11.630 --> 00:03:12.561
+the file name.
+
+41
+00:03:13.640 --> 00:03:19.697
+Now, if you happen to be in the directory
+that you want to copy this to,
+
+42
+00:03:19.697 --> 00:03:22.777
+you don't have to put a directory,
+
+43
+00:03:22.777 --> 00:03:28.031
+you can just put the file new
+now the list of disk partitions.
+
+44
+00:03:28.031 --> 00:03:29.871
+Because we're going to need
+to list the partition.
+
+45
+00:03:29.871 --> 00:03:34.320
+So we make sure that we are using
+the right input file and
+
+46
+00:03:34.320 --> 00:03:37.140
+the right output file.
+
+47
+00:03:37.140 --> 00:03:41.046
+And there are some commands
+we could use here,
+
+48
+00:03:41.046 --> 00:03:45.161
+we could use pseudo,
+we could use f disk minus L.
+
+49
+00:03:46.540 --> 00:03:53.061
+We could use the L S B L K or
+we can use Mt.
+
+50
+00:03:54.940 --> 00:03:59.751
+So we want to list the partitions,
+locate our drives, make sure it works.
+
+51
+00:04:01.040 --> 00:04:04.761
+Have the correct output input files.
+
+52
+00:04:05.840 --> 00:04:09.240
+Now, D C F L D D.
+
+53
+00:04:09.240 --> 00:04:14.851
+We can create a forensic evidence
+file with a verification value.
+
+54
+00:04:15.940 --> 00:04:16.940
+Yeah.
+
+55
+00:04:16.940 --> 00:04:22.661
+So we can do our MD five and
+our shore one with D C F L D D.
+
+56
+00:04:24.840 --> 00:04:29.159
+Now in this particular command we
+are asking for the MD five hash but
+
+57
+00:04:29.159 --> 00:04:31.561
+you can ask for the shore one as well.
+
+58
+00:04:33.140 --> 00:04:37.323
+But when you look at this command,
+it is the MD five hash that will
+
+59
+00:04:37.323 --> 00:04:41.051
+automatically be created when
+we execute this command.
+
+60
+00:04:42.540 --> 00:04:48.343
+And again, our input file would
+be in our device folder and
+
+61
+00:04:48.343 --> 00:04:52.249
+then it would be S T A, R, S, D, B or C or
+
+62
+00:04:52.249 --> 00:04:58.140
+whatever it is mounted as And
+then her output file.
+
+63
+00:04:58.140 --> 00:05:02.476
+This is simply put in
+the home directory and
+
+64
+00:05:02.476 --> 00:05:09.831
+than it has to file name now hash we're
+telling it we want to hash so half.
+
+65
+00:05:09.831 --> 00:05:15.572
+And I'm saying equals MD five and
+then we have to have a hash
+
+66
+00:05:15.572 --> 00:05:21.920
+law where we're writing this hash out too,
+so hash log equals.
+
+67
+00:05:21.920 --> 00:05:26.934
+And then the file path in
+the file name to where we want to
+
+68
+00:05:26.934 --> 00:05:32.820
+output are hash log and
+again to list the partitions in the disk,
+
+69
+00:05:32.820 --> 00:05:37.951
+including the size we can use
+our f disk minus L command.
+
+70
+00:05:39.540 --> 00:05:43.239
+There is another command we can use and
+this is newer and
+
+71
+00:05:43.239 --> 00:05:48.145
+I really like the way this one works
+better And we're going to get to see that
+
+72
+00:05:48.145 --> 00:05:52.811
+when we go through our demo,
+we'll walk through each one of these and
+
+73
+00:05:52.811 --> 00:05:57.251
+I'll show you the output it gives,
+but it's called DC three DD.
+
+74
+00:05:58.540 --> 00:06:00.851
+And with DC three DD.
+
+75
+00:06:02.140 --> 00:06:09.461
+We can create our hash values
+the same as we did in D c f L D G.
+
+76
+00:06:10.740 --> 00:06:13.341
+But the command is just
+easier to write and
+
+77
+00:06:13.341 --> 00:06:16.101
+the information it gives
+us is more robust.
+
+78
+00:06:16.101 --> 00:06:18.440
+We get more information.
+
+79
+00:06:18.440 --> 00:06:22.500
+You'll get about the same information
+as you would with fbK immature, you're
+
+80
+00:06:22.500 --> 00:06:26.940
+going to get the time it started, you're
+going to get how many bytes it copied.
+
+81
+00:06:26.940 --> 00:06:30.261
+You're going to get a lot of information
+and we'll see this way do I walk through.
+
+82
+00:06:31.340 --> 00:06:36.971
+So the command works pretty much
+the same way It starts with DC three DD.
+
+83
+00:06:36.971 --> 00:06:43.033
+Because that is the program that
+we're running our input file,
+
+84
+00:06:43.033 --> 00:06:46.861
+which is going to equal deaf for device.
+
+85
+00:06:48.040 --> 00:06:53.344
+and then this one happens to be STB but
+it could be Akkad depends
+
+86
+00:06:53.344 --> 00:07:00.040
+on what drives you want to image and
+where the file system mounted it.
+
+87
+00:07:00.040 --> 00:07:04.040
+And then we have hohf,
+which is a little different.
+
+88
+00:07:04.040 --> 00:07:09.340
+HDs for hash and
+o F stands for output file.
+
+89
+00:07:09.340 --> 00:07:13.878
+So we're hash of the output file and
+
+90
+00:07:13.878 --> 00:07:17.540
+that equals STD dot i M G.
+
+91
+00:07:17.540 --> 00:07:19.251
+And that's what I'm naming the image.
+
+92
+00:07:20.740 --> 00:07:26.059
+I'll profile with a hash value
+is going to be STB dot i m G And
+
+93
+00:07:26.059 --> 00:07:31.740
+I have half equals empty
+five Passion Equal Shaw one.
+
+94
+00:07:31.740 --> 00:07:35.954
+So I'm doing an MD five and
+assure one with this command and
+
+95
+00:07:35.954 --> 00:07:40.951
+now I'm going to output it to a log and
+it says log equals hash dot txt.
+
+96
+00:07:42.140 --> 00:07:43.730
+That's what I'm naming my log.
+
+97
+00:07:43.730 --> 00:07:46.240
+Hashtag txt Okay.
+
+98
+00:07:46.240 --> 00:07:47.140
+Mhm.
+
+99
+00:07:47.140 --> 00:07:50.810
+By default it will write this hash log.
+
+100
+00:07:50.810 --> 00:07:55.741
+If I do not put a file path in here, it's
+going to write it and whatever folder I'm
+
+101
+00:07:55.741 --> 00:07:59.651
+in in terminal and we'll see that
+when we do our walk through.
+
+102
+00:08:01.540 --> 00:08:04.490
+Okay.
+We're going to do our demo now of our
+
+103
+00:08:04.490 --> 00:08:07.370
+three commands that we talked about.
+
+104
+00:08:07.370 --> 00:08:10.481
+The DD command, the D C F L D.
+
+105
+00:08:10.481 --> 00:08:15.756
+D command In the DC three DD command,
+We're going to do a demonstration and
+
+106
+00:08:15.756 --> 00:08:22.070
+this is a demonstration only because I'm
+running it on a Lennox virtual machine.
+
+107
+00:08:22.070 --> 00:08:27.340
+If you do have the Lennox VM and you want
+to follow along at home, That's great.
+
+108
+00:08:27.340 --> 00:08:32.275
+The commands we're going
+to be using are going
+
+109
+00:08:32.275 --> 00:08:35.580
+to be D D D C F L D D and D C three D D.
+
+110
+00:08:35.580 --> 00:08:39.966
+And these are the commands we
+talked about for imaging a drive,
+
+111
+00:08:39.966 --> 00:08:42.809
+full drive or logical volume in Lennox.
+
+112
+00:08:42.809 --> 00:08:43.660
+Now the D.
+
+113
+00:08:43.660 --> 00:08:46.080
+D command will image the drive.
+
+114
+00:08:46.080 --> 00:08:48.331
+The syntax of the command is D.
+
+115
+00:08:48.331 --> 00:08:49.040
+D.
+
+116
+00:08:49.040 --> 00:08:50.991
+And then we have our input file I.
+
+117
+00:08:50.991 --> 00:08:51.615
+F.
+And
+
+118
+00:08:51.615 --> 00:08:53.670
+we have to give it the path to the drive.
+
+119
+00:08:53.670 --> 00:08:57.281
+So this is DEv STB is
+the path to the drive.
+
+120
+00:08:57.281 --> 00:08:59.690
+We're going to image now the output file.
+
+121
+00:08:59.690 --> 00:09:03.680
+I'm putting it in this folder
+on my desktop called task.
+
+122
+00:09:03.680 --> 00:09:08.958
+So it would be home my name because
+I'm the user desktop test and
+
+123
+00:09:08.958 --> 00:09:13.860
+I'm calling it flash drive dot
+I M G flash drive dot image.
+
+124
+00:09:13.860 --> 00:09:16.967
+Now when I do this, but
+before I would do this,
+
+125
+00:09:16.967 --> 00:09:19.780
+let's back up just a minute for a second.
+
+126
+00:09:19.780 --> 00:09:23.489
+You probably want to if you were
+doing this on the system and
+
+127
+00:09:23.489 --> 00:09:28.637
+you were doing it live before you created
+the image, you would want to go ahead and
+
+128
+00:09:28.637 --> 00:09:32.680
+list your blocks out and
+take a look at what you wanted to image.
+
+129
+00:09:32.680 --> 00:09:36.050
+So let's list the blocks
+out to list the blocks out.
+
+130
+00:09:36.050 --> 00:09:42.140
+I'm going to use the LS for
+list and then B L K for list block.
+
+131
+00:09:42.140 --> 00:09:49.332
+Now we do this, we can see all
+the drives that can be mounted here and
+
+132
+00:09:49.332 --> 00:09:56.040
+I see my STB,
+I can see how big it is, it's 120 MB.
+
+133
+00:09:56.040 --> 00:09:59.935
+It is my USB test drive and
+that is the one
+
+134
+00:09:59.935 --> 00:10:04.671
+that I want to create a DVD
+image of the command.
+
+135
+00:10:04.671 --> 00:10:08.990
+Again, D D for dis duplicate.
+
+136
+00:10:08.990 --> 00:10:10.713
+I.
+F is the input file and
+
+137
+00:10:10.713 --> 00:10:14.494
+we're pointing it at this
+S D B O F is the output file and
+
+138
+00:10:14.494 --> 00:10:18.380
+I'm going to output to this
+test folder on my desktop.
+
+139
+00:10:18.380 --> 00:10:22.115
+Now when I hit enter,
+it's going to take a second to run and
+
+140
+00:10:22.115 --> 00:10:26.250
+it's already finished and
+it tells you how many records in and
+
+141
+00:10:26.250 --> 00:10:29.460
+how many records out
+that number should match.
+
+142
+00:10:29.460 --> 00:10:34.476
+It tells you how many bytes that it copied
+and it gives us you in megabytes also,
+
+143
+00:10:34.476 --> 00:10:37.820
+but it is not automatically
+creating a hash value.
+
+144
+00:10:37.820 --> 00:10:42.140
+If we go and look in our test folder,
+we can see our flash drive dot image.
+
+145
+00:10:42.140 --> 00:10:46.270
+Now D c F L d D.
+
+146
+00:10:46.270 --> 00:10:50.834
+We can create a MD five and
+sha one image if we'd like,
+
+147
+00:10:50.834 --> 00:10:55.820
+as we're creating the image itself and
+it runs that fast.
+
+148
+00:10:55.820 --> 00:10:57.640
+So let's take a look at the command.
+
+149
+00:10:57.640 --> 00:11:02.560
+It's D C F L D D again,
+our input file, which is the same.
+
+150
+00:11:02.560 --> 00:11:07.482
+It's in the devices and
+it's STB I asked for
+
+151
+00:11:07.482 --> 00:11:12.403
+a hash MD five and
+sha one I output in my MD five
+
+152
+00:11:12.403 --> 00:11:16.560
+to MD five log equals MD five dot txt.
+
+153
+00:11:16.560 --> 00:11:20.011
+The MD five log is what it's creating and
+I have to give it a file name.
+
+154
+00:11:20.011 --> 00:11:25.640
+The show one log is the same show
+one log equals shaw one dot txt.
+
+155
+00:11:25.640 --> 00:11:30.111
+I could have named these anything but
+I named them MD five dot txt.
+
+156
+00:11:30.111 --> 00:11:35.469
+And shaw one dot txt So I know what they
+are but you can name them whatever you'd
+
+157
+00:11:35.469 --> 00:11:40.930
+like and I have the hash converting after
+and bs is the sector size of 5, 12.
+
+158
+00:11:40.930 --> 00:11:45.104
+Now my output file I'm calling
+it tests USB two dot image and
+
+159
+00:11:45.104 --> 00:11:49.862
+then again it tells me the blocks
+written and the blocks in and out and
+
+160
+00:11:49.862 --> 00:11:52.230
+all those numbers should match.
+
+161
+00:11:52.230 --> 00:11:57.760
+And I go ahead and look in my test folder,
+I can see that I have my test to image.
+
+162
+00:11:57.760 --> 00:12:01.468
+I still have my flash drive image but
+I have my test to image and
+
+163
+00:12:01.468 --> 00:12:04.812
+I have my MD five which gives
+me the MD five hash value and
+
+164
+00:12:04.812 --> 00:12:08.340
+the shaw one which gives
+me the shaw one hash value.
+
+165
+00:12:08.340 --> 00:12:13.092
+The next command I'm going
+to show you is the one that
+
+166
+00:12:13.092 --> 00:12:17.530
+I really like the best and
+that is the D C three D D.
+
+167
+00:12:17.530 --> 00:12:19.470
+And you'll see why in a second.
+
+168
+00:12:19.470 --> 00:12:22.580
+So I'm going to go ahead and
+copy this command.
+
+169
+00:12:22.580 --> 00:12:25.590
+I'm going to paste it here and
+it will run as soon as I paste it.
+
+170
+00:12:25.590 --> 00:12:28.440
+So we have the Dc three DD.
+
+171
+00:12:28.440 --> 00:12:33.137
+The input file and
+it's the same path devices STB Now
+
+172
+00:12:33.137 --> 00:12:38.581
+the hash output STB image so
+I'm hashing it with an output and
+
+173
+00:12:38.581 --> 00:12:41.810
+I'm calling the output STB image.
+
+174
+00:12:41.810 --> 00:12:45.658
+My hash is going to equal an MD five and
+sha one and
+
+175
+00:12:45.658 --> 00:12:50.300
+I'm putting him in the log,
+the log equals hash dot txt.
+
+176
+00:12:50.300 --> 00:12:52.690
+So we'll go ahead and
+we'll run the command and
+
+177
+00:12:52.690 --> 00:12:54.422
+you can see it is we're running and
+
+178
+00:12:54.422 --> 00:12:58.580
+you can see that it's running because you
+see the bites as they're being copied.
+
+179
+00:12:58.580 --> 00:13:02.691
+So it kind of has a progress bar
+similar to what you can do with F D.
+
+180
+00:13:02.691 --> 00:13:03.630
+K.
+Imager.
+
+181
+00:13:03.630 --> 00:13:05.650
+Whereas the other two we ran them and
+
+182
+00:13:05.650 --> 00:13:08.360
+we just waited until my
+command line came back.
+
+183
+00:13:08.360 --> 00:13:14.280
+It's finished and we can see that we get
+the bytes copied and the bites hashed.
+
+184
+00:13:14.280 --> 00:13:16.550
+And those number of bytes should match.
+
+185
+00:13:16.550 --> 00:13:19.460
+We can see the sectors in.
+
+186
+00:13:19.460 --> 00:13:21.630
+It reports zero bad sectors.
+
+187
+00:13:21.630 --> 00:13:23.671
+And this is the input results for
+the device.
+
+188
+00:13:23.671 --> 00:13:27.665
+So it's hashing the device
+similar to FTK imager and
+
+189
+00:13:27.665 --> 00:13:31.770
+then it's hashing the output file,
+our image file.
+
+190
+00:13:31.770 --> 00:13:36.401
+And it's giving us the hash values for
+the image file and those hashtags match.
+
+191
+00:13:36.401 --> 00:13:40.670
+And that's showing us that no data on
+the drive was changed when we created our
+
+192
+00:13:40.670 --> 00:13:43.887
+image and that's what makes
+a forensically sound image,
+
+193
+00:13:43.887 --> 00:13:47.530
+that we can show that we made no
+changes to the original evidence.
+
+194
+00:13:47.530 --> 00:13:52.800
+It also gives you a time when it
+completed at a time when it started.
+
+195
+00:13:52.800 --> 00:13:58.592
+So you get more of a robust
+output with D C three
+
+196
+00:13:58.592 --> 00:14:06.381
+D D than we do with the other
+commands like D D or even D C F L, D.
+
+197
+00:14:06.381 --> 00:14:10.123
+D.
+We can create the hash values but we don't
+
+198
+00:14:10.123 --> 00:14:15.881
+get the hash of the evidence in the hash
+of the image file so that we can see.
+
+199
+00:14:15.881 --> 00:14:17.190
+We've made no changes.
+
+200
+00:14:17.190 --> 00:14:22.074
+You could always hash your image
+file using a hash some command,
+
+201
+00:14:22.074 --> 00:14:24.170
+but that's an extra step.
+
+202
+00:14:24.170 --> 00:14:27.540
+And with this using this command,
+we don't have to take that step.
+
+203
+00:14:27.540 --> 00:14:30.127
+Now.
+What we can also do is I'm going to go
+
+204
+00:14:30.127 --> 00:14:34.859
+ahead and close terminal for now is I
+can take a look at my USB test drive and
+
+205
+00:14:34.859 --> 00:14:37.140
+I can see what's on there.
+
+206
+00:14:37.140 --> 00:14:38.860
+What's kind of nice with Lennox.
+
+207
+00:14:38.860 --> 00:14:42.940
+I'm going to go ahead and
+I am going to eject my test drive.
+
+208
+00:14:42.940 --> 00:14:48.306
+I can open up my test folder and
+I can take my STB image and
+
+209
+00:14:48.306 --> 00:14:51.701
+I can open it with image dismount.
+
+210
+00:14:51.701 --> 00:14:55.234
+Now I mounted my USB drive,
+the original evidence itself or
+
+211
+00:14:55.234 --> 00:14:58.767
+my test drive in this case and
+now I've mounted the image and
+
+212
+00:14:58.767 --> 00:15:03.076
+I can bring the image up and I can see
+that the files are the same as they were
+
+213
+00:15:03.076 --> 00:15:06.940
+on the test drive and
+I could go through that if I wanted to.
+
+214
+00:15:06.940 --> 00:15:13.110
+So I do have the ability in Lenox
+to mount the image as a bribe.
+
+215
+00:15:13.110 --> 00:15:17.210
+And you also have the ability
+to go ahead and amounted.
+
+216
+00:15:17.210 --> 00:15:23.642
+And that ends our demonstration
+of the Lennox D D D C F L D D and
+
+217
+00:15:23.642 --> 00:15:27.640
+D C three D D commands for imaging.
+
+218
+00:15:27.640 --> 00:15:32.560
+In our next course, we're going to talk
+about hash values and file hashing

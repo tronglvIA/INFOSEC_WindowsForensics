@@ -1,0 +1,835 @@
+WEBVTT
+
+1
+00:00:00.540 --> 00:00:04.340
+Hello and
+welcome back to digital forensic concepts.
+
+2
+00:00:04.340 --> 00:00:08.819
+In this course we're talking about
+keywords and draft searches.
+
+3
+00:00:08.819 --> 00:00:14.170
+In this module, module three, we're
+going to discuss how we use our searches,
+
+4
+00:00:14.170 --> 00:00:18.000
+some examples of when we would
+want to use a graph search.
+
+5
+00:00:18.000 --> 00:00:21.526
+Our regular expression would be for
+
+6
+00:00:21.526 --> 00:00:27.140
+an IP address,
+a phone number to find you or else.
+
+7
+00:00:27.140 --> 00:00:30.466
+We're also going to take a look
+at the graph options and
+
+8
+00:00:30.466 --> 00:00:34.863
+the great recursive search research
+directories, recursive lee.
+
+9
+00:00:34.863 --> 00:00:39.483
+This is an example of a correct expression
+
+10
+00:00:39.483 --> 00:00:44.470
+to find an IP address and
+we take a look at it.
+
+11
+00:00:44.470 --> 00:00:48.665
+We can see we have our square
+brackets with our zero through 9 and
+
+12
+00:00:48.665 --> 00:00:50.303
+because it's correct.
+
+13
+00:00:50.303 --> 00:00:54.385
+We need the escape character before
+the curly bracket because that would be
+
+14
+00:00:54.385 --> 00:00:57.061
+considered an operator or
+a special character.
+
+15
+00:00:58.110 --> 00:01:02.840
+And then we have one or
+3, one comma three.
+
+16
+00:01:02.840 --> 00:01:05.751
+And then again we have our
+ski are curly brackets.
+
+17
+00:01:07.940 --> 00:01:15.890
+And we have our escape and we have
+a dot and then we have zero through 9.
+
+18
+00:01:15.890 --> 00:01:21.317
+Again we have an escape and we have one or
+
+19
+00:01:21.317 --> 00:01:26.415
+3 have our dot 0 to 9 curly brackets
+
+20
+00:01:26.415 --> 00:01:30.531
+dot 1,3 square brackets.
+
+21
+00:01:30.531 --> 00:01:34.640
+Zero through nine, and
+then again matching one or three times.
+
+22
+00:01:34.640 --> 00:01:37.249
+So what this is saying is
+we're going to look for
+
+23
+00:01:37.249 --> 00:01:41.240
+the digits zero through nine,
+matching one or three times.
+
+24
+00:01:41.240 --> 00:01:44.206
+We're looking for dot and
+then we're looking for
+
+25
+00:01:44.206 --> 00:01:48.670
+the digits again zero through nine,
+matching one or three times and a dot.
+
+26
+00:01:48.670 --> 00:01:54.840
+Zero through nine, matching one or
+three times dot and then zero through 9.
+
+27
+00:01:54.840 --> 00:01:59.377
+Imagine one or
+3 times the file were searching and
+
+28
+00:01:59.377 --> 00:02:04.669
+this would be called I can think
+I have config dot txt now for
+
+29
+00:02:04.669 --> 00:02:07.440
+the group phone number.
+
+30
+00:02:07.440 --> 00:02:12.396
+Again we're using reps, so
+we have to use the escape character
+
+31
+00:02:12.396 --> 00:02:17.181
+before the bracket to have it
+operated a special character.
+
+32
+00:02:18.440 --> 00:02:21.540
+And in our square brackets we
+have again zero through 9.
+
+33
+00:02:21.540 --> 00:02:26.653
+We have a three matching three times 0-9,
+
+34
+00:02:26.653 --> 00:02:32.851
+matching three times followed
+by a space a dash or dot.
+
+35
+00:02:34.040 --> 00:02:38.972
+And then we have our special character
+question mark escaped one or
+
+36
+00:02:38.972 --> 00:02:40.651
+more times 0- nine.
+
+37
+00:02:42.050 --> 00:02:46.761
+We have our three whatever brackets
+escaped to operate as special characters.
+
+38
+00:02:46.761 --> 00:02:53.571
+The curly brackets, space, dash or dot and
+then there are enclosed square brackets.
+
+39
+00:02:55.440 --> 00:03:00.070
+And then we have our escape
+question mark again 0 to 9.
+
+40
+00:03:00.070 --> 00:03:07.240
+Matching four times when our curly
+brackets escaped to operate as a function.
+
+41
+00:03:07.240 --> 00:03:12.031
+And the file we're looking at right here
+is phone numbers underscore dot txt and
+
+42
+00:03:12.031 --> 00:03:13.090
+we have our URL.
+
+43
+00:03:13.090 --> 00:03:19.040
+And this is Igra extended group so
+we have great minus E.
+
+44
+00:03:19.040 --> 00:03:23.061
+We have our www, we have or.
+
+45
+00:03:24.140 --> 00:03:29.367
+The logical or which is not escaped
+because in regret we don't escape
+
+46
+00:03:29.367 --> 00:03:35.600
+the special character unless you want the
+graph to interpret it as a literal pipe.
+
+47
+00:03:35.600 --> 00:03:42.670
+That we have our HTTP HTTPS with or
+in between the pipe.
+
+48
+00:03:42.670 --> 00:03:47.397
+Biological or then we have
+an escape in front of the thought
+
+49
+00:03:47.397 --> 00:03:51.929
+because we want to find a literal
+dot com in the file we're
+
+50
+00:03:51.929 --> 00:03:55.698
+looking at here is Ivan
+underscore n t dot txt.
+
+51
+00:03:55.698 --> 00:03:59.662
+So we can see we have to escape the
+special characters to have them work as
+
+52
+00:03:59.662 --> 00:04:01.540
+operators with breath.
+
+53
+00:04:01.540 --> 00:04:04.980
+But in egress the special
+characters workers, operators.
+
+54
+00:04:04.980 --> 00:04:09.740
+Unless there is preceded
+by the escape character.
+
+55
+00:04:09.740 --> 00:04:13.970
+Then we're going to work with
+our additional operators and
+
+56
+00:04:13.970 --> 00:04:19.447
+remember the -i for case, insensitive
+minus n to show the line numbers.
+
+57
+00:04:19.447 --> 00:04:23.660
+The -C which we're going to
+see lines before and after.
+
+58
+00:04:23.660 --> 00:04:26.433
+And in this case we
+have the number four so
+
+59
+00:04:26.433 --> 00:04:31.501
+I'm going to see four lines before and
+after our hit and then we have the URL.
+
+60
+00:04:31.501 --> 00:04:33.239
+Where your expression,
+
+61
+00:04:33.239 --> 00:04:38.711
+we just talked about in the same Ivan
+underscore dot txt file searching it now.
+
+62
+00:04:38.711 --> 00:04:43.340
+A recursive search would be
+grip minus R for recursive.
+
+63
+00:04:43.340 --> 00:04:47.601
+We're searching for
+the term logins in our logs and
+
+64
+00:04:47.601 --> 00:04:52.271
+now we have another recursive
+search with grip minus R.
+
+65
+00:04:52.271 --> 00:04:57.358
+For recursive search, and
+in this one we're searching for
+
+66
+00:04:57.358 --> 00:05:02.561
+IP addresses and
+a file called IP underscore txt I'm sorry.
+
+67
+00:05:02.561 --> 00:05:06.841
+This is a directory minus R indicate.
+
+68
+00:05:06.841 --> 00:05:10.840
+We're looking at a directory
+called iP underscore txt.
+
+69
+00:05:10.840 --> 00:05:13.943
+So we're going to be crucial
+research that entire directory
+
+70
+00:05:13.943 --> 00:05:16.440
+which can contain multiple files.
+
+71
+00:05:16.440 --> 00:05:19.697
+And we'll see that in our
+demonstration and their demonstration,
+
+72
+00:05:19.697 --> 00:05:22.393
+we're going to use the Windows
+10 Lennox terminal app.
+
+73
+00:05:22.393 --> 00:05:25.929
+And we're going to look for
+IP addresses, phone numbers, you or
+
+74
+00:05:25.929 --> 00:05:28.820
+else we're going to do group searches and
+searches.
+
+75
+00:05:28.820 --> 00:05:34.349
+We're going to search your coercively
+the sample files we're going to use or
+
+76
+00:05:34.349 --> 00:05:40.615
+a file called if configured up text iP
+tests text, phone numbers underscore txt.
+
+77
+00:05:40.615 --> 00:05:45.370
+And the directories are going to look in
+our rehearsal search are going to be logs,
+
+78
+00:05:45.370 --> 00:05:49.615
+which is actually the folder containing
+the windows of that locks and
+
+79
+00:05:49.615 --> 00:05:52.240
+a folder named IP underscore txt.
+
+80
+00:05:52.240 --> 00:05:57.640
+So let's get started with our
+demonstration and this walkthrough.
+
+81
+00:05:57.640 --> 00:06:01.110
+We're going to test some
+of our grip expressions.
+
+82
+00:06:01.110 --> 00:06:05.647
+The first grip expression we're
+going to use is to find an IP
+
+83
+00:06:05.647 --> 00:06:09.620
+address in the file
+called if config dot txt.
+
+84
+00:06:09.620 --> 00:06:14.456
+And we can see this is the expression
+that we talked about in our PowerPoint
+
+85
+00:06:14.456 --> 00:06:15.940
+presentation.
+
+86
+00:06:15.940 --> 00:06:19.451
+And we see we're using grip and
+we can see searching for
+
+87
+00:06:19.451 --> 00:06:23.740
+the numbers zero through 9,
+occurring 1- three times.
+
+88
+00:06:23.740 --> 00:06:27.100
+And we're doing that again 0 to 9,
+1, 2, 3 times.
+
+89
+00:06:27.100 --> 00:06:29.900
+0 to 91 or three times.
+
+90
+00:06:29.900 --> 00:06:36.830
+And then again 0 to 9 occurring between
+occurring from once or three times.
+
+91
+00:06:36.830 --> 00:06:40.600
+So this isn't arranges either one time or
+three times.
+
+92
+00:06:40.600 --> 00:06:42.957
+And let's see what we get for results,
+
+93
+00:06:42.957 --> 00:06:46.820
+as you can see, it's returning
+the results of IP addresses.
+
+94
+00:06:46.820 --> 00:06:51.221
+The next great expression we're
+going to use is going to be for
+
+95
+00:06:51.221 --> 00:06:55.140
+a US phone number and
+we're still using grip.
+
+96
+00:06:55.140 --> 00:06:58.724
+So you have to escape the special
+characters and we're looking for
+
+97
+00:06:58.724 --> 00:07:00.240
+a US phone number.
+
+98
+00:07:00.240 --> 00:07:04.240
+So we're looking for the digits zero
+through nine, occurring three times.
+
+99
+00:07:04.240 --> 00:07:07.800
+Zero through nine, occurring three times.
+
+100
+00:07:07.800 --> 00:07:13.566
+And in this expression, I want to point
+out this is followed by an escaped bracket
+
+101
+00:07:13.566 --> 00:07:19.040
+and then a singular bracket because
+an area code could be in a bracket.
+
+102
+00:07:19.040 --> 00:07:22.707
+And in this breast set
+of brackets right here,
+
+103
+00:07:22.707 --> 00:07:27.440
+we have a space which is just a space,
+a dash or dot.
+
+104
+00:07:27.440 --> 00:07:32.112
+And none of these characters need to be
+escaped because this is grip if it were
+
+105
+00:07:32.112 --> 00:07:35.543
+eager grip,
+we would have to escape these characters.
+
+106
+00:07:35.543 --> 00:07:40.640
+In order for them to find literal dashes,
+literal spaces or literal dots.
+
+107
+00:07:40.640 --> 00:07:44.084
+So let's test our expression,
+and as we can see,
+
+108
+00:07:44.084 --> 00:07:47.861
+this does return phone
+numbers in different formats.
+
+109
+00:07:47.861 --> 00:07:52.240
+We can see we have one here that does have
+the parentheses around the area code.
+
+110
+00:07:52.240 --> 00:07:56.140
+A space and
+then a dash separated phone number.
+
+111
+00:07:56.140 --> 00:08:02.068
+We have a phone number separated by
+all dashes, one separated by spaces,
+
+112
+00:08:02.068 --> 00:08:06.720
+one separated by dots and
+one with no separation at all.
+
+113
+00:08:06.720 --> 00:08:11.381
+It's just all crunched together and
+the escaped question mark.
+
+114
+00:08:11.381 --> 00:08:16.089
+Character means zero more
+times the next expression
+
+115
+00:08:16.089 --> 00:08:20.640
+we're going to test,
+it's going to be a URL.
+
+116
+00:08:20.640 --> 00:08:25.040
+Are searching for a URL and we're
+going to use extended grip this time.
+
+117
+00:08:25.040 --> 00:08:29.348
+And as we can see we have grip minus E for
+extended grip,
+
+118
+00:08:29.348 --> 00:08:32.840
+we do not have to escape our bracket.
+
+119
+00:08:32.840 --> 00:08:37.980
+We're using the logical or with no escape
+character, no escape character before it.
+
+120
+00:08:37.980 --> 00:08:45.550
+So looking for www Http or http or https.
+
+121
+00:08:45.550 --> 00:08:50.640
+And we do have to escape the dot because
+we're looking for a literal dot com.
+
+122
+00:08:50.640 --> 00:08:55.346
+And we're searching in the file
+Ivan underscore nt dot txt
+
+123
+00:08:55.346 --> 00:09:00.540
+which is a red ripper report
+of the Ivan anti user account.
+
+124
+00:09:00.540 --> 00:09:04.728
+And we can see we do get several hits for
+the https and
+
+125
+00:09:04.728 --> 00:09:07.620
+the dot coms throughout the file.
+
+126
+00:09:07.620 --> 00:09:12.515
+And we can see we have an email
+address down here with a dot com which
+
+127
+00:09:12.515 --> 00:09:16.140
+is Ivan zero democracy at gmail.com.
+
+128
+00:09:16.140 --> 00:09:19.099
+We can also see some Microsoft com and
+
+129
+00:09:19.099 --> 00:09:22.840
+we don't see too much
+more in the center user.
+
+130
+00:09:22.840 --> 00:09:27.314
+But now let's add in some operators with
+this regular expression to get a little
+
+131
+00:09:27.314 --> 00:09:29.610
+more context to what we're looking at.
+
+132
+00:09:29.610 --> 00:09:34.840
+Okay, let's go back to our expression
+when we ran the expression
+
+133
+00:09:34.840 --> 00:09:40.570
+this time we ran it with the -i,
+which is case insensitive the minus n.
+
+134
+00:09:40.570 --> 00:09:44.672
+Because I want to see the line numbers
+where it's finding these hits and
+
+135
+00:09:44.672 --> 00:09:46.211
+I want to see some context.
+
+136
+00:09:46.211 --> 00:09:48.210
+I want to see four lines before and after.
+
+137
+00:09:48.210 --> 00:09:52.770
+So I used the minus C space for
+two c, four lines before and
+
+138
+00:09:52.770 --> 00:09:54.961
+four lines after each hit.
+
+139
+00:09:58.740 --> 00:10:01.470
+And we use the same regular
+expression we did before.
+
+140
+00:10:01.470 --> 00:10:04.150
+So now let's take a look at it
+with a little more context.
+
+141
+00:10:04.150 --> 00:10:08.720
+And we can see here this is katana search
+terms using the katana search bar.
+
+142
+00:10:08.720 --> 00:10:14.240
+This is coming from a file path of
+Explorer, which would be File Explorer.
+
+143
+00:10:14.240 --> 00:10:18.560
+And we can see our search page,
+let's go Microsoft dot com,
+
+144
+00:10:18.560 --> 00:10:21.440
+our start page is the same here.
+
+145
+00:10:21.440 --> 00:10:26.914
+We can see Internet Explorer Main Windows
+search continue down.
+
+146
+00:10:26.914 --> 00:10:30.732
+We could see recent docs key, you can see,
+
+147
+00:10:30.732 --> 00:10:35.611
+we have typed URLs and
+we can see our email address hit in
+
+148
+00:10:35.611 --> 00:10:41.251
+the Un Red Milky is where that
+email address hit an unread mail.
+
+149
+00:10:42.750 --> 00:10:45.841
+And you can see a little bit
+more about the mail application,
+
+150
+00:10:45.841 --> 00:10:47.361
+It was Mozilla Thunderbird.
+
+151
+00:10:48.440 --> 00:10:53.040
+And we can see the user profile
+of Ivan here apt out of roaming.
+
+152
+00:10:53.040 --> 00:10:56.698
+So we get a little more context of
+what we're looking at in a little more
+
+153
+00:10:56.698 --> 00:11:00.700
+information when we use the operators
+to see the lines before and after.
+
+154
+00:11:00.700 --> 00:11:04.576
+And we also have the line numbers,
+they are in this red grip,
+
+155
+00:11:04.576 --> 00:11:08.540
+report the line numbers
+that the hits are founded.
+
+156
+00:11:08.540 --> 00:11:13.116
+Now let's try a recursive search
+in the Windows of vet logs and
+
+157
+00:11:13.116 --> 00:11:16.440
+we're going to use great for this one.
+
+158
+00:11:16.440 --> 00:11:20.340
+And we're searching great minus R for
+recursive search.
+
+159
+00:11:20.340 --> 00:11:23.842
+And we're searching for the word log in
+and researching in the Windows event logs,
+
+160
+00:11:23.842 --> 00:11:25.640
+a folder called logs.
+
+161
+00:11:25.640 --> 00:11:28.311
+And that folder is located
+within the file system at C.
+
+162
+00:11:28.311 --> 00:11:34.880
+Windows system, 32 win event logs and
+see what we find out here, okay.
+
+163
+00:11:34.880 --> 00:11:40.263
+It's returning to things for to us these
+are binary files so it's not breaking out
+
+164
+00:11:40.263 --> 00:11:46.040
+the hits, but we do see two Windows event
+log specified that have matches in them.
+
+165
+00:11:46.040 --> 00:11:49.280
+So we would have to go ahead and
+look at these files individually.
+
+166
+00:11:49.280 --> 00:11:54.801
+Now we're going to try looking in
+a folder called IP underscore txt.
+
+167
+00:11:54.801 --> 00:11:57.540
+And we're going to search for
+IP addresses.
+
+168
+00:11:57.540 --> 00:12:02.790
+There are two files in this folder,
+let's go ahead and run our search.
+
+169
+00:12:02.790 --> 00:12:08.340
+We're going to paste anyway, and when we
+run the search, we have our great minus R.
+
+170
+00:12:08.340 --> 00:12:11.949
+IP regular expression and
+then the folder was searching,
+
+171
+00:12:11.949 --> 00:12:16.883
+and it's a directory researching,
+recursive lee in IP underscore txt., and
+
+172
+00:12:16.883 --> 00:12:19.840
+you can see here on the left-hand side.
+
+173
+00:12:19.840 --> 00:12:25.043
+These two files in here if config
+an iptest.txt and it will tell
+
+174
+00:12:25.043 --> 00:12:30.751
+you which violet found the hidden and
+it shows us our IP address hits.

@@ -1,0 +1,1941 @@
+WEBVTT
+
+1
+00:00:00.440 --> 00:00:04.785
+Welcome back to digital
+forensic concepts.
+
+2
+00:00:04.785 --> 00:00:07.230
+This is our final project and
+
+3
+00:00:07.230 --> 00:00:10.035
+these is the questions
+with the answers.
+
+4
+00:00:10.035 --> 00:00:12.900
+Question number 1; what are
+
+5
+00:00:12.900 --> 00:00:14.580
+the four phases in
+
+6
+00:00:14.580 --> 00:00:17.775
+a complete computer
+forensic examination?
+
+7
+00:00:17.775 --> 00:00:21.525
+The answer is
+collection and storage,
+
+8
+00:00:21.525 --> 00:00:26.759
+the preservation process,
+analysis and testing,
+
+9
+00:00:26.759 --> 00:00:29.685
+and reporting and testifying.
+
+10
+00:00:29.685 --> 00:00:33.335
+Question number 2; what is
+
+11
+00:00:33.335 --> 00:00:37.970
+the difference between
+criminal and civil offenses?
+
+12
+00:00:37.970 --> 00:00:41.960
+Criminal law deals with
+offenses against the state.
+
+13
+00:00:41.960 --> 00:00:45.785
+The burden of proof is proof
+beyond a reasonable doubt,
+
+14
+00:00:45.785 --> 00:00:50.135
+and its punishment can
+include time in jail.
+
+15
+00:00:50.135 --> 00:00:53.300
+Civil law deals with
+violations of contracts,
+
+16
+00:00:53.300 --> 00:00:57.530
+lawsuits, divorces,
+and custody cases.
+
+17
+00:00:57.530 --> 00:01:02.030
+Civil cases often have
+a financial aspect.
+
+18
+00:01:02.030 --> 00:01:06.635
+The burden of proof is
+preponderance of the evidence.
+
+19
+00:01:06.635 --> 00:01:11.495
+What does the Fourth
+Amendment guarantee people?
+
+20
+00:01:11.495 --> 00:01:13.205
+Question 3.
+
+21
+00:01:13.205 --> 00:01:17.270
+The Fourth Amendment guarantees
+people it's the right
+
+22
+00:01:17.270 --> 00:01:18.920
+of the people to be secure in
+
+23
+00:01:18.920 --> 00:01:20.795
+their persons, houses, papers,
+
+24
+00:01:20.795 --> 00:01:25.475
+and effects against unreasonable
+searches and seizures,
+
+25
+00:01:25.475 --> 00:01:28.730
+shall not be violated
+and no warrants
+
+26
+00:01:28.730 --> 00:01:31.825
+shall issue but upon
+probable cause,
+
+27
+00:01:31.825 --> 00:01:34.325
+supported by oath or affirmation,
+
+28
+00:01:34.325 --> 00:01:37.835
+and particularly describing
+the place to be searched,
+
+29
+00:01:37.835 --> 00:01:41.215
+and the person or
+thing to be seized.
+
+30
+00:01:41.215 --> 00:01:44.330
+So it's the right of the
+people to be secure in
+
+31
+00:01:44.330 --> 00:01:48.829
+their homes against unreasonable
+searches and seizures,
+
+32
+00:01:48.829 --> 00:01:50.450
+and no warrant will be
+
+33
+00:01:50.450 --> 00:01:54.055
+issued unless there
+is probable cause,
+
+34
+00:01:54.055 --> 00:01:56.850
+and that probable cause has to
+
+35
+00:01:56.850 --> 00:01:59.805
+include the place to be searched,
+
+36
+00:01:59.805 --> 00:02:03.960
+and the person or
+thing to be seized.
+
+37
+00:02:03.960 --> 00:02:06.410
+If you violate the
+Fourth Amendment,
+
+38
+00:02:06.410 --> 00:02:10.145
+that will result in the
+evidence being thrown out.
+
+39
+00:02:10.145 --> 00:02:14.175
+Question number 4; what is
+
+40
+00:02:14.175 --> 00:02:18.885
+a consent search and can
+consent be withdrawn?
+
+41
+00:02:18.885 --> 00:02:22.730
+A consent search is when a
+person gives permission for
+
+42
+00:02:22.730 --> 00:02:26.685
+an official to seize and
+search their property.
+
+43
+00:02:26.685 --> 00:02:29.960
+Consent should be
+given in writing;
+
+44
+00:02:29.960 --> 00:02:33.425
+it must be given freely
+and without coercion,
+
+45
+00:02:33.425 --> 00:02:37.645
+and yes, consent can be
+withdrawn at any time.
+
+46
+00:02:37.645 --> 00:02:42.930
+Question 5; what is a
+preservation request?
+
+47
+00:02:42.930 --> 00:02:48.110
+Preservation request is we
+may request providers to,
+
+48
+00:02:48.110 --> 00:02:50.240
+for the time of 90 days,
+
+49
+00:02:50.240 --> 00:02:52.790
+preserve records that it has in
+
+50
+00:02:52.790 --> 00:02:59.810
+its possession pending the
+issuance of legal process,
+
+51
+00:02:59.810 --> 00:03:01.685
+something like a search warrant.
+
+52
+00:03:01.685 --> 00:03:05.420
+We can only ask for the
+information already in
+
+53
+00:03:05.420 --> 00:03:09.265
+their possession, not
+future information.
+
+54
+00:03:09.265 --> 00:03:12.175
+We must have a date
+
+55
+00:03:12.175 --> 00:03:16.115
+and time with an IP address
+to request records,
+
+56
+00:03:16.115 --> 00:03:18.425
+and we may need to
+
+57
+00:03:18.425 --> 00:03:21.535
+provide an account number
+or other information.
+
+58
+00:03:21.535 --> 00:03:24.710
+This would be when we're
+requesting records from
+
+59
+00:03:24.710 --> 00:03:27.020
+an Internet service provider
+
+60
+00:03:27.020 --> 00:03:31.350
+or some type of
+social media account.
+
+61
+00:03:32.150 --> 00:03:36.765
+Question 6; what is
+a search warrant?
+
+62
+00:03:36.765 --> 00:03:39.530
+A search warrant is a
+legal document and it
+
+63
+00:03:39.530 --> 00:03:43.130
+authorizes the search
+and/or seizure of property.
+
+64
+00:03:43.130 --> 00:03:45.575
+Search warrants are issued
+
+65
+00:03:45.575 --> 00:03:48.545
+upon the legal standard
+of probable cause,
+
+66
+00:03:48.545 --> 00:03:51.055
+and they are supported by oath.
+
+67
+00:03:51.055 --> 00:03:53.735
+A search warrant authorizes
+
+68
+00:03:53.735 --> 00:03:56.915
+the search of a place
+to look for evidence,
+
+69
+00:03:56.915 --> 00:04:00.260
+contraband, or stolen
+property to be
+
+70
+00:04:00.260 --> 00:04:04.330
+used as evidence in
+a criminal case.
+
+71
+00:04:04.330 --> 00:04:08.535
+Question 7; explain
+the Daubert Rule.
+
+72
+00:04:08.535 --> 00:04:10.760
+The Daubert Rule is a test
+
+73
+00:04:10.760 --> 00:04:13.840
+regarding the admissibility
+of scientific evidence.
+
+74
+00:04:13.840 --> 00:04:17.390
+The Daubert Rule requires
+that a technique used to
+
+75
+00:04:17.390 --> 00:04:21.005
+obtain evidence has been
+tested and verified,
+
+76
+00:04:21.005 --> 00:04:24.065
+has been subject to peer
+review and publication,
+
+77
+00:04:24.065 --> 00:04:26.845
+it must have a known
+rate of error,
+
+78
+00:04:26.845 --> 00:04:29.430
+and the method has been based
+
+79
+00:04:29.430 --> 00:04:34.520
+on accepted by the
+scientific community.
+
+80
+00:04:34.520 --> 00:04:36.800
+The method that
+we're using has been
+
+81
+00:04:36.800 --> 00:04:40.080
+accepted by the
+scientific community.
+
+82
+00:04:40.340 --> 00:04:43.595
+Question number 8; what are
+
+83
+00:04:43.595 --> 00:04:46.850
+ethics and how do they
+relate to digital forensics?
+
+84
+00:04:46.850 --> 00:04:48.020
+Well, ethics are a set of
+
+85
+00:04:48.020 --> 00:04:50.330
+principles that guide
+a person's behavior.
+
+86
+00:04:50.330 --> 00:04:53.410
+When we're in our profession,
+
+87
+00:04:53.410 --> 00:04:56.645
+if we make poor
+ethical decisions,
+
+88
+00:04:56.645 --> 00:05:00.790
+we can ruin a case
+or even our careers.
+
+89
+00:05:00.790 --> 00:05:04.820
+Unethical behavior may
+also severely disrupt
+
+90
+00:05:04.820 --> 00:05:09.050
+the lives or businesses of
+those being investigated.
+
+91
+00:05:09.050 --> 00:05:13.250
+Unethical behavior can
+lead to civil action.
+
+92
+00:05:13.250 --> 00:05:15.890
+We can be sued for
+unethical behavior.
+
+93
+00:05:15.890 --> 00:05:19.475
+Question number 9; what
+is Locard's Principle?
+
+94
+00:05:19.475 --> 00:05:20.930
+Locard's Principle has to do with
+
+95
+00:05:20.930 --> 00:05:23.275
+the cross-transference
+of evidence.
+
+96
+00:05:23.275 --> 00:05:25.060
+When a person or
+an object comes in
+
+97
+00:05:25.060 --> 00:05:27.640
+contact with another
+person or an object,
+
+98
+00:05:27.640 --> 00:05:31.890
+evidence is exchanged
+and this exchange can
+
+99
+00:05:31.890 --> 00:05:36.370
+link the perpetrator of a
+crime to a particular place,
+
+100
+00:05:36.370 --> 00:05:39.430
+victim, or another
+piece of evidence.
+
+101
+00:05:39.430 --> 00:05:42.730
+Locard's principle applies
+to computer forensics also.
+
+102
+00:05:42.730 --> 00:05:46.135
+Electronic activities
+produce artifacts.
+
+103
+00:05:46.135 --> 00:05:47.380
+When we interact with a computer,
+
+104
+00:05:47.380 --> 00:05:49.180
+we produce artifacts that are
+
+105
+00:05:49.180 --> 00:05:53.480
+detectable through our digital
+forensic examinations.
+
+106
+00:05:53.480 --> 00:05:56.310
+Question number 10, list
+
+107
+00:05:56.310 --> 00:05:58.770
+the stages of the
+scientific method.
+
+108
+00:05:58.770 --> 00:06:00.855
+Well, we have observation
+
+109
+00:06:00.855 --> 00:06:02.715
+and we're going to
+make an observation.
+
+110
+00:06:02.715 --> 00:06:04.350
+We're going to
+develop a hypothesis
+
+111
+00:06:04.350 --> 00:06:05.820
+based on our observation.
+
+112
+00:06:05.820 --> 00:06:07.995
+We're going to test
+that hypothesis
+
+113
+00:06:07.995 --> 00:06:10.515
+to see if it is accurate or not,
+
+114
+00:06:10.515 --> 00:06:13.275
+and then we're going to
+verify the hypothesis.
+
+115
+00:06:13.275 --> 00:06:14.910
+If a hypothesis is true,
+
+116
+00:06:14.910 --> 00:06:16.620
+then we make a conclusion.
+
+117
+00:06:16.620 --> 00:06:20.770
+If not, we need to form
+another hypothesis.
+
+118
+00:06:20.870 --> 00:06:23.910
+Question 11, what is
+
+119
+00:06:23.910 --> 00:06:27.150
+the difference between a
+witness and an expert witness?
+
+120
+00:06:27.150 --> 00:06:30.120
+A witness is a
+person who provides
+
+121
+00:06:30.120 --> 00:06:34.305
+testimony under oath and is
+subject to perjury laws.
+
+122
+00:06:34.305 --> 00:06:36.675
+You cannot lie under
+oath. That's perjury.
+
+123
+00:06:36.675 --> 00:06:40.980
+A witness has a connection
+to the incident,
+
+124
+00:06:40.980 --> 00:06:43.050
+or they have information about
+
+125
+00:06:43.050 --> 00:06:46.215
+the incident that's
+being investigated.
+
+126
+00:06:46.215 --> 00:06:51.315
+An expert witness is a witness
+with expert knowledge,
+
+127
+00:06:51.315 --> 00:06:54.015
+skill, or experience,
+and training.
+
+128
+00:06:54.015 --> 00:06:57.915
+They are considered an
+expert in a specific field,
+
+129
+00:06:57.915 --> 00:07:00.025
+and they are usually paid.
+
+130
+00:07:00.025 --> 00:07:01.610
+They do not necessarily have
+
+131
+00:07:01.610 --> 00:07:04.025
+any connection to
+the crime itself.
+
+132
+00:07:04.025 --> 00:07:05.930
+They are an expert in the field
+
+133
+00:07:05.930 --> 00:07:07.910
+that is being talked about.
+
+134
+00:07:07.910 --> 00:07:09.995
+Question number 12.
+
+135
+00:07:09.995 --> 00:07:13.595
+What are the three V's
+of big data forensics?
+
+136
+00:07:13.595 --> 00:07:17.280
+We have volume, and
+
+137
+00:07:17.280 --> 00:07:20.325
+the volume refers to the
+complexity and size of the data.
+
+138
+00:07:20.325 --> 00:07:25.320
+Velocity refers to the speed
+that modern data travels at.
+
+139
+00:07:25.320 --> 00:07:27.645
+Variety refers to
+
+140
+00:07:27.645 --> 00:07:31.035
+unstructured and/or
+multi-structured data.
+
+141
+00:07:31.035 --> 00:07:35.320
+Those are the three V's
+of big data forensics.
+
+142
+00:07:35.570 --> 00:07:39.045
+Question 13, give examples
+
+143
+00:07:39.045 --> 00:07:41.625
+of how a crime scene
+can be documented.
+
+144
+00:07:41.625 --> 00:07:44.235
+Well, we can document a crime
+scene with photographs,
+
+145
+00:07:44.235 --> 00:07:46.455
+we could document it with videos.
+
+146
+00:07:46.455 --> 00:07:50.230
+We could draw diagrams to
+document our crime scene.
+
+147
+00:07:50.300 --> 00:07:54.210
+Question 14, what is
+digital evidence?
+
+148
+00:07:54.210 --> 00:07:57.855
+Digital evidence is anything
+that can hold data,
+
+149
+00:07:57.855 --> 00:07:59.670
+such as computer or a tablet,
+
+150
+00:07:59.670 --> 00:08:02.085
+a cell phone, router,
+watch, camera,
+
+151
+00:08:02.085 --> 00:08:06.180
+an internal, external
+drive, smart TVs, devices,
+
+152
+00:08:06.180 --> 00:08:11.055
+refrigerators, TVs,
+Nest, Echo devices, etc.
+
+153
+00:08:11.055 --> 00:08:13.230
+Anything that can hold
+
+154
+00:08:13.230 --> 00:08:17.050
+data is considered
+digital evidence.
+
+155
+00:08:17.090 --> 00:08:20.400
+Question 15, what facts
+
+156
+00:08:20.400 --> 00:08:23.595
+should be documented when
+collecting evidence?
+
+157
+00:08:23.595 --> 00:08:27.524
+Well, we wanted to document
+who collected the evidence,
+
+158
+00:08:27.524 --> 00:08:30.390
+where the evidence was found,
+
+159
+00:08:30.390 --> 00:08:32.820
+when was the evidence found?
+
+160
+00:08:32.820 --> 00:08:34.485
+Referring to the date and time.
+
+161
+00:08:34.485 --> 00:08:37.330
+What is the evidence?
+
+162
+00:08:37.850 --> 00:08:41.250
+You want to describe it,
+make model, serial number.
+
+163
+00:08:41.250 --> 00:08:44.310
+Why is the evidence being seized?
+
+164
+00:08:44.310 --> 00:08:46.395
+Is it contained in a warrant?
+
+165
+00:08:46.395 --> 00:08:51.405
+Is it obviously contraband
+or stolen property?
+
+166
+00:08:51.405 --> 00:08:54.105
+Question 16.
+
+167
+00:08:54.105 --> 00:08:59.860
+What does the preservation
+of digital evidence entail?
+
+168
+00:08:59.870 --> 00:09:02.220
+Well, we want to prevent
+
+169
+00:09:02.220 --> 00:09:04.755
+destruction of the
+original evidence.
+
+170
+00:09:04.755 --> 00:09:08.565
+We want to make no changes
+to the original evidence.
+
+171
+00:09:08.565 --> 00:09:10.980
+We want to maintain
+the integrity of
+
+172
+00:09:10.980 --> 00:09:13.650
+the original evidence from
+the time of collection,
+
+173
+00:09:13.650 --> 00:09:15.210
+from the time we collected it
+
+174
+00:09:15.210 --> 00:09:17.460
+throughout the court proceedings.
+
+175
+00:09:17.460 --> 00:09:19.440
+Question 17.
+
+176
+00:09:19.440 --> 00:09:21.419
+If you find a device
+
+177
+00:09:21.419 --> 00:09:23.310
+when you're searching
+for evidence that is
+
+178
+00:09:23.310 --> 00:09:27.465
+turned off in general,
+you should do what?
+
+179
+00:09:27.465 --> 00:09:31.030
+The answer to that
+is leave it off.
+
+180
+00:09:31.430 --> 00:09:34.125
+Question 18.
+
+181
+00:09:34.125 --> 00:09:37.050
+If you find the device
+that is turned on
+
+182
+00:09:37.050 --> 00:09:39.975
+in general, you should do what?
+
+183
+00:09:39.975 --> 00:09:43.200
+If we find a device
+that's turned on,
+
+184
+00:09:43.200 --> 00:09:46.140
+we want to photograph
+all the open windows,
+
+185
+00:09:46.140 --> 00:09:48.810
+whether it be a computer
+or a tablet or a phone.
+
+186
+00:09:48.810 --> 00:09:50.490
+If the device has a screen,
+
+187
+00:09:50.490 --> 00:09:52.515
+you want to photograph
+all the open windows.
+
+188
+00:09:52.515 --> 00:09:56.265
+We want to know any running
+applications and processes.
+
+189
+00:09:56.265 --> 00:09:58.650
+Any type of destructive processes
+
+190
+00:09:58.650 --> 00:10:00.360
+or any type of encryption.
+
+191
+00:10:00.360 --> 00:10:03.180
+Then we would collect the RAM.
+
+192
+00:10:03.180 --> 00:10:05.625
+The volatile memory.
+
+193
+00:10:05.625 --> 00:10:09.120
+If we encounter a
+destructive process,
+
+194
+00:10:09.120 --> 00:10:11.580
+we would want to immediately pull
+
+195
+00:10:11.580 --> 00:10:13.920
+the plug from the
+back of the device,
+
+196
+00:10:13.920 --> 00:10:16.470
+or in the case of a
+laptop or a phone,
+
+197
+00:10:16.470 --> 00:10:20.490
+remove the battery, and if you
+cannot remove the battery,
+
+198
+00:10:20.490 --> 00:10:23.340
+hard shut the device.
+
+199
+00:10:23.340 --> 00:10:25.665
+Question number 19.
+
+200
+00:10:25.665 --> 00:10:30.150
+When should an examiner
+use write protection,
+
+201
+00:10:30.150 --> 00:10:31.455
+and part two of that,
+
+202
+00:10:31.455 --> 00:10:34.770
+and why would an examiner
+use write protection?
+
+203
+00:10:34.770 --> 00:10:37.260
+We're going to always use
+write protection when we're
+
+204
+00:10:37.260 --> 00:10:39.585
+working with the
+original evidence,
+
+205
+00:10:39.585 --> 00:10:43.605
+when we're previewing
+or live imaging.
+
+206
+00:10:43.605 --> 00:10:46.860
+That's when we're going
+to use write protection.
+
+207
+00:10:46.860 --> 00:10:49.590
+Why we would use it is forensic
+
+208
+00:10:49.590 --> 00:10:51.810
+examiners use write
+protection to prevent
+
+209
+00:10:51.810 --> 00:10:57.315
+changes or destruction of
+the original evidence.
+
+210
+00:10:57.315 --> 00:11:02.105
+Question 20, what
+is volatile data?
+
+211
+00:11:02.105 --> 00:11:05.995
+Volatile data is data
+that is eradicated,
+
+212
+00:11:05.995 --> 00:11:07.315
+data that goes away,
+
+213
+00:11:07.315 --> 00:11:09.505
+when the device loses power.
+
+214
+00:11:09.505 --> 00:11:12.745
+Data not written to a hard drive.
+
+215
+00:11:12.745 --> 00:11:16.090
+Some examples are RAM,
+random access memory.
+
+216
+00:11:16.090 --> 00:11:19.690
+Some malware will
+only be alive in RAM.
+
+217
+00:11:19.690 --> 00:11:21.850
+Certain registry keys,
+
+218
+00:11:21.850 --> 00:11:24.970
+running processes, and
+network connection,
+
+219
+00:11:24.970 --> 00:11:27.220
+are some examples of
+data that we would
+
+220
+00:11:27.220 --> 00:11:32.270
+find in RAM as volatile data.
+
+221
+00:11:33.060 --> 00:11:35.350
+Question 21.
+
+222
+00:11:35.350 --> 00:11:37.675
+What is encryption?
+
+223
+00:11:37.675 --> 00:11:41.920
+What data types can
+encryption be applied to?
+
+224
+00:11:41.920 --> 00:11:44.050
+Encryption is the process of
+
+225
+00:11:44.050 --> 00:11:46.555
+randomizing data,
+making it unreadable.
+
+226
+00:11:46.555 --> 00:11:48.010
+This is done to secure the data
+
+227
+00:11:48.010 --> 00:11:50.140
+to prevent unauthorized access.
+
+228
+00:11:50.140 --> 00:11:54.970
+Encryption can be applied to
+files, containers, volumes,
+
+229
+00:11:54.970 --> 00:12:00.115
+and disks. Question 22.
+
+230
+00:12:00.115 --> 00:12:05.905
+What would be some reasons
+to conduct live imaging?
+
+231
+00:12:05.905 --> 00:12:09.310
+Well, if we find a
+computer turned on,
+
+232
+00:12:09.310 --> 00:12:11.185
+and we see encryption running,
+
+233
+00:12:11.185 --> 00:12:13.930
+we may want to do
+some live imaging,
+
+234
+00:12:13.930 --> 00:12:18.340
+so we can capture an
+unencrypted logical image
+
+235
+00:12:18.340 --> 00:12:20.080
+of that volume.
+
+236
+00:12:20.080 --> 00:12:22.600
+If your system cannot
+be shut down you
+
+237
+00:12:22.600 --> 00:12:24.805
+might be forced to
+do live imaging.
+
+238
+00:12:24.805 --> 00:12:26.425
+If you're dealing with a server,
+
+239
+00:12:26.425 --> 00:12:29.485
+or a network that
+cannot be shut down,
+
+240
+00:12:29.485 --> 00:12:31.510
+or if we're collecting RAM.
+
+241
+00:12:31.510 --> 00:12:37.255
+RAM has to be collected live
+because if it loses power,
+
+242
+00:12:37.255 --> 00:12:38.890
+the RAM goes away,
+
+243
+00:12:38.890 --> 00:12:40.750
+and then you can't collect it.
+
+244
+00:12:40.750 --> 00:12:42.640
+Question 23.
+
+245
+00:12:42.640 --> 00:12:45.730
+When and why do
+forensic examiners
+
+246
+00:12:45.730 --> 00:12:49.180
+only use sterile media
+for evidence collection?
+
+247
+00:12:49.180 --> 00:12:52.765
+Well, forensic examiners
+only use sterile media for
+
+248
+00:12:52.765 --> 00:12:54.970
+evidence collection
+to ensure that
+
+249
+00:12:54.970 --> 00:12:57.760
+no previously or
+pre-existing data,
+
+250
+00:12:57.760 --> 00:12:59.575
+is on the target drive.
+
+251
+00:12:59.575 --> 00:13:02.500
+We want to do this to
+avoid cross-contamination.
+
+252
+00:13:02.500 --> 00:13:04.300
+Forensic examiners use
+
+253
+00:13:04.300 --> 00:13:06.430
+sterile media when
+collecting evidence,
+
+254
+00:13:06.430 --> 00:13:10.880
+and when copying evidence
+onto a storage device.
+
+255
+00:13:11.310 --> 00:13:13.645
+Question 24.
+
+256
+00:13:13.645 --> 00:13:15.849
+Why do forensic examiners
+
+257
+00:13:15.849 --> 00:13:19.270
+validate their hardware
+and software tools?
+
+258
+00:13:19.270 --> 00:13:21.670
+The answer, forensic examiners
+
+259
+00:13:21.670 --> 00:13:23.665
+validate their hardware
+and software tools,
+
+260
+00:13:23.665 --> 00:13:27.820
+to ensure accuracy of their
+findings, and conclusions.
+
+261
+00:13:27.820 --> 00:13:31.295
+We want to become aware
+of any software issues.
+
+262
+00:13:31.295 --> 00:13:33.660
+We want to avoid having our
+
+263
+00:13:33.660 --> 00:13:36.640
+findings being called
+into question.
+
+264
+00:13:36.930 --> 00:13:39.610
+Question 25.
+
+265
+00:13:39.610 --> 00:13:43.420
+What does a full forensic image
+
+266
+00:13:43.420 --> 00:13:45.955
+of a physical disk contain?
+
+267
+00:13:45.955 --> 00:13:47.950
+We're talking about from sector
+
+268
+00:13:47.950 --> 00:13:50.230
+zero to the end of the drive.
+
+269
+00:13:50.230 --> 00:13:52.780
+It is a full forensic copy,
+
+270
+00:13:52.780 --> 00:13:54.550
+commonly referred to as an image.
+
+271
+00:13:54.550 --> 00:13:56.695
+It's going to contain
+allocated files,
+
+272
+00:13:56.695 --> 00:14:00.955
+file slack, deleted
+files, unallocated space,
+
+273
+00:14:00.955 --> 00:14:04.810
+unused space, that space
+prior to the volume,
+
+274
+00:14:04.810 --> 00:14:10.250
+an HPA, host protected
+area, and a DOC.
+
+275
+00:14:12.570 --> 00:14:14.830
+Question 26.
+
+276
+00:14:14.830 --> 00:14:17.725
+What is a hash value?
+
+277
+00:14:17.725 --> 00:14:21.520
+The answer, a hash value
+is a way to represent
+
+278
+00:14:21.520 --> 00:14:25.135
+data with a unique
+numerical value,
+
+279
+00:14:25.135 --> 00:14:28.639
+using a mathematical algorithm.
+
+280
+00:14:30.180 --> 00:14:33.835
+It is like a
+fingerprint of a file.
+
+281
+00:14:33.835 --> 00:14:35.620
+Question 27.
+
+282
+00:14:35.620 --> 00:14:37.195
+Will the size of the data
+
+283
+00:14:37.195 --> 00:14:39.685
+change the length
+of the hash value?
+
+284
+00:14:39.685 --> 00:14:43.960
+The answer is no. Regardless
+of the size of the data,
+
+285
+00:14:43.960 --> 00:14:48.865
+the result is a fixed
+length hexadecimal value.
+
+286
+00:14:48.865 --> 00:14:52.645
+We have common hash
+types over MD5 hash,
+
+287
+00:14:52.645 --> 00:14:54.730
+which is a 128-bit value.
+
+288
+00:14:54.730 --> 00:14:58.645
+It's always going to be a 128
+bits, 32 characters long.
+
+289
+00:14:58.645 --> 00:15:03.775
+Whether you're hashing
+a one gigabyte folder,
+
+290
+00:15:03.775 --> 00:15:06.100
+or you're hashing a
+10 terabyte drive,
+
+291
+00:15:06.100 --> 00:15:07.840
+it's a 128-bit value.
+
+292
+00:15:07.840 --> 00:15:10.990
+It does not change based
+on the size of the data.
+
+293
+00:15:10.990 --> 00:15:15.310
+We have SHA1, which is a
+160 bit at 40 characters,
+
+294
+00:15:15.310 --> 00:15:21.740
+and SHA256, which is 256-bit
+value at 64 characters.
+
+295
+00:15:23.880 --> 00:15:29.590
+Question 28. List some of
+the common uses of hashing.
+
+296
+00:15:29.590 --> 00:15:31.480
+Why do we use hashing?
+
+297
+00:15:31.480 --> 00:15:33.085
+What can we use it for?
+
+298
+00:15:33.085 --> 00:15:35.275
+Well, we can use it to ensure
+
+299
+00:15:35.275 --> 00:15:38.210
+data integrity
+during transmission.
+
+300
+00:15:38.220 --> 00:15:40.510
+If we know the hash value of
+
+301
+00:15:40.510 --> 00:15:42.460
+the file that we're
+supposed to be receiving,
+
+302
+00:15:42.460 --> 00:15:45.175
+once our transmission is
+done we can hash that file.
+
+303
+00:15:45.175 --> 00:15:46.930
+If the hash value matches,
+
+304
+00:15:46.930 --> 00:15:51.190
+then we know that we've gotten
+a good copy of that data.
+
+305
+00:15:51.190 --> 00:15:56.170
+It can also be used for sector
+checking, file integrity,
+
+306
+00:15:56.170 --> 00:15:57.834
+and we use it to validate
+
+307
+00:15:57.834 --> 00:15:59.770
+a forensic copies of hard drives,
+
+308
+00:15:59.770 --> 00:16:01.990
+by forensic images, to show that
+
+309
+00:16:01.990 --> 00:16:05.770
+no changes were made to
+the original evidence.
+
+310
+00:16:05.770 --> 00:16:08.425
+Question Number 29.
+
+311
+00:16:08.425 --> 00:16:12.430
+Describe the TCP:
+Transmission Control
+
+312
+00:16:12.430 --> 00:16:17.335
+Protocol handshake used to
+initiate data transfer.
+
+313
+00:16:17.335 --> 00:16:20.245
+The device requesting
+the communication
+
+314
+00:16:20.245 --> 00:16:23.410
+sends a packet with
+the SYN bit turned on.
+
+315
+00:16:23.410 --> 00:16:25.960
+The receiving device sends back
+
+316
+00:16:25.960 --> 00:16:29.290
+a packet with the SYN and
+the ACK bit turned on.
+
+317
+00:16:29.290 --> 00:16:33.130
+The device requesting
+the communication,
+
+318
+00:16:33.130 --> 00:16:35.620
+the first device
+that originally sent
+
+319
+00:16:35.620 --> 00:16:38.260
+the SYN bit turned on
+requested the communication,
+
+320
+00:16:38.260 --> 00:16:41.890
+then sends back a packet
+with the ACK bit turned on,
+
+321
+00:16:41.890 --> 00:16:44.170
+and then communication starts.
+
+322
+00:16:44.170 --> 00:16:47.440
+That is the TCP handshake.
+
+323
+00:16:47.440 --> 00:16:49.690
+Question 30. What is
+
+324
+00:16:49.690 --> 00:16:52.735
+the function of DNS:
+Domain Name Service?
+
+325
+00:16:52.735 --> 00:16:56.950
+DNS translates our
+alphanumerical web addresses or
+
+326
+00:16:56.950 --> 00:17:02.000
+URLs into IP addresses
+and vice versa.
+
+327
+00:17:02.100 --> 00:17:04.810
+What is a MAC address?
+
+328
+00:17:04.810 --> 00:17:08.350
+A MAC address is a hardware
+identification number that
+
+329
+00:17:08.350 --> 00:17:12.515
+uniquely identifies each
+device on a network.
+
+330
+00:17:12.515 --> 00:17:14.730
+It is burnt into
+the network card of
+
+331
+00:17:14.730 --> 00:17:16.410
+the device and it is
+
+332
+00:17:16.410 --> 00:17:19.365
+unique to that device
+and that device only.
+
+333
+00:17:19.365 --> 00:17:21.345
+Question 32.
+
+334
+00:17:21.345 --> 00:17:25.745
+What are case specific keywords?
+
+335
+00:17:25.745 --> 00:17:28.390
+Case specific keywords
+are keywords that
+
+336
+00:17:28.390 --> 00:17:30.790
+relate to one specific case,
+
+337
+00:17:30.790 --> 00:17:32.785
+and some examples
+of this could be
+
+338
+00:17:32.785 --> 00:17:35.335
+the names of the people
+involved in our case,
+
+339
+00:17:35.335 --> 00:17:38.410
+some usernames for those
+people, addresses,
+
+340
+00:17:38.410 --> 00:17:39.430
+whether they're email or
+
+341
+00:17:39.430 --> 00:17:41.515
+physical addresses,
+phone numbers,
+
+342
+00:17:41.515 --> 00:17:43.330
+a certain type of
+slang that maybe
+
+343
+00:17:43.330 --> 00:17:45.519
+your particular suspect uses,
+
+344
+00:17:45.519 --> 00:17:48.355
+URLs that they frequently visit,
+
+345
+00:17:48.355 --> 00:17:49.960
+and filenames of interest,
+
+346
+00:17:49.960 --> 00:17:51.700
+filenames that may
+be pertinent to
+
+347
+00:17:51.700 --> 00:17:54.890
+that one specific case.
+
+348
+00:17:55.260 --> 00:17:57.970
+Question 33.
+
+349
+00:17:57.970 --> 00:18:00.610
+What would a forensic
+examiner be looking
+
+350
+00:18:00.610 --> 00:18:03.055
+for using this grep search?
+
+351
+00:18:03.055 --> 00:18:04.780
+Let's take a look
+at our grep search.
+
+352
+00:18:04.780 --> 00:18:07.195
+The answer is an IP address,
+
+353
+00:18:07.195 --> 00:18:09.055
+but we've got grep,
+
+354
+00:18:09.055 --> 00:18:11.080
+so we know we're using
+grep and not extended
+
+355
+00:18:11.080 --> 00:18:14.510
+grep. Here's our expression.
+
+356
+00:18:14.730 --> 00:18:17.035
+We have our square brackets
+
+357
+00:18:17.035 --> 00:18:18.640
+with a range of
+zero through nine,
+
+358
+00:18:18.640 --> 00:18:21.770
+so we're looking for a number
+between zero and nine.
+
+359
+00:18:22.310 --> 00:18:28.080
+It's going to occur either
+one or three times.
+
+360
+00:18:28.080 --> 00:18:29.385
+This is in a range.
+
+361
+00:18:29.385 --> 00:18:32.600
+Either it occurs once or
+it occurs three times.
+
+362
+00:18:32.600 --> 00:18:36.535
+Then we're going to see a dot,
+
+363
+00:18:36.535 --> 00:18:39.130
+and then it's going to repeat
+
+364
+00:18:39.130 --> 00:18:41.950
+a numeric value of
+zero through nine
+
+365
+00:18:41.950 --> 00:18:44.410
+occurring one or three
+times followed by a dot,
+
+366
+00:18:44.410 --> 00:18:46.375
+numeric value of
+zero through nine
+
+367
+00:18:46.375 --> 00:18:49.210
+occurring one or three
+times followed by a dot,
+
+368
+00:18:49.210 --> 00:18:50.860
+a numeric value zero through
+
+369
+00:18:50.860 --> 00:18:54.159
+nine occurring one
+or three times,
+
+370
+00:18:54.159 --> 00:18:58.520
+and that would describe
+an IP address.
+
+371
+00:18:58.740 --> 00:19:03.655
+Because this is
+grep and not egrep,
+
+372
+00:19:03.655 --> 00:19:06.565
+you have to escape the brackets,
+
+373
+00:19:06.565 --> 00:19:09.590
+special characters,
+
+374
+00:19:10.770 --> 00:19:15.205
+so that they function as
+operators, special characters.
+
+375
+00:19:15.205 --> 00:19:16.510
+Otherwise, it'll look for
+
+376
+00:19:16.510 --> 00:19:22.070
+a literal square bracket or
+a literal curly bracket.
+
+377
+00:19:23.970 --> 00:19:26.215
+If this were egrep,
+
+378
+00:19:26.215 --> 00:19:29.469
+we would not have to use
+those escape characters,
+
+379
+00:19:29.469 --> 00:19:35.750
+but we would have to use an
+escape character on the dot.
+
+380
+00:19:36.420 --> 00:19:38.455
+Question 34.
+
+381
+00:19:38.455 --> 00:19:40.975
+What are some of the limitations
+
+382
+00:19:40.975 --> 00:19:43.960
+of a text-based keyword search?
+
+383
+00:19:43.960 --> 00:19:45.940
+Now this is plaintext,
+
+384
+00:19:45.940 --> 00:19:48.550
+you're searching for a word
+
+385
+00:19:48.550 --> 00:19:52.285
+either in a file or you can
+search your entire drive,
+
+386
+00:19:52.285 --> 00:19:54.370
+but some of the things that would
+
+387
+00:19:54.370 --> 00:19:59.095
+impede your text-based searches
+would be bit shifting,
+
+388
+00:19:59.095 --> 00:20:02.425
+and this is when a file is
+altered at the binary level,
+
+389
+00:20:02.425 --> 00:20:03.790
+the bits are actually moved
+
+390
+00:20:03.790 --> 00:20:07.840
+around using some
+type of hex editor.
+
+391
+00:20:07.840 --> 00:20:12.340
+Encryption. Because we
+know with encryption,
+
+392
+00:20:12.340 --> 00:20:16.225
+our text is not plaintext
+anymore, it's scrambled.
+
+393
+00:20:16.225 --> 00:20:20.320
+Compression. We would
+have to decompress
+
+394
+00:20:20.320 --> 00:20:21.640
+the files and then run
+
+395
+00:20:21.640 --> 00:20:24.925
+the keyword search
+to get our hits,
+
+396
+00:20:24.925 --> 00:20:28.645
+and using non-word characters.
+
+397
+00:20:28.645 --> 00:20:33.595
+An example of that is
+if you had a character,
+
+398
+00:20:33.595 --> 00:20:35.530
+you could replace
+it with a number,
+
+399
+00:20:35.530 --> 00:20:36.940
+replace an O with a zero,
+
+400
+00:20:36.940 --> 00:20:38.860
+replace an E with a three,
+
+401
+00:20:38.860 --> 00:20:43.510
+and that will defeat your
+plain text keyword searching.
+
+402
+00:20:43.510 --> 00:20:45.565
+Question Number 35.
+
+403
+00:20:45.565 --> 00:20:48.940
+What are some of the
+considerations and qualities
+
+404
+00:20:48.940 --> 00:20:51.730
+a forensic examiner must think
+
+405
+00:20:51.730 --> 00:20:56.030
+about to produce a
+well written report?
+
+406
+00:20:56.220 --> 00:20:59.410
+Well a well-written report,
+
+407
+00:20:59.410 --> 00:21:02.185
+we must consider our
+target audience.
+
+408
+00:21:02.185 --> 00:21:04.345
+Who are we writing
+this report for?
+
+409
+00:21:04.345 --> 00:21:06.880
+Is it somebody who
+is highly technical?
+
+410
+00:21:06.880 --> 00:21:09.775
+Is it our boss?
+
+411
+00:21:09.775 --> 00:21:13.525
+Is it somebody who is
+going to be on a jury?
+
+412
+00:21:13.525 --> 00:21:15.430
+Who is our audience?
+
+413
+00:21:15.430 --> 00:21:17.080
+Who are we writing
+the report for?
+
+414
+00:21:17.080 --> 00:21:20.320
+We want to make it
+clear and unambiguous.
+
+415
+00:21:20.320 --> 00:21:22.840
+We want to make it detailed,
+
+416
+00:21:22.840 --> 00:21:25.255
+but we want it to be concise.
+
+417
+00:21:25.255 --> 00:21:28.840
+It has to be
+fact-based, unbiased,
+
+418
+00:21:28.840 --> 00:21:34.870
+and the report should include
+any exculpatory findings.
+
+419
+00:21:34.870 --> 00:21:37.330
+Exculpatory findings are findings
+
+420
+00:21:37.330 --> 00:21:41.660
+that tend to prove
+somebody's innocence.
+
+421
+00:21:43.800 --> 00:21:47.440
+End of final project.
+
+422
+00:21:47.440 --> 00:21:49.790
+Questions and answers.

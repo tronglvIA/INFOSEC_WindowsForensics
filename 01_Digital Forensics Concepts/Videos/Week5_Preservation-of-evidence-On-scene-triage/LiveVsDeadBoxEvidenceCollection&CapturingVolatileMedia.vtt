@@ -1,0 +1,904 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.795
+Hello, and welcome back to
+the computer forensics path,
+
+2
+00:00:03.795 --> 00:00:06.495
+Course 7, Module 2.
+
+3
+00:00:06.495 --> 00:00:08.385
+In this module, we're
+going to look at
+
+4
+00:00:08.385 --> 00:00:12.270
+live versus dead box
+evidence collection.
+
+5
+00:00:12.270 --> 00:00:15.810
+This is collecting from
+a live running machine
+
+6
+00:00:15.810 --> 00:00:19.935
+versus collecting from
+a machine that is off.
+
+7
+00:00:19.935 --> 00:00:23.160
+Some of our considerations when
+
+8
+00:00:23.160 --> 00:00:26.100
+deciding whether to collect from
+
+9
+00:00:26.100 --> 00:00:28.710
+a live running machine or
+
+10
+00:00:28.710 --> 00:00:31.500
+go ahead and power down
+the machine and do
+
+11
+00:00:31.500 --> 00:00:37.725
+a traditional dead box collection
+would be volatile data,
+
+12
+00:00:37.725 --> 00:00:41.640
+specifically RAM,
+random access memory.
+
+13
+00:00:41.640 --> 00:00:45.424
+Encryption; if
+encryption is running,
+
+14
+00:00:45.424 --> 00:00:48.160
+we're going to want
+to collect that live.
+
+15
+00:00:48.160 --> 00:00:51.105
+Our inability to shut
+down the system;
+
+16
+00:00:51.105 --> 00:00:52.790
+some systems cannot be
+
+17
+00:00:52.790 --> 00:00:55.010
+shut down for one
+reason or another.
+
+18
+00:00:55.010 --> 00:00:56.660
+We talked about the example of
+
+19
+00:00:56.660 --> 00:01:00.595
+a business with servers
+that we cannot shut down.
+
+20
+00:01:00.595 --> 00:01:02.505
+The size of the data;
+
+21
+00:01:02.505 --> 00:01:04.355
+if we're dealing with big data,
+
+22
+00:01:04.355 --> 00:01:06.635
+we're going to be doing
+a large collection,
+
+23
+00:01:06.635 --> 00:01:08.390
+and we talked about that
+when we talked about
+
+24
+00:01:08.390 --> 00:01:10.865
+big data and the
+challenges of big data.
+
+25
+00:01:10.865 --> 00:01:13.690
+Cloud storage, social media;
+
+26
+00:01:13.690 --> 00:01:15.800
+we would have to
+access those accounts
+
+27
+00:01:15.800 --> 00:01:17.899
+through a live running computer
+
+28
+00:01:17.899 --> 00:01:23.245
+and capture that information
+from the live machine.
+
+29
+00:01:23.245 --> 00:01:28.505
+Remember to stay within the
+scope of your legal process.
+
+30
+00:01:28.505 --> 00:01:32.720
+Know what you have named
+in your search warrant,
+
+31
+00:01:32.720 --> 00:01:36.230
+and make sure you stay
+within those limitations.
+
+32
+00:01:36.230 --> 00:01:38.960
+This is the definition
+of volatile data.
+
+33
+00:01:38.960 --> 00:01:42.185
+Basically, it's data
+that goes away or
+
+34
+00:01:42.185 --> 00:01:45.830
+is eradicated when the
+device powers down.
+
+35
+00:01:45.830 --> 00:01:48.020
+If the device loses power,
+
+36
+00:01:48.020 --> 00:01:50.140
+that information is gone.
+
+37
+00:01:50.140 --> 00:01:52.680
+That random access
+memory is gone forever,
+
+38
+00:01:52.680 --> 00:01:53.780
+it's not going to come back when
+
+39
+00:01:53.780 --> 00:01:55.920
+you turn the machine back on.
+
+40
+00:01:55.930 --> 00:01:58.400
+Another way of defining it,
+
+41
+00:01:58.400 --> 00:02:01.115
+it could be the data that
+is not written to disk.
+
+42
+00:02:01.115 --> 00:02:04.745
+Because remember, if you're
+doing a dead box collection,
+
+43
+00:02:04.745 --> 00:02:06.920
+you're collecting
+only the data that
+
+44
+00:02:06.920 --> 00:02:10.170
+has been written to the disk.
+
+45
+00:02:10.370 --> 00:02:13.140
+Examples would be RAM,
+
+46
+00:02:13.140 --> 00:02:17.220
+random access memory, which
+I talked about before.
+
+47
+00:02:17.220 --> 00:02:20.180
+One thing to be aware of
+with RAM is there are
+
+48
+00:02:20.180 --> 00:02:24.295
+certain malware that
+will only run in RAM.
+
+49
+00:02:24.295 --> 00:02:27.605
+If we're doing an
+incident response case
+
+50
+00:02:27.605 --> 00:02:29.370
+and we're looking
+for that type of
+
+51
+00:02:29.370 --> 00:02:31.450
+malware and we don't
+
+52
+00:02:31.450 --> 00:02:34.639
+collect RAM and we
+power down our machine,
+
+53
+00:02:34.639 --> 00:02:37.780
+we're going to lose
+that information.
+
+54
+00:02:37.780 --> 00:02:41.780
+Certain registry keys
+only exist in RAM.
+
+55
+00:02:41.780 --> 00:02:44.210
+Our list of running processes,
+
+56
+00:02:44.210 --> 00:02:47.225
+the processes that are currently
+running on the machine,
+
+57
+00:02:47.225 --> 00:02:49.745
+and network connections,
+
+58
+00:02:49.745 --> 00:02:53.370
+the devices that are
+connected to the network.
+
+59
+00:02:53.420 --> 00:02:59.150
+RAM, always collect RAM,
+random access memory.
+
+60
+00:02:59.150 --> 00:03:00.260
+If a computer is on and you
+
+61
+00:03:00.260 --> 00:03:01.835
+have the ability to collect RAM,
+
+62
+00:03:01.835 --> 00:03:03.295
+you need to do so.
+
+63
+00:03:03.295 --> 00:03:06.350
+Modern computers
+contain anywhere from
+
+64
+00:03:06.350 --> 00:03:09.545
+eight gigabytes of RAM up
+to 96 gigabytes of RAM.
+
+65
+00:03:09.545 --> 00:03:13.085
+It is no longer acceptable
+to not collect it.
+
+66
+00:03:13.085 --> 00:03:16.435
+You're going to be questioned
+on why you didn't.
+
+67
+00:03:16.435 --> 00:03:18.330
+In an intrusion in
+
+68
+00:03:18.330 --> 00:03:21.735
+incident response cases,
+RAM is essential.
+
+69
+00:03:21.735 --> 00:03:23.490
+These cases rely heavily on
+
+70
+00:03:23.490 --> 00:03:25.160
+random access memory because we
+
+71
+00:03:25.160 --> 00:03:27.505
+need to see the
+network connections,
+
+72
+00:03:27.505 --> 00:03:29.660
+we need to see the
+running processes when
+
+73
+00:03:29.660 --> 00:03:31.760
+we're doing these types
+of investigations,
+
+74
+00:03:31.760 --> 00:03:33.470
+and we need to see any malware
+
+75
+00:03:33.470 --> 00:03:36.360
+that may only be
+running in memory.
+
+76
+00:03:36.670 --> 00:03:39.980
+We can see on this
+screenshot that
+
+77
+00:03:39.980 --> 00:03:43.025
+this particular machine
+had 64 gigabytes of RAM,
+
+78
+00:03:43.025 --> 00:03:45.515
+and it's just a desktop computer.
+
+79
+00:03:45.515 --> 00:03:48.680
+You wouldn't leave a
+64-gigabyte thumb drive
+
+80
+00:03:48.680 --> 00:03:49.835
+sitting on the desk,
+
+81
+00:03:49.835 --> 00:03:53.465
+you shouldn't leave 64
+gigabytes of RAM behind.
+
+82
+00:03:53.465 --> 00:03:57.080
+There are many RAM
+capture tools out there.
+
+83
+00:03:57.080 --> 00:03:58.775
+Here's a list of some of them.
+
+84
+00:03:58.775 --> 00:04:02.084
+Magnet has one, DumpIt,
+
+85
+00:04:02.084 --> 00:04:07.930
+Belkasoft, and FTK Imager is
+capable of capturing RAM.
+
+86
+00:04:09.260 --> 00:04:12.025
+This is a screenshot of DumpIt,
+
+87
+00:04:12.025 --> 00:04:14.975
+very easy to use, very efficient.
+
+88
+00:04:14.975 --> 00:04:17.150
+One thing to consider,
+
+89
+00:04:17.150 --> 00:04:19.430
+it has a very small footprint
+
+90
+00:04:19.430 --> 00:04:21.680
+since it is a command-line tool.
+
+91
+00:04:21.680 --> 00:04:24.560
+If you're using a GUI tool,
+
+92
+00:04:24.560 --> 00:04:26.735
+graphical user interface tool,
+
+93
+00:04:26.735 --> 00:04:30.575
+it's going to leave a bigger
+footprint on the system.
+
+94
+00:04:30.575 --> 00:04:33.785
+If you can use a
+command-line tool,
+
+95
+00:04:33.785 --> 00:04:35.720
+you're better off because it will
+
+96
+00:04:35.720 --> 00:04:38.190
+leave a smaller footprint.
+
+97
+00:04:38.320 --> 00:04:41.645
+At the end of this module,
+
+98
+00:04:41.645 --> 00:04:46.450
+we'll show you a live
+demonstration of DumpIt.
+
+99
+00:04:46.450 --> 00:04:48.590
+Encryption is another one of
+
+100
+00:04:48.590 --> 00:04:50.270
+the things we need to
+consider when we're
+
+101
+00:04:50.270 --> 00:04:54.425
+deciding whether or not we're
+going to do live imaging.
+
+102
+00:04:54.425 --> 00:04:57.200
+Encryption is defined
+as the process of
+
+103
+00:04:57.200 --> 00:04:59.705
+randomizing data to
+make it unreadable.
+
+104
+00:04:59.705 --> 00:05:01.580
+This is a way we secure our data
+
+105
+00:05:01.580 --> 00:05:04.660
+to prevent unauthorized access.
+
+106
+00:05:04.660 --> 00:05:07.310
+Encryption can be
+applied to files,
+
+107
+00:05:07.310 --> 00:05:09.860
+containers, volumes, or disks.
+
+108
+00:05:09.860 --> 00:05:12.345
+You can have an encrypted
+file, a container,
+
+109
+00:05:12.345 --> 00:05:16.554
+an entire volume or
+full disk encryption.
+
+110
+00:05:16.554 --> 00:05:19.255
+A lot of operating systems
+
+111
+00:05:19.255 --> 00:05:21.640
+including Windows 10 and
+the latest release of
+
+112
+00:05:21.640 --> 00:05:25.450
+Mac OSX have the capabilities
+
+113
+00:05:25.450 --> 00:05:28.390
+of encrypting any of
+these or all of these.
+
+114
+00:05:28.390 --> 00:05:29.890
+We're going to look for
+
+115
+00:05:29.890 --> 00:05:32.200
+encryption and we
+can see on the slide
+
+116
+00:05:32.200 --> 00:05:37.195
+the graphics show us
+examples of encryption.
+
+117
+00:05:37.195 --> 00:05:39.610
+We're going to check
+our taskbar and
+
+118
+00:05:39.610 --> 00:05:44.005
+our system tray and we're
+going to see what is running.
+
+119
+00:05:44.005 --> 00:05:50.305
+If you see an icon like you
+see on the very far right,
+
+120
+00:05:50.305 --> 00:05:54.140
+that is a BitLocker
+encrypted drive.
+
+121
+00:05:54.480 --> 00:06:00.760
+We can also see an example
+of cystine, PGP encryption,
+
+122
+00:06:00.760 --> 00:06:03.865
+and those other icons
+
+123
+00:06:03.865 --> 00:06:08.480
+are also showing you
+indications of encryption.
+
+124
+00:06:10.020 --> 00:06:14.990
+If you have no indication
+of encryption,
+
+125
+00:06:15.780 --> 00:06:19.989
+if you have a suspicion
+of encryption,
+
+126
+00:06:19.989 --> 00:06:25.810
+I would go ahead and check
+to see what's going on.
+
+127
+00:06:25.810 --> 00:06:27.340
+On a Windows system,
+
+128
+00:06:27.340 --> 00:06:29.155
+it's very easy,
+
+129
+00:06:29.155 --> 00:06:32.035
+if you look at the graphic
+on the right here.
+
+130
+00:06:32.035 --> 00:06:34.450
+You are interacting and making
+
+131
+00:06:34.450 --> 00:06:37.255
+changes to the system
+but document it.
+
+132
+00:06:37.255 --> 00:06:40.645
+Document use expected there
+was encryption running
+
+133
+00:06:40.645 --> 00:06:45.140
+because you know in Windows
+10 BitLocker is enabled.
+
+134
+00:06:45.660 --> 00:06:48.295
+Here we go to the bottom
+
+135
+00:06:48.295 --> 00:06:51.145
+in the Windows 10
+and type in "bit",
+
+136
+00:06:51.145 --> 00:06:55.780
+you'll see the BitLocker
+control panel.
+
+137
+00:06:55.780 --> 00:06:59.575
+You would go ahead and check
+the BitLocker control panel.
+
+138
+00:06:59.575 --> 00:07:01.330
+When you open it up,
+you're going to see
+
+139
+00:07:01.330 --> 00:07:04.690
+a graphics almost the one
+we have on the screen.
+
+140
+00:07:04.690 --> 00:07:13.790
+We can see here that
+BitLocker is turned off,
+
+141
+00:07:17.190 --> 00:07:20.155
+so you would know
+
+142
+00:07:20.155 --> 00:07:23.440
+that you had no BitLocker
+drives up here,
+
+143
+00:07:23.440 --> 00:07:24.730
+but wait a second,
+
+144
+00:07:24.730 --> 00:07:27.535
+if we look at this
+removable drive R,
+
+145
+00:07:27.535 --> 00:07:29.890
+BitLocker is turned on.
+
+146
+00:07:29.890 --> 00:07:32.230
+So we know volume
+
+147
+00:07:32.230 --> 00:07:36.445
+R is an encrypted volume
+that right now is unlocked.
+
+148
+00:07:36.445 --> 00:07:38.020
+If I saw that,
+
+149
+00:07:38.020 --> 00:07:41.650
+I would want to go
+ahead and live image,
+
+150
+00:07:41.650 --> 00:07:47.410
+logical volume R. Because
+
+151
+00:07:47.410 --> 00:07:49.720
+if I don't and I shut
+this machine down,
+
+152
+00:07:49.720 --> 00:07:51.160
+I power it off,
+
+153
+00:07:51.160 --> 00:07:54.010
+BitLocker will kick in and I may
+
+154
+00:07:54.010 --> 00:07:57.385
+not be able to get
+back into their drive.
+
+155
+00:07:57.385 --> 00:08:00.790
+This is going to be my only
+shot at that evidence.
+
+156
+00:08:00.790 --> 00:08:08.125
+I'm going to go ahead and
+create my live image,
+
+157
+00:08:08.125 --> 00:08:13.645
+I'm also going to go ahead
+and back up the recovery key,
+
+158
+00:08:13.645 --> 00:08:16.105
+as you can see here on
+the right-hand side.
+
+159
+00:08:16.105 --> 00:08:20.305
+We can save that
+recovery key to a file,
+
+160
+00:08:20.305 --> 00:08:22.975
+now you're going to go
+ahead and save that
+
+161
+00:08:22.975 --> 00:08:26.395
+out to your target media,
+
+162
+00:08:26.395 --> 00:08:28.360
+your destination drive,
+
+163
+00:08:28.360 --> 00:08:30.820
+where you're collecting
+your evidence,
+
+164
+00:08:30.820 --> 00:08:32.770
+the same place you would put
+
+165
+00:08:32.770 --> 00:08:38.630
+your logical image of
+the BitLocker R drive.
+
+166
+00:08:39.450 --> 00:08:42.174
+In our next module,
+
+167
+00:08:42.174 --> 00:08:43.780
+we're going to talk about
+
+168
+00:08:43.780 --> 00:08:47.710
+live imaging in
+forensic boot media,
+
+169
+00:08:47.710 --> 00:08:53.935
+now we're going to do
+a demo using DumpIt.
+
+170
+00:08:53.935 --> 00:08:57.685
+This is a live
+demonstration of DumpIt.
+
+171
+00:08:57.685 --> 00:09:00.580
+DumpIt is a very simple program,
+
+172
+00:09:00.580 --> 00:09:03.710
+it is a command line program
+
+173
+00:09:04.140 --> 00:09:09.714
+which you can go ahead and
+double-click on the Shortcut,
+
+174
+00:09:09.714 --> 00:09:12.235
+mine is right down
+here in my taskbar.
+
+175
+00:09:12.235 --> 00:09:14.725
+If I double-click on that,
+
+176
+00:09:14.725 --> 00:09:17.650
+DumpIt is going to run.
+
+177
+00:09:17.650 --> 00:09:20.875
+Now, it's going to ask me
+if I want to continue,
+
+178
+00:09:20.875 --> 00:09:23.875
+it's going to show me the size
+
+179
+00:09:23.875 --> 00:09:25.929
+of the memory that
+I'm collecting,
+
+180
+00:09:25.929 --> 00:09:29.380
+and it's going to show me
+where it is putting the files.
+
+181
+00:09:29.380 --> 00:09:34.279
+It's putting it at C Users
+Denise desktop OneDrive,
+
+182
+00:09:34.560 --> 00:09:40.025
+and it's naming the file
+the name of the computer,
+
+183
+00:09:40.025 --> 00:09:42.275
+a date and timestamp,
+
+184
+00:09:42.275 --> 00:09:44.685
+and it's called a.raw,
+
+185
+00:09:44.685 --> 00:09:47.490
+R-A-W will be the file extension.
+
+186
+00:09:47.490 --> 00:09:52.050
+I would simply hit the "Y"
+and it starts working.
+
+187
+00:09:52.050 --> 00:09:54.375
+When it's completed
+it is going to
+
+188
+00:09:54.375 --> 00:09:57.460
+save the file right here.
+
+189
+00:09:57.460 --> 00:10:00.490
+You can change that if you had
+
+190
+00:10:00.490 --> 00:10:02.200
+an external destination drive
+
+191
+00:10:02.200 --> 00:10:04.225
+that you are saving
+all your evidence to.
+
+192
+00:10:04.225 --> 00:10:09.220
+You would go ahead and
+save that file out there.
+
+193
+00:10:09.220 --> 00:10:11.530
+I'm not going to let
+this run through
+
+194
+00:10:11.530 --> 00:10:14.365
+because there's quite a bit
+of memory on this machine.
+
+195
+00:10:14.365 --> 00:10:17.605
+But I just wanted to give
+you a quick look at DumpIt,
+
+196
+00:10:17.605 --> 00:10:21.770
+we will be using this
+throughout the path.

@@ -1,0 +1,503 @@
+WEBVTT
+
+1
+00:00:00.330 --> 00:00:05.464
+Welcome back to the computer
+forensics path, Course 7,
+
+2
+00:00:05.464 --> 00:00:12.087
+we're going to talk about the triage and
+preservation of digital evidence.
+
+3
+00:00:12.087 --> 00:00:14.727
+Preservation of digital evidence.
+
+4
+00:00:14.727 --> 00:00:18.626
+How do we preserve
+the evidence to make little or
+
+5
+00:00:18.626 --> 00:00:21.747
+no changes to the original evidence?
+
+6
+00:00:21.747 --> 00:00:26.436
+We're going to talk about live
+versus dead box evidence collection.
+
+7
+00:00:26.436 --> 00:00:32.333
+Whether you're going to be doing a large
+live imaging of a logical product or
+
+8
+00:00:32.333 --> 00:00:36.848
+we're going to do the traditional,
+remove the hard drive
+
+9
+00:00:36.848 --> 00:00:41.381
+connected to a write blocker and
+create a forensic image.
+
+10
+00:00:43.349 --> 00:00:48.916
+We're going to define volatile data and
+talk about how we capture volatile data,
+
+11
+00:00:48.916 --> 00:00:52.964
+and we're also going to talk
+about forensic boot options.
+
+12
+00:00:52.964 --> 00:00:57.996
+This is when we would do to some
+type of Lennox Destro CD or
+
+13
+00:00:57.996 --> 00:01:01.959
+maybe a commercial type of USB or
+CD drive and
+
+14
+00:01:01.959 --> 00:01:06.459
+boot into a forensically
+sound environment where
+
+15
+00:01:06.459 --> 00:01:11.297
+we're not making changes
+to the original evidence.
+
+16
+00:01:12.712 --> 00:01:17.321
+In course seven module 1, we're going to
+talk about the preservation of digital
+
+17
+00:01:17.321 --> 00:01:21.677
+evidence, how we preserve the evidence and
+what steps we're going to take.
+
+18
+00:01:21.677 --> 00:01:24.649
+Okay, when we talk about
+preservation of evidence,
+
+19
+00:01:24.649 --> 00:01:28.876
+what we're talking about is we don't
+want to make any changes to the original
+
+20
+00:01:28.876 --> 00:01:32.858
+evidence and of course we don't
+want to destroy the original evidence.
+
+21
+00:01:32.858 --> 00:01:37.519
+We need to maintain the integrity of
+the original evidence from the time we
+
+22
+00:01:37.519 --> 00:01:41.216
+collected to the time it goes
+through court proceedings.
+
+23
+00:01:41.216 --> 00:01:45.935
+And we do that by working
+off of duplicates making
+
+24
+00:01:45.935 --> 00:01:50.656
+a forensically sound digital copy,
+using write
+
+25
+00:01:50.656 --> 00:01:55.732
+blockers booting into some
+type of forensic media.
+
+26
+00:01:55.732 --> 00:02:01.964
+If we have to do live imaging, there are
+situations where we're going to have to
+
+27
+00:02:01.964 --> 00:02:07.187
+live imaging, it's going to be
+expected of us to do live imaging.
+
+28
+00:02:07.187 --> 00:02:11.150
+And yes, we are going to be making
+changes to the original evidence.
+
+29
+00:02:11.150 --> 00:02:17.387
+What you want to do there is document
+what you did and why you did it.
+
+30
+00:02:19.169 --> 00:02:22.832
+Document any changes you make
+to the original evidence.
+
+31
+00:02:22.832 --> 00:02:26.709
+And the key to this is knowing
+your equipment, your software,
+
+32
+00:02:26.709 --> 00:02:31.100
+your forensic software and your
+physical equipment and how it works and
+
+33
+00:02:31.100 --> 00:02:35.434
+explain why you made changes,
+why it was necessary to do what you did?
+
+34
+00:02:35.434 --> 00:02:40.638
+And there's going to be cases where
+it's absolutely necessary and
+
+35
+00:02:40.638 --> 00:02:43.670
+if you don't, you'd be negligent.
+
+36
+00:02:43.670 --> 00:02:46.007
+If a computer is off,
+if you're doing a search,
+
+37
+00:02:46.007 --> 00:02:47.779
+can you find a computer that's off?
+
+38
+00:02:47.779 --> 00:02:52.062
+Leave it off, don't just turn it on.
+
+39
+00:02:52.062 --> 00:02:58.433
+You're either going to booted in to
+some type of forensic boot media.
+
+40
+00:02:58.433 --> 00:03:03.540
+Or if you have a device that off,
+you're going to remove the hard drive,
+
+41
+00:03:03.540 --> 00:03:08.671
+if possible, connected to a write
+blocker and create a forensic image.
+
+42
+00:03:08.671 --> 00:03:14.448
+If the devices on here's where
+things get a little different,
+
+43
+00:03:14.448 --> 00:03:20.122
+first of all photograph all
+the open windows on the computer.
+
+44
+00:03:20.122 --> 00:03:26.235
+Note any running applications of
+processes, no any destructive processes.
+
+45
+00:03:26.235 --> 00:03:30.472
+Look for destructive processes,
+things like wiping DR0.
+
+46
+00:03:30.472 --> 00:03:34.478
+Look for signs of encryption,
+you're going to see padlocks and
+
+47
+00:03:34.478 --> 00:03:36.418
+things that looks like locks.
+
+48
+00:03:36.418 --> 00:03:39.115
+And we're going to collect RAM and
+
+49
+00:03:39.115 --> 00:03:44.327
+we're going to talk about how we do
+all this throughout this course.
+
+50
+00:03:44.327 --> 00:03:47.800
+This slide shows an example
+of just wiping software.
+
+51
+00:03:47.800 --> 00:03:53.115
+We can see the top one
+it's erasing a file and
+
+52
+00:03:53.115 --> 00:03:57.282
+then the graphic just below that,
+
+53
+00:03:57.282 --> 00:04:02.033
+we can see that it's erasing disc one.
+
+54
+00:04:02.033 --> 00:04:05.018
+So if we see something
+that looks like this,
+
+55
+00:04:05.018 --> 00:04:10.273
+we know destructive processes running and
+we're going to have to take action.
+
+56
+00:04:11.765 --> 00:04:14.789
+If you see a destructive process running,
+
+57
+00:04:14.789 --> 00:04:18.825
+immediately pull the plug from
+the back of the computer.
+
+58
+00:04:18.825 --> 00:04:23.682
+Don't pull the plug from the wall because
+
+59
+00:04:23.682 --> 00:04:28.677
+it could have some type of backup battery,
+
+60
+00:04:28.677 --> 00:04:33.833
+pull the plug from
+the back of the computer.
+
+61
+00:04:33.833 --> 00:04:38.308
+To look for indication of
+running destructive processes,
+
+62
+00:04:38.308 --> 00:04:41.087
+look down the bottom at the task bar.
+
+63
+00:04:41.087 --> 00:04:44.676
+Or if the task tray you
+can see in the graphic,
+
+64
+00:04:44.676 --> 00:04:48.091
+you can see the tray,
+we see the kill disk.
+
+65
+00:04:48.091 --> 00:04:54.530
+That is the sign for kill disk,
+that's their logo is running,
+
+66
+00:04:54.530 --> 00:04:59.885
+and we can see on the task bar,
+kill disk is running.
+
+67
+00:04:59.885 --> 00:05:01.946
+If you see kill this running,
+
+68
+00:05:01.946 --> 00:05:05.743
+you want to pull the plug from
+the back of the computer.
+
+69
+00:05:05.743 --> 00:05:10.944
+Once we've determined that a destructive
+processes running, we've checked the task
+
+70
+00:05:10.944 --> 00:05:15.660
+bar, we checked the tray, we see that
+there is a destructive process running.
+
+71
+00:05:15.660 --> 00:05:18.024
+We're going to pull the plug
+from the back of the computer.
+
+72
+00:05:18.024 --> 00:05:25.479
+If you are working with a laptop,
+you must also remove the battery.
+
+73
+00:05:25.479 --> 00:05:31.078
+If you cannot remove the battery,
+if it's a Surface Pro or
+
+74
+00:05:31.078 --> 00:05:36.222
+another laptop where you
+cannot remove the battery,
+
+75
+00:05:36.222 --> 00:05:42.986
+hard shut the computer as fast as you can,
+hold down the power button.
+
+76
+00:05:42.986 --> 00:05:48.086
+Also, another step we're going to take to
+preserve the evidence is we're going to
+
+77
+00:05:48.086 --> 00:05:53.047
+isolate it from radio RF, from wireless
+signal and from Bluetooth signal.
+
+78
+00:05:53.047 --> 00:05:56.924
+So we're going to use some type of
+RF shielding like a Faraday bag.
+
+79
+00:05:56.924 --> 00:06:03.295
+Faraday is a brand name, there are other
+companies that make RF shielding bags and
+
+80
+00:06:03.295 --> 00:06:09.127
+this is to prevent remote wiping of
+course and alteration of the evidence.
+
+81
+00:06:09.127 --> 00:06:17.241
+If we have a device that is powered
+on we wanted to stay powered on.
+
+82
+00:06:17.241 --> 00:06:24.849
+So we need a portable battery or
+another portable power supply.
+
+83
+00:06:24.849 --> 00:06:29.131
+Because power loss can cause data loss,
+and
+
+84
+00:06:29.131 --> 00:06:33.296
+it can also trigger the computer locking,
+
+85
+00:06:33.296 --> 00:06:38.748
+if it loses power or
+can trigger encryption kicking in.
+
+86
+00:06:38.748 --> 00:06:46.274
+If those encrypted drives were open,
+they're not going to be anymore.
+
+87
+00:06:46.274 --> 00:06:50.787
+So there may be times when you
+need to prevent power loss, so
+
+88
+00:06:50.787 --> 00:06:53.766
+make sure you have a portable battery or
+
+89
+00:06:53.766 --> 00:06:58.029
+another portable supply with
+you in your evidence kit.
+
+90
+00:06:58.029 --> 00:06:59.201
+Write protection.
+
+91
+00:06:59.201 --> 00:07:03.358
+Always use write protection when
+working with the original evidence.
+
+92
+00:07:03.358 --> 00:07:07.299
+And I'm talking about preview and
+live imaging.
+
+93
+00:07:07.299 --> 00:07:10.538
+Use write protection as much as possible,
+and
+
+94
+00:07:10.538 --> 00:07:15.033
+we're doing this to prevent
+changes to the original evidence.
+
+95
+00:07:15.033 --> 00:07:19.563
+But if you can't use write protection
+because there's going to be sometimes and
+
+96
+00:07:19.563 --> 00:07:22.427
+you can't,
+it's just not physically possible,
+
+97
+00:07:22.427 --> 00:07:26.233
+document the changes that you
+are making to the original evidence.
+
+98
+00:07:26.233 --> 00:07:31.292
+And here is where knowing your software,
+knowing your tools comes into play.
+
+99
+00:07:31.292 --> 00:07:35.886
+So you might have to do some testing and
+validating in your lab to figure out what
+
+100
+00:07:35.886 --> 00:07:39.032
+changes your particular
+type of software is making.
+
+101
+00:07:39.032 --> 00:07:44.071
+I can tell you any time you plug in USB
+device into a computer, you're making
+
+102
+00:07:44.071 --> 00:07:49.616
+changes to the registry and we'll talk
+more about that, throughout this course.
+
+103
+00:07:49.616 --> 00:07:54.203
+In our next module,
+we're going to talk about live box
+
+104
+00:07:54.203 --> 00:07:57.651
+versus dead box evidence collection.

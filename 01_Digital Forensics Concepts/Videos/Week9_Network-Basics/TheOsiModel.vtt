@@ -1,0 +1,458 @@
+WEBVTT
+
+1
+00:00:00.740 --> 00:00:04.540
+Welcome back to digital forensic concepts.
+
+2
+00:00:04.540 --> 00:00:08.638
+We're talking about network basics,
+in this course and in this module,
+
+3
+00:00:08.638 --> 00:00:10.961
+we're going to talk about the OSI model.
+
+4
+00:00:12.440 --> 00:00:18.204
+OSI stands for Open System
+Interconnection.And in this slide,
+
+5
+00:00:18.204 --> 00:00:24.140
+we can see the layers,
+the protocols and the unit exchange.
+
+6
+00:00:24.140 --> 00:00:28.852
+The layers from top to bottom, so
+from layer 7 down the layer 1.
+
+7
+00:00:28.852 --> 00:00:32.858
+Layer 7, we have the application layer,
+layer 6,
+
+8
+00:00:32.858 --> 00:00:37.933
+we have a presentation layer,
+layer 5 would be the session layer,
+
+9
+00:00:37.933 --> 00:00:43.631
+layer 4 would be the transport layer,
+layer 3 would be the network layer,
+
+10
+00:00:43.631 --> 00:00:49.001
+layer 2 would be the data link layer,
+and layer 1 the physical layer.
+
+11
+00:00:50.240 --> 00:00:55.150
+And this diagram shows each layer,
+each protocol,
+
+12
+00:00:55.150 --> 00:00:58.630
+and then it shows the unit exchange.
+
+13
+00:00:58.630 --> 00:01:03.461
+You look at the physical layer,
+you can see the user unit exchange is bit.
+
+14
+00:01:04.640 --> 00:01:09.201
+Whereas if you look at the network layer,
+you can see the unit exchange is packet.
+
+15
+00:01:10.940 --> 00:01:15.340
+So different units of exchange
+happened at different layers.
+
+16
+00:01:15.340 --> 00:01:19.130
+We're going to start and
+talk about layer 1 down at the bottom.
+
+17
+00:01:19.130 --> 00:01:22.940
+The physical layer is the lowest
+layer of the OSI model.
+
+18
+00:01:22.940 --> 00:01:27.440
+And we are talking about actual
+physical components of the network.
+
+19
+00:01:27.440 --> 00:01:32.596
+So we're talking about things
+including cables, the frequencies
+
+20
+00:01:32.596 --> 00:01:37.761
+that we operate are whether they
+are wireless or hard wired cables.
+
+21
+00:01:39.640 --> 00:01:43.830
+This is what activates and
+maintains and ends.
+
+22
+00:01:43.830 --> 00:01:49.777
+The actual physical connection is
+responsible for transmission and
+
+23
+00:01:49.777 --> 00:01:55.950
+reception of the unstructured raw data,
+as we saw the units were bits.
+
+24
+00:01:55.950 --> 00:01:59.830
+So it is unstructured broad data
+that this slayer is dealing with,
+
+25
+00:01:59.830 --> 00:02:03.340
+it also handles our voltages and
+data rates.
+
+26
+00:02:03.340 --> 00:02:04.724
+How much voltage we're using?
+
+27
+00:02:04.724 --> 00:02:06.690
+What are our data rates for transmission?
+
+28
+00:02:06.690 --> 00:02:09.139
+This is all defined in this layer.
+
+29
+00:02:09.139 --> 00:02:13.572
+It's going to convert the digital
+analog bits into an electrical or
+
+30
+00:02:13.572 --> 00:02:17.640
+an optical signal to be
+transported over the network.
+
+31
+00:02:17.640 --> 00:02:23.064
+Data encoding also happens at this layer,
+if the data is encoded.
+
+32
+00:02:23.064 --> 00:02:28.091
+Our data link layer, which is layer 2,
+the main function of
+
+33
+00:02:28.091 --> 00:02:34.400
+this layer is to ensure data transfer
+is error free from one node to another,
+
+34
+00:02:34.400 --> 00:02:39.926
+because when our information is
+transmitted across our network,
+
+35
+00:02:39.926 --> 00:02:43.502
+it will have hops from
+one note to another.
+
+36
+00:02:43.502 --> 00:02:48.786
+This layer is also transmitting and
+receiving data frames,
+
+37
+00:02:48.786 --> 00:02:53.420
+and this is manages the sequence
+of the data frames.
+
+38
+00:02:53.420 --> 00:02:57.026
+This layer also sends and
+accepts acknowledgement for
+
+39
+00:02:57.026 --> 00:02:59.160
+the frames received and sent.
+
+40
+00:02:59.160 --> 00:03:02.070
+The frame was you sent,
+was the frame received?
+
+41
+00:03:02.070 --> 00:03:07.350
+If the frame was not received,
+it also was responsible for re sending it.
+
+42
+00:03:07.350 --> 00:03:09.340
+This is handled at that later,
+
+43
+00:03:09.340 --> 00:03:14.800
+the data link layer.And it does manage the
+frame traffic control over the network.
+
+44
+00:03:14.800 --> 00:03:19.821
+So the unit is frames, and this is
+the layer that is responsible for ensuring
+
+45
+00:03:19.821 --> 00:03:25.234
+that the data is transferred from one node
+to another without errors, and if there
+
+46
+00:03:25.234 --> 00:03:30.280
+are errors, this layer is responsible
+to re send those frames of data.
+
+47
+00:03:30.280 --> 00:03:35.267
+Now, the network layer is responsible for
+packets, because its unit is packets, so
+
+48
+00:03:35.267 --> 00:03:39.078
+it will handle the packet forwarding,
+it will handle the routing
+
+49
+00:03:39.078 --> 00:03:42.300
+through different channels
+from one node to another.
+
+50
+00:03:42.300 --> 00:03:47.014
+It acts as kind of the network
+controller of the traffic cup, and
+
+51
+00:03:47.014 --> 00:03:50.500
+also manages our subnet traffic.
+
+52
+00:03:50.500 --> 00:03:53.131
+It will decide which route to take, and
+
+53
+00:03:53.131 --> 00:03:58.395
+it usually does that by which route would
+be the fastest.And it is what divides
+
+54
+00:03:58.395 --> 00:04:03.423
+the outgoing messages into packets,
+and then reassembles the messages,
+
+55
+00:04:03.423 --> 00:04:08.540
+the incoming packets to be sent
+up to the higher levels of the.
+
+56
+00:04:08.540 --> 00:04:11.861
+The transport layer, layer 4 handles
+
+57
+00:04:11.861 --> 00:04:17.100
+the coordination of data between
+the system and the host.
+
+58
+00:04:17.100 --> 00:04:20.573
+It decides how much data is going to send,
+
+59
+00:04:20.573 --> 00:04:25.650
+how fast it's going to send it and
+where it's sending it to.
+
+60
+00:04:25.650 --> 00:04:31.197
+A good example of a protocol on
+the transport layer would be the TCP,
+
+61
+00:04:31.197 --> 00:04:35.769
+which is built on top of the IP or
+internet protocol, and
+
+62
+00:04:35.769 --> 00:04:38.820
+it is commonly referred to as TCP IP.
+
+63
+00:04:38.820 --> 00:04:41.340
+We did discuss that earlier.
+
+64
+00:04:41.340 --> 00:04:45.820
+Now the transport layer receives
+messages from the session layer above.
+
+65
+00:04:45.820 --> 00:04:48.506
+It converts the message
+into smaller units,
+
+66
+00:04:48.506 --> 00:04:53.140
+what it does that it's going to
+pass it on to the network layer.
+
+67
+00:04:53.140 --> 00:04:58.325
+The session layer which is layer 5,
+is what creates the session because
+
+68
+00:04:58.325 --> 00:05:03.425
+when two devices need to communicate,
+a session has to be created, and
+
+69
+00:05:03.425 --> 00:05:09.561
+it's done at the session layer.And this
+is involved setting up the communication.
+
+70
+00:05:10.740 --> 00:05:15.920
+An example would be how long should
+the system wait for response?
+
+71
+00:05:15.920 --> 00:05:18.440
+When is it going to time out?
+
+72
+00:05:18.440 --> 00:05:23.096
+The session layer handles
+the coordination of communication,
+
+73
+00:05:23.096 --> 00:05:28.799
+it handles transmission between the
+applications at each end of the session.
+
+74
+00:05:28.799 --> 00:05:32.353
+So two computers
+are talking to each other,
+
+75
+00:05:32.353 --> 00:05:36.483
+each one is involved in the session,
+and layer 5,
+
+76
+00:05:36.483 --> 00:05:41.977
+the session layer is what handles
+how communication is conducted.
+
+77
+00:05:41.977 --> 00:05:44.991
+It makes sure it happens properly so
+
+78
+00:05:44.991 --> 00:05:50.315
+that the session does not end
+prematurely and cause data loss,
+
+79
+00:05:50.315 --> 00:05:55.048
+and all this is handled at
+the session layer, layer 5.
+
+80
+00:05:55.048 --> 00:05:58.471
+Layer 6 is called the presentation layer.
+
+81
+00:05:59.640 --> 00:06:05.352
+This layer kind of prepares the data,
+just like it kind of says it presents it,
+
+82
+00:06:05.352 --> 00:06:10.289
+ensures that it's set in such a way
+that the receiver can understand
+
+83
+00:06:10.289 --> 00:06:14.275
+it.The receiving device can
+interpret the data, and
+
+84
+00:06:14.275 --> 00:06:20.371
+this could involve languages, syntax,
+it sort of plays the role of a translator.
+
+85
+00:06:21.640 --> 00:06:25.810
+It presents the data for
+the application of the network.
+
+86
+00:06:25.810 --> 00:06:30.659
+One of the important things that happens
+here at layer 6, is encryption and
+
+87
+00:06:30.659 --> 00:06:34.618
+decryption, happens at later 6,
+the presentation layer.
+
+88
+00:06:34.618 --> 00:06:39.279
+The layer above layer six is going
+to be the application layer, and
+
+89
+00:06:39.279 --> 00:06:42.525
+this is the top most layer
+of the OSI model, and
+
+90
+00:06:42.525 --> 00:06:47.840
+this is the layer that most users
+are going to interact with directly.
+
+91
+00:06:47.840 --> 00:06:51.117
+This receives information
+directly from the user, and
+
+92
+00:06:51.117 --> 00:06:54.440
+it displays an incoming
+information to the user.
+
+93
+00:06:54.440 --> 00:06:59.211
+And good examples of things we're going
+to see at the application layer are going
+
+94
+00:06:59.211 --> 00:07:01.620
+to be our Web browsers, Telnet and FTP.
+
+95
+00:07:01.620 --> 00:07:06.851
+And these are communications that rely
+on layer 7, the application layer.

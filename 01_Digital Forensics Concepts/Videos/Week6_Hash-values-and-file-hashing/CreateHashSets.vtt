@@ -1,0 +1,284 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.065
+Welcome back, to the
+computer forensics path.
+
+2
+00:00:04.065 --> 00:00:06.795
+In this course, Course 12,
+
+3
+00:00:06.795 --> 00:00:09.120
+we're talking about hashing.
+
+4
+00:00:09.120 --> 00:00:11.280
+In this module, Module 2,
+
+5
+00:00:11.280 --> 00:00:13.890
+we're going to talk about
+creating hash sets.
+
+6
+00:00:13.890 --> 00:00:15.735
+Why are we create hash sets,
+
+7
+00:00:15.735 --> 00:00:18.090
+and what we can use them for.
+
+8
+00:00:18.090 --> 00:00:20.565
+The NIST hash set.
+
+9
+00:00:20.565 --> 00:00:26.325
+NIST is a database or
+a list of hash values.
+
+10
+00:00:26.325 --> 00:00:31.300
+These hash values
+are for known files.
+
+11
+00:00:31.400 --> 00:00:36.435
+They're use for eliminating
+known files from our case,
+
+12
+00:00:36.435 --> 00:00:38.220
+like Windows system files or
+
+13
+00:00:38.220 --> 00:00:42.060
+common files that come with
+your install of Windows 10.
+
+14
+00:00:42.060 --> 00:00:46.460
+They could be used for
+identifying files of interests,
+
+15
+00:00:46.460 --> 00:00:48.770
+files that we want to look at.
+
+16
+00:00:48.770 --> 00:00:52.144
+Suppose we were looking
+for a specific document,
+
+17
+00:00:52.144 --> 00:00:54.815
+may be in an IP theft case,
+
+18
+00:00:54.815 --> 00:00:56.760
+intellectual property theft case.
+
+19
+00:00:56.760 --> 00:00:59.015
+If we knew the file hash value
+
+20
+00:00:59.015 --> 00:01:01.145
+of the document we
+were looking for,
+
+21
+00:01:01.145 --> 00:01:05.095
+we might search for it on
+our suspect's computer.
+
+22
+00:01:05.095 --> 00:01:07.385
+It also helps us
+
+23
+00:01:07.385 --> 00:01:10.715
+identify the same files
+in different cases.
+
+24
+00:01:10.715 --> 00:01:13.255
+This could be true with malware.
+
+25
+00:01:13.255 --> 00:01:17.325
+If we know the
+value of a malware,
+
+26
+00:01:17.325 --> 00:01:20.255
+we could use that
+hash value to find
+
+27
+00:01:20.255 --> 00:01:23.980
+that specific malware on
+more than one computer.
+
+28
+00:01:23.980 --> 00:01:26.850
+It also helps us de-duplicate or
+
+29
+00:01:26.850 --> 00:01:29.685
+find duplicates in our cases.
+
+30
+00:01:29.685 --> 00:01:32.640
+We can eliminate the
+duplicate files,
+
+31
+00:01:32.640 --> 00:01:36.000
+and cut down our exam time.
+
+32
+00:01:36.000 --> 00:01:38.145
+Now, the NIST hash set,
+
+33
+00:01:38.145 --> 00:01:40.275
+these are known files.
+
+34
+00:01:40.275 --> 00:01:43.470
+They are like system files.
+
+35
+00:01:43.470 --> 00:01:49.205
+We can exclude authentic
+or genuine system files,
+
+36
+00:01:49.205 --> 00:01:52.160
+known software files,
+
+37
+00:01:52.160 --> 00:01:56.660
+known as negative
+hashing or de-NISTing.
+
+38
+00:01:56.660 --> 00:02:01.225
+There are several types of
+hash sets available online.
+
+39
+00:02:01.225 --> 00:02:03.620
+The National Institute of
+
+40
+00:02:03.620 --> 00:02:06.260
+Standards and
+Technology, or NIST,
+
+41
+00:02:06.260 --> 00:02:08.810
+for short, has a website you can
+
+42
+00:02:08.810 --> 00:02:12.670
+go to download this
+software reference library.
+
+43
+00:02:12.670 --> 00:02:17.805
+It's called the
+NIST NSRL library,
+
+44
+00:02:17.805 --> 00:02:21.720
+National Software
+Reference library.
+
+45
+00:02:21.720 --> 00:02:24.060
+What do we use the hash sets for?
+
+46
+00:02:24.060 --> 00:02:27.170
+We've already talked about
+finding files of interests.
+
+47
+00:02:27.170 --> 00:02:31.950
+Some cases, the example
+I gave was in IP theft.
+
+48
+00:02:31.950 --> 00:02:33.710
+But we could also use this for
+
+49
+00:02:33.710 --> 00:02:37.910
+illicit images or detecting
+child pornography.
+
+50
+00:02:37.910 --> 00:02:40.565
+We can search for any known file,
+
+51
+00:02:40.565 --> 00:02:43.420
+using its hash value.
+
+52
+00:02:43.420 --> 00:02:48.065
+We can create our own
+hash sets of files that
+
+53
+00:02:48.065 --> 00:02:49.760
+we are either interested in or we
+
+54
+00:02:49.760 --> 00:02:52.240
+want to eliminate from our view.
+
+55
+00:02:52.240 --> 00:02:56.190
+Most software will allow us
+to create custom hash sets,
+
+56
+00:02:56.190 --> 00:02:57.770
+and we're going to get to do that
+
+57
+00:02:57.770 --> 00:03:00.245
+in our walkthrough at autopsy.
+
+58
+00:03:00.245 --> 00:03:06.080
+We can import hash sets
+from one format to another,
+
+59
+00:03:06.080 --> 00:03:08.255
+but we might have
+to convert them.
+
+60
+00:03:08.255 --> 00:03:12.275
+This does have a conversion
+tool on its website,
+
+61
+00:03:12.275 --> 00:03:14.880
+which we will also download.
+
+62
+00:03:15.620 --> 00:03:18.555
+In our next module,
+
+63
+00:03:18.555 --> 00:03:23.310
+we're going to talk about
+hashing individual files.

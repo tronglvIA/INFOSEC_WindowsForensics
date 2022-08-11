@@ -1,0 +1,592 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.195
+Hello, and welcome back
+
+2
+00:00:03.195 --> 00:00:06.750
+to the computer
+forensics bootcamp.
+
+3
+00:00:06.750 --> 00:00:10.860
+In this module, we are
+going to talk about what
+
+4
+00:00:10.860 --> 00:00:13.140
+computer forensics is in
+
+5
+00:00:13.140 --> 00:00:16.935
+the role of the computer
+forensic examiner.
+
+6
+00:00:16.935 --> 00:00:21.690
+The National Institute of
+Standards and Technology,
+
+7
+00:00:21.690 --> 00:00:26.700
+NIST, defines digital forensics
+
+8
+00:00:26.700 --> 00:00:30.225
+as a forensic science field.
+
+9
+00:00:30.225 --> 00:00:33.945
+It is considered a
+forensic science.
+
+10
+00:00:33.945 --> 00:00:36.885
+We're going to be
+mainly concentrating
+
+11
+00:00:36.885 --> 00:00:39.830
+on the retrieval, storing,
+
+12
+00:00:39.830 --> 00:00:42.575
+and analyzing electronic data,
+
+13
+00:00:42.575 --> 00:00:44.990
+and we're going to use this
+data in investigations,
+
+14
+00:00:44.990 --> 00:00:46.235
+whether they're criminal,
+
+15
+00:00:46.235 --> 00:00:49.090
+civil, or internal
+investigations.
+
+16
+00:00:49.090 --> 00:00:52.055
+One thing we need
+to be aware of is
+
+17
+00:00:52.055 --> 00:00:56.000
+a multitude of items can
+contain digital evidence.
+
+18
+00:00:56.000 --> 00:00:57.845
+We always think of
+
+19
+00:00:57.845 --> 00:01:01.219
+computers and cell
+phones, mobile devices.
+
+20
+00:01:01.219 --> 00:01:03.470
+But now we have to be aware of
+
+21
+00:01:03.470 --> 00:01:08.210
+motor vehicle entertainment
+centers, aerial drones,
+
+22
+00:01:08.210 --> 00:01:11.435
+and a variety of Cloud
+storage options,
+
+23
+00:01:11.435 --> 00:01:15.875
+as well as watches, Alexas,
+refrigerators, TV's.
+
+24
+00:01:15.875 --> 00:01:18.260
+There's all kinds of
+devices out there
+
+25
+00:01:18.260 --> 00:01:21.709
+that contain digital evidence.
+
+26
+00:01:21.709 --> 00:01:24.860
+Another challenge we face as
+
+27
+00:01:24.860 --> 00:01:28.280
+forensic examiners is the sizes,
+
+28
+00:01:28.280 --> 00:01:30.680
+the amount of data
+that we're looking at.
+
+29
+00:01:30.680 --> 00:01:33.275
+We have vast sums of data,
+
+30
+00:01:33.275 --> 00:01:36.260
+and we are looking for
+that small piece of
+
+31
+00:01:36.260 --> 00:01:40.780
+data that is relevant to our
+particular investigation.
+
+32
+00:01:40.780 --> 00:01:42.890
+We also need to be concerned
+
+33
+00:01:42.890 --> 00:01:45.050
+about preserving the evidence,
+
+34
+00:01:45.050 --> 00:01:47.405
+meaning that when we
+collect this evidence,
+
+35
+00:01:47.405 --> 00:01:52.919
+we've got to do it in a way
+that is reliable and proven,
+
+36
+00:01:52.919 --> 00:01:54.785
+and we have to do it
+
+37
+00:01:54.785 --> 00:01:57.500
+without altering the
+evidence in any way.
+
+38
+00:01:57.500 --> 00:02:01.860
+We want to make every effort
+not to alter the evidence.
+
+39
+00:02:02.720 --> 00:02:06.175
+Here is a layout talking
+
+40
+00:02:06.175 --> 00:02:10.410
+about the process of
+computer forensics.
+
+41
+00:02:10.410 --> 00:02:12.670
+Again, it is the
+collection, storage,
+
+42
+00:02:12.670 --> 00:02:14.170
+preservation,
+
+43
+00:02:14.170 --> 00:02:18.790
+analysis, and presentation
+of electronic evidence.
+
+44
+00:02:18.790 --> 00:02:22.675
+Remember, this process
+must be repeatable.
+
+45
+00:02:22.675 --> 00:02:25.470
+In other words, you must be
+able to do it more than once.
+
+46
+00:02:25.470 --> 00:02:27.165
+It must be repeatable.
+
+47
+00:02:27.165 --> 00:02:29.785
+It must be reproducible,
+
+48
+00:02:29.785 --> 00:02:31.840
+meaning that you could
+give that evidence to
+
+49
+00:02:31.840 --> 00:02:33.730
+another examiner and they
+
+50
+00:02:33.730 --> 00:02:35.820
+could come up with the
+same results you did,
+
+51
+00:02:35.820 --> 00:02:39.450
+the same findings, and
+it must be verifiable.
+
+52
+00:02:39.450 --> 00:02:41.560
+We must be able to verify what
+
+53
+00:02:41.560 --> 00:02:46.195
+our tools or our forensic
+software is telling us.
+
+54
+00:02:46.195 --> 00:02:47.930
+How do we achieve this?
+
+55
+00:02:47.930 --> 00:02:49.880
+We achieve this through
+
+56
+00:02:49.880 --> 00:02:52.355
+what they call approved
+methodologies.
+
+57
+00:02:52.355 --> 00:02:53.960
+In other words, methods that
+
+58
+00:02:53.960 --> 00:02:56.260
+have been scientifically tested.
+
+59
+00:02:56.260 --> 00:02:59.330
+We're going to use tools
+that have been validated.
+
+60
+00:02:59.330 --> 00:03:00.580
+We're going to
+validate our tools,
+
+61
+00:03:00.580 --> 00:03:02.000
+and we're going to
+talk a lot more about
+
+62
+00:03:02.000 --> 00:03:03.920
+that in upcoming modules.
+
+63
+00:03:03.920 --> 00:03:05.690
+We're going to follow
+these procedures
+
+64
+00:03:05.690 --> 00:03:08.320
+every time, all the time.
+
+65
+00:03:08.320 --> 00:03:11.660
+That way, when you're
+called into court or you're
+
+66
+00:03:11.660 --> 00:03:15.920
+testifying before your
+boss or in a civil case,
+
+67
+00:03:15.920 --> 00:03:17.330
+you can say with
+
+68
+00:03:17.330 --> 00:03:19.340
+the utmost certainty
+that this is how you
+
+69
+00:03:19.340 --> 00:03:22.040
+performed this
+particular examination
+
+70
+00:03:22.040 --> 00:03:23.975
+because you always
+do it that way.
+
+71
+00:03:23.975 --> 00:03:26.420
+You want to get into good habits
+
+72
+00:03:26.420 --> 00:03:29.560
+so you do not skip
+or miss any steps.
+
+73
+00:03:29.560 --> 00:03:31.355
+The role of the examiner,
+
+74
+00:03:31.355 --> 00:03:33.125
+what is the job of the examiner?
+
+75
+00:03:33.125 --> 00:03:36.095
+Well, we have some
+major responsibilities,
+
+76
+00:03:36.095 --> 00:03:37.625
+and they're going to include
+
+77
+00:03:37.625 --> 00:03:40.225
+the collecting of the
+digital evidence.
+
+78
+00:03:40.225 --> 00:03:42.500
+We're going to have to examine
+
+79
+00:03:42.500 --> 00:03:44.449
+and preserve this evidence,
+
+80
+00:03:44.449 --> 00:03:46.865
+we are going to do reporting.
+
+81
+00:03:46.865 --> 00:03:50.120
+Reporting will usually
+be in a written form,
+
+82
+00:03:50.120 --> 00:03:54.025
+but you can have some form
+of verbal reporting also.
+
+83
+00:03:54.025 --> 00:03:56.690
+You're going to want
+to include some type
+
+84
+00:03:56.690 --> 00:03:59.060
+of peer review and
+quality assurance.
+
+85
+00:03:59.060 --> 00:04:01.040
+Peer review is when
+a colleague looks
+
+86
+00:04:01.040 --> 00:04:03.890
+over your work and checks it.
+
+87
+00:04:03.890 --> 00:04:07.870
+Quality assurance is pretty
+much the same thing.
+
+88
+00:04:07.870 --> 00:04:11.060
+Court presentations
+are another thing
+
+89
+00:04:11.060 --> 00:04:12.370
+we're going to be
+responsible for,
+
+90
+00:04:12.370 --> 00:04:13.460
+and we're going to
+have to present
+
+91
+00:04:13.460 --> 00:04:14.510
+this evidence in court,
+
+92
+00:04:14.510 --> 00:04:16.325
+whether that's criminal or civil
+
+93
+00:04:16.325 --> 00:04:19.585
+or some type of internal hearing.
+
+94
+00:04:19.585 --> 00:04:23.180
+We also find ourselves
+responsible with anything
+
+95
+00:04:23.180 --> 00:04:26.645
+associated with computers
+or investigations.
+
+96
+00:04:26.645 --> 00:04:29.600
+Another thing that
+computer forensic examiner
+
+97
+00:04:29.600 --> 00:04:30.920
+has to be aware of is they
+
+98
+00:04:30.920 --> 00:04:35.640
+probably have more than one
+boss or reporting chain.
+
+99
+00:04:35.980 --> 00:04:39.140
+This could be because
+of the function of
+
+100
+00:04:39.140 --> 00:04:42.470
+the legal system or the
+function of your employer.
+
+101
+00:04:42.470 --> 00:04:44.840
+I know when I worked
+in the public sector,
+
+102
+00:04:44.840 --> 00:04:48.470
+I reported to my
+direct supervisor,
+
+103
+00:04:48.470 --> 00:04:50.630
+but I also had a sergeant who was
+
+104
+00:04:50.630 --> 00:04:52.805
+in charge of the
+forensic laboratory,
+
+105
+00:04:52.805 --> 00:04:55.895
+and then I also had to talk
+to the state's attorney.
+
+106
+00:04:55.895 --> 00:04:59.675
+There were multiple bosses
+that I was reporting to.
+
+107
+00:04:59.675 --> 00:05:05.815
+Some agencies or companies
+have a division of labor.
+
+108
+00:05:05.815 --> 00:05:08.930
+A lot of times the
+evidence will be collected
+
+109
+00:05:08.930 --> 00:05:11.755
+by the first responders
+or the investigators,
+
+110
+00:05:11.755 --> 00:05:13.970
+and then they're going to
+deliver that evidence to
+
+111
+00:05:13.970 --> 00:05:17.830
+a laboratory for examination
+by a forensic examiner.
+
+112
+00:05:17.830 --> 00:05:20.930
+So we have the first responders
+and the investigators
+
+113
+00:05:20.930 --> 00:05:23.875
+working in the field and the
+examiner working in the lab.
+
+114
+00:05:23.875 --> 00:05:25.790
+In some cases, you will be
+
+115
+00:05:25.790 --> 00:05:28.370
+responsible for both those jobs.
+
+116
+00:05:28.370 --> 00:05:30.050
+But if you're not, if you're
+
+117
+00:05:30.050 --> 00:05:32.120
+the forensic examiner
+working in the lab,
+
+118
+00:05:32.120 --> 00:05:34.790
+you want to make sure
+you are talking to
+
+119
+00:05:34.790 --> 00:05:36.170
+the first responders and
+
+120
+00:05:36.170 --> 00:05:38.530
+the investigators
+working in the field.
+
+121
+00:05:38.530 --> 00:05:40.985
+If you're somebody that
+works in the field,
+
+122
+00:05:40.985 --> 00:05:42.470
+you want to make
+sure you understand
+
+123
+00:05:42.470 --> 00:05:44.975
+the proper way to collect
+digital evidence,
+
+124
+00:05:44.975 --> 00:05:47.135
+and you and the examiner are
+
+125
+00:05:47.135 --> 00:05:50.310
+talking to each other
+and on the same page.
+
+126
+00:05:53.180 --> 00:05:55.365
+In our next module,
+
+127
+00:05:55.365 --> 00:05:56.870
+we're going to talk about
+
+128
+00:05:56.870 --> 00:06:02.700
+some forensic methodologies
+and investigative processes.

@@ -1,0 +1,591 @@
+WEBVTT
+
+1
+00:00:00.840 --> 00:00:03.981
+Welcome back to the digital
+forensics concepts.
+
+2
+00:00:03.981 --> 00:00:07.230
+Path, in this course.
+
+3
+00:00:07.230 --> 00:00:13.000
+Network basics or on module 3,
+network protocols.
+
+4
+00:00:13.000 --> 00:00:16.540
+We talk about the different
+protocols used on the network.
+
+5
+00:00:16.540 --> 00:00:21.243
+A network protocol is simply
+a set of rules that dictate
+
+6
+00:00:21.243 --> 00:00:27.140
+how data is transmitted between
+devices in the network.
+
+7
+00:00:27.140 --> 00:00:31.541
+This is what allows their devices to
+communicate with each other regardless of
+
+8
+00:00:31.541 --> 00:00:36.740
+their operating systems or how they're
+made up, their structure or design.
+
+9
+00:00:36.740 --> 00:00:40.620
+So I can send messages or
+transfer data within my network.
+
+10
+00:00:40.620 --> 00:00:46.340
+Even if I have say a Windows machine and
+a Mac, I can still share data.
+
+11
+00:00:46.340 --> 00:00:49.661
+It doesn't matter
+the structure in my machine.
+
+12
+00:00:51.090 --> 00:00:53.640
+Internet protocols.
+
+13
+00:00:53.640 --> 00:00:57.140
+The first we're going to talk about is IP.
+
+14
+00:00:57.140 --> 00:01:01.231
+IP is the method for
+sending data from one device to another
+
+15
+00:01:01.231 --> 00:01:05.251
+solely based on their IP
+addresses in the packet header.
+
+16
+00:01:06.440 --> 00:01:12.140
+It is the principal communication
+protocol in the internet protocol suite.
+
+17
+00:01:12.140 --> 00:01:16.723
+For sending data across
+network boundaries,
+
+18
+00:01:16.723 --> 00:01:20.380
+it is commonly referred to as TCP IP.
+
+19
+00:01:20.380 --> 00:01:25.087
+Because the two protocols that
+are the foundation of this
+
+20
+00:01:25.087 --> 00:01:30.730
+are the transmission protocol TCP and
+the internet protocol IP.
+
+21
+00:01:30.730 --> 00:01:34.511
+We're going to talk
+about TCP very shortly.
+
+22
+00:01:36.010 --> 00:01:44.050
+The TCP protocol is what allows
+us to send data over a network.
+
+23
+00:01:44.050 --> 00:01:49.240
+We talked about that with the IP
+protocol commonly referred to as TCP IP.
+
+24
+00:01:49.240 --> 00:01:55.940
+And this particular protocol is reliable.
+
+25
+00:01:55.940 --> 00:01:58.440
+It is connection orientated.
+
+26
+00:01:58.440 --> 00:02:01.761
+And we're going to talk about
+how it sets that connection up.
+
+27
+00:02:04.330 --> 00:02:08.440
+The TCP handshake is what allows
+us to establish communication.
+
+28
+00:02:08.440 --> 00:02:13.320
+If I want to send a message to another
+computer, I want to transfer some data.
+
+29
+00:02:13.320 --> 00:02:18.440
+My computer would send that receiving
+computer or other device on the network.
+
+30
+00:02:18.440 --> 00:02:22.820
+A SYN request.
+
+31
+00:02:22.820 --> 00:02:27.698
+Once it gets that SYN, the other computer
+will send back a SYN along with their ACK
+
+32
+00:02:27.698 --> 00:02:29.361
+and the acknowledgement.
+
+33
+00:02:30.840 --> 00:02:36.940
+And then receiving computer will send
+back an ACK, acknowledging my SYN-ACK.
+
+34
+00:02:36.940 --> 00:02:40.280
+So it's SYN, SYN-ACK, ACK.
+
+35
+00:02:40.280 --> 00:02:43.703
+And we can see that, right,
+clearly in the diagram and
+
+36
+00:02:43.703 --> 00:02:49.140
+this is called the TCP handshake once
+this is completed communication starts.
+
+37
+00:02:49.140 --> 00:02:52.158
+So there's no question that
+these two computers or
+
+38
+00:02:52.158 --> 00:02:54.061
+other devices on your network.
+
+39
+00:02:54.061 --> 00:02:55.280
+No they're communicating.
+
+40
+00:02:55.280 --> 00:02:58.140
+They've established communications
+with this handshake.
+
+41
+00:02:58.140 --> 00:03:01.812
+Now when they're done sending the data and
+
+42
+00:03:01.812 --> 00:03:05.910
+they've checked to make
+sure it's all there.
+
+43
+00:03:05.910 --> 00:03:09.182
+They're going to terminate
+their communications and
+
+44
+00:03:09.182 --> 00:03:13.446
+they do this with the computer that
+originally sent the sin to request in
+
+45
+00:03:13.446 --> 00:03:17.640
+the first place is going to send
+over a thin or finish command.
+
+46
+00:03:17.640 --> 00:03:22.476
+The receiving computer is going to send
+back a FIN-ACK a FIN stating that it
+
+47
+00:03:22.476 --> 00:03:23.856
+knows is at the end and
+
+48
+00:03:23.856 --> 00:03:28.561
+an acknowledgement acknowledging
+that they received the FIN command.
+
+49
+00:03:31.040 --> 00:03:35.773
+The other computer will then send
+back an acknowledgement acknowledging
+
+50
+00:03:35.773 --> 00:03:39.040
+the FIN ACK and transmission will end.
+
+51
+00:03:39.040 --> 00:03:41.240
+Communication will stop.
+
+52
+00:03:41.240 --> 00:03:46.980
+TCP is known as a connection
+oriented protocol.
+
+53
+00:03:46.980 --> 00:03:51.043
+We saw that with handshake
+transferring the packets and
+
+54
+00:03:51.043 --> 00:03:54.161
+then are cutting off of the transmission.
+
+55
+00:03:55.540 --> 00:04:00.195
+It does break the messages into
+packets because if say one of my
+
+56
+00:04:00.195 --> 00:04:05.320
+packets doesn't get there,
+I just have to resend that one packet.
+
+57
+00:04:05.320 --> 00:04:08.940
+You don't have to resend
+the entire transmission again.
+
+58
+00:04:08.940 --> 00:04:13.942
+So this is if an error is encountered
+during transmission, it saves time by only
+
+59
+00:04:13.942 --> 00:04:19.261
+having to resend whatever packets were not
+received rather than the whole message.
+
+60
+00:04:20.339 --> 00:04:24.883
+And once the receiving device gets
+the package they are reassembled
+
+61
+00:04:24.883 --> 00:04:27.840
+on the other end, the destination.
+
+62
+00:04:27.840 --> 00:04:31.570
+Now these packets can
+take different routes.
+
+63
+00:04:31.570 --> 00:04:36.540
+They don't all have to go through the same
+routes to get from point A to point B.
+
+64
+00:04:36.540 --> 00:04:42.182
+Some packets may take one route traffic
+may get congested on that route and
+
+65
+00:04:42.182 --> 00:04:48.940
+then other packets may be rerouted around
+in a different path to get there faster.
+
+66
+00:04:48.940 --> 00:04:52.717
+TCP is used to transmit data for
+
+67
+00:04:52.717 --> 00:04:56.651
+several protocols such as ftp.
+
+68
+00:04:56.651 --> 00:05:01.303
+The file transfer protocol secure shell or
+SSH,
+
+69
+00:05:01.303 --> 00:05:05.440
+telnet email protocols such as a IMAP.
+
+70
+00:05:05.440 --> 00:05:12.010
+POP post office protocol,
+simple mail transfer protocol.
+
+71
+00:05:12.010 --> 00:05:16.937
+SMTP and
+the hypertext transfer protocol on one
+
+72
+00:05:16.937 --> 00:05:20.761
+commonly used on the internet http.
+
+73
+00:05:22.140 --> 00:05:27.765
+The slide shows commonly used ports
+with these protocols, as we can see,
+
+74
+00:05:27.765 --> 00:05:33.440
+our file transfer protocol,
+will commonly use port 20 or 21.
+
+75
+00:05:33.440 --> 00:05:36.930
+Whereas SSH secure shell we use 22.
+
+76
+00:05:36.930 --> 00:05:40.710
+We can see telnet uses 23 email.
+
+77
+00:05:40.710 --> 00:05:46.482
+SMTP is going to use 25 DNS,
+which we talked about earlier,
+
+78
+00:05:46.482 --> 00:05:51.699
+which is how we translate those
+URL into IP addresses and
+
+79
+00:05:51.699 --> 00:05:56.270
+IP addresses back to URLs,
+that uses Port 53.
+
+80
+00:05:56.270 --> 00:06:01.714
+And we can see just going down the slide,
+we have http the hypertext transport and
+
+81
+00:06:01.714 --> 00:06:04.451
+that would be the internet at 0.80.
+
+82
+00:06:05.540 --> 00:06:09.499
+And we have a IMAP which is
+another intimate protocol but
+
+83
+00:06:09.499 --> 00:06:14.639
+it goes commonly goes across port 143 and
+then https down at the bottom
+
+84
+00:06:14.639 --> 00:06:19.780
+of the slide goes across port number
+443 Now these are the common ports
+
+85
+00:06:19.780 --> 00:06:25.257
+that you will see these protocols on
+that doesn't necessarily mean somebody
+
+86
+00:06:25.257 --> 00:06:30.770
+can't have their network configured
+differently and use a different port.
+
+87
+00:06:30.770 --> 00:06:35.140
+But commonly these are the ports
+used by these protocols.
+
+88
+00:06:35.140 --> 00:06:39.150
+Now UDP or the user data gram protocol.
+
+89
+00:06:39.150 --> 00:06:46.587
+Now UDP unlike TCP is connectionless,
+TCP we saw we established communication,
+
+90
+00:06:46.587 --> 00:06:51.545
+we transferred our packets,
+we had error checking and
+
+91
+00:06:51.545 --> 00:06:56.180
+then the communication was
+stopped with our FIN and
+
+92
+00:06:56.180 --> 00:07:00.960
+our FIN ACK UDP is a fire and
+forget type of protocol.
+
+93
+00:07:00.960 --> 00:07:02.740
+It's considered connection list.
+
+94
+00:07:02.740 --> 00:07:06.040
+There's no handshake and
+there's no error checking.
+
+95
+00:07:06.040 --> 00:07:11.830
+It would be like dropping a letter in the
+mail and, you don't know if it gets there.
+
+96
+00:07:11.830 --> 00:07:13.440
+Where's UDP?
+
+97
+00:07:13.440 --> 00:07:14.350
+Excuse me?
+
+98
+00:07:14.350 --> 00:07:16.700
+Where's like TCP is
+more like a phone call.
+
+99
+00:07:16.700 --> 00:07:19.870
+You pick up the phone somebody
+answers on the other end.
+
+100
+00:07:19.870 --> 00:07:22.903
+You know, you've established connection,
+
+101
+00:07:22.903 --> 00:07:27.590
+you have your conversation and
+then you say bye and you hang up with UDP.
+
+102
+00:07:27.590 --> 00:07:31.170
+There is no handshake, no error checking.
+
+103
+00:07:31.170 --> 00:07:35.850
+And again it is a fire and
+forget type protocol,
+
+104
+00:07:35.850 --> 00:07:39.361
+Arc address resolution protocol.
+
+105
+00:07:40.840 --> 00:07:43.893
+Now art is a protocol
+used to map IP addresses,
+
+106
+00:07:43.893 --> 00:07:47.940
+two Mac addresses to
+their harbor addresses.
+
+107
+00:07:47.940 --> 00:07:51.824
+And this protocol operates
+the data link layer,
+
+108
+00:07:51.824 --> 00:07:55.940
+data link layer, which is OSI layer 2.
+
+109
+00:07:55.940 --> 00:07:59.090
+And we're going to talk about
+the OSI model in our next module.
+
+110
+00:07:59.090 --> 00:08:03.680
+But we have our IP address as you
+can see in our diagram up at the top
+
+111
+00:08:03.680 --> 00:08:08.440
+that we have our art which
+converts it to the Mac address.
+
+112
+00:08:08.440 --> 00:08:13.660
+Now this art keeps track,
+there's something called ARC table where
+
+113
+00:08:13.660 --> 00:08:19.700
+your device will keep track of the IP
+addresses and the Mac addresses.
+
+114
+00:08:19.700 --> 00:08:22.430
+And there's also something
+called R poisoning language.
+
+115
+00:08:22.430 --> 00:08:25.440
+We're not going to talk about
+this particular course.
+
+116
+00:08:25.440 --> 00:08:31.400
+But those addresses can
+be altered by a bad guy.
+
+117
+00:08:31.400 --> 00:08:33.865
+And you'll think you're
+going to say Google and
+
+118
+00:08:33.865 --> 00:08:36.640
+you're really going to the nefarious site.
+
+119
+00:08:36.640 --> 00:08:40.765
+So art is the address resolution protocol,
+and
+
+120
+00:08:40.765 --> 00:08:45.530
+it's what converts IP
+addresses into Mac addresses.
+
+121
+00:08:45.530 --> 00:08:47.051
+And it uses the ARP table.
+
+122
+00:08:48.140 --> 00:08:52.471
+In our next module,
+we're going to talk about the OSI model,
+
+123
+00:08:52.471 --> 00:08:57.250
+which we've mentioned,
+different data layers throughout here.
+
+124
+00:08:57.250 --> 00:08:59.740
+Different layers in the OSI model.
+
+125
+00:08:59.740 --> 00:09:04.060
+We're going to talk about each of these
+layers and what they do and how they work.

@@ -1,0 +1,1632 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:05.205
+Hello, and welcome back to
+Computer Forensics Bootcamp.
+
+2
+00:00:05.205 --> 00:00:07.875
+In this module, we're
+going to talk about
+
+3
+00:00:07.875 --> 00:00:12.105
+the forensic methodology
+and investigations.
+
+4
+00:00:12.105 --> 00:00:14.625
+The investigative process.
+
+5
+00:00:14.625 --> 00:00:16.335
+The first thing we want to do
+
+6
+00:00:16.335 --> 00:00:18.735
+is we want to do some
+case preparation.
+
+7
+00:00:18.735 --> 00:00:20.330
+What case preparation is,
+
+8
+00:00:20.330 --> 00:00:21.410
+is we're going to gather
+
+9
+00:00:21.410 --> 00:00:25.300
+information before we even
+start up our computer.
+
+10
+00:00:25.300 --> 00:00:28.955
+Before the start of our
+forensic examination,
+
+11
+00:00:28.955 --> 00:00:31.250
+the first things
+we do is to try to
+
+12
+00:00:31.250 --> 00:00:33.980
+define what type of
+case we are looking at.
+
+13
+00:00:33.980 --> 00:00:35.840
+To do that, we're going to need
+
+14
+00:00:35.840 --> 00:00:37.855
+to answer some basic questions.
+
+15
+00:00:37.855 --> 00:00:40.695
+First and foremost, what
+is this case about?
+
+16
+00:00:40.695 --> 00:00:42.980
+Is this a larceny case?
+
+17
+00:00:42.980 --> 00:00:44.240
+Is this a robbery case?
+
+18
+00:00:44.240 --> 00:00:47.985
+Is this an intellectual
+property theft?
+
+19
+00:00:47.985 --> 00:00:49.970
+What type of case are looking at?
+
+20
+00:00:49.970 --> 00:00:52.175
+The next thing we're
+going to talk about is,
+
+21
+00:00:52.175 --> 00:00:56.230
+what evidence can we
+expect to recover?
+
+22
+00:00:56.230 --> 00:00:58.310
+What crime do we think or
+
+23
+00:00:58.310 --> 00:01:00.320
+violation do we think
+was committed and
+
+24
+00:01:00.320 --> 00:01:02.090
+what type of evidence
+do we expect to
+
+25
+00:01:02.090 --> 00:01:05.440
+find on this particular
+computer that we're examining?
+
+26
+00:01:05.440 --> 00:01:10.130
+The next question we may
+want a answer is where most
+
+27
+00:01:10.130 --> 00:01:12.080
+likely will this
+evidence be located
+
+28
+00:01:12.080 --> 00:01:14.860
+on the computer itself
+within the file system?
+
+29
+00:01:14.860 --> 00:01:16.970
+To do that, we're
+going to have to know
+
+30
+00:01:16.970 --> 00:01:19.250
+a little bit about
+where computers store
+
+31
+00:01:19.250 --> 00:01:21.950
+certain data as a
+default location
+
+32
+00:01:21.950 --> 00:01:23.120
+and we're going to
+talk about that
+
+33
+00:01:23.120 --> 00:01:24.560
+throughout this course.
+
+34
+00:01:24.560 --> 00:01:26.720
+The next thing we have
+to think about is
+
+35
+00:01:26.720 --> 00:01:29.425
+what are our legal restrictions?
+
+36
+00:01:29.425 --> 00:01:32.750
+Is there a limitation
+on the scope of
+
+37
+00:01:32.750 --> 00:01:34.160
+our search warrant or on
+
+38
+00:01:34.160 --> 00:01:36.245
+the scope of our
+search authority?
+
+39
+00:01:36.245 --> 00:01:38.240
+Or is this a special case
+
+40
+00:01:38.240 --> 00:01:40.010
+where we may be
+dealing with something
+
+41
+00:01:40.010 --> 00:01:44.590
+that is proprietary property
+or privileged information?
+
+42
+00:01:44.590 --> 00:01:47.210
+The next question we're
+going to want to answer is,
+
+43
+00:01:47.210 --> 00:01:50.030
+who is involved in this
+and what is their role?
+
+44
+00:01:50.030 --> 00:01:51.305
+Are they a suspect?
+
+45
+00:01:51.305 --> 00:01:53.965
+Are they a victim?
+Are they a witness?
+
+46
+00:01:53.965 --> 00:01:57.070
+These will help us determine
+what we're going to
+
+47
+00:01:57.070 --> 00:01:59.210
+do and how we're going
+
+48
+00:01:59.210 --> 00:02:01.880
+to formulate our
+search strategies.
+
+49
+00:02:01.880 --> 00:02:04.055
+Commonly, there are four phases
+
+50
+00:02:04.055 --> 00:02:05.915
+in the investigative process.
+
+51
+00:02:05.915 --> 00:02:08.515
+We have our collection
+and storage,
+
+52
+00:02:08.515 --> 00:02:12.719
+our preservation, our
+analysis and testing,
+
+53
+00:02:12.719 --> 00:02:15.850
+and our reporting and testifying.
+
+54
+00:02:16.640 --> 00:02:19.485
+Criminal investigations.
+
+55
+00:02:19.485 --> 00:02:21.560
+If you're doing a
+criminal investigation,
+
+56
+00:02:21.560 --> 00:02:24.770
+this deals with offenses
+against the state.
+
+57
+00:02:24.770 --> 00:02:26.720
+Somebody broke some sort of law,
+
+58
+00:02:26.720 --> 00:02:29.560
+whether it's state,
+federal, local.
+
+59
+00:02:29.560 --> 00:02:31.940
+In these cases, a court
+
+60
+00:02:31.940 --> 00:02:34.115
+must authorize the
+search warrant,
+
+61
+00:02:34.115 --> 00:02:37.145
+and we must abide by
+the rules of evidence.
+
+62
+00:02:37.145 --> 00:02:38.360
+We have to keep these in mind.
+
+63
+00:02:38.360 --> 00:02:39.980
+I'm going to talk
+about legal issues
+
+64
+00:02:39.980 --> 00:02:41.390
+throughout this course.
+
+65
+00:02:41.390 --> 00:02:45.290
+Each investigative model
+is going to have to follow
+
+66
+00:02:45.290 --> 00:02:49.175
+the procedures of their
+particular jurisdiction,
+
+67
+00:02:49.175 --> 00:02:50.990
+their particular court system.
+
+68
+00:02:50.990 --> 00:02:53.495
+A civil investigation.
+
+69
+00:02:53.495 --> 00:02:55.550
+This covers a lot
+of things that are
+
+70
+00:02:55.550 --> 00:02:57.640
+not covered by criminal law.
+
+71
+00:02:57.640 --> 00:03:00.825
+It could be a
+violation of contract,
+
+72
+00:03:00.825 --> 00:03:02.670
+it could be a civil lawsuit,
+
+73
+00:03:02.670 --> 00:03:04.430
+it could be a custody dispute,
+
+74
+00:03:04.430 --> 00:03:08.034
+a divorce, or any other
+type of civil case.
+
+75
+00:03:08.034 --> 00:03:09.830
+Usually, with civil cases,
+
+76
+00:03:09.830 --> 00:03:11.659
+there is a financial aspect.
+
+77
+00:03:11.659 --> 00:03:13.610
+Nobody's going to
+go to jail or lose
+
+78
+00:03:13.610 --> 00:03:18.340
+their freedom but there is
+some type of financial aspect.
+
+79
+00:03:18.340 --> 00:03:21.590
+Usually, the equipment and
+
+80
+00:03:21.590 --> 00:03:23.390
+the data that can be
+inspected are going to be
+
+81
+00:03:23.390 --> 00:03:25.730
+negotiated and a long
+
+82
+00:03:25.730 --> 00:03:29.330
+time may pass before
+these devices are seized.
+
+83
+00:03:29.330 --> 00:03:32.140
+Civil investigations tend to be
+
+84
+00:03:32.140 --> 00:03:35.440
+data-driven and the
+extracted data,
+
+85
+00:03:35.440 --> 00:03:36.565
+like I said, must be
+
+86
+00:03:36.565 --> 00:03:38.890
+filtered by the
+court's requirements.
+
+87
+00:03:38.890 --> 00:03:40.405
+You may have limitations
+
+88
+00:03:40.405 --> 00:03:44.605
+on what you can examine
+and what you can look at.
+
+89
+00:03:44.605 --> 00:03:45.880
+You may only be able to look at
+
+90
+00:03:45.880 --> 00:03:47.920
+photos or you may
+only be able to look
+
+91
+00:03:47.920 --> 00:03:51.190
+at messages or documents.
+
+92
+00:03:51.190 --> 00:03:52.930
+It depends on the
+type of case and
+
+93
+00:03:52.930 --> 00:03:55.520
+what the court decides.
+
+94
+00:03:55.520 --> 00:03:58.420
+Administrative investigations are
+
+95
+00:03:58.420 --> 00:04:02.270
+usually fact-finding inquiries.
+
+96
+00:04:02.360 --> 00:04:05.530
+These type of things
+are that somebody
+
+97
+00:04:05.530 --> 00:04:09.280
+broke a rule or a
+policy or a protocol.
+
+98
+00:04:09.280 --> 00:04:12.625
+It's some type of
+professional misconduct.
+
+99
+00:04:12.625 --> 00:04:14.620
+A lot of times
+we're talking about
+
+100
+00:04:14.620 --> 00:04:18.170
+fraud audits or somebody
+looking at something
+
+101
+00:04:18.170 --> 00:04:19.190
+they're not supposed to be on
+
+102
+00:04:19.190 --> 00:04:21.110
+their company
+computer or using it
+
+103
+00:04:21.110 --> 00:04:25.505
+for something they're not
+supposed to be using it for.
+
+104
+00:04:25.505 --> 00:04:32.480
+This is a generic model of
+on scene flow that we would
+
+105
+00:04:32.480 --> 00:04:34.610
+use when we're dealing
+
+106
+00:04:34.610 --> 00:04:39.340
+with collecting
+evidence on a scene.
+
+107
+00:04:39.340 --> 00:04:41.335
+The first concern is going to be
+
+108
+00:04:41.335 --> 00:04:44.210
+scene safety and that's going to
+
+109
+00:04:44.210 --> 00:04:47.645
+apply no matter what type of
+investigation you are doing.
+
+110
+00:04:47.645 --> 00:04:50.000
+The next thing we want to
+think about when we're
+
+111
+00:04:50.000 --> 00:04:52.880
+collecting evidence is we
+want to isolate the evidence.
+
+112
+00:04:52.880 --> 00:04:55.265
+If the evidence is
+connected to a network,
+
+113
+00:04:55.265 --> 00:04:57.880
+the evidence could be
+altered or remotely wiped
+
+114
+00:04:57.880 --> 00:05:00.815
+so we want to get the
+evidence off the network.
+
+115
+00:05:00.815 --> 00:05:02.720
+The next thing we want to do is
+
+116
+00:05:02.720 --> 00:05:04.505
+we want to document the scene.
+
+117
+00:05:04.505 --> 00:05:06.575
+You want to take photographs,
+
+118
+00:05:06.575 --> 00:05:09.320
+draw a diagram, do a video.
+
+119
+00:05:09.320 --> 00:05:11.960
+But you want to show that
+scene as it was when you
+
+120
+00:05:11.960 --> 00:05:15.200
+first arrive before
+anybody moves anything.
+
+121
+00:05:15.200 --> 00:05:17.030
+The next thing we're
+going to do is
+
+122
+00:05:17.030 --> 00:05:18.290
+we're going to scan the scene and
+
+123
+00:05:18.290 --> 00:05:21.590
+identify what could
+be evidence to us.
+
+124
+00:05:21.590 --> 00:05:25.550
+Once we've identified our
+possible sources of evidence,
+
+125
+00:05:25.550 --> 00:05:27.230
+we're going to collect them
+
+126
+00:05:27.230 --> 00:05:30.425
+and we're going to do
+so in a proper manner,
+
+127
+00:05:30.425 --> 00:05:32.525
+and we're going to
+document that collection.
+
+128
+00:05:32.525 --> 00:05:34.055
+What I mean by that
+is you're going to
+
+129
+00:05:34.055 --> 00:05:36.080
+document who found it,
+
+130
+00:05:36.080 --> 00:05:38.585
+where they found it, what time.
+
+131
+00:05:38.585 --> 00:05:39.860
+All these things are very
+
+132
+00:05:39.860 --> 00:05:41.810
+important when it comes
+to authenticating
+
+133
+00:05:41.810 --> 00:05:45.815
+the evidence later on in
+any type of court action.
+
+134
+00:05:45.815 --> 00:05:48.110
+Now these next
+three boxes you see
+
+135
+00:05:48.110 --> 00:05:50.195
+in that reddish color are
+
+136
+00:05:50.195 --> 00:05:51.920
+only going to apply if you
+
+137
+00:05:51.920 --> 00:05:54.995
+have a forensic expert on scene,
+
+138
+00:05:54.995 --> 00:05:57.215
+because if you don't,
+
+139
+00:05:57.215 --> 00:06:00.020
+after documenting the collection,
+
+140
+00:06:00.020 --> 00:06:02.480
+what's going to happen is
+people are going to pull
+
+141
+00:06:02.480 --> 00:06:04.655
+the plugs from the
+back of the computers,
+
+142
+00:06:04.655 --> 00:06:06.470
+and package the evidence,
+
+143
+00:06:06.470 --> 00:06:08.180
+but if you have a forensic person
+
+144
+00:06:08.180 --> 00:06:10.220
+on scene, a forensic examiner,
+
+145
+00:06:10.220 --> 00:06:13.534
+and you come across
+a running computer,
+
+146
+00:06:13.534 --> 00:06:17.720
+the first thing you
+want to do is look and
+
+147
+00:06:17.720 --> 00:06:22.625
+see if there's any type of
+destructive process running.
+
+148
+00:06:22.625 --> 00:06:25.070
+The three things we
+want to look for is
+
+149
+00:06:25.070 --> 00:06:27.320
+RAM, encryption, and destruction.
+
+150
+00:06:27.320 --> 00:06:29.865
+I like to use the acronym RED.
+
+151
+00:06:29.865 --> 00:06:31.705
+The R stands for RAM,
+
+152
+00:06:31.705 --> 00:06:33.880
+and that's going to be
+random access memory.
+
+153
+00:06:33.880 --> 00:06:35.770
+Once the computer is shut off,
+
+154
+00:06:35.770 --> 00:06:38.230
+that random access
+memory is gone,
+
+155
+00:06:38.230 --> 00:06:40.660
+so we're going to
+lose all that data.
+
+156
+00:06:40.660 --> 00:06:43.709
+The E in RED, encryption.
+
+157
+00:06:43.709 --> 00:06:47.000
+If you have an encrypted
+volume that is up
+
+158
+00:06:47.000 --> 00:06:50.330
+and open in RAM and you
+shut the computer off,
+
+159
+00:06:50.330 --> 00:06:53.390
+you may never be able to
+examine that volume because
+
+160
+00:06:53.390 --> 00:06:54.920
+encryption is going to kick in
+
+161
+00:06:54.920 --> 00:06:56.840
+and if you can't get back in,
+
+162
+00:06:56.840 --> 00:06:58.400
+you will not be able to
+
+163
+00:06:58.400 --> 00:07:00.365
+see what is on that
+encrypted volume.
+
+164
+00:07:00.365 --> 00:07:02.195
+Then I mentioned destructive,
+
+165
+00:07:02.195 --> 00:07:04.370
+if this destructive
+process is running,
+
+166
+00:07:04.370 --> 00:07:07.490
+you want to immediately pull
+the plug from the back of
+
+167
+00:07:07.490 --> 00:07:09.350
+the computer to stop
+
+168
+00:07:09.350 --> 00:07:11.645
+that destructive
+process from running.
+
+169
+00:07:11.645 --> 00:07:15.305
+If it's a laptop, make sure
+you take the battery out.
+
+170
+00:07:15.305 --> 00:07:18.365
+If we do have an up
+and running computer,
+
+171
+00:07:18.365 --> 00:07:21.320
+the first thing we want
+to do is collect RAM.
+
+172
+00:07:21.320 --> 00:07:23.555
+If we have an
+encrypted volume up,
+
+173
+00:07:23.555 --> 00:07:27.440
+we want to take a logical
+image of that volume,
+
+174
+00:07:27.440 --> 00:07:30.110
+so at least we have that in
+
+175
+00:07:30.110 --> 00:07:32.465
+case we cannot get back
+into that encrypted volume.
+
+176
+00:07:32.465 --> 00:07:35.120
+Maybe the suspect won't
+give up the password,
+
+177
+00:07:35.120 --> 00:07:38.075
+or there could be other reasons
+why we can't get back in.
+
+178
+00:07:38.075 --> 00:07:41.555
+Again, destructive
+processes pull the plug.
+
+179
+00:07:41.555 --> 00:07:44.720
+If you come across a computer
+that is off and you have
+
+180
+00:07:44.720 --> 00:07:47.540
+a forensic expert
+on the scene and
+
+181
+00:07:47.540 --> 00:07:48.710
+you suspect that there might be
+
+182
+00:07:48.710 --> 00:07:50.390
+evidence on that computer and
+
+183
+00:07:50.390 --> 00:07:53.540
+the case is urgent,
+
+184
+00:07:53.540 --> 00:07:55.295
+it could be a missing kid,
+
+185
+00:07:55.295 --> 00:07:58.070
+it could be that you want
+to get enough evidence to
+
+186
+00:07:58.070 --> 00:07:59.210
+make an arrest because you're
+
+187
+00:07:59.210 --> 00:08:00.875
+afraid your suspect will flee,
+
+188
+00:08:00.875 --> 00:08:03.170
+you might want to do
+an on-scene preview
+
+189
+00:08:03.170 --> 00:08:05.220
+of that computer.
+
+190
+00:08:05.380 --> 00:08:08.480
+The other issue is triage.
+
+191
+00:08:08.480 --> 00:08:12.440
+If you come upon a scene where
+you have multiple devices,
+
+192
+00:08:12.440 --> 00:08:14.720
+you don't just want to
+collect everything.
+
+193
+00:08:14.720 --> 00:08:16.460
+You don't want to take 10 or 20
+
+194
+00:08:16.460 --> 00:08:18.110
+computers when only one or
+
+195
+00:08:18.110 --> 00:08:19.700
+two may have evidence
+
+196
+00:08:19.700 --> 00:08:21.605
+that's going to be
+relevant to your case.
+
+197
+00:08:21.605 --> 00:08:23.734
+You might want to do some triage,
+
+198
+00:08:23.734 --> 00:08:26.390
+so you don't have to
+collect everything.
+
+199
+00:08:26.390 --> 00:08:27.815
+Once that is done,
+
+200
+00:08:27.815 --> 00:08:30.755
+you would properly
+package the evidence.
+
+201
+00:08:30.755 --> 00:08:33.800
+Package computers
+in plastic unless
+
+202
+00:08:33.800 --> 00:08:36.185
+there is some liquid
+on the computer.
+
+203
+00:08:36.185 --> 00:08:38.015
+It could be a body fluid
+
+204
+00:08:38.015 --> 00:08:40.145
+or there just could be
+some type of liquid,
+
+205
+00:08:40.145 --> 00:08:44.105
+in that case, package
+the computer in paper.
+
+206
+00:08:44.105 --> 00:08:47.735
+You're going to properly
+then transport the evidence.
+
+207
+00:08:47.735 --> 00:08:49.910
+You want to package it
+so that it's secure
+
+208
+00:08:49.910 --> 00:08:52.070
+and not going to be
+damaged during transport,
+
+209
+00:08:52.070 --> 00:08:55.115
+and when you get the evidence
+back to your location,
+
+210
+00:08:55.115 --> 00:08:57.380
+you're going to want to
+put that evidence in
+
+211
+00:08:57.380 --> 00:09:01.505
+a secure room where
+access is limited.
+
+212
+00:09:01.505 --> 00:09:04.820
+Forensic analysis preparation.
+
+213
+00:09:04.820 --> 00:09:07.475
+Now that we've got our
+evidence back to our lab,
+
+214
+00:09:07.475 --> 00:09:08.765
+we're going to examine it.
+
+215
+00:09:08.765 --> 00:09:10.310
+The first thing we're
+going to do is you
+
+216
+00:09:10.310 --> 00:09:12.020
+want to review all the paperwork.
+
+217
+00:09:12.020 --> 00:09:13.790
+What I mean by that
+is you want to
+
+218
+00:09:13.790 --> 00:09:15.815
+read all the reports
+that were written.
+
+219
+00:09:15.815 --> 00:09:19.115
+If there is a search warrant
+involved or a court order,
+
+220
+00:09:19.115 --> 00:09:20.795
+you want to read that too.
+
+221
+00:09:20.795 --> 00:09:24.140
+You want to make sure you
+understand where the scope of
+
+222
+00:09:24.140 --> 00:09:28.055
+your authority comes from
+and what your scope is.
+
+223
+00:09:28.055 --> 00:09:29.450
+You may have a limited
+
+224
+00:09:29.450 --> 00:09:32.450
+search and you want
+to make sure you
+
+225
+00:09:32.450 --> 00:09:37.245
+understand that before
+you begin your analysis.
+
+226
+00:09:37.245 --> 00:09:40.685
+You want to make a plan
+to examine the computer.
+
+227
+00:09:40.685 --> 00:09:42.080
+Again we talked about
+
+228
+00:09:42.080 --> 00:09:43.610
+understanding what
+type of case you're
+
+229
+00:09:43.610 --> 00:09:47.270
+investigating and what type
+of evidence you want to find,
+
+230
+00:09:47.270 --> 00:09:50.165
+and where you think that
+evidence might be located.
+
+231
+00:09:50.165 --> 00:09:54.050
+Again confirm your search
+authority and scope.
+
+232
+00:09:54.050 --> 00:09:55.850
+That is so important,
+
+233
+00:09:55.850 --> 00:09:58.395
+because you may have
+a limited scope,
+
+234
+00:09:58.395 --> 00:10:01.915
+and that may be one sentence
+in an entire search warrant,
+
+235
+00:10:01.915 --> 00:10:03.850
+but if you miss
+that one sentence,
+
+236
+00:10:03.850 --> 00:10:07.290
+you're going to be violating
+your search authority.
+
+237
+00:10:07.290 --> 00:10:10.655
+Be aware of and
+plan for conflicts.
+
+238
+00:10:10.655 --> 00:10:13.670
+What I mean by that
+is you may have
+
+239
+00:10:13.670 --> 00:10:14.780
+a computer that came from
+
+240
+00:10:14.780 --> 00:10:16.130
+an attorney's office and that's
+
+241
+00:10:16.130 --> 00:10:17.900
+going to be privileged
+information.
+
+242
+00:10:17.900 --> 00:10:20.104
+You could have
+medical information
+
+243
+00:10:20.104 --> 00:10:22.335
+that would be limited by HIPAA.
+
+244
+00:10:22.335 --> 00:10:25.420
+You could have somebody
+who's a writer and they
+
+245
+00:10:25.420 --> 00:10:29.035
+have their proprietary
+information on there.
+
+246
+00:10:29.035 --> 00:10:32.485
+You want to make sure you're
+aware of all the conflicts.
+
+247
+00:10:32.485 --> 00:10:35.440
+You also want to be aware
+of what tools you have,
+
+248
+00:10:35.440 --> 00:10:36.860
+what tools are available,
+
+249
+00:10:36.860 --> 00:10:38.530
+and what tools you might need for
+
+250
+00:10:38.530 --> 00:10:40.480
+this investigation in case
+
+251
+00:10:40.480 --> 00:10:42.865
+you have to obtain another tool.
+
+252
+00:10:42.865 --> 00:10:46.090
+You're going to have to go
+back and refine your plan as
+
+253
+00:10:46.090 --> 00:10:49.420
+needed as you progress
+through the investigation.
+
+254
+00:10:49.420 --> 00:10:53.275
+This is a generic model for
+what happens at the lab.
+
+255
+00:10:53.275 --> 00:10:55.525
+When a detective or somebody
+
+256
+00:10:55.525 --> 00:10:57.730
+brings a computer
+to you to examine,
+
+257
+00:10:57.730 --> 00:10:59.000
+there's going to be some form of
+
+258
+00:10:59.000 --> 00:11:01.120
+intake where you documented who
+
+259
+00:11:01.120 --> 00:11:05.150
+brought it to you and what
+date and time you received it.
+
+260
+00:11:05.150 --> 00:11:07.075
+Then you're going to photograph
+
+261
+00:11:07.075 --> 00:11:08.710
+the evidence and you're
+going to document
+
+262
+00:11:08.710 --> 00:11:11.800
+the evidence noting any damage to
+
+263
+00:11:11.800 --> 00:11:15.145
+that evidence before it
+became in your custody.
+
+264
+00:11:15.145 --> 00:11:17.890
+You want to photograph and
+document the evidence.
+
+265
+00:11:17.890 --> 00:11:20.410
+You're going to document the
+make, model, serial number,
+
+266
+00:11:20.410 --> 00:11:21.700
+and any type of damage and
+
+267
+00:11:21.700 --> 00:11:23.755
+you're going to take photographs.
+
+268
+00:11:23.755 --> 00:11:25.760
+You're going to
+preserve the evidence,
+
+269
+00:11:25.760 --> 00:11:29.695
+and this usually involves
+some type of write blocking.
+
+270
+00:11:29.695 --> 00:11:32.530
+You're not writing to
+the original evidence.
+
+271
+00:11:32.530 --> 00:11:36.235
+Then you're going to
+create a bit-stream copy.
+
+272
+00:11:36.235 --> 00:11:39.130
+You're going to image that drive.
+
+273
+00:11:39.130 --> 00:11:40.570
+Once you're done with that,
+
+274
+00:11:40.570 --> 00:11:42.675
+you're going to
+validate the copy,
+
+275
+00:11:42.675 --> 00:11:45.600
+you're going to take one
+last hash and validate if
+
+276
+00:11:45.600 --> 00:11:48.345
+you haven't made any changes
+to the original evidence,
+
+277
+00:11:48.345 --> 00:11:50.070
+and then you're going to secure
+
+278
+00:11:50.070 --> 00:11:52.440
+the original evidence in
+
+279
+00:11:52.440 --> 00:11:55.025
+a place where access
+is controlled.
+
+280
+00:11:55.025 --> 00:11:56.660
+When you're done with that,
+
+281
+00:11:56.660 --> 00:11:59.230
+you're going to examine
+the copy of the evidence.
+
+282
+00:11:59.230 --> 00:12:01.150
+We never work on the
+original evidence,
+
+283
+00:12:01.150 --> 00:12:03.550
+we always work off of a copy.
+
+284
+00:12:03.550 --> 00:12:06.830
+You're going to
+report your findings.
+
+285
+00:12:06.830 --> 00:12:10.225
+You're going to have your
+report peer reviewed,
+
+286
+00:12:10.225 --> 00:12:11.290
+you're going to have it looked at
+
+287
+00:12:11.290 --> 00:12:13.120
+by another professional and
+
+288
+00:12:13.120 --> 00:12:16.960
+then you're going to
+present your findings.
+
+289
+00:12:16.960 --> 00:12:19.840
+We have some special type
+of cases that you'll
+
+290
+00:12:19.840 --> 00:12:22.135
+probably come across in
+the corporate world,
+
+291
+00:12:22.135 --> 00:12:25.625
+like an intellectual property
+theft investigation.
+
+292
+00:12:25.625 --> 00:12:28.759
+In this case, you want
+to always consider
+
+293
+00:12:28.759 --> 00:12:32.570
+the suspect's computer
+a crime scene.
+
+294
+00:12:32.570 --> 00:12:35.500
+That device should be
+considered a crime scene.
+
+295
+00:12:35.500 --> 00:12:38.500
+You want to immediately preserve.
+
+296
+00:12:38.500 --> 00:12:40.810
+Do not access that device and do
+
+297
+00:12:40.810 --> 00:12:44.060
+not allow anybody else
+to access that device.
+
+298
+00:12:45.180 --> 00:12:48.905
+You're going to want
+to take a look and see
+
+299
+00:12:48.905 --> 00:12:53.500
+how the suspect may
+have exfiltrated data.
+
+300
+00:12:53.500 --> 00:12:55.540
+We're looking at how the suspect
+
+301
+00:12:55.540 --> 00:12:57.535
+got the data off the computer.
+
+302
+00:12:57.535 --> 00:13:01.210
+Did he use a DVD or
+CD or USB device?
+
+303
+00:13:01.210 --> 00:13:04.060
+Did he use that computer
+
+304
+00:13:04.060 --> 00:13:06.895
+to transfer data
+to a home network?
+
+305
+00:13:06.895 --> 00:13:09.460
+What type of activities
+was he doing?
+
+306
+00:13:09.460 --> 00:13:11.345
+Was he negotiating a salary
+
+307
+00:13:11.345 --> 00:13:13.355
+with another company,
+with a competitor?
+
+308
+00:13:13.355 --> 00:13:17.020
+Was he selling
+proprietary information?
+
+309
+00:13:17.020 --> 00:13:20.320
+Were there any mass
+deletions or drive
+
+310
+00:13:20.320 --> 00:13:22.705
+wiping or programs that
+
+311
+00:13:22.705 --> 00:13:25.300
+are meant to hide
+or destroy data?
+
+312
+00:13:25.300 --> 00:13:27.430
+You want to take a look
+at all that when you're
+
+313
+00:13:27.430 --> 00:13:30.510
+investigating and intellectual
+property theft case.
+
+314
+00:13:30.510 --> 00:13:32.950
+E-discovery cases, which would be
+
+315
+00:13:32.950 --> 00:13:34.240
+another case you
+would come across
+
+316
+00:13:34.240 --> 00:13:36.085
+in a corporate type environment,
+
+317
+00:13:36.085 --> 00:13:40.584
+are not the same as your
+ordinary examination.
+
+318
+00:13:40.584 --> 00:13:44.470
+What you're doing in an
+e-discovery case is you're
+
+319
+00:13:44.470 --> 00:13:47.860
+collecting information and this
+
+320
+00:13:47.860 --> 00:13:50.625
+may be in response to a lawsuit,
+
+321
+00:13:50.625 --> 00:13:53.195
+a freedom of information request,
+
+322
+00:13:53.195 --> 00:13:56.350
+or some other type
+of investigation.
+
+323
+00:13:56.350 --> 00:13:59.915
+These types of data that
+you're going to be looking to
+
+324
+00:13:59.915 --> 00:14:01.600
+collect are going to be emails,
+
+325
+00:14:01.600 --> 00:14:04.270
+documents, presentations,
+databases,
+
+326
+00:14:04.270 --> 00:14:07.225
+perhaps voicemails or some
+other type of media file,
+
+327
+00:14:07.225 --> 00:14:10.180
+you're going to look at
+social media remnants that
+
+328
+00:14:10.180 --> 00:14:14.020
+may be left on the
+computer and websites.
+
+329
+00:14:14.390 --> 00:14:20.155
+E-discovery, you're going
+to be looking at metadata.
+
+330
+00:14:20.155 --> 00:14:22.735
+It's focused on the metadata
+
+331
+00:14:22.735 --> 00:14:25.480
+as opposed to
+collecting the data.
+
+332
+00:14:25.480 --> 00:14:29.380
+How, when and where was
+this document created,
+
+333
+00:14:29.380 --> 00:14:31.375
+these are going to be
+
+334
+00:14:31.375 --> 00:14:35.570
+more of a focus than
+the actual content.
+
+335
+00:14:35.570 --> 00:14:38.365
+Then you must know
+where the data is.
+
+336
+00:14:38.365 --> 00:14:40.780
+Where is it you're going
+to locate this data?
+
+337
+00:14:40.780 --> 00:14:42.190
+Is it archived?
+
+338
+00:14:42.190 --> 00:14:45.440
+A lot of companies use
+email archival systems.
+
+339
+00:14:45.440 --> 00:14:49.360
+So you're going to have to
+understand where this data is,
+
+340
+00:14:49.360 --> 00:14:52.955
+you're going to be thinking
+about the documents metadata,
+
+341
+00:14:52.955 --> 00:14:55.685
+when, how, and where
+it was collected.
+
+342
+00:14:55.685 --> 00:14:58.630
+When you're doing an
+e-discovery project,
+
+343
+00:14:58.630 --> 00:15:01.325
+you're going to have to
+scope it and this is going
+
+344
+00:15:01.325 --> 00:15:04.325
+to begin with a data
+mapping exercise.
+
+345
+00:15:04.325 --> 00:15:06.460
+You're also going
+to have to identify
+
+346
+00:15:06.460 --> 00:15:08.050
+the physical location
+of the data.
+
+347
+00:15:08.050 --> 00:15:10.244
+The data maybe on
+a server off-site,
+
+348
+00:15:10.244 --> 00:15:13.330
+the data may be in the Cloud.
+
+349
+00:15:13.330 --> 00:15:16.560
+You're going to have
+to understand all of
+
+350
+00:15:16.560 --> 00:15:20.705
+those aspects when you're
+doing an e-discovery case.
+
+351
+00:15:20.705 --> 00:15:22.820
+In the next module,
+
+352
+00:15:22.820 --> 00:15:26.590
+we're going to download
+software and get our systems
+
+353
+00:15:26.590 --> 00:15:31.960
+ready to start examining
+digital evidence.

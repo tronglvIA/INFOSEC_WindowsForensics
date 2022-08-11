@@ -1,0 +1,451 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.560
+Hello, and welcome back to
+digital forensic concepts.
+
+2
+00:00:04.560 --> 00:00:06.600
+In this course, course 9,
+
+3
+00:00:06.600 --> 00:00:10.170
+we're going to talk about
+keyword in grep searches.
+
+4
+00:00:10.170 --> 00:00:13.680
+In this course, we're
+going to cover how
+
+5
+00:00:13.680 --> 00:00:17.205
+to formulate case-specific
+keyword lists,
+
+6
+00:00:17.205 --> 00:00:20.580
+a review of grep
+and extended grep,
+
+7
+00:00:20.580 --> 00:00:22.815
+what they are and how they work.
+
+8
+00:00:22.815 --> 00:00:24.960
+We're also going to look at using
+
+9
+00:00:24.960 --> 00:00:26.850
+practical graph expressions
+
+10
+00:00:26.850 --> 00:00:28.950
+and extended grep expressions.
+
+11
+00:00:28.950 --> 00:00:31.230
+We're also going
+to take a look at
+
+12
+00:00:31.230 --> 00:00:33.120
+keyword searching in
+
+13
+00:00:33.120 --> 00:00:35.735
+the free and open-source
+tool autopsy.
+
+14
+00:00:35.735 --> 00:00:38.015
+In module 1, we're going to cover
+
+15
+00:00:38.015 --> 00:00:40.725
+keyword in grep searches.
+
+16
+00:00:40.725 --> 00:00:42.560
+When you're looking
+at a case and you're
+
+17
+00:00:42.560 --> 00:00:45.200
+choosing a keyword list,
+
+18
+00:00:45.200 --> 00:00:48.320
+you want to think
+about the type of
+
+19
+00:00:48.320 --> 00:00:51.420
+incident or a fence
+you're investigating.
+
+20
+00:00:51.420 --> 00:00:53.360
+If you're not the case, agent,
+
+21
+00:00:53.360 --> 00:00:55.250
+you definitely want
+to speak to them.
+
+22
+00:00:55.250 --> 00:00:56.480
+If you're not investigating,
+
+23
+00:00:56.480 --> 00:00:58.775
+you want to talk to
+that person to find out
+
+24
+00:00:58.775 --> 00:01:01.735
+information regarding the case
+that you're investigating.
+
+25
+00:01:01.735 --> 00:01:05.015
+We want to formulate
+our keyword searches
+
+26
+00:01:05.015 --> 00:01:09.245
+around the elements
+of the investigation.
+
+27
+00:01:09.245 --> 00:01:11.340
+What happened in this instance?
+
+28
+00:01:11.340 --> 00:01:14.195
+We want to include
+any existing leads
+
+29
+00:01:14.195 --> 00:01:17.770
+or names of suspects or
+people who may be involved.
+
+30
+00:01:17.770 --> 00:01:20.300
+We want to take a look
+at our suspects and
+
+31
+00:01:20.300 --> 00:01:22.790
+find out stuff about
+them personally.
+
+32
+00:01:22.790 --> 00:01:25.160
+This can help us locate
+
+33
+00:01:25.160 --> 00:01:27.835
+possible information
+to break passwords.
+
+34
+00:01:27.835 --> 00:01:32.075
+We definitely want to look
+at case-specific keywords,
+
+35
+00:01:32.075 --> 00:01:35.750
+keywords that will be useful
+in this one particular case.
+
+36
+00:01:35.750 --> 00:01:38.795
+They're specific
+to that one case.
+
+37
+00:01:38.795 --> 00:01:40.280
+Now a keyword searching, we
+
+38
+00:01:40.280 --> 00:01:42.125
+generally have two categories.
+
+39
+00:01:42.125 --> 00:01:44.105
+We have generic keywords.
+
+40
+00:01:44.105 --> 00:01:48.275
+Keywords that are generic
+to a specific type of case,
+
+41
+00:01:48.275 --> 00:01:51.050
+like maybe a drug case or
+
+42
+00:01:51.050 --> 00:01:55.300
+maybe a theft of
+intellectual property case.
+
+43
+00:01:55.300 --> 00:01:57.870
+Then we have
+case-specific keywords,
+
+44
+00:01:57.870 --> 00:02:00.620
+and a case-specific keyword
+is a keyword that is specific
+
+45
+00:02:00.620 --> 00:02:03.620
+to that one particular
+case you're investigating.
+
+46
+00:02:03.620 --> 00:02:05.750
+That may be something like
+
+47
+00:02:05.750 --> 00:02:09.230
+suspect names or people
+who involve names.
+
+48
+00:02:09.230 --> 00:02:13.505
+You can get generic
+case keyword lists
+
+49
+00:02:13.505 --> 00:02:16.650
+from the URL I have up
+here on the screen.
+
+50
+00:02:16.650 --> 00:02:20.480
+DIF or training,
+DIF or resources.
+
+51
+00:02:20.480 --> 00:02:22.580
+If you belong to any groups,
+
+52
+00:02:22.580 --> 00:02:24.980
+you can check your list servers.
+
+53
+00:02:24.980 --> 00:02:28.270
+If you are in law
+enforcement, ICAC,
+
+54
+00:02:28.270 --> 00:02:29.780
+Internet crimes against children
+
+55
+00:02:29.780 --> 00:02:31.460
+has keyword lists that you can
+
+56
+00:02:31.460 --> 00:02:33.410
+download and you can get
+
+57
+00:02:33.410 --> 00:02:36.635
+keyword lists from other
+forensic examiners.
+
+58
+00:02:36.635 --> 00:02:39.720
+There are some limitations to
+
+59
+00:02:39.720 --> 00:02:42.170
+text-based keyword searching and
+
+60
+00:02:42.170 --> 00:02:44.410
+some of these are a bit shifting.
+
+61
+00:02:44.410 --> 00:02:46.205
+Bit shifting is when you
+
+62
+00:02:46.205 --> 00:02:48.530
+alter the data at
+the binary level,
+
+63
+00:02:48.530 --> 00:02:51.215
+somebody goes in with
+a hex editor and
+
+64
+00:02:51.215 --> 00:02:54.410
+alternates the data
+at that binary level.
+
+65
+00:02:54.410 --> 00:02:58.880
+It will also cause
+you to not be able to
+
+66
+00:02:58.880 --> 00:03:00.590
+search your file using
+
+67
+00:03:00.590 --> 00:03:03.395
+a text-based search scheme
+if the file is encrypted.
+
+68
+00:03:03.395 --> 00:03:05.150
+Because remember encryption,
+
+69
+00:03:05.150 --> 00:03:06.920
+we're not looking at plain tasks.
+
+70
+00:03:06.920 --> 00:03:10.235
+That text is scrambled
+using an algorithm,
+
+71
+00:03:10.235 --> 00:03:12.425
+so the file is encrypted.
+
+72
+00:03:12.425 --> 00:03:15.710
+Compressed files will also not be
+
+73
+00:03:15.710 --> 00:03:18.920
+able to be searched with
+text-based keyword searching,
+
+74
+00:03:18.920 --> 00:03:20.450
+you would have to decompress
+
+75
+00:03:20.450 --> 00:03:22.920
+the file before you
+could search it.
+
+76
+00:03:22.920 --> 00:03:26.390
+That's anything like a zip
+file or an archive file.
+
+77
+00:03:26.390 --> 00:03:31.504
+Also, non-keyboard characters
+or non-word characters
+
+78
+00:03:31.504 --> 00:03:36.395
+can be used to hide files
+from keyword searching.
+
+79
+00:03:36.395 --> 00:03:39.815
+What I mean by using
+non-word characters,
+
+80
+00:03:39.815 --> 00:03:41.090
+if we take a look at the slide,
+
+81
+00:03:41.090 --> 00:03:44.929
+if I'm looking for the
+keywords, resume or bio,
+
+82
+00:03:44.929 --> 00:03:47.000
+maybe I'm doing an intellectual
+
+83
+00:03:47.000 --> 00:03:49.340
+property theft case
+where somebody was
+
+84
+00:03:49.340 --> 00:03:52.040
+applying to a competitor and
+
+85
+00:03:52.040 --> 00:03:54.615
+going to take some of the
+information with them.
+
+86
+00:03:54.615 --> 00:03:56.240
+If I put it into words, resume,
+
+87
+00:03:56.240 --> 00:03:59.240
+or bio, all I'm going to
+find are those words.
+
+88
+00:03:59.240 --> 00:04:00.980
+It's not going to
+hit on things like,
+
+89
+00:04:00.980 --> 00:04:04.085
+you see the re5um3.
+
+90
+00:04:04.085 --> 00:04:09.270
+It would not find that and
+it would not find the b!0.
+
+91
+00:04:09.270 --> 00:04:12.180
+If I was searching for
+an IP address but I
+
+92
+00:04:12.180 --> 00:04:13.760
+didn't know what IP addresses
+
+93
+00:04:13.760 --> 00:04:15.530
+are important to my case yet,
+
+94
+00:04:15.530 --> 00:04:20.480
+I would have to do a lot
+of keyword searches,
+
+95
+00:04:20.480 --> 00:04:24.545
+just searching for
+individual IP addresses.
+
+96
+00:04:24.545 --> 00:04:27.695
+This is where our pattern
+matching comes in.
+
+97
+00:04:27.695 --> 00:04:30.095
+Our patents searches,
+grep searches,
+
+98
+00:04:30.095 --> 00:04:34.770
+which we're going to talk
+about in our next module.

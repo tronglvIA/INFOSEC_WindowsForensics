@@ -1,0 +1,1022 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.395
+Hello, and welcome back to
+the computer forensics path,
+
+2
+00:00:04.395 --> 00:00:12.130
+Course 6, recognizing and
+collecting digital evidence.
+
+3
+00:00:12.590 --> 00:00:15.680
+In this course, we're going to
+
+4
+00:00:15.680 --> 00:00:19.850
+cover preparation and planning,
+
+5
+00:00:19.850 --> 00:00:26.700
+securing and evaluating the
+scene, documenting the scene,
+
+6
+00:00:26.700 --> 00:00:29.480
+how we're going to
+collect evidence,
+
+7
+00:00:29.480 --> 00:00:32.020
+how we're going to transport,
+
+8
+00:00:32.020 --> 00:00:35.440
+package, and store evidence.
+
+9
+00:00:36.800 --> 00:00:40.305
+In Course 6, Module 1,
+
+10
+00:00:40.305 --> 00:00:45.970
+we are going to cover the
+pre-recovery planning phase.
+
+11
+00:00:46.190 --> 00:00:49.250
+Pre-recovering planning is one of
+
+12
+00:00:49.250 --> 00:00:53.075
+the most important parts
+of the investigation.
+
+13
+00:00:53.075 --> 00:00:56.870
+Because if we don't seize
+the evidence properly,
+
+14
+00:00:56.870 --> 00:00:59.820
+it will not be
+admissible in court.
+
+15
+00:01:00.350 --> 00:01:04.430
+Pre-recovery planning is
+going to include being able
+
+16
+00:01:04.430 --> 00:01:07.895
+to recognize sources
+of digital evidence,
+
+17
+00:01:07.895 --> 00:01:10.535
+being able to document it,
+
+18
+00:01:10.535 --> 00:01:16.085
+collect it properly,
+package it properly,
+
+19
+00:01:16.085 --> 00:01:17.750
+be able to transport it in
+
+20
+00:01:17.750 --> 00:01:20.000
+a safe way to preserve
+the evidence,
+
+21
+00:01:20.000 --> 00:01:22.550
+and store it in an area
+where it's going to
+
+22
+00:01:22.550 --> 00:01:26.730
+be secure and safe.
+
+23
+00:01:27.430 --> 00:01:31.400
+Our planning phase,
+which was our first one.
+
+24
+00:01:31.400 --> 00:01:34.040
+The first thing we want
+to consider is going to
+
+25
+00:01:34.040 --> 00:01:37.250
+be what kind of case
+are we investigating?
+
+26
+00:01:37.250 --> 00:01:40.370
+What is the alleged
+violation or crime?
+
+27
+00:01:40.370 --> 00:01:43.145
+Is it a violation
+of company policy?
+
+28
+00:01:43.145 --> 00:01:45.695
+Is it a crime?
+
+29
+00:01:45.695 --> 00:01:47.750
+We're going to want to
+think about our case.
+
+30
+00:01:47.750 --> 00:01:49.340
+This is going to
+lead us to believe
+
+31
+00:01:49.340 --> 00:01:52.085
+what type of evidence we're
+going to be collecting.
+
+32
+00:01:52.085 --> 00:01:55.100
+If you're looking for
+a case that's going to
+
+33
+00:01:55.100 --> 00:01:57.800
+involve a lot of
+communications or
+
+34
+00:01:57.800 --> 00:02:00.020
+a case that's going
+to involve a lot of
+
+35
+00:02:00.020 --> 00:02:02.600
+mobile devices versus a
+case where we're going to
+
+36
+00:02:02.600 --> 00:02:06.200
+be looking at servers and raids
+
+37
+00:02:06.200 --> 00:02:11.000
+and all kinds of large
+configurations of networks.
+
+38
+00:02:11.000 --> 00:02:12.860
+What type of case
+are we looking at?
+
+39
+00:02:12.860 --> 00:02:15.350
+What type of evidence are we
+are going to be collecting?
+
+40
+00:02:15.350 --> 00:02:16.835
+What's at the scene?
+
+41
+00:02:16.835 --> 00:02:19.060
+Is this a residence
+or a business?
+
+42
+00:02:19.060 --> 00:02:21.590
+Are we going into a home or
+we're going to be looking
+
+43
+00:02:21.590 --> 00:02:24.170
+for maybe a single laptop or are
+
+44
+00:02:24.170 --> 00:02:26.690
+we going to a business work
+and we're going to be dealing
+
+45
+00:02:26.690 --> 00:02:29.870
+with that network and that
+server-type environment?
+
+46
+00:02:29.870 --> 00:02:33.035
+What type of Internet
+these people have,
+
+47
+00:02:33.035 --> 00:02:35.855
+is it going to be
+secure or unsecure?
+
+48
+00:02:35.855 --> 00:02:38.030
+You want to know that in
+
+49
+00:02:38.030 --> 00:02:39.650
+advance so you would
+
+50
+00:02:39.650 --> 00:02:41.560
+want to do some
+reconnaissance on the scene.
+
+51
+00:02:41.560 --> 00:02:43.490
+We'll talk more about doing
+
+52
+00:02:43.490 --> 00:02:45.080
+scene reconnaissance before we
+
+53
+00:02:45.080 --> 00:02:46.825
+execute our search warrant.
+
+54
+00:02:46.825 --> 00:02:49.200
+What are the user's skills?
+
+55
+00:02:49.200 --> 00:02:51.720
+Is our user a computer
+programmer or is
+
+56
+00:02:51.720 --> 00:02:54.910
+our user somebody who can
+barely turn the computer on?
+
+57
+00:02:54.910 --> 00:02:57.690
+Do we know if Cloud
+storage is going to be
+
+58
+00:02:57.690 --> 00:03:00.210
+part of our case, is it likely?
+
+59
+00:03:00.210 --> 00:03:02.885
+If you're dealing with a
+lot of social networking
+
+60
+00:03:02.885 --> 00:03:05.209
+and Cloud storage like Dropbox,
+
+61
+00:03:05.209 --> 00:03:07.430
+if you know you're dealing
+with Dropbox, Google Drive,
+
+62
+00:03:07.430 --> 00:03:10.080
+OneDrive, is Cloud storage
+
+63
+00:03:10.080 --> 00:03:11.745
+going to be part of
+our investigation?
+
+64
+00:03:11.745 --> 00:03:14.755
+If so, how are we
+going to handle that?
+
+65
+00:03:14.755 --> 00:03:17.765
+When we're planning, we have
+to make considerations.
+
+66
+00:03:17.765 --> 00:03:19.760
+First of all, is how
+are we going to enter?
+
+67
+00:03:19.760 --> 00:03:21.470
+Is this a business
+where we're just going
+
+68
+00:03:21.470 --> 00:03:23.180
+to walk in and ask to speak with
+
+69
+00:03:23.180 --> 00:03:25.610
+the manager or is
+
+70
+00:03:25.610 --> 00:03:27.650
+this a home where
+we're going to have to
+
+71
+00:03:27.650 --> 00:03:29.750
+be knocking on a door
+and somebody's going to
+
+72
+00:03:29.750 --> 00:03:32.375
+answer it or is this more
+of a high-risk warrant?
+
+73
+00:03:32.375 --> 00:03:34.310
+We're dealing with a narcotics or
+
+74
+00:03:34.310 --> 00:03:37.250
+a gang-type environment where
+
+75
+00:03:37.250 --> 00:03:40.130
+we're going to need to
+make a dynamic entry,
+
+76
+00:03:40.130 --> 00:03:43.230
+maybe SWAT makes
+the entry for us.
+
+77
+00:03:43.820 --> 00:03:45.860
+How are we going to contain
+
+78
+00:03:45.860 --> 00:03:47.555
+the suspects once we're inside?
+
+79
+00:03:47.555 --> 00:03:49.610
+Because the first
+thing we're going to
+
+80
+00:03:49.610 --> 00:03:51.620
+want to do is get the people away
+
+81
+00:03:51.620 --> 00:03:53.360
+from the computers
+because we don't want
+
+82
+00:03:53.360 --> 00:03:55.930
+them destroying or
+altering evidence.
+
+83
+00:03:55.930 --> 00:03:57.020
+How are we going to contain the
+
+84
+00:03:57.020 --> 00:03:59.015
+suspects when we
+get to the scene?
+
+85
+00:03:59.015 --> 00:04:02.080
+Are we going to have
+specialized legal issues?
+
+86
+00:04:02.080 --> 00:04:03.800
+If this is a business,
+
+87
+00:04:03.800 --> 00:04:05.660
+we know we're probably not
+
+88
+00:04:05.660 --> 00:04:07.310
+going to be able to
+shut their computers
+
+89
+00:04:07.310 --> 00:04:11.750
+down so live imaging is
+going to be concerned.
+
+90
+00:04:11.750 --> 00:04:14.050
+What type of network
+are we dealing with?
+
+91
+00:04:14.050 --> 00:04:16.070
+Is it a single laptop?
+
+92
+00:04:16.070 --> 00:04:18.815
+A bunch of mobile devices?
+
+93
+00:04:18.815 --> 00:04:21.275
+Is it a server firm?
+
+94
+00:04:21.275 --> 00:04:24.570
+So we need to know what
+we're walking into.
+
+95
+00:04:24.580 --> 00:04:27.530
+The administrator,
+if we're dealing
+
+96
+00:04:27.530 --> 00:04:29.660
+with Cloud services
+or Cloud computing,
+
+97
+00:04:29.660 --> 00:04:32.585
+the administrators
+may not be on-site.
+
+98
+00:04:32.585 --> 00:04:35.735
+Do they contract out
+their computer services
+
+99
+00:04:35.735 --> 00:04:38.285
+or is the administrator
+going to be on-site?
+
+100
+00:04:38.285 --> 00:04:41.275
+That is another thing
+we want to consider.
+
+101
+00:04:41.275 --> 00:04:44.370
+Planning. If we know
+
+102
+00:04:44.370 --> 00:04:46.264
+in advancement we're
+going into servers,
+
+103
+00:04:46.264 --> 00:04:49.045
+do we know that they
+can't be shut down?
+
+104
+00:04:49.045 --> 00:04:52.520
+We need to know what type of
+operating system possible,
+
+105
+00:04:52.520 --> 00:04:54.860
+are they using a standard
+operating system
+
+106
+00:04:54.860 --> 00:04:58.560
+or is this a proprietary
+operating system?
+
+107
+00:04:59.270 --> 00:05:02.040
+Are they on or off scene?
+
+108
+00:05:02.040 --> 00:05:04.100
+Because again, we could
+
+109
+00:05:04.100 --> 00:05:06.200
+be dealing with Cloud
+computers where a lot
+
+110
+00:05:06.200 --> 00:05:08.105
+of companies now are going to
+
+111
+00:05:08.105 --> 00:05:11.305
+AWS or other types
+of Cloud computing.
+
+112
+00:05:11.305 --> 00:05:14.565
+Where are our servers
+actually going to be?
+
+113
+00:05:14.565 --> 00:05:17.850
+What type of databases are
+we going to be dealing with?
+
+114
+00:05:17.850 --> 00:05:19.360
+Are they standard databases?
+
+115
+00:05:19.360 --> 00:05:22.485
+Are they going to be a
+proprietary database?
+
+116
+00:05:22.485 --> 00:05:26.059
+These are all things that
+we want to know if possible
+
+117
+00:05:26.059 --> 00:05:30.180
+before we plan out
+our search warrant.
+
+118
+00:05:30.850 --> 00:05:33.320
+Operations plan.
+
+119
+00:05:33.320 --> 00:05:35.150
+When you show up,
+
+120
+00:05:35.150 --> 00:05:37.310
+you just can't have
+
+121
+00:05:37.310 --> 00:05:38.600
+everybody go running in
+
+122
+00:05:38.600 --> 00:05:39.980
+and start moving
+everything around.
+
+123
+00:05:39.980 --> 00:05:43.025
+There's a certain way
+we have to do things so
+
+124
+00:05:43.025 --> 00:05:48.385
+your best bet is to assign
+personnel in advance.
+
+125
+00:05:48.385 --> 00:05:51.075
+You're going to
+have a supervisor,
+
+126
+00:05:51.075 --> 00:05:52.370
+no matter where you work,
+
+127
+00:05:52.370 --> 00:05:54.305
+you always have one of those.
+
+128
+00:05:54.305 --> 00:05:56.990
+You're going to have
+people assigned to
+
+129
+00:05:56.990 --> 00:05:59.665
+do interviews and search.
+
+130
+00:05:59.665 --> 00:06:04.010
+You're going to have people
+assign to just evidence.
+
+131
+00:06:04.010 --> 00:06:05.300
+They're going to document log
+
+132
+00:06:05.300 --> 00:06:06.620
+all those evidence as it comes
+
+133
+00:06:06.620 --> 00:06:11.035
+in and do the evidence
+intake, very important.
+
+134
+00:06:11.035 --> 00:06:12.770
+You're going to
+have certain people
+
+135
+00:06:12.770 --> 00:06:14.450
+that are going to be
+assigned to preview
+
+136
+00:06:14.450 --> 00:06:16.010
+this evidence and we're
+going to talk about
+
+137
+00:06:16.010 --> 00:06:18.965
+previewing as we go
+through this path.
+
+138
+00:06:18.965 --> 00:06:21.320
+You're going to have somebody
+
+139
+00:06:21.320 --> 00:06:23.810
+whose responsibility it is to
+
+140
+00:06:23.810 --> 00:06:25.430
+take photographs of the scene and
+
+141
+00:06:25.430 --> 00:06:28.475
+photographs of the
+evidence as they're found.
+
+142
+00:06:28.475 --> 00:06:31.100
+All these assignments
+should be done at advance,
+
+143
+00:06:31.100 --> 00:06:34.070
+everybody should know their
+role before they walk into
+
+144
+00:06:34.070 --> 00:06:36.115
+that residence or business
+
+145
+00:06:36.115 --> 00:06:38.570
+when we are doing one of
+these search warrants.
+
+146
+00:06:38.570 --> 00:06:41.570
+Search warrants surveillance,
+extremely important.
+
+147
+00:06:41.570 --> 00:06:43.850
+Know the place you
+will researching,
+
+148
+00:06:43.850 --> 00:06:46.280
+you want to know the
+physical layout as well
+
+149
+00:06:46.280 --> 00:06:49.315
+as what we're going to be
+walking into digitally.
+
+150
+00:06:49.315 --> 00:06:52.305
+Is that residents or
+is it a business?
+
+151
+00:06:52.305 --> 00:06:54.975
+Do we want people present?
+
+152
+00:06:54.975 --> 00:06:58.535
+What is the layout of this
+residents or business?
+
+153
+00:06:58.535 --> 00:06:59.765
+Who lives there?
+
+154
+00:06:59.765 --> 00:07:01.160
+Who receives mail there?
+
+155
+00:07:01.160 --> 00:07:02.690
+Who resides there?
+
+156
+00:07:02.690 --> 00:07:04.115
+All these things are very
+
+157
+00:07:04.115 --> 00:07:06.970
+important before you
+execute a search warrant.
+
+158
+00:07:06.970 --> 00:07:09.180
+What kind of equipment
+are we going to need?
+
+159
+00:07:09.180 --> 00:07:10.370
+Well, that's going to depend
+
+160
+00:07:10.370 --> 00:07:13.400
+on what we're
+walking into but you
+
+161
+00:07:13.400 --> 00:07:15.470
+always want to try to come with
+
+162
+00:07:15.470 --> 00:07:19.140
+as much equipment as
+you possibly can.
+
+163
+00:07:19.520 --> 00:07:21.840
+We're going to need toolkit,
+
+164
+00:07:21.840 --> 00:07:23.345
+we'll need bags, markers,
+
+165
+00:07:23.345 --> 00:07:24.710
+evidence tape, camera,
+
+166
+00:07:24.710 --> 00:07:26.660
+large envelopes,
+small envelopes too,
+
+167
+00:07:26.660 --> 00:07:29.105
+anti-static bags, Faraday bags,
+
+168
+00:07:29.105 --> 00:07:31.585
+bags that will block signals,
+
+169
+00:07:31.585 --> 00:07:35.445
+scissors, evidence log,
+
+170
+00:07:35.445 --> 00:07:38.480
+all these things are
+going to be necessary.
+
+171
+00:07:38.480 --> 00:07:40.910
+This is more equipment
+we're going to need
+
+172
+00:07:40.910 --> 00:07:42.785
+to consider having, we
+going to need pens,
+
+173
+00:07:42.785 --> 00:07:44.810
+you're going to
+need gloves because
+
+174
+00:07:44.810 --> 00:07:46.040
+the areas you're
+going to be searching
+
+175
+00:07:46.040 --> 00:07:47.825
+can be contaminated.
+
+176
+00:07:47.825 --> 00:07:50.315
+You will need some type
+of hand sanitizer,
+
+177
+00:07:50.315 --> 00:07:52.165
+we're going to need labels,
+
+178
+00:07:52.165 --> 00:07:55.415
+we're going to need
+sterilized target media
+
+179
+00:07:55.415 --> 00:07:57.065
+to copy our data onto,
+
+180
+00:07:57.065 --> 00:07:59.630
+especially if we're doing
+live acquisitions and
+
+181
+00:07:59.630 --> 00:08:00.965
+we're going to talk about this
+
+182
+00:08:00.965 --> 00:08:02.845
+in-depth throughout the path.
+
+183
+00:08:02.845 --> 00:08:04.530
+You're going to need some type of
+
+184
+00:08:04.530 --> 00:08:06.225
+laptop to run your software from,
+
+185
+00:08:06.225 --> 00:08:07.985
+you're going to need
+forensic software,
+
+186
+00:08:07.985 --> 00:08:09.340
+we're going to need
+write blockers,
+
+187
+00:08:09.340 --> 00:08:10.670
+we're going to need cables
+
+188
+00:08:10.670 --> 00:08:12.140
+and connectors because we don't
+
+189
+00:08:12.140 --> 00:08:15.110
+know what we need to
+connect to at this point.
+
+190
+00:08:15.110 --> 00:08:16.400
+Then you're going
+to need some type
+
+191
+00:08:16.400 --> 00:08:18.680
+of portable batteries to
+
+192
+00:08:18.680 --> 00:08:20.810
+prevent electronic items from
+
+193
+00:08:20.810 --> 00:08:22.820
+having some type of
+data loss and again,
+
+194
+00:08:22.820 --> 00:08:26.030
+we're going to cover more on
+this throughout this path.
+
+195
+00:08:26.030 --> 00:08:28.820
+On-site preview.
+
+196
+00:08:28.820 --> 00:08:31.110
+The reasoning for doing
+
+197
+00:08:31.110 --> 00:08:32.690
+an on-site preview
+is just going to
+
+198
+00:08:32.690 --> 00:08:34.890
+reduce the amount of
+items we need to collect.
+
+199
+00:08:34.890 --> 00:08:38.330
+It's going to stop us from
+collecting unnecessary items,
+
+200
+00:08:38.330 --> 00:08:40.625
+which the days of walking,
+
+201
+00:08:40.625 --> 00:08:44.240
+take everything, leave and
+try to examine it over.
+
+202
+00:08:44.240 --> 00:08:46.325
+Most home computers now
+
+203
+00:08:46.325 --> 00:08:49.970
+have terabytes size hard
+drives at the least
+
+204
+00:08:49.970 --> 00:08:53.030
+and we do not have the time to
+
+205
+00:08:53.030 --> 00:08:54.860
+examine every item that can be
+
+206
+00:08:54.860 --> 00:08:57.130
+seized in even just
+the average home,
+
+207
+00:08:57.130 --> 00:08:59.120
+it's just not practical.
+
+208
+00:08:59.120 --> 00:09:02.140
+You want to reduce the
+amount of items you collect,
+
+209
+00:09:02.140 --> 00:09:05.000
+you don't want to collect
+unnecessary items and that's
+
+210
+00:09:05.000 --> 00:09:08.300
+one of the reasons you
+do an on-site preview.
+
+211
+00:09:08.300 --> 00:09:11.480
+Another reason would be to
+locate relevant evidence.
+
+212
+00:09:11.480 --> 00:09:14.560
+We want to eliminate
+evidence that is irrelevant,
+
+213
+00:09:14.560 --> 00:09:17.510
+we want to be able to focus
+in on relevant evidence,
+
+214
+00:09:17.510 --> 00:09:20.660
+an on-site preview
+will help us do that.
+
+215
+00:09:20.660 --> 00:09:23.000
+Another reason would be it would
+
+216
+00:09:23.000 --> 00:09:25.025
+limit the interruption
+of a business.
+
+217
+00:09:25.025 --> 00:09:27.975
+If you're doing a
+live on-site preview,
+
+218
+00:09:27.975 --> 00:09:31.790
+you can limit your impact on
+
+219
+00:09:31.790 --> 00:09:33.890
+that business and that's going to
+
+220
+00:09:33.890 --> 00:09:37.080
+be very important down the line.
+
+221
+00:09:38.470 --> 00:09:41.180
+In our next module,
+
+222
+00:09:41.180 --> 00:09:45.930
+we're going to discuss
+documenting the scene.

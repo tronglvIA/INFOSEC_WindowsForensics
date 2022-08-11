@@ -1,0 +1,442 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.495
+Welcome back to digital
+forensic concepts.
+
+2
+00:00:03.495 --> 00:00:05.835
+In this course, course 10,
+
+3
+00:00:05.835 --> 00:00:08.520
+we're going to talk
+about network basics.
+
+4
+00:00:08.520 --> 00:00:10.814
+In overview of this course,
+
+5
+00:00:10.814 --> 00:00:13.290
+we're going to define
+what a network is.
+
+6
+00:00:13.290 --> 00:00:16.425
+We're going to talk about
+how a network functions.
+
+7
+00:00:16.425 --> 00:00:18.750
+How does the data get
+across our network?
+
+8
+00:00:18.750 --> 00:00:20.670
+We're going to talk about IP and
+
+9
+00:00:20.670 --> 00:00:22.740
+MAC addresses and what they are,
+
+10
+00:00:22.740 --> 00:00:25.980
+and how they're used
+in network protocols,
+
+11
+00:00:25.980 --> 00:00:27.540
+and how they're used throughout
+
+12
+00:00:27.540 --> 00:00:30.735
+the network to complete
+transmissions of data.
+
+13
+00:00:30.735 --> 00:00:32.430
+We're also going to talk about
+
+14
+00:00:32.430 --> 00:00:35.950
+Internet protocols
+and the OSI model.
+
+15
+00:00:36.550 --> 00:00:39.605
+In Module 1, we're going to
+
+16
+00:00:39.605 --> 00:00:42.320
+define the network and
+
+17
+00:00:42.320 --> 00:00:45.665
+we're going to talk about the
+functions of the network.
+
+18
+00:00:45.665 --> 00:00:48.530
+What is a computer network?
+
+19
+00:00:48.530 --> 00:00:52.160
+Well, a computer network is
+defined as a collection of
+
+20
+00:00:52.160 --> 00:00:54.170
+computers linked together
+for communication
+
+21
+00:00:54.170 --> 00:00:56.465
+and sharing of data
+and other resources.
+
+22
+00:00:56.465 --> 00:00:59.180
+You might have a network in
+your home where you share
+
+23
+00:00:59.180 --> 00:01:02.605
+a printer and you could share
+data between the computers.
+
+24
+00:01:02.605 --> 00:01:04.685
+If you work in a
+business environment,
+
+25
+00:01:04.685 --> 00:01:06.110
+you might have a larger scale
+
+26
+00:01:06.110 --> 00:01:08.555
+network that you use at work.
+
+27
+00:01:08.555 --> 00:01:12.890
+A LAN, or a local area network,
+
+28
+00:01:12.890 --> 00:01:16.250
+is a group of computers linked
+together in a small area,
+
+29
+00:01:16.250 --> 00:01:19.235
+generally, it's one
+geographical location.
+
+30
+00:01:19.235 --> 00:01:20.930
+It could be in one building or
+
+31
+00:01:20.930 --> 00:01:23.145
+a small home office,
+whereas a WAN,
+
+32
+00:01:23.145 --> 00:01:26.165
+a wide area network,
+
+33
+00:01:26.165 --> 00:01:28.360
+is a group of computers linked
+
+34
+00:01:28.360 --> 00:01:31.180
+together over a large
+geographical area.
+
+35
+00:01:31.180 --> 00:01:32.710
+This can span city,
+
+36
+00:01:32.710 --> 00:01:35.285
+states, and even countries.
+
+37
+00:01:35.285 --> 00:01:38.440
+The data is transferred across
+
+38
+00:01:38.440 --> 00:01:42.170
+this network in things
+called packets.
+
+39
+00:01:42.450 --> 00:01:46.090
+These packets have a header,
+
+40
+00:01:46.090 --> 00:01:48.665
+a footer, and a payload.
+
+41
+00:01:48.665 --> 00:01:52.450
+The header, much
+like a file header,
+
+42
+00:01:52.450 --> 00:01:56.140
+tells computers what type
+of service they are,
+
+43
+00:01:56.140 --> 00:01:58.420
+are they TCP, UDP.
+
+44
+00:01:58.420 --> 00:02:00.460
+They tell us the source,
+
+45
+00:02:00.460 --> 00:02:04.405
+where these packets came
+from, the destination,
+
+46
+00:02:04.405 --> 00:02:06.694
+where the packets are going,
+
+47
+00:02:06.694 --> 00:02:12.500
+and each packet has a
+sequence number and flags.
+
+48
+00:02:12.500 --> 00:02:16.160
+Now, the footer tells
+
+49
+00:02:16.160 --> 00:02:18.380
+the receiving device
+that it has reached
+
+50
+00:02:18.380 --> 00:02:21.205
+the end of the transmission.
+
+51
+00:02:21.205 --> 00:02:24.810
+The footer also has error
+checking and usually that's in
+
+52
+00:02:24.810 --> 00:02:30.225
+a CRC format which stands for
+cyclical redundancy check.
+
+53
+00:02:30.225 --> 00:02:31.880
+Of course, the payload is
+
+54
+00:02:31.880 --> 00:02:34.840
+the actual data contained
+within the packet.
+
+55
+00:02:34.840 --> 00:02:37.685
+We're going to talk about
+the parts of a network.
+
+56
+00:02:37.685 --> 00:02:40.670
+What are the hardware parts
+that make up our network?
+
+57
+00:02:40.670 --> 00:02:42.480
+Well we have routers.
+
+58
+00:02:42.480 --> 00:02:44.675
+A router is something you
+would have in your house,
+
+59
+00:02:44.675 --> 00:02:47.510
+and you would also have
+that in a larger network.
+
+60
+00:02:47.510 --> 00:02:49.580
+Routers provide
+Internet connection
+
+61
+00:02:49.580 --> 00:02:51.515
+to a local area network.
+
+62
+00:02:51.515 --> 00:02:57.150
+A router operates at
+layer 3 of the OSI model.
+
+63
+00:02:57.150 --> 00:02:59.115
+That is the network layer.
+
+64
+00:02:59.115 --> 00:03:04.445
+We're going to cover the OSI
+model in a later course.
+
+65
+00:03:04.445 --> 00:03:07.610
+A router connects devices within
+
+66
+00:03:07.610 --> 00:03:10.705
+a network by forwarding
+data packets between them.
+
+67
+00:03:10.705 --> 00:03:15.170
+This data can be sent between
+devices or to the Internet.
+
+68
+00:03:15.170 --> 00:03:18.800
+The router assigns
+a local IP address
+
+69
+00:03:18.800 --> 00:03:21.600
+to the device on the network.
+
+70
+00:03:21.680 --> 00:03:26.025
+Hub. Now, a hub,
+
+71
+00:03:26.025 --> 00:03:27.794
+unlike a router,
+
+72
+00:03:27.794 --> 00:03:32.110
+broadcasts out to everybody
+that is on that network.
+
+73
+00:03:32.110 --> 00:03:35.895
+Hubs operate at the
+physical layer of
+
+74
+00:03:35.895 --> 00:03:39.495
+OSI Layer 1 of a network.
+
+75
+00:03:39.495 --> 00:03:43.645
+They are used to connect
+multiple devices in a network.
+
+76
+00:03:43.645 --> 00:03:46.355
+Now, it can have
+multiple connections
+
+77
+00:03:46.355 --> 00:03:48.320
+and they pass on anything they
+
+78
+00:03:48.320 --> 00:03:53.480
+receive on one connection to
+all the other connections.
+
+79
+00:03:53.480 --> 00:03:57.440
+There is no filtering
+by IP or MAC addresses.
+
+80
+00:03:57.440 --> 00:04:00.800
+With the router, we had
+the filtering by IP,
+
+81
+00:04:00.800 --> 00:04:03.400
+but with the hub, we do not.
+
+82
+00:04:03.400 --> 00:04:07.290
+Switches are also
+part of a network.
+
+83
+00:04:07.290 --> 00:04:10.005
+A switch operates at OSI layer 6,
+
+84
+00:04:10.005 --> 00:04:12.510
+which is the data link layer.
+
+85
+00:04:12.510 --> 00:04:16.515
+This connects the
+device to the network.
+
+86
+00:04:16.515 --> 00:04:21.460
+It also does its
+filtering by MAC address.
+
+87
+00:04:21.680 --> 00:04:24.170
+It uses MAC addresses to route
+
+88
+00:04:24.170 --> 00:04:26.060
+the packets to where
+they need to go,
+
+89
+00:04:26.060 --> 00:04:30.870
+unlike the router which
+uses the IP addresses.
+
+90
+00:04:33.980 --> 00:04:36.345
+In our next module,
+
+91
+00:04:36.345 --> 00:04:38.000
+we're going to talk about IP and
+
+92
+00:04:38.000 --> 00:04:40.340
+MAC addresses, what they are.
+
+93
+00:04:40.340 --> 00:04:42.560
+We've already talked
+about how they're
+
+94
+00:04:42.560 --> 00:04:45.695
+used with routers and switches,
+
+95
+00:04:45.695 --> 00:04:47.660
+but we're going to talk
+more about what they do,
+
+96
+00:04:47.660 --> 00:04:49.235
+the functions of them,
+
+97
+00:04:49.235 --> 00:04:52.770
+and how they work
+on our networks.

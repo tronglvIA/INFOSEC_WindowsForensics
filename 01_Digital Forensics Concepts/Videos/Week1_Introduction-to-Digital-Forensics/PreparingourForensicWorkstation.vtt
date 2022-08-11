@@ -1,0 +1,578 @@
+WEBVTT
+
+1
+00:00:00.393 --> 00:00:06.536
+Hello and welcome back to the computer
+forensics boot camp, in this module,
+
+2
+00:00:06.536 --> 00:00:12.125
+we're going to prepare our forensic
+workstation to examine evidence.
+
+3
+00:00:12.125 --> 00:00:16.831
+We're going to acquire open
+source forensic software and
+
+4
+00:00:16.831 --> 00:00:20.443
+we're going to acquire
+the path image file.
+
+5
+00:00:20.443 --> 00:00:23.877
+The first step is to open our web browser.
+
+6
+00:00:23.877 --> 00:00:28.512
+The second step is we're going to
+download the document containing the URLs
+
+7
+00:00:28.512 --> 00:00:32.259
+of the software needed for
+this path and the path VMDK file.
+
+8
+00:00:32.259 --> 00:00:35.845
+These are the software URLs.
+
+9
+00:00:35.845 --> 00:00:39.141
+We're going to download
+the sleuth kit by autopsy.
+
+10
+00:00:39.141 --> 00:00:42.936
+We're going to download the add
+on modules for the sleuth kit.
+
+11
+00:00:42.936 --> 00:00:47.603
+We are going to download 7-Zip because
+we're going to need that to extract
+
+12
+00:00:47.603 --> 00:00:49.087
+the Zimmerman tools.
+
+13
+00:00:49.087 --> 00:00:51.255
+We're going to go to the website
+with the Zimmerman tools.
+
+14
+00:00:51.255 --> 00:00:55.633
+We're going to download
+the am cache Parser,
+
+15
+00:00:55.633 --> 00:01:01.194
+the app compact cache Parser,
+the register explorer,
+
+16
+00:01:01.194 --> 00:01:05.453
+shellbag explorer, jump list explorer,
+
+17
+00:01:05.453 --> 00:01:10.321
+timeline explorer,
+MFTE explorer and WxTcmd.
+
+18
+00:01:10.321 --> 00:01:13.627
+We're also going to download kill disk.
+
+19
+00:01:13.627 --> 00:01:17.472
+We are going to download
+HDX which is a hex editor.
+
+20
+00:01:17.472 --> 00:01:21.208
+We're going to download active disk
+editor which is also a hex editor but
+
+21
+00:01:21.208 --> 00:01:24.581
+I'm going to show you where we're
+going to use both of these tools.
+
+22
+00:01:24.581 --> 00:01:31.104
+Were also going to download for
+discoveries link Parser.
+
+23
+00:01:31.104 --> 00:01:34.523
+We're going to download access data,
+ftk-imager,
+
+24
+00:01:34.523 --> 00:01:37.864
+the latest version we
+are going to download dcode,
+
+25
+00:01:37.864 --> 00:01:41.841
+which is going to help us when
+we're decoding some hex values.
+
+26
+00:01:41.841 --> 00:01:45.822
+We are going to download
+the exil tool by Phil Harvey so
+
+27
+00:01:45.822 --> 00:01:48.699
+we can view exif data in image files.
+
+28
+00:01:48.699 --> 00:01:55.621
+And we're going to download a software
+tool to view Windows prefetch.
+
+29
+00:01:55.621 --> 00:01:58.740
+So let's get started.
+
+30
+00:01:58.740 --> 00:02:05.487
+The first site we're going to go to
+is the sleuth kit dot org by autopsy.
+
+31
+00:02:05.487 --> 00:02:09.103
+You can cut that from the document and
+paste it into your browser.
+
+32
+00:02:09.103 --> 00:02:15.869
+When you get here, you're going to
+hit the download now button and
+
+33
+00:02:15.869 --> 00:02:21.881
+you're going to be presented
+with a screen with a 64 bit or
+
+34
+00:02:21.881 --> 00:02:25.279
+a 32 bit for Windows or Linux.
+
+35
+00:02:25.279 --> 00:02:30.568
+Once you hit choose one and you hit
+download, a download window will pop up
+
+36
+00:02:30.568 --> 00:02:35.696
+and you can go ahead and save that
+where you would like on your computer.
+
+37
+00:02:35.696 --> 00:02:43.195
+The next website, we're going to go to
+GitHub for the add on modules for autopsy.
+
+38
+00:02:43.195 --> 00:02:44.816
+You're going to see this clone or
+
+39
+00:02:44.816 --> 00:02:48.319
+download button depending on what
+type of file system you're on.
+
+40
+00:02:48.319 --> 00:02:51.014
+If you're on a Windows system,
+download zip.
+
+41
+00:02:51.014 --> 00:02:54.931
+If you're in Linux,
+you would need to clone it.
+
+42
+00:02:54.931 --> 00:02:59.182
+Follow the instructions
+here on how to install
+
+43
+00:02:59.182 --> 00:03:03.764
+the third party modules if
+you would like to do so.
+
+44
+00:03:03.764 --> 00:03:09.495
+The next website we're going to go to
+is 7-Zip again, cut and paste on your
+
+45
+00:03:09.495 --> 00:03:15.688
+browser when you come you're also going to
+be presented with a 32 bit version and
+
+46
+00:03:15.688 --> 00:03:20.885
+a 64 bit version pick whichever
+is applicable to your computer.
+
+47
+00:03:20.885 --> 00:03:23.197
+You would hit the download link and
+
+48
+00:03:23.197 --> 00:03:27.431
+again you would save that to where
+you want it on your computer.
+
+49
+00:03:27.431 --> 00:03:32.727
+We're going to go to Eric Zimmerman's
+website for the Zimmerman tools.
+
+50
+00:03:32.727 --> 00:03:34.068
+There's several tools down here.
+
+51
+00:03:34.068 --> 00:03:38.907
+These are all free and open source so you
+can download whatever you would like what
+
+52
+00:03:38.907 --> 00:03:43.477
+we're going to be using for the course is
+we're going to want the M cache parser.
+
+53
+00:03:43.477 --> 00:03:47.788
+And again, you just click the link and
+
+54
+00:03:47.788 --> 00:03:53.852
+download the tool,
+the app compact, cache parser,
+
+55
+00:03:53.852 --> 00:03:58.435
+the MFT Explorer, registry Explorer,
+
+56
+00:03:58.435 --> 00:04:03.288
+shell bag Explorer, timeline Explorer in
+
+57
+00:04:03.288 --> 00:04:08.431
+the Windows 10 timeline database parser.
+
+58
+00:04:08.431 --> 00:04:12.033
+We're also going to
+download Jumplist Explorer.
+
+59
+00:04:12.033 --> 00:04:13.908
+The GUI version.
+
+60
+00:04:13.908 --> 00:04:16.416
+There is a command line version and
+you can go ahead and
+
+61
+00:04:16.416 --> 00:04:17.988
+download both if you would like.
+
+62
+00:04:17.988 --> 00:04:19.537
+And if I didn't tell you already,
+
+63
+00:04:19.537 --> 00:04:22.005
+we definitely want this
+timeline Explorer dyed hair.
+
+64
+00:04:22.005 --> 00:04:26.438
+We're going to use that
+throughout the class.
+
+65
+00:04:26.438 --> 00:04:30.228
+Next we're going to go to KillDisk.com and
+
+66
+00:04:30.228 --> 00:04:35.976
+we're going to download the free
+reversion of active KillDisk.
+
+67
+00:04:35.976 --> 00:04:38.660
+This is for Windows and this is for Mac.
+
+68
+00:04:38.660 --> 00:04:42.822
+So whichever computer you have,
+you click on the link and
+
+69
+00:04:42.822 --> 00:04:48.208
+then download the file and again you
+save it where you like and install it.
+
+70
+00:04:48.208 --> 00:04:52.529
+Next one is HxD.
+
+71
+00:04:52.529 --> 00:04:54.179
+HxD is a hex viewer,
+
+72
+00:04:54.179 --> 00:04:59.238
+which we're going to use when we
+do some of our file system work.
+
+73
+00:04:59.238 --> 00:05:02.753
+You do want to go with the latest release.
+
+74
+00:05:02.753 --> 00:05:05.182
+There are plug ins on GitHub.
+
+75
+00:05:05.182 --> 00:05:08.387
+We're not going to need that for
+what we're doing.
+
+76
+00:05:08.387 --> 00:05:14.573
+You would just simply click the download
+button and download the software.
+
+77
+00:05:14.573 --> 00:05:20.103
+We're going to go to ActiveDisk editor
+next and again we have for Windows or
+
+78
+00:05:20.103 --> 00:05:26.284
+for Linux depending on your operating
+system download, which is appropriate.
+
+79
+00:05:26.284 --> 00:05:34.542
+We're going to use this tool to view file
+structures within the operating system.
+
+80
+00:05:34.542 --> 00:05:38.268
+We're going to download
+4discovery link parser and
+
+81
+00:05:38.268 --> 00:05:43.116
+this will be used when we look at
+link files throughout the course,
+
+82
+00:05:43.116 --> 00:05:48.940
+you would hit the download now button and
+you simply download and save the file.
+
+83
+00:05:48.940 --> 00:05:52.084
+FTK imager.
+
+84
+00:05:52.084 --> 00:05:55.692
+It's a little different when
+you hit this download button,
+
+85
+00:05:55.692 --> 00:05:58.390
+before access data will
+let you download it.
+
+86
+00:05:58.390 --> 00:06:01.611
+They require,
+you do fill out some information,
+
+87
+00:06:01.611 --> 00:06:06.527
+you do have to opt into the emails or
+you will not be able to download the tool.
+
+88
+00:06:06.527 --> 00:06:10.606
+You can go back and
+opt out at a later date if you'd like, but
+
+89
+00:06:10.606 --> 00:06:16.491
+if you don't check, yes, you won't get an
+email with a link to download FTK imager.
+
+90
+00:06:16.491 --> 00:06:18.289
+So you're going to have
+to check this submit.
+
+91
+00:06:18.289 --> 00:06:23.644
+And they will send you they will send you
+an email to whatever email address you put
+
+92
+00:06:23.644 --> 00:06:28.841
+in here and that email will contain a link
+to download FTK imager and we are going to
+
+93
+00:06:28.841 --> 00:06:33.926
+need this throughout the course so
+it's important that you do download it.
+
+94
+00:06:33.926 --> 00:06:41.186
+DCODE, we're going to use this to
+translate some hexi decimal values and
+
+95
+00:06:41.186 --> 00:06:45.179
+you simply download dcode and save it.
+
+96
+00:06:45.179 --> 00:06:46.582
+It will be a zip file.
+
+97
+00:06:46.582 --> 00:06:51.015
+Go ahead and use 7-Zip to extract it and
+you must use 7-Zip.
+
+98
+00:06:51.015 --> 00:06:55.295
+When you're extracting the Zimmerman
+tools, they will not extract properly.
+
+99
+00:06:55.295 --> 00:06:59.112
+So please download 7-Zip
+if you don't have it and
+
+100
+00:06:59.112 --> 00:07:02.941
+use that 7-Zip to extract
+these software tools.
+
+101
+00:07:02.941 --> 00:07:07.645
+The next tool we're going to
+download is going to be
+
+102
+00:07:07.645 --> 00:07:12.579
+the Exif tool by Phil Harvey
+again go with the latest
+
+103
+00:07:12.579 --> 00:07:16.822
+version download the Windows or
+the Mac OS,
+
+104
+00:07:16.822 --> 00:07:22.236
+whichever is appropriate for
+you and install the tool.
+
+105
+00:07:22.236 --> 00:07:27.581
+We are going to download NirSoft win
+prefetch viewer because we're going to
+
+106
+00:07:27.581 --> 00:07:32.736
+take a good look at Windows prefetch,
+there is some information
+
+107
+00:07:32.736 --> 00:07:37.509
+about the tool itself if you'd
+like to read through that and
+
+108
+00:07:37.509 --> 00:07:41.337
+the download button is
+down here at the bottom.
+
+109
+00:07:41.337 --> 00:07:46.241
+And again they have a 32 and
+a 64 bit version of the tool and
+
+110
+00:07:46.241 --> 00:07:50.777
+they also have an MD five
+hash show one shot 52 to 56.
+
+111
+00:07:50.777 --> 00:07:56.178
+So you can check your download to
+make sure it downloaded properly.
+
+112
+00:07:56.178 --> 00:08:01.429
+And we're going to talk about
+how you will kind of use
+
+113
+00:08:01.429 --> 00:08:07.194
+hash values to validate files
+later on in this course.
+
+114
+00:08:07.194 --> 00:08:15.587
+In our next module we are going to
+start exploring some forensic basics.
+
+115
+00:08:15.587 --> 00:08:20.867
+We're going to talk about hexi decimal,
+decimal and
+
+116
+00:08:20.867 --> 00:08:27.013
+binary and how we deal with
+those types of data structures.
+
+117
+00:08:27.013 --> 00:08:31.734
+I just want to make you aware when
+you're downloading the course,
+
+118
+00:08:31.734 --> 00:08:34.190
+VMDK file, the path, VMDK file.
+
+119
+00:08:34.190 --> 00:08:39.079
+It may take a while, so
+allow yourself some time to download that.
+
+120
+00:08:39.079 --> 00:08:42.241
+You can either pause the video and
+do it or
+
+121
+00:08:42.241 --> 00:08:47.925
+do it when the video is not running,
+that is totally up to you and a block.

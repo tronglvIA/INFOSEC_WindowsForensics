@@ -1,0 +1,339 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.710
+Welcome to InfoSec Computer
+Forensics Bootcamp.
+
+2
+00:00:04.710 --> 00:00:06.930
+My name is Denise Duffy,
+
+3
+00:00:06.930 --> 00:00:09.495
+you can see I have my
+cellphone number up there.
+
+4
+00:00:09.495 --> 00:00:12.350
+I'm going to be your instructor
+for this learning path.
+
+5
+00:00:12.350 --> 00:00:15.420
+I have a background
+in law enforcement,
+
+6
+00:00:15.420 --> 00:00:17.430
+I was part of an ICAC unit,
+
+7
+00:00:17.430 --> 00:00:19.470
+Internet Crimes Against Children.
+
+8
+00:00:19.470 --> 00:00:23.415
+I did digital and
+mobile forensics,
+
+9
+00:00:23.415 --> 00:00:27.240
+I handled cases such as child
+exploitation, narcotics,
+
+10
+00:00:27.240 --> 00:00:29.850
+suicide, sexual
+assault, homicide,
+
+11
+00:00:29.850 --> 00:00:32.370
+home invasion, theft,
+missing persons.
+
+12
+00:00:32.370 --> 00:00:34.290
+I've handled a variety
+of different cases.
+
+13
+00:00:34.290 --> 00:00:36.825
+I also have handled
+some fraud cases.
+
+14
+00:00:36.825 --> 00:00:40.860
+After I retired, I work
+in the private sector for
+
+15
+00:00:40.860 --> 00:00:44.100
+CyforTec Group and
+we handle a lot of
+
+16
+00:00:44.100 --> 00:00:47.580
+IP theft cases for
+major companies,
+
+17
+00:00:47.580 --> 00:00:53.205
+we handle intrusion cases and
+a variety of civil cases.
+
+18
+00:00:53.205 --> 00:00:56.175
+I work both in the public
+and private sectors.
+
+19
+00:00:56.175 --> 00:01:00.255
+Our learning objectives for
+this path is we're going to
+
+20
+00:01:00.255 --> 00:01:02.130
+come to understand
+what it means to have
+
+21
+00:01:02.130 --> 00:01:04.965
+a mindset of a computer
+forensic examiner.
+
+22
+00:01:04.965 --> 00:01:07.710
+We're going to
+understand the methods
+
+23
+00:01:07.710 --> 00:01:10.695
+we use when we're
+doing the examination,
+
+24
+00:01:10.695 --> 00:01:15.015
+why they are so important and
+how they are useful to us.
+
+25
+00:01:15.015 --> 00:01:19.500
+We're going to develop skills
+that most examiners have.
+
+26
+00:01:19.500 --> 00:01:21.360
+We're going to expose you to
+
+27
+00:01:21.360 --> 00:01:24.690
+a wide variety of forensic
+tools and techniques,
+
+28
+00:01:24.690 --> 00:01:27.540
+we're going to show you
+some advanced concepts,
+
+29
+00:01:27.540 --> 00:01:29.355
+you're going to
+get some exposure.
+
+30
+00:01:29.355 --> 00:01:30.870
+We're going to prepare you for
+
+31
+00:01:30.870 --> 00:01:33.180
+further study in the
+forensics field,
+
+32
+00:01:33.180 --> 00:01:35.655
+because this will not
+be your last course.
+
+33
+00:01:35.655 --> 00:01:39.615
+We're also going to prepare
+you for the CCFE exam.
+
+34
+00:01:39.615 --> 00:01:42.630
+A little bit about this course,
+
+35
+00:01:42.630 --> 00:01:45.975
+it is not an expert level
+computer forensics course,
+
+36
+00:01:45.975 --> 00:01:47.190
+this is the beginning,
+we're going
+
+37
+00:01:47.190 --> 00:01:48.390
+to touch on everything,
+
+38
+00:01:48.390 --> 00:01:51.850
+but we're really not going to
+get to dive into too much.
+
+39
+00:01:51.860 --> 00:01:54.900
+This is a foundations course,
+
+40
+00:01:54.900 --> 00:01:56.040
+we need to start,
+
+41
+00:01:56.040 --> 00:01:57.820
+we need to walk
+before we can run.
+
+42
+00:01:57.820 --> 00:01:59.310
+We're going to touch on
+
+43
+00:01:59.310 --> 00:02:02.050
+everything a computer forensic
+examiner needs to know.
+
+44
+00:02:02.050 --> 00:02:03.480
+This is a great overview
+
+45
+00:02:03.480 --> 00:02:05.085
+of everything we're going to see,
+
+46
+00:02:05.085 --> 00:02:06.630
+but additional study beyond
+
+47
+00:02:06.630 --> 00:02:08.725
+this course is going
+to be required.
+
+48
+00:02:08.725 --> 00:02:12.585
+The best way to learn computer
+forensics is by doing,
+
+49
+00:02:12.585 --> 00:02:16.110
+hands-on, and active
+participation.
+
+50
+00:02:16.110 --> 00:02:18.840
+A little bit more about
+our certification exam,
+
+51
+00:02:18.840 --> 00:02:20.590
+the certifying body,
+
+52
+00:02:20.590 --> 00:02:22.470
+the people that issued
+the certificate is
+
+53
+00:02:22.470 --> 00:02:28.740
+the IACRB in the Certified
+Computer Forensic Examiner,
+
+54
+00:02:28.740 --> 00:02:30.890
+the CCFE test.
+
+55
+00:02:30.890 --> 00:02:33.490
+It's going to test your
+fundamental knowledge
+
+56
+00:02:33.490 --> 00:02:34.900
+of computer forensics,
+
+57
+00:02:34.900 --> 00:02:38.710
+evidence recovery in
+the analysis process.
+
+58
+00:02:38.710 --> 00:02:40.390
+You're going to be evaluated on
+
+59
+00:02:40.390 --> 00:02:44.315
+your knowledge of both
+the hard and soft skills,
+
+60
+00:02:44.315 --> 00:02:47.580
+you're going to be tested
+on the soft skills,
+
+61
+00:02:47.580 --> 00:02:49.570
+you've got to prove that you have
+
+62
+00:02:49.570 --> 00:02:51.535
+the requisite
+background knowledge of
+
+63
+00:02:51.535 --> 00:02:53.350
+the complex legal issues that are
+
+64
+00:02:53.350 --> 00:02:55.510
+related to the computer
+forensics field.
+
+65
+00:02:55.510 --> 00:02:57.250
+It's going to be multiple choice,
+
+66
+00:02:57.250 --> 00:03:01.550
+50 questions, you must get
+a passing score of 70,
+
+67
+00:03:01.550 --> 00:03:04.590
+you have a time
+duration of two hours,
+
+68
+00:03:04.590 --> 00:03:06.145
+so there is a time limit,
+
+69
+00:03:06.145 --> 00:03:08.755
+but it's plenty of time
+don't worry about it
+
+70
+00:03:08.755 --> 00:03:11.875
+and the test's format
+in multiple-choice.
+
+71
+00:03:11.875 --> 00:03:16.435
+There's no essays or hands
+on practical in this test.
+
+72
+00:03:16.435 --> 00:03:19.640
+Let's get started.
